@@ -9,7 +9,7 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#030A1C]/95 backdrop-blur-md border-b border-[#10213F] h-[84px]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#030A1C]/95 backdrop-blur-md border-b border-[#10213F]">
       <div className="max-w-[1260px] mx-auto px-4 lg:px-5">
         <div className="flex items-center justify-between h-[84px]">
           
@@ -108,7 +108,7 @@ export function Navigation() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden border-t border-white/5 py-4"
+              className="lg:hidden border-t border-white/5 py-4 bg-[#030A1C]/95 backdrop-blur-md"
             >
               <div className="flex flex-col gap-3">
                 <Link to="/" className="text-sm text-[#F9FAFB] hover:text-[#2F80ED] py-2">
