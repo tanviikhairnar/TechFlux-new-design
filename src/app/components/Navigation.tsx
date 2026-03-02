@@ -32,8 +32,11 @@ export function Navigation() {
 
           {/* Desktop Nav Links */}
           <div className="hidden items-center gap-7 lg:flex">
-            
-            <Link to="/" className="text-[16px] font-medium text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
+
+            <Link
+              to="/"
+              className="text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
+            >
               Home
             </Link>
 
@@ -43,7 +46,7 @@ export function Navigation() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="flex items-center gap-1 text-[16px] font-medium text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
+              <button className="flex items-center gap-1 text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white">
                 Services
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
@@ -70,7 +73,7 @@ export function Navigation() {
                       <a
                         key={i}
                         href={item.href}
-                        className="block px-5 py-3 text-sm text-[#F9FAFB] transition-all hover:bg-[#2F80ED]/10 hover:text-[#2F80ED]"
+                        className="block px-5 py-3 text-sm text-gray-300 transition-all hover:bg-[#2F80ED]/10 hover:text-white"
                       >
                         {item.label}
                       </a>
@@ -80,15 +83,24 @@ export function Navigation() {
               </AnimatePresence>
             </div>
 
-            <a href="/#portfolio" className="text-[16px] font-medium text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
+            <a
+              href="/#portfolio"
+              className="text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
+            >
               Case Studies
             </a>
 
-            <Link to="/become-partner" className="text-[16px] font-medium text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
+            <Link
+              to="/become-partner"
+              className="text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
+            >
               Partner
             </Link>
 
-            <Link to="/contact" className="text-[16px] font-medium text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
+            <Link
+              to="/contact"
+              className="text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
+            >
               Contact
             </Link>
 
@@ -122,19 +134,19 @@ export function Navigation() {
               className="lg:hidden border-t border-white/5 py-4 bg-[#030A1C]/95 backdrop-blur-md"
             >
               <div className="flex flex-col gap-3">
-                <Link to="/" className="text-[16px] text-[#F9FAFB] hover:text-[#2F80ED] py-2">
+                <Link to="/" className="text-[17px] text-gray-400 hover:text-white py-2">
                   Home
                 </Link>
-                <a href="/#saas" className="text-[16px] text-[#F9FAFB] hover:text-[#2F80ED] py-2">
+                <a href="/#saas" className="text-[17px] text-gray-400 hover:text-white py-2">
                   SaaS Development
                 </a>
-                <a href="/#ai" className="text-[16px] text-[#F9FAFB] hover:text-[#2F80ED] py-2">
+                <a href="/#ai" className="text-[17px] text-gray-400 hover:text-white py-2">
                   AI Solutions
                 </a>
-                <a href="/#portfolio" className="text-[16px] text-[#F9FAFB] hover:text-[#2F80ED] py-2">
+                <a href="/#portfolio" className="text-[17px] text-gray-400 hover:text-white py-2">
                   Case Studies
                 </a>
-                <Link to="/contact" className="text-[16px] text-[#F9FAFB] hover:text-[#2F80ED] py-2">
+                <Link to="/contact" className="text-[17px] text-gray-400 hover:text-white py-2">
                   Contact
                 </Link>
                 <Link
@@ -147,6 +159,7 @@ export function Navigation() {
             </motion.div>
           )}
         </AnimatePresence>
+
       </div>
     </nav>
   );
