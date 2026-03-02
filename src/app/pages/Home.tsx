@@ -53,39 +53,46 @@ export default function Home() {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2F80ED]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#2D9CDB]/10 rounded-full blur-[120px]" />
 
-        <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5 py-20 grid md:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="w-full max-w-[1320px] mx-auto px-6 lg:px-8 py-24 grid md:grid-cols-2 gap-16 items-center relative z-10">
+
+          {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="max-w-xl"
           >
             <h1
-              className="text-5xl md:text-6xl font-bold text-[#F9FAFB] leading-tight mb-6"
+              className="text-6xl md:text-7xl font-bold text-[#F9FAFB] leading-[1.1] mb-8"
               style={{ fontFamily: 'Sora, sans-serif' }}
             >
               Building Scalable SaaS, AI & On-Demand Platforms
             </h1>
-            <p className="text-lg text-[#9CA3AF] leading-relaxed mb-8">
-              TechFlux Solutions partners with startups and agencies to design, develop, and scale high-performance digital products.
+
+            <p className="text-xl text-[#9CA3AF] leading-relaxed mb-10">
+              TechFlux Solutions partners with startups and agencies to design,
+              develop, and scale high-performance digital products.
             </p>
-            <div className="flex flex-wrap gap-4">
+
+            <div className="flex flex-wrap gap-5">
               <Link
                 to="/book-strategy-call"
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all flex items-center gap-2"
+                className="px-9 py-4 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all flex items-center gap-2"
               >
                 Book Strategy Call
                 <ArrowRight className="w-5 h-5" />
               </Link>
+
               <a
                 href="#portfolio"
-                className="px-8 py-4 rounded-xl border border-[#2F80ED] text-[#2F80ED] font-semibold hover:bg-[#2F80ED]/10 transition-all"
+                className="px-9 py-4 rounded-xl border border-[#2F80ED] text-[#2F80ED] font-semibold hover:bg-[#2F80ED]/10 transition-all"
               >
                 View Case Studies
               </a>
             </div>
-
           </motion.div>
 
+          {/* RIGHT IMAGE */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -96,11 +103,12 @@ export default function Home() {
               <img
                 src="https://images.unsplash.com/photo-1770169272345-9636d5ef2681?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMEFJJTIwdGVjaG5vbG9neSUyMG5ldXJhbCUyMG5ldHdvcmt8ZW58MXx8fHwxNzcyMDQ0NTQ4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                 alt="AI Technology"
-                className="w-full h-auto rounded-2xl"
+                className="w-full max-w-[640px] h-auto rounded-2xl ml-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F1A] via-transparent to-transparent" />
             </div>
           </motion.div>
+
         </div>
       </section>
 
@@ -161,21 +169,24 @@ export default function Home() {
               {
                 icon: Layers,
                 title: 'SaaS Development',
-                description: 'Build MVPs, subscription models, and scalable dashboards for long-term growth.',
-                link: '#saas'
+                description:
+                  'Build MVPs, subscription models, and scalable dashboards for long-term growth.',
+                link: '#saas',
               },
               {
                 icon: Brain,
                 title: 'AI Solutions',
-                description: 'Integrate AI chatbots, GPT models, automation, and advanced analytics.',
-                link: '#ai'
+                description:
+                  'Integrate AI chatbots, GPT models, automation, and advanced analytics.',
+                link: '#ai',
               },
               {
                 icon: Zap,
                 title: 'On-Demand Applications',
-                description: 'Real-time systems for booking, marketplace, and delivery platforms.',
-                link: '#ondemand'
-              }
+                description:
+                  'Real-time systems for booking, marketplace, and delivery platforms.',
+                link: '#ondemand',
+              },
             ].map((service, index) => (
               <motion.div
                 key={index}
@@ -184,26 +195,25 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group relative p-8 rounded-2xl backdrop-blur-xl border border-white/5 hover:border-[#2F80ED]/50 transition-all"
-                style={{ background: 'rgba(255,255,255,0.03)' }}
+                className="group relative p-8 rounded-2xl border border-[#1B263B] hover:border-[#2F80ED]/60 transition-all"
+                style={{ background: '#0F172A' }}
               >
-                <div
-                  className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#2D9CDB]/20 to-[#2F80ED]/20 flex items-center justify-center mb-6 group-hover:shadow-lg group-hover:shadow-[#2F80ED]/30 transition-all"
-                >
-                  <service.icon
-                    className="w-7 h-7"
-                    style={{ color: "#2F80ED" }}
-                  />
+                {/* Icon */}
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] flex items-center justify-center mb-6 shadow-lg shadow-[#2F80ED]/25 transition-all">
+                  <service.icon className="w-7 h-7 text-white" />
                 </div>
+
                 <h3
                   className="text-xl font-bold text-[#F9FAFB] mb-3"
                   style={{ fontFamily: 'Sora, sans-serif' }}
                 >
                   {service.title}
                 </h3>
+
                 <p className="text-[#9CA3AF] leading-relaxed mb-4">
                   {service.description}
                 </p>
+
                 <a
                   href={service.link}
                   className="text-[#2F80ED] font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"

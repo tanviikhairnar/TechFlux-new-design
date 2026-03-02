@@ -11,22 +11,29 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[#10213F] bg-[#030A1C]/95 backdrop-blur-md">
       <div className="mx-auto max-w-[1260px] px-4 lg:px-5">
-        <div className="flex h-[84px] items-center justify-between">
+        <div className="flex h-[96px] items-center justify-between">
           
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
-          <Link to="/" className="flex items-center gap-2">
-            <img src={techfluxLogo} alt="TechFlux Logo" className="h-7 w-7 object-contain" />
-            <span className="text-[18px] font-semibold leading-none tracking-[-0.01em] text-[#F9FAFB]" style={{ fontFamily: 'Sora, sans-serif' }}>
-              TechFlux Solutions
-            </span>
-          </Link>
+            <Link to="/" className="flex items-center gap-3">
+              <img
+                src={techfluxLogo}
+                alt="TechFlux Logo"
+                className="h-9 w-9 object-contain"
+              />
+              <span
+                className="text-[20px] font-semibold tracking-[-0.01em] text-[#F9FAFB]"
+                style={{ fontFamily: 'Sora, sans-serif' }}
+              >
+                TechFlux Solutions
+              </span>
+            </Link>
           </motion.div>
 
           {/* Desktop Nav Links */}
           <div className="hidden items-center gap-7 lg:flex">
             
-            <Link to="/" className="text-[14px] font-medium leading-none text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
+            <Link to="/" className="text-[16px] font-medium text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
               Home
             </Link>
 
@@ -36,7 +43,7 @@ export function Navigation() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="flex items-center gap-1 text-[14px] font-medium leading-none text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
+              <button className="flex items-center gap-1 text-[16px] font-medium text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
                 Services
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
@@ -73,26 +80,26 @@ export function Navigation() {
               </AnimatePresence>
             </div>
 
-            <a href="/#portfolio" className="text-[14px] font-medium leading-none text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
+            <a href="/#portfolio" className="text-[16px] font-medium text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
               Case Studies
             </a>
 
-            <Link to="/become-partner" className="text-[14px] font-medium leading-none text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
+            <Link to="/become-partner" className="text-[16px] font-medium text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
               Partner
             </Link>
 
-            <Link to="/contact" className="text-[14px] font-medium leading-none text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
+            <Link to="/contact" className="text-[16px] font-medium text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
               Contact
             </Link>
 
             {/* CTA Button */}
             <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-            <Link
-              to="/book-strategy-call"
-              className="inline-flex h-[42px] items-center rounded-xl bg-gradient-to-r from-[#3AAEFE] to-[#2F80ED] px-5 text-[13px] font-semibold leading-none text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30"
-            >
-              Book Strategy Call
-            </Link>
+              <Link
+                to="/book-strategy-call"
+                className="inline-flex h-[48px] items-center rounded-xl bg-gradient-to-r from-[#3AAEFE] to-[#2F80ED] px-6 text-[15px] font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30"
+              >
+                Book Strategy Call
+              </Link>
             </motion.div>
           </div>
 
@@ -115,24 +122,24 @@ export function Navigation() {
               className="lg:hidden border-t border-white/5 py-4 bg-[#030A1C]/95 backdrop-blur-md"
             >
               <div className="flex flex-col gap-3">
-                <Link to="/" className="text-sm text-[#F9FAFB] hover:text-[#2F80ED] py-2">
+                <Link to="/" className="text-[16px] text-[#F9FAFB] hover:text-[#2F80ED] py-2">
                   Home
                 </Link>
-                <a href="/#saas" className="text-sm text-[#F9FAFB] hover:text-[#2F80ED] py-2">
+                <a href="/#saas" className="text-[16px] text-[#F9FAFB] hover:text-[#2F80ED] py-2">
                   SaaS Development
                 </a>
-                <a href="/#ai" className="text-sm text-[#F9FAFB] hover:text-[#2F80ED] py-2">
+                <a href="/#ai" className="text-[16px] text-[#F9FAFB] hover:text-[#2F80ED] py-2">
                   AI Solutions
                 </a>
-                <a href="/#portfolio" className="text-sm text-[#F9FAFB] hover:text-[#2F80ED] py-2">
+                <a href="/#portfolio" className="text-[16px] text-[#F9FAFB] hover:text-[#2F80ED] py-2">
                   Case Studies
                 </a>
-                <Link to="/contact" className="text-sm text-[#F9FAFB] hover:text-[#2F80ED] py-2">
+                <Link to="/contact" className="text-[16px] text-[#F9FAFB] hover:text-[#2F80ED] py-2">
                   Contact
                 </Link>
                 <Link
                   to="/book-strategy-call"
-                  className="mt-2 rounded-lg bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] px-5 py-2.5 text-center text-sm font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30"
+                  className="mt-2 rounded-lg bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] px-5 py-3 text-center text-[15px] font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30"
                 >
                   Book Strategy Call
                 </Link>
