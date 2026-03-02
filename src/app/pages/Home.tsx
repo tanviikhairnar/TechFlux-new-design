@@ -83,6 +83,7 @@ export default function Home() {
                 View Case Studies
               </a>
             </div>
+
           </motion.div>
 
           <motion.div
@@ -220,11 +221,29 @@ export default function Home() {
       <section id="saas" className="py-24 relative bg-[#111827]/30">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <div className="grid md:grid-cols-2 gap-12 items-start">
+
+            {/* IMAGE (LEFT) */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="order-2"
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
+                <img
+                  src="https://images.unsplash.com/photo-1575388902449-6bca946ad549?auto=format&fit=crop&w=1080&q=80"
+                  alt="SaaS Dashboard"
+                  className="w-full h-[420px] object-cover rounded-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
+              </div>
+            </motion.div>
+
+            {/* CONTENT (RIGHT) */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
             >
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#F9FAFB] mb-6"
@@ -235,6 +254,7 @@ export default function Home() {
               <p className="text-[#9CA3AF] mb-8 leading-relaxed text-[17px] max-w-[680px]">
                 We build production-ready SaaS platforms with robust subscription management, multi-tenant architecture, and intuitive admin dashboards. From MVP to enterprise scale, we architect solutions that grow with your business.
               </p>
+
               <div className="space-y-4 mb-8">
                 {[
                   'Multi-tenant architecture with role-based access',
@@ -253,10 +273,13 @@ export default function Home() {
                     <div className="w-7 h-7 rounded-full border-2 border-[#2F80ED] flex items-center justify-center flex-shrink-0">
                       <Check className="w-4 h-4 text-[#2F80ED]" />
                     </div>
-                    <span className="text-[#B9C8E6] text-[16px] md:text-[17px] font-medium">{item}</span>
+                    <span className="text-[#B9C8E6] text-[16px] md:text-[17px] font-medium">
+                      {item}
+                    </span>
                   </motion.div>
                 ))}
               </div>
+
               <Link
                 to="/book-strategy-call"
                 className="inline-flex h-[58px] px-9 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-[18px] font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all items-center"
@@ -265,50 +288,22 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative order-1"
-            >
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
-                <img
-                  src="https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBTYWFTJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3MjAzNDAzNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="SaaS Dashboard"
-                  className="w-full h-[420px] object-cover rounded-2xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
 
+
       {/* AI Section */}
+
       <section id="ai" className="py-24 relative">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <div className="grid md:grid-cols-2 gap-12 items-center">
+
+            {/* CONTENT (LEFT) */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative order-2 md:justify-self-end"
-            >
-              <div className="relative rounded-2xl overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1597600159211-d6c104f408d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwQUklMjBncmFkaWVudCUyMGhvbG9ncmFtfGVufDF8fHx8MTc3MjA0NDU0OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="AI Gradient"
-                  className="w-full h-auto rounded-2xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="order-1 md:pr-4"
             >
               <h2
                 className="text-4xl md:text-5xl font-bold text-[#F9FAFB] mb-6"
@@ -316,9 +311,11 @@ export default function Home() {
               >
                 AI-Powered Innovation
               </h2>
+
               <p className="text-[#9CA3AF] mb-8 leading-relaxed">
                 Harness the power of artificial intelligence to automate workflows, enhance customer experiences, and unlock data-driven insights. We integrate cutting-edge AI models including GPT, custom ML algorithms, and intelligent automation.
               </p>
+
               <div className="space-y-4 mb-8">
                 {[
                   'Custom AI chatbots with natural language processing',
@@ -337,10 +334,13 @@ export default function Home() {
                     <div className="w-7 h-7 rounded-full border-2 border-[#2F80ED] flex items-center justify-center flex-shrink-0">
                       <Check className="w-4 h-4 text-[#2F80ED]" />
                     </div>
-                    <span className="text-[#B9C8E6] text-[16px] md:text-[17px] font-medium">{item}</span>
+                    <span className="text-[#B9C8E6] text-[16px] md:text-[17px] font-medium">
+                      {item}
+                    </span>
                   </motion.div>
                 ))}
               </div>
+
               <Link
                 to="/book-strategy-call"
                 className="inline-flex px-8 py-4 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all items-center gap-2"
@@ -349,16 +349,54 @@ export default function Home() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>
+
+            {/* IMAGE (RIGHT) */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
+                <img
+                  src="https://images.unsplash.com/photo-1597600159211-d6c104f408d1?auto=format&fit=crop&w=1080&q=80"
+                  alt="AI Gradient"
+                  className="w-full h-[420px] object-cover rounded-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
 
-      {/* On-Demand Section */}
+
+      {/* On-Demand Section (UNCHANGED – Already Correct) */}
       <section id="ondemand" className="py-24 relative bg-[#111827]/30">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <div className="grid md:grid-cols-2 gap-12 items-center">
+
+            {/* IMAGE (LEFT) */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
+                <img
+                  src="https://images.unsplash.com/photo-1707836868495-3307d371aba4?auto=format&fit=crop&w=1080&q=80"
+                  alt="On-Demand App"
+                  className="w-full h-[420px] object-cover rounded-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
+              </div>
+            </motion.div>
+
+            {/* CONTENT (RIGHT) */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
@@ -371,6 +409,7 @@ export default function Home() {
               <p className="text-[#9CA3AF] mb-8 leading-relaxed text-[17px] max-w-[700px]">
                 Build real-time marketplaces, booking systems, and delivery platforms that connect users instantly. We create seamless experiences for service providers and customers with live tracking, payment processing, and smart matching algorithms.
               </p>
+
               <div className="space-y-4 mb-8">
                 {[
                   'Real-time booking and scheduling systems',
@@ -389,10 +428,13 @@ export default function Home() {
                     <div className="w-7 h-7 rounded-full border-2 border-[#2F80ED] flex items-center justify-center flex-shrink-0">
                       <Check className="w-4 h-4 text-[#2F80ED]" />
                     </div>
-                    <span className="text-[#B9C8E6] text-[16px] md:text-[17px] font-medium">{item}</span>
+                    <span className="text-[#B9C8E6] text-[16px] md:text-[17px] font-medium">
+                      {item}
+                    </span>
                   </motion.div>
                 ))}
               </div>
+
               <Link
                 to="/book-strategy-call"
                 className="inline-flex h-[58px] px-9 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-[18px] font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all items-center"
@@ -401,27 +443,12 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
-                <img
-                  src="https://images.unsplash.com/photo-1707836868495-3307d371aba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXNpZ24lMjBtb2NrdXB8ZW58MXx8fHwxNzcyMDAxMjM2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="On-Demand App"
-                  className="w-full h-[420px] object-cover rounded-2xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Development Process */}
-      <section id="process" className="py-24 relative">
+      <section id="process" className="py-12 relative">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -440,18 +467,21 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+          <div
             className="mb-12"
             onMouseLeave={() => setActiveProcessStep(null)}
           >
-            <div className="hidden lg:grid lg:grid-cols-6 gap-8 pb-56">
+            <div className="hidden lg:grid lg:grid-cols-6 gap-8 pb-32">
               {processSteps.map((step, index) => (
-                <div
+                <motion.div
                   key={step.icon}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.2
+                  }}
                   className="relative"
                   onMouseEnter={() => setActiveProcessStep(index)}
                 >
@@ -465,11 +495,16 @@ export default function Home() {
                     >
                       {step.icon}
                     </button>
+
                     {index < processSteps.length - 1 && (
                       <div className="ml-4 h-[2px] flex-1 bg-gradient-to-r from-[#2F80ED]/70 to-transparent" />
                     )}
                   </div>
-                  <p className="text-[#F9FAFB] text-xl font-semibold leading-tight" style={{ fontFamily: 'Sora, sans-serif' }}>
+
+                  <p
+                    className="text-[#F9FAFB] text-xl font-semibold leading-tight"
+                    style={{ fontFamily: 'Sora, sans-serif' }}
+                  >
                     {step.short}
                   </p>
 
@@ -481,16 +516,22 @@ export default function Home() {
                         exit={{ opacity: 0, y: 10, scale: 0.98 }}
                         transition={{ duration: 0.22 }}
                         className={`absolute top-[118px] z-30 w-[320px] rounded-2xl border border-[#2F80ED]/35 bg-[#0F1C35]/95 p-5 shadow-[0_16px_45px_rgba(47,128,237,0.22)] backdrop-blur-xl ${index === 0
-                            ? 'left-0'
-                            : index === processSteps.length - 1
-                              ? 'right-0'
-                              : 'left-1/2 -translate-x-1/2'
+                          ? 'left-0'
+                          : index === processSteps.length - 1
+                            ? 'right-0'
+                            : 'left-1/2 -translate-x-1/2'
                           }`}
                       >
-                        <div className="text-[#2F80ED] font-bold text-xl mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>
+                        <div
+                          className="text-[#2F80ED] font-bold text-xl mb-2"
+                          style={{ fontFamily: 'Sora, sans-serif' }}
+                        >
                           {step.icon}
                         </div>
-                        <h3 className="text-[#F9FAFB] font-semibold text-lg mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>
+                        <h3
+                          className="text-[#F9FAFB] font-semibold text-lg mb-2"
+                          style={{ fontFamily: 'Sora, sans-serif' }}
+                        >
                           {step.label}
                         </h3>
                         <p className="text-[#9CA3AF] text-sm leading-relaxed">
@@ -499,24 +540,38 @@ export default function Home() {
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </div>
+                </motion.div>
               ))}
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:hidden">
               {processSteps.map((step, index) => (
-                <button
+                <motion.button
                   key={step.icon}
                   type="button"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.15
+                  }}
                   onClick={() => setActiveProcessStep(index)}
                   className="rounded-xl border border-white/10 bg-[#0F1C35] px-4 py-5 text-left"
                 >
-                  <div className="text-[#2F80ED] text-2xl font-bold mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>{step.icon}</div>
-                  <div className="text-[#F9FAFB] font-semibold">{step.short}</div>
-                </button>
+                  <div
+                    className="text-[#2F80ED] text-2xl font-bold mb-2"
+                    style={{ fontFamily: 'Sora, sans-serif' }}
+                  >
+                    {step.icon}
+                  </div>
+                  <div className="text-[#F9FAFB] font-semibold">
+                    {step.short}
+                  </div>
+                </motion.button>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           <AnimatePresence mode="wait">
             {activeProcessStep !== null && (
@@ -528,10 +583,16 @@ export default function Home() {
                 transition={{ duration: 0.22 }}
                 className="max-w-[460px] rounded-xl border border-white/10 bg-[#0F1C35] p-6 shadow-xl shadow-[#2F80ED]/10 lg:hidden"
               >
-                <div className="text-[#2F80ED] font-bold text-2xl mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>
+                <div
+                  className="text-[#2F80ED] font-bold text-2xl mb-2"
+                  style={{ fontFamily: 'Sora, sans-serif' }}
+                >
                   {processSteps[activeProcessStep].icon}
                 </div>
-                <h3 className="text-[#F9FAFB] font-semibold text-2xl mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>
+                <h3
+                  className="text-[#F9FAFB] font-semibold text-2xl mb-2"
+                  style={{ fontFamily: 'Sora, sans-serif' }}
+                >
                   {processSteps[activeProcessStep].label}
                 </h3>
                 <p className="text-[#9CA3AF] text-base leading-relaxed">
@@ -544,7 +605,7 @@ export default function Home() {
       </section>
 
       {/* Case Studies Preview */}
-      <section id="portfolio" className="py-24 relative bg-[#111827]/30">
+      <section id="portfolio" className="py-24 relative bg-[#0B1220]">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -554,8 +615,8 @@ export default function Home() {
           >
             <div>
               <h2
-                className="text-4xl md:text-5xl font-bold text-[#F9FAFB] mb-2"
-                style={{ fontFamily: 'Sora, sans-serif' }}
+                className="text-4xl md:text-5xl font-bold text-[#F9FAFB] mb-3"
+                style={{ fontFamily: "Sora, sans-serif" }}
               >
                 Success Stories
               </h2>
@@ -563,29 +624,44 @@ export default function Home() {
                 Real products. Real results. Real impact.
               </p>
             </div>
-            <a href="#" className="text-[#2F80ED] font-semibold hover:text-[#66B7FF] transition-colors">View All Case Studies</a>
+
+            <a
+              href="#"
+              className="text-[#2F80ED] font-semibold flex items-center gap-2 hover:text-[#66B7FF] transition-colors"
+            >
+              View All Case Studies →
+            </a>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                image: 'https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBTYWFTJTIwZGFzaGJvYXJkJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3MjAzNDAzNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-                title: 'Analytics Dashboard',
-                description: 'Built a multi-tenant analytics platform serving 10,000+ users with 99.9% uptime.',
-                tags: ['React', 'Node.js', 'PostgreSQL', 'AI/ML']
+                image:
+                  "https://images.unsplash.com/photo-1575388902449-6bca946ad549?auto=format&fit=crop&w=1080&q=80",
+                category: "SaaS",
+                title: "Analytics Dashboard",
+                description:
+                  "Built a multi-tenant analytics platform serving 10,000+ users with 99.9% uptime.",
+                metric: "300% revenue growth",
               },
               {
-                image: 'https://images.unsplash.com/photo-1707836868495-3307d371aba4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXNpZ24lMjBtb2NrdXB8ZW58MXx8fHwxNzcyMDAxMjM2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-                title: 'AI Shopping Assistant',
-                description: 'Developed an AI-powered recommendation engine that increased conversion by 45%.',
-                tags: ['React Native', 'Firebase', 'Stripe', 'Maps API']
+                image:
+                  "https://images.unsplash.com/photo-1707836868495-3307d371aba4?auto=format&fit=crop&w=1080&q=80",
+                category: "AI",
+                title: "AI Shopping Assistant",
+                description:
+                  "Developed an AI-powered recommendation engine that increased conversion by 45%.",
+                metric: "45% conversion increase",
               },
               {
-                image: 'https://images.unsplash.com/photo-1768987439382-894ea4e2a736?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBwbGF0Zm9ybSUyMGludGVyZmFjZXxlbnwxfHx8fDE3NzE5Nzk2ODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-                title: 'Telemedicine Platform',
-                description: 'Created a secure healthcare booking platform connecting 5,000+ patients with doctors.',
-                tags: ['Next.js', 'Shopify', 'GraphQL', 'AWS']
-              }
+                image:
+                  "https://images.unsplash.com/photo-1768987439382-894ea4e2a736?auto=format&fit=crop&w=1080&q=80",
+                category: "On-Demand",
+                title: "Telemedicine Platform",
+                description:
+                  "Created a secure healthcare booking platform connecting 5,000+ patients with doctors.",
+                metric: "5,000+ active users",
+              },
             ].map((project, index) => (
               <motion.div
                 key={index}
@@ -594,44 +670,39 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group relative rounded-2xl backdrop-blur-xl border border-white/5 overflow-hidden hover:border-[#2F80ED]/30 transition-all shadow-lg"
-                style={{ background: 'rgba(255,255,255,0.03)' }}
+                className="group rounded-2xl overflow-hidden border border-white/5 bg-[#111827] hover:border-[#2F80ED]/30 transition-all shadow-lg"
               >
-                <div className="relative h-48 overflow-hidden">
+                {/* Image */}
+                <div className="relative h-56 overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F1A] via-[#0B0F1A]/50 to-transparent" />
                 </div>
+
+                {/* Content */}
                 <div className="p-6">
+                  {/* Category Badge */}
+                  <span className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full bg-[#1E293B] text-[#2F80ED]">
+                    {project.category}
+                  </span>
+
                   <h3
-                    className="text-xl font-bold text-[#F9FAFB] mb-2"
-                    style={{ fontFamily: 'Sora, sans-serif' }}
+                    className="text-xl font-bold text-[#F9FAFB] mb-3"
+                    style={{ fontFamily: "Sora, sans-serif" }}
                   >
                     {project.title}
                   </h3>
-                  <p className="text-[#9CA3AF] mb-4 leading-relaxed">
+
+                  <p className="text-[#9CA3AF] mb-6 leading-relaxed">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 rounded-full bg-[#2F80ED]/10 text-[#2F80ED] text-sm font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+
+                  {/* Metric Line */}
+                  <div className="text-[#2F80ED] font-semibold flex items-center gap-2">
+                    ↗ {project.metric}
                   </div>
-                  <a
-                    href="#"
-                    className="text-[#2F80ED] font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
-                  >
-                    View Case Study
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
                 </div>
               </motion.div>
             ))}
