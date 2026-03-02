@@ -9,22 +9,24 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#030A1C]/95 backdrop-blur-md border-b border-[#10213F]">
-      <div className="max-w-[1260px] mx-auto px-4 lg:px-5">
-        <div className="flex items-center justify-between h-[84px]">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[#10213F] bg-[#030A1C]/95 backdrop-blur-md">
+      <div className="mx-auto max-w-[1260px] px-4 lg:px-5">
+        <div className="flex h-[84px] items-center justify-between">
           
           {/* Logo */}
+          <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
           <Link to="/" className="flex items-center gap-2">
-            <img src={techfluxLogo} alt="TechFlux Logo" className="w-8 h-8 object-contain" />
-            <span className="text-[20px] font-semibold text-[#F9FAFB] leading-none tracking-[-0.01em]" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <img src={techfluxLogo} alt="TechFlux Logo" className="h-7 w-7 object-contain" />
+            <span className="text-[18px] font-semibold leading-none tracking-[-0.01em] text-[#F9FAFB]" style={{ fontFamily: 'Sora, sans-serif' }}>
               TechFlux Solutions
             </span>
           </Link>
+          </motion.div>
 
           {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden items-center gap-7 lg:flex">
             
-            <Link to="/" className="text-[16px] leading-none text-[#F9FAFB] hover:text-[#2F80ED] transition-colors font-semibold">
+            <Link to="/" className="text-[14px] font-medium leading-none text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
               Home
             </Link>
 
@@ -34,7 +36,7 @@ export function Navigation() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="flex items-center gap-1 text-[16px] leading-none text-[#F9FAFB] hover:text-[#2F80ED] transition-colors font-semibold">
+              <button className="flex items-center gap-1 text-[14px] font-medium leading-none text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
                 Services
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
@@ -50,7 +52,7 @@ export function Navigation() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 5 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-72 rounded-xl bg-[#111827]/95 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden"
+                    className="absolute left-1/2 top-full mt-4 w-72 -translate-x-1/2 overflow-hidden rounded-xl border border-white/10 bg-[#111827]/95 shadow-2xl backdrop-blur-xl"
                   >
                     {[
                       { label: "SaaS Development", href: "/#saas" },
@@ -61,7 +63,7 @@ export function Navigation() {
                       <a
                         key={i}
                         href={item.href}
-                        className="block px-5 py-3 text-lg text-[#F9FAFB] hover:bg-[#2F80ED]/10 hover:text-[#2F80ED] transition-all"
+                        className="block px-5 py-3 text-sm text-[#F9FAFB] transition-all hover:bg-[#2F80ED]/10 hover:text-[#2F80ED]"
                       >
                         {item.label}
                       </a>
@@ -71,25 +73,27 @@ export function Navigation() {
               </AnimatePresence>
             </div>
 
-            <a href="/#portfolio" className="text-[16px] leading-none text-[#F9FAFB] hover:text-[#2F80ED] transition-colors font-semibold">
+            <a href="/#portfolio" className="text-[14px] font-medium leading-none text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
               Case Studies
             </a>
 
-            <Link to="/become-partner" className="text-[16px] leading-none text-[#F9FAFB] hover:text-[#2F80ED] transition-colors font-semibold">
+            <Link to="/become-partner" className="text-[14px] font-medium leading-none text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
               Partner
             </Link>
 
-            <Link to="/contact" className="text-[16px] leading-none text-[#F9FAFB] hover:text-[#2F80ED] transition-colors font-semibold">
+            <Link to="/contact" className="text-[14px] font-medium leading-none text-[#F9FAFB] transition-colors hover:text-[#2F80ED]">
               Contact
             </Link>
 
             {/* CTA Button */}
+            <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
             <Link
               to="/book-strategy-call"
-              className="px-7 h-[48px] inline-flex items-center rounded-[16px] bg-gradient-to-r from-[#3AAEFE] to-[#2F80ED] text-white text-[16px] font-semibold leading-none transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30"
+              className="inline-flex h-[42px] items-center rounded-xl bg-gradient-to-r from-[#3AAEFE] to-[#2F80ED] px-5 text-[13px] font-semibold leading-none text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30"
             >
               Book Strategy Call
             </Link>
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -128,7 +132,7 @@ export function Navigation() {
                 </Link>
                 <Link
                   to="/book-strategy-call"
-                  className="mt-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-sm font-semibold text-center"
+                  className="mt-2 rounded-lg bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] px-5 py-2.5 text-center text-sm font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30"
                 >
                   Book Strategy Call
                 </Link>
