@@ -21,11 +21,12 @@ export default function BecomePartner() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 
+            <h1
+              id="white-label-partnership-heading"
               className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F9FAFB] leading-tight mb-6"
               style={{ fontFamily: 'Sora, sans-serif' }}
             >
-              Scale Your Agency Without Hiring In-House Developers
+              Scale Your Agency Without Hiring Developers
             </h1>
             <p className="text-base md:text-xl text-[#9CA3AF] leading-relaxed mb-8">
               Partner with Tachflux as your dedicated SaaS, AI & On-Demand development team.

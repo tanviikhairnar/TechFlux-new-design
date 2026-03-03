@@ -8,12 +8,12 @@ export function Navigation() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const serviceItems = [
-    { label: "SaaS Development", href: "/#saas", useRoute: false },
-    { label: "AI Solutions", href: "/#ai", useRoute: false },
-    { label: "On-Demand Applications", href: "/#ondemand", useRoute: false },
-    { label: "White-Label Partnership", href: "/#whitelabel", useRoute: false },
-    { label: "Unity Game Development", href: "/unity-game-development", useRoute: true },
-    { label: "E-Commerce Solutions", href: "/e-commerce-solutions", useRoute: true },
+    { label: "SaaS Development", href: "/saas-development#saas-development-heading", useRoute: true },
+    { label: "AI Solutions", href: "/ai-solutions#ai-solutions-heading", useRoute: true },
+    { label: "On-Demand Applications", href: "/on-demand-solutions#on-demand-applications-heading", useRoute: true },
+    { label: "White-Label Partnership", href: "/become-partner#white-label-partnership-heading", useRoute: true },
+    { label: "Unity Game Development", href: "/unity-game-development#unity-game-development-heading", useRoute: true },
+    { label: "E-Commerce Solutions", href: "/e-commerce-solutions#ecommerce-solutions-heading", useRoute: true },
   ] as const;
 
   return (
@@ -150,22 +150,22 @@ export function Navigation() {
                 <Link to="/" className="text-[17px] text-gray-400 hover:text-white py-2">
                   Home
                 </Link>
-                <a href="/#saas" className="text-[17px] text-gray-400 hover:text-white py-2">
+                <Link to="/saas-development#saas-development-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
                   SaaS Development
-                </a>
-                <a href="/#ai" className="text-[17px] text-gray-400 hover:text-white py-2">
+                </Link>
+                <Link to="/ai-solutions#ai-solutions-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
                   AI Solutions
-                </a>
-                <a href="/#ondemand" className="text-[17px] text-gray-400 hover:text-white py-2">
+                </Link>
+                <Link to="/on-demand-solutions#on-demand-applications-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
                   On-Demand Applications
-                </a>
-                <a href="/#whitelabel" className="text-[17px] text-gray-400 hover:text-white py-2">
+                </Link>
+                <Link to="/become-partner#white-label-partnership-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
                   White-Label Partnership
-                </a>
-                <Link to="/unity-game-development" className="text-[17px] text-gray-400 hover:text-white py-2">
+                </Link>
+                <Link to="/unity-game-development#unity-game-development-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
                   Unity Game Development
                 </Link>
-                <Link to="/e-commerce-solutions" className="text-[17px] text-gray-400 hover:text-white py-2">
+                <Link to="/e-commerce-solutions#ecommerce-solutions-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
                   E-Commerce Solutions
                 </Link>
                 <Link to="/case-studies" className="text-[17px] text-gray-400 hover:text-white py-2">

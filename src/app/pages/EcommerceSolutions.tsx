@@ -42,7 +42,7 @@ export default function EcommerceSolutions() {
             <div className="mx-auto mb-6 inline-flex rounded-full border border-[#2F80ED]/40 bg-[#0C2146] px-4 py-1 text-sm text-[#72B5FF]">
               E-Commerce Solutions
             </div>
-            <h1 className="mx-auto mb-6 max-w-4xl text-4xl font-bold leading-tight text-[#F8FAFC] sm:text-5xl md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h1 id="ecommerce-solutions-heading" className="mx-auto mb-6 max-w-4xl text-4xl font-bold leading-tight text-[#F8FAFC] sm:text-5xl md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
               Build Complete E-Commerce Experiences
             </h1>
             <p className="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-[#94A3B8]">

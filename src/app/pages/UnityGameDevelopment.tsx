@@ -178,7 +178,7 @@ export default function UnityGameDevelopment() {
               <span className="mb-6 inline-flex rounded-full border border-[#2F80ED]/40 bg-[#0C2146] px-4 py-1 text-sm text-[#72B5FF]">
                 Unity Game Development
               </span>
-              <h1 className="max-w-[560px] text-4xl font-bold leading-tight text-[#F8FAFC] sm:text-5xl md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h1 id="unity-game-development-heading" className="max-w-[560px] text-4xl font-bold leading-tight text-[#F8FAFC] sm:text-5xl md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
                 High-Performance Unity Game Development
               </h1>
               <p className="mt-5 max-w-[620px] text-base leading-relaxed text-[#9DB0CC] md:text-lg">
