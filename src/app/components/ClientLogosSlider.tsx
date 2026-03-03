@@ -1,32 +1,26 @@
 import { motion } from 'motion/react';
-import allstarLogo from '../../assets/logos/allstar_logo_i.png';
-import aqatoLogo from '../../assets/logos/aqato_logo_i.png';
-import imageULogo from '../../assets/logos/image_u.png';
-import linkedNetLogo from '../../assets/logos/Linked-Net-logo.png';
-import myCarePlusLogo from '../../assets/logos/MyCarePlus_Logo.png';
-import obscurLogo from '../../assets/logos/obscur.jpg';
-import snmLogo from '../../assets/logos/snm_logo_i.png';
-import studioNewMediaLogo from '../../assets/logos/Studio new media logo_black_new.png';
 
-const clientLogos = [
-  { src: allstarLogo, alt: 'Allstar' },
-  { src: aqatoLogo, alt: 'Aqato' },
-  { src: imageULogo, alt: 'Image U' },
-  { src: linkedNetLogo, alt: 'Linked Net' },
-  { src: myCarePlusLogo, alt: 'MyCarePlus' },
-  { src: obscurLogo, alt: 'Obscur' },
-  { src: snmLogo, alt: 'SNM' },
-  { src: studioNewMediaLogo, alt: 'Studio New Media' },
-];
+const logoFiles = import.meta.glob('../../assets/logos/*.{png,jpg,jpeg,webp,svg}', {
+  eager: true,
+  import: 'default',
+}) as Record<string, string>;
+
+const clientLogos = Object.entries(logoFiles)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, src]) => {
+    const filename = path.split('/').pop() || 'logo';
+    const cleanName = filename.replace(/\.[^/.]+$/, '').replace(/[_-]+/g, ' ').trim();
+    const alt = cleanName.replace(/\b\w/g, (c) => c.toUpperCase());
+    return { src, alt };
+  });
 
 export function ClientLogosSlider() {
   return (
     <section className="py-10">
       <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
-        {/* Desktop / Tablet Marquee */}
-        <div className="relative hidden overflow-hidden py-2 md:block">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#0B0F1A] to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#0B0F1A] to-transparent" />
+        <div className="relative hidden overflow-hidden rounded-2xl border border-white/5 bg-[#0F1B33] py-3 md:block">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-[#0F1B33] to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-[#0F1B33] to-transparent" />
 
           <motion.div
             className="flex w-max items-center gap-8 px-6"
@@ -36,22 +30,21 @@ export function ClientLogosSlider() {
             {[...clientLogos, ...clientLogos].map((logo, index) => (
               <div
                 key={`${logo.alt}-${index}`}
-                className="flex h-16 w-[160px] shrink-0 items-center justify-center px-3"
+                className="group flex h-20 w-[190px] shrink-0 items-center justify-center rounded-xl border border-white/8 bg-[#162844] px-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#2F80ED]/45 hover:bg-[#1A3358] hover:shadow-lg hover:shadow-[#2F80ED]/25"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-9 w-auto max-w-full object-contain grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+                  className="max-h-11 w-auto max-w-full object-contain grayscale-[0.25] contrast-110 opacity-85 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
                 />
               </div>
             ))}
           </motion.div>
         </div>
 
-        {/* Mobile Marquee */}
-        <div className="relative overflow-hidden py-1 md:hidden">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#0B0F1A] to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#0B0F1A] to-transparent" />
+        <div className="relative overflow-hidden rounded-xl border border-white/5 bg-[#0F1B33] py-2 md:hidden">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#0F1B33] to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#0F1B33] to-transparent" />
 
           <motion.div
             className="flex w-max items-center gap-5"
@@ -61,12 +54,12 @@ export function ClientLogosSlider() {
             {[...clientLogos, ...clientLogos].map((logo, index) => (
               <div
                 key={`mobile-${logo.alt}-${index}`}
-                className="flex h-12 w-[120px] shrink-0 items-center justify-center px-2"
+                className="group flex h-14 w-[138px] shrink-0 items-center justify-center rounded-lg border border-white/8 bg-[#162844] px-2"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-7 w-auto max-w-full object-contain grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+                  className="max-h-8 w-auto max-w-full object-contain grayscale-[0.25] contrast-110 opacity-85 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
                 />
               </div>
             ))}
