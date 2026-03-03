@@ -2,30 +2,38 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import techfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
+import TachfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
 
 export function Navigation() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const serviceItems = [
+    { label: "SaaS Development", href: "/#saas", useRoute: false },
+    { label: "AI Solutions", href: "/#ai", useRoute: false },
+    { label: "On-Demand Applications", href: "/#ondemand", useRoute: false },
+    { label: "White-Label Partnership", href: "/#whitelabel", useRoute: false },
+    { label: "Unity Game Development", href: "/unity-game-development", useRoute: true },
+    { label: "E-Commerce Solutions", href: "/e-commerce-solutions", useRoute: true },
+  ] as const;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[#10213F] bg-[#030A1C]/95 backdrop-blur-md">
       <div className="mx-auto max-w-[1260px] px-4 lg:px-5">
-        <div className="flex h-[96px] items-center justify-between">
+        <div className="flex h-[84px] items-center justify-between">
           
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
             <Link to="/" className="flex items-center gap-3">
               <img
-                src={techfluxLogo}
-                alt="TechFlux Logo"
+                src={TachfluxLogo}
+                alt="Tachflux Logo"
                 className="h-9 w-9 object-contain"
               />
               <span
                 className="text-[20px] font-semibold tracking-[-0.01em] text-[#F9FAFB]"
                 style={{ fontFamily: 'Sora, sans-serif' }}
               >
-                TechFlux Solutions
+                Tachflux Solutions
               </span>
             </Link>
           </motion.div>
@@ -64,37 +72,42 @@ export function Navigation() {
                     transition={{ duration: 0.15 }}
                     className="absolute left-1/2 top-full mt-4 w-72 -translate-x-1/2 overflow-hidden rounded-xl border border-white/10 bg-[#111827]/95 shadow-2xl backdrop-blur-xl"
                   >
-                    {[
-                      { label: "SaaS Development", href: "/#saas" },
-                      { label: "AI Solutions", href: "/#ai" },
-                      { label: "On-Demand Apps", href: "/#ondemand" },
-                      { label: "White-Label", href: "/#whitelabel" },
-                    ].map((item, i) => (
-                      <a
-                        key={i}
-                        href={item.href}
-                        className="block px-5 py-3 text-sm text-gray-300 transition-all hover:bg-[#2F80ED]/10 hover:text-white"
-                      >
-                        {item.label}
-                      </a>
-                    ))}
+                    {serviceItems.map((item, i) =>
+                      item.useRoute ? (
+                        <Link
+                          key={i}
+                          to={item.href}
+                          className="block px-5 py-3 text-sm text-gray-300 transition-all hover:bg-[#2F80ED]/10 hover:text-white"
+                        >
+                          {item.label}
+                        </Link>
+                      ) : (
+                        <a
+                          key={i}
+                          href={item.href}
+                          className="block px-5 py-3 text-sm text-gray-300 transition-all hover:bg-[#2F80ED]/10 hover:text-white"
+                        >
+                          {item.label}
+                        </a>
+                      )
+                    )}
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
 
-            <a
-              href="/#portfolio"
+            <Link
+              to="/case-studies"
               className="text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
             >
               Case Studies
-            </a>
+            </Link>
 
             <Link
-              to="/become-partner"
+              to="/blog"
               className="text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
             >
-              Partner
+              Blog
             </Link>
 
             <Link
@@ -143,9 +156,24 @@ export function Navigation() {
                 <a href="/#ai" className="text-[17px] text-gray-400 hover:text-white py-2">
                   AI Solutions
                 </a>
-                <a href="/#portfolio" className="text-[17px] text-gray-400 hover:text-white py-2">
-                  Case Studies
+                <a href="/#ondemand" className="text-[17px] text-gray-400 hover:text-white py-2">
+                  On-Demand Applications
                 </a>
+                <a href="/#whitelabel" className="text-[17px] text-gray-400 hover:text-white py-2">
+                  White-Label Partnership
+                </a>
+                <Link to="/unity-game-development" className="text-[17px] text-gray-400 hover:text-white py-2">
+                  Unity Game Development
+                </Link>
+                <Link to="/e-commerce-solutions" className="text-[17px] text-gray-400 hover:text-white py-2">
+                  E-Commerce Solutions
+                </Link>
+                <Link to="/case-studies" className="text-[17px] text-gray-400 hover:text-white py-2">
+                  Case Studies
+                </Link>
+                <Link to="/blog" className="text-[17px] text-gray-400 hover:text-white py-2">
+                  Blog
+                </Link>
                 <Link to="/contact" className="text-[17px] text-gray-400 hover:text-white py-2">
                   Contact
                 </Link>
@@ -164,3 +192,4 @@ export function Navigation() {
     </nav>
   );
 }
+

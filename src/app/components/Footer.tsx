@@ -1,6 +1,12 @@
 import { motion } from "motion/react";
-import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
-import techfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
+import { Github, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import TachfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
+
+const socialLinks = [
+  { icon: Linkedin, href: "https://www.linkedin.com/company/techfluxsolution/", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/techflux_solutions?igsh=MW0zdHl4bnhkajYxYQ==", label: "Instagram" },
+  { icon: Github, href: "https://github.com/techfluxsolutions", label: "GitHub" },
+];
 
 export function Footer() {
   return (
@@ -18,9 +24,9 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-6 flex items-center gap-3">
-              <img src={techfluxLogo} alt="TechFlux Logo" className="h-9 w-9" />
+              <img src={TachfluxLogo} alt="Tachflux Logo" className="h-9 w-9" />
               <span className="font-sora text-xl font-semibold text-white">
-                TechFlux Solutions
+                Tachflux Solutions
               </span>
             </div>
 
@@ -30,15 +36,18 @@ export function Footer() {
             </p>
 
             <div className="flex gap-4">
-              {[Linkedin, Twitter, Github].map((Icon, index) => (
+              {socialLinks.map((item, index) => (
                 <motion.a
                   key={index}
-                  href="#"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.label}
                   whileHover={{ y: -3, scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                   className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 text-[#9CA3AF] transition-all duration-300 hover:bg-[#2F80ED]/20 hover:text-[#2F80ED]"
                 >
-                  <Icon className="h-4 w-4" />
+                  <item.icon className="h-4 w-4" />
                 </motion.a>
               ))}
             </div>
@@ -99,20 +108,24 @@ export function Footer() {
             <ul className="space-y-4 text-base">
               <li className="flex items-start gap-3">
                 <Mail className="mt-1 h-4 w-4 text-[#2F80ED]" />
-                <span className="text-[#9CA3AF]">hello@techflux.com</span>
+                <span className="text-[#9CA3AF]">sales@techflux.in</span>
               </li>
 
               <li className="flex items-start gap-3">
                 <Phone className="mt-1 h-4 w-4 text-[#2F80ED]" />
-                <span className="text-[#9CA3AF]">+1 (234) 567-8900</span>
+                <span className="text-[#9CA3AF]">+91 9730960043</span>
               </li>
 
               <li className="flex items-start gap-3">
                 <MapPin className="mt-1 h-4 w-4 text-[#2F80ED]" />
                 <span className="leading-relaxed text-[#9CA3AF]">
-                  123 Innovation Drive
-                  <br />
-                  San Francisco, CA 94105
+                  Office 1: Dhawan Apartment, Maneksha Nagar, Dwarka, Nashik, Maharashtra 422011
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-1 h-4 w-4 text-[#2F80ED]" />
+                <span className="leading-relaxed text-[#9CA3AF]">
+                  Office 2: Bavdhan, Pune
                 </span>
               </li>
             </ul>
@@ -146,7 +159,7 @@ export function Footer() {
         </motion.div>
 
         <div className="border-t border-white/5 pt-6 text-center text-sm text-[#6B7280]">
-          © 2026 TechFlux Solutions. All Rights Reserved.
+          &copy; 2026 Tachflux Solutions. All Rights Reserved.
         </div>
       </div>
     </footer>

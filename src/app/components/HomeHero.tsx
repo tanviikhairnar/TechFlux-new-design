@@ -24,7 +24,7 @@ const HomeHero = () => {
           </h1>
 
           <p className="text-lg text-[#9CA3AF] leading-relaxed mb-8 max-w-xl">
-            TechFlux Solutions partners with startups and agencies to design,
+            Tachflux Solutions partners with startups and agencies to design,
             develop, and scale high-performance digital products.
           </p>
 
@@ -69,3 +69,4 @@ const HomeHero = () => {
 }
 
 export default HomeHero
+

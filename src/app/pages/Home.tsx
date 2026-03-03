@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import { ClientLogosSlider } from '../components/ClientLogosSlider';
 
 function Counter({
   value,
@@ -70,7 +71,7 @@ export default function Home() {
             </h1>
 
             <p className="text-xl text-[#9CA3AF] leading-relaxed mb-10">
-              TechFlux Solutions partners with startups and agencies to design,
+              Tachflux Solutions partners with startups and agencies to design,
               develop, and scale high-performance digital products.
             </p>
 
@@ -83,12 +84,12 @@ export default function Home() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
 
-              <a
-                href="#portfolio"
+              <Link
+                to="/case-studies"
                 className="px-9 py-4 rounded-xl border border-[#2F80ED] text-[#2F80ED] font-semibold hover:bg-[#2F80ED]/10 transition-all"
               >
                 View Case Studies
-              </a>
+              </Link>
             </div>
           </motion.div>
 
@@ -291,7 +292,7 @@ export default function Home() {
               </div>
 
               <Link
-                to="/book-strategy-call"
+                to="/saas-development"
                 className="inline-flex h-[58px] px-9 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-[18px] font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all items-center"
               >
                 Explore SaaS Development
@@ -352,7 +353,7 @@ export default function Home() {
               </div>
 
               <Link
-                to="/book-strategy-call"
+                to="/ai-solutions"
                 className="inline-flex px-8 py-4 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all items-center gap-2"
               >
                 Explore AI Solutions
@@ -446,7 +447,7 @@ export default function Home() {
               </div>
 
               <Link
-                to="/book-strategy-call"
+                to="/on-demand-solutions"
                 className="inline-flex h-[58px] px-9 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-[18px] font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all items-center"
               >
                 View On-Demand Solutions
@@ -635,12 +636,12 @@ export default function Home() {
               </p>
             </div>
 
-            <a
-              href="#"
+            <Link
+              to="/case-studies"
               className="text-[#2F80ED] font-semibold flex items-center gap-2 hover:text-[#66B7FF] transition-colors"
             >
               View All Case Studies →
-            </a>
+            </Link>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -720,6 +721,8 @@ export default function Home() {
         </div>
       </section>
 
+      <ClientLogosSlider />
+
       {/* Testimonials Section */}
       <section className="py-24 relative">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
@@ -743,7 +746,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                text: "TechFlux transformed our idea into a fully functional SaaS platform in just 4 months. Their expertise in scalable architecture was exactly what we needed.",
+                text: "Tachflux transformed our idea into a fully functional SaaS platform in just 4 months. Their expertise in scalable architecture was exactly what we needed.",
                 name: "Michael Chen",
                 company: "CEO, DataInsight"
               },
@@ -753,7 +756,7 @@ export default function Home() {
                 company: "VP Product, TechVentures"
               },
               {
-                text: "Working with TechFlux as our white-label partner has allowed us to scale our agency without the overhead of hiring developers.",
+                text: "Working with Tachflux as our white-label partner has allowed us to scale our agency without the overhead of hiring developers.",
                 name: "David Martinez",
                 company: "Founder, Digital Agency Co."
               }
@@ -812,7 +815,7 @@ export default function Home() {
               Scale Your Agency Without Hiring Developers
             </h2>
             <p className="text-base md:text-lg text-[#9CA3AF] leading-relaxed mb-8 max-w-3xl mx-auto">
-              Partner with TechFlux Solutions and let our expert developers become an extension of your team. Build, launch, and scale while you focus on growth.
+              Partner with Tachflux Solutions and let our expert developers become an extension of your team. Build, launch, and scale while you focus on growth.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
@@ -867,6 +870,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 

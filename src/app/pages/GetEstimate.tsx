@@ -202,7 +202,7 @@ export default function GetEstimate() {
             </div>
             
             <p className="text-[#F9FAFB] leading-relaxed mb-6 text-lg">
-              "TechFlux provided a detailed estimate that helped us understand exactly what we were getting. Their transparent approach and clear communication made the decision easy."
+              "Tachflux provided a detailed estimate that helped us understand exactly what we were getting. Their transparent approach and clear communication made the decision easy."
             </p>
             
             <div className="flex items-center gap-3">
@@ -222,3 +222,4 @@ export default function GetEstimate() {
     </div>
   );
 }
+

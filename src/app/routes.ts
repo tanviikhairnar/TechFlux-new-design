@@ -4,6 +4,13 @@ import BookStrategyCall from "./pages/BookStrategyCall";
 import GetEstimate from "./pages/GetEstimate";
 import BecomePartner from "./pages/BecomePartner";
 import Contact from "./pages/Contact";
+import SaaSDevelopment from "./pages/SaaSDevelopment";
+import AiSolutions from "./pages/AiSolutions";
+import OnDemandSolutions from "./pages/OnDemandSolutions";
+import UnityGameDevelopment from "./pages/UnityGameDevelopment";
+import EcommerceSolutions from "./pages/EcommerceSolutions";
+import CaseStudies from "./pages/CaseStudies";
+import Blog from "./pages/Blog";
 
 export const router = createBrowserRouter([
   {
@@ -25,5 +32,33 @@ export const router = createBrowserRouter([
   {
     path: "/contact",
     Component: Contact,
+  },
+  {
+    path: "/saas-development",
+    Component: SaaSDevelopment,
+  },
+  {
+    path: "/ai-solutions",
+    Component: AiSolutions,
+  },
+  {
+    path: "/on-demand-solutions",
+    Component: OnDemandSolutions,
+  },
+  {
+    path: "/unity-game-development",
+    Component: UnityGameDevelopment,
+  },
+  {
+    path: "/e-commerce-solutions",
+    Component: EcommerceSolutions,
+  },
+  {
+    path: "/case-studies",
+    Component: CaseStudies,
+  },
+  {
+    path: "/blog",
+    Component: Blog,
   },
 ]);

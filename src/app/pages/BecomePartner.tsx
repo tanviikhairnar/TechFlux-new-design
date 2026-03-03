@@ -28,7 +28,7 @@ export default function BecomePartner() {
               Scale Your Agency Without Hiring In-House Developers
             </h1>
             <p className="text-xl text-[#9CA3AF] leading-relaxed mb-8">
-              Partner with TechFlux as your dedicated SaaS, AI & On-Demand development team.
+              Partner with Tachflux as your dedicated SaaS, AI & On-Demand development team.
             </p>
             <Link 
               to="/book-strategy-call"
@@ -259,7 +259,7 @@ export default function BecomePartner() {
             </div>
             
             <p className="text-[#F9FAFB] leading-relaxed mb-6 text-lg">
-              "The white-label partnership with TechFlux has allowed us to scale our agency significantly. Their team is reliable, skilled, and truly understands enterprise development. We can now take on larger projects with confidence."
+              "The white-label partnership with Tachflux has allowed us to scale our agency significantly. Their team is reliable, skilled, and truly understands enterprise development. We can now take on larger projects with confidence."
             </p>
             
             <div className="flex items-center gap-3">
@@ -311,3 +311,4 @@ export default function BecomePartner() {
     </div>
   );
 }
+
