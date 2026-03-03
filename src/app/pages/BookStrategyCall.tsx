@@ -52,17 +52,17 @@ export default function BookStrategyCall() {
       <main className="relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.15),transparent_42%)]" />
 
-        <div className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-20 pt-32 lg:px-5">
+        <div className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-16 pt-28 md:pb-20 md:pt-32 lg:px-5">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="mx-auto mb-16 max-w-4xl text-center"
           >
-            <h1 className="mb-6 text-5xl font-bold leading-tight text-[#E5E7EB] md:text-6xl lg:text-7xl" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h1 className="mb-6 text-4xl font-bold leading-tight text-[#E5E7EB] sm:text-5xl md:text-6xl lg:text-7xl" style={{ fontFamily: 'Sora, sans-serif' }}>
               Let&apos;s Build Something Scalable
             </h1>
-            <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#94A3B8] md:text-xl">
+            <p className="mx-auto max-w-3xl text-base leading-relaxed text-[#94A3B8] md:text-xl">
               Discuss your SaaS, AI, or On-Demand project with our product experts. Get clarity on feasibility,
               architecture, timeline, and budget.
             </p>
@@ -234,4 +234,3 @@ export default function BookStrategyCall() {
     </div>
   );
 }
-

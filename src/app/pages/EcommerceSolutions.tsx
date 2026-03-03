@@ -37,12 +37,12 @@ export default function EcommerceSolutions() {
       <main className="relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.14),transparent_42%)]" />
 
-        <section className="relative z-10 mx-auto flex min-h-[560px] w-full max-w-[1260px] items-center px-4 pb-20 pt-28 text-center md:min-h-[620px] md:pt-32 lg:px-5">
+        <section className="relative z-10 mx-auto flex min-h-[520px] w-full max-w-[1260px] items-center px-4 pb-16 pt-24 text-center md:min-h-[620px] md:pb-20 md:pt-32 lg:px-5">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="w-full">
             <div className="mx-auto mb-6 inline-flex rounded-full border border-[#2F80ED]/40 bg-[#0C2146] px-4 py-1 text-sm text-[#72B5FF]">
               E-Commerce Solutions
             </div>
-            <h1 className="mx-auto mb-6 max-w-4xl text-5xl font-bold leading-tight text-[#F8FAFC] md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h1 className="mx-auto mb-6 max-w-4xl text-4xl font-bold leading-tight text-[#F8FAFC] sm:text-5xl md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
               Build Complete E-Commerce Experiences
             </h1>
             <p className="mx-auto mb-10 max-w-3xl text-lg leading-relaxed text-[#94A3B8]">
@@ -61,7 +61,7 @@ export default function EcommerceSolutions() {
         <section className="border-y border-white/5 bg-[#0E1A31] py-20">
           <div className="mx-auto grid w-full max-w-[1260px] items-center gap-10 px-4 lg:grid-cols-[1fr_1.04fr] lg:px-5">
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h2 className="mb-5 text-5xl font-bold text-[#E5E7EB] md:text-[46px]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="mb-5 text-4xl font-bold text-[#E5E7EB] md:text-[46px]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Modern E-Commerce Solutions
               </h2>
               <p className="mb-7 text-base leading-relaxed text-[#94A3B8]">

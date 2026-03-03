@@ -172,13 +172,13 @@ export default function UnityGameDevelopment() {
       <main className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.14),transparent_42%)]" />
 
-        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-28 pt-36 md:pb-32 md:pt-40 lg:px-5">
+        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-24 pt-28 md:pb-32 md:pt-40 lg:px-5">
           <div className="grid items-center gap-12 lg:min-h-[520px] lg:grid-cols-[1.05fr_1fr]">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <span className="mb-6 inline-flex rounded-full border border-[#2F80ED]/40 bg-[#0C2146] px-4 py-1 text-sm text-[#72B5FF]">
                 Unity Game Development
               </span>
-              <h1 className="max-w-[560px] text-5xl font-bold leading-tight text-[#F8FAFC] md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h1 className="max-w-[560px] text-4xl font-bold leading-tight text-[#F8FAFC] sm:text-5xl md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
                 High-Performance Unity Game Development
               </h1>
               <p className="mt-5 max-w-[620px] text-base leading-relaxed text-[#9DB0CC] md:text-lg">

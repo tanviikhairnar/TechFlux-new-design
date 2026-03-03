@@ -13,7 +13,7 @@ export default function GetEstimate() {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2F80ED]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#2D9CDB]/10 rounded-full blur-[120px]" />
         
-        <div className="max-w-[1140px] mx-auto px-6 py-20 relative z-10">
+        <div className="max-w-[1140px] mx-auto px-4 py-16 md:py-20 lg:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -21,12 +21,12 @@ export default function GetEstimate() {
             className="text-center max-w-3xl mx-auto mb-12"
           >
             <h1 
-              className="text-5xl md:text-6xl font-bold text-[#F9FAFB] leading-tight mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F9FAFB] leading-tight mb-6"
               style={{ fontFamily: 'Sora, sans-serif' }}
             >
               Get a Clear Project Estimate Within 24 Hours
             </h1>
-            <p className="text-xl text-[#9CA3AF] leading-relaxed">
+            <p className="text-base md:text-xl text-[#9CA3AF] leading-relaxed">
               Share your requirements and receive structured guidance.
             </p>
           </motion.div>
@@ -36,7 +36,7 @@ export default function GetEstimate() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-4xl mx-auto rounded-2xl backdrop-blur-xl border border-white/5 p-8 md:p-12"
+            className="max-w-4xl mx-auto rounded-2xl backdrop-blur-xl border border-white/5 p-6 md:p-12"
             style={{ background: 'rgba(255,255,255,0.03)' }}
           >
             <form className="space-y-6">
@@ -124,8 +124,8 @@ export default function GetEstimate() {
       </section>
 
       {/* What Happens Next */}
-      <section className="py-24 relative bg-[#111827]/30">
-        <div className="max-w-[1140px] mx-auto px-6">
+      <section className="py-16 md:py-24 relative bg-[#111827]/30">
+        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -186,8 +186,8 @@ export default function GetEstimate() {
       </section>
 
       {/* Trust Signal */}
-      <section className="py-24 relative">
-        <div className="max-w-[1140px] mx-auto px-6">
+      <section className="py-16 md:py-24 relative">
+        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

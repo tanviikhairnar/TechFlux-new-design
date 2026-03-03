@@ -45,17 +45,17 @@ export default function Blog() {
       <main className="relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.14),transparent_42%)]" />
 
-        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-20 pt-32 lg:px-5">
+        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-16 pt-28 md:pb-20 md:pt-32 lg:px-5">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="mb-14 text-center"
           >
-            <h1 className="mx-auto mb-6 max-w-5xl text-5xl font-bold leading-tight text-[#E5E7EB] md:text-7xl" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h1 className="mx-auto mb-6 max-w-5xl text-4xl font-bold leading-tight text-[#E5E7EB] sm:text-5xl md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
               Insights on SaaS, AI & Digital Product Engineering
             </h1>
-            <p className="mx-auto max-w-3xl text-lg text-[#94A3B8]">
+            <p className="mx-auto max-w-3xl text-base text-[#94A3B8] md:text-lg">
               Actionable insights, product strategies, and technical deep dives from Tachflux experts.
             </p>
           </motion.div>
@@ -81,7 +81,7 @@ export default function Blog() {
                     </span>
                   </div>
 
-                  <h2 className="mb-3 text-4xl font-semibold leading-tight text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  <h2 className="mb-3 text-2xl font-semibold leading-tight text-[#E5E7EB] md:text-3xl" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {post.title}
                   </h2>
                   <p className="mb-6 text-base leading-relaxed text-[#94A3B8]">{post.excerpt}</p>
@@ -107,7 +107,7 @@ export default function Blog() {
               viewport={{ once: true }}
               className="rounded-3xl border border-white/5 bg-[#1A2B46] px-8 py-12 text-center md:px-12"
             >
-              <h2 className="mb-4 text-5xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="mb-4 text-3xl font-bold text-[#E5E7EB] md:text-5xl" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Ready to Build Something Scalable?
               </h2>
               <p className="mx-auto mb-8 max-w-3xl text-lg text-[#94A3B8]">

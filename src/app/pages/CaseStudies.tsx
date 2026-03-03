@@ -138,17 +138,17 @@ export default function CaseStudies() {
       <main className="relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.14),transparent_42%)]" />
 
-        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-20 pt-32 lg:px-5">
+        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-16 pt-28 md:pb-20 md:pt-32 lg:px-5">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="mb-10 text-center"
           >
-            <h1 className="mb-5 text-5xl font-bold text-[#E5E7EB] md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h1 className="mb-5 text-4xl font-bold text-[#E5E7EB] sm:text-5xl md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
               Real Products. Real Results.
             </h1>
-            <p className="mx-auto max-w-3xl text-lg text-[#94A3B8]">
+            <p className="mx-auto max-w-3xl text-base text-[#94A3B8] md:text-lg">
               Explore how Tachflux builds scalable SaaS, AI, On-Demand, eCommerce, and Enterprise systems.
             </p>
           </motion.div>
@@ -207,7 +207,7 @@ export default function CaseStudies() {
                     {item.categoryLabel}
                   </button>
 
-                  <h3 className="mb-2 text-3xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  <h3 className="mb-2 text-2xl font-semibold text-[#E5E7EB] md:text-3xl" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {item.name}
                   </h3>
 

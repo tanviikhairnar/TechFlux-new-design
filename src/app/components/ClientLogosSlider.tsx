@@ -23,7 +23,8 @@ export function ClientLogosSlider() {
   return (
     <section className="py-10">
       <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
-        <div className="relative overflow-hidden py-2">
+        {/* Desktop / Tablet Marquee */}
+        <div className="relative hidden overflow-hidden py-2 md:block">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#0B0F1A] to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#0B0F1A] to-transparent" />
 
@@ -41,6 +42,31 @@ export function ClientLogosSlider() {
                   src={logo.src}
                   alt={logo.alt}
                   className="max-h-9 w-auto max-w-full object-contain grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Mobile Marquee */}
+        <div className="relative overflow-hidden py-1 md:hidden">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#0B0F1A] to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#0B0F1A] to-transparent" />
+
+          <motion.div
+            className="flex w-max items-center gap-5"
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{ ease: 'linear', duration: 18, repeat: Infinity }}
+          >
+            {[...clientLogos, ...clientLogos].map((logo, index) => (
+              <div
+                key={`mobile-${logo.alt}-${index}`}
+                className="flex h-12 w-[120px] shrink-0 items-center justify-center px-2"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-h-7 w-auto max-w-full object-contain grayscale opacity-70 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
                 />
               </div>
             ))}

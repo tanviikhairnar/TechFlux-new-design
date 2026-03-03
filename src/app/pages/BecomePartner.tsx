@@ -14,7 +14,7 @@ export default function BecomePartner() {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2F80ED]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#2D9CDB]/10 rounded-full blur-[120px]" />
         
-        <div className="max-w-[1140px] mx-auto px-6 py-20 relative z-10">
+        <div className="max-w-[1140px] mx-auto px-4 py-16 md:py-20 lg:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -22,17 +22,17 @@ export default function BecomePartner() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 
-              className="text-5xl md:text-6xl font-bold text-[#F9FAFB] leading-tight mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F9FAFB] leading-tight mb-6"
               style={{ fontFamily: 'Sora, sans-serif' }}
             >
               Scale Your Agency Without Hiring In-House Developers
             </h1>
-            <p className="text-xl text-[#9CA3AF] leading-relaxed mb-8">
+            <p className="text-base md:text-xl text-[#9CA3AF] leading-relaxed mb-8">
               Partner with Tachflux as your dedicated SaaS, AI & On-Demand development team.
             </p>
             <Link 
               to="/book-strategy-call"
-              className="inline-flex px-10 py-5 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all items-center gap-2"
+              className="inline-flex w-full sm:w-auto justify-center px-8 py-4 md:px-10 md:py-5 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all items-center gap-2"
             >
               Schedule Partnership Call
               <ArrowRight className="w-5 h-5" />
@@ -42,8 +42,8 @@ export default function BecomePartner() {
       </section>
 
       {/* Who This Is For */}
-      <section className="py-24 relative bg-[#111827]/30">
-        <div className="max-w-[1140px] mx-auto px-6">
+      <section className="py-16 md:py-24 relative bg-[#111827]/30">
+        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -93,8 +93,8 @@ export default function BecomePartner() {
       </section>
 
       {/* What We Offer */}
-      <section className="py-24 relative">
-        <div className="max-w-[1140px] mx-auto px-6">
+      <section className="py-16 md:py-24 relative">
+        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -171,8 +171,8 @@ export default function BecomePartner() {
       </section>
 
       {/* How Partnership Works */}
-      <section className="py-24 relative bg-[#111827]/30">
-        <div className="max-w-[1140px] mx-auto px-6">
+      <section className="py-16 md:py-24 relative bg-[#111827]/30">
+        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -243,8 +243,8 @@ export default function BecomePartner() {
       </section>
 
       {/* Testimonial */}
-      <section className="py-24 relative">
-        <div className="max-w-[1140px] mx-auto px-6">
+      <section className="py-16 md:py-24 relative">
+        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -276,8 +276,8 @@ export default function BecomePartner() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 relative bg-[#111827]/30">
-        <div className="max-w-[1140px] mx-auto px-6">
+      <section className="py-16 md:py-20 relative bg-[#111827]/30">
+        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -297,7 +297,7 @@ export default function BecomePartner() {
               </p>
               <Link 
                 to="/book-strategy-call"
-                className="inline-flex px-10 py-5 rounded-xl bg-white text-[#2F80ED] font-bold hover:bg-[#F9FAFB] transition-all shadow-2xl hover:shadow-white/20 items-center gap-2"
+              className="inline-flex w-full sm:w-auto justify-center px-8 py-4 md:px-10 md:py-5 rounded-xl bg-white text-[#2F80ED] font-bold hover:bg-[#F9FAFB] transition-all shadow-2xl hover:shadow-white/20 items-center gap-2"
               >
                 Schedule Partnership Call
                 <ArrowRight className="w-5 h-5" />
