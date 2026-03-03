@@ -1,315 +1,225 @@
 import { motion } from 'motion/react';
-import { Shield, Users, TrendingUp, Clock, Code2, Check, Star, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Navigation } from '../components/Navigation';
+import { CheckCircle2, DollarSign, Handshake, Send, Users } from 'lucide-react';
 import { Footer } from '../components/Footer';
+import { Navigation } from '../components/Navigation';
+
+const perfectFor = [
+  {
+    icon: Users,
+    title: 'Digital Agencies',
+    text: 'Expand service offerings without building an in-house dev team',
+  },
+  {
+    icon: Handshake,
+    title: 'Consultants',
+    text: 'Add technical capabilities to your consulting practice',
+  },
+  {
+    icon: DollarSign,
+    title: 'Resellers',
+    text: 'Create recurring revenue with SaaS and AI products',
+  },
+];
+
+const steps = [
+  {
+    number: '01',
+    title: 'You Find Clients',
+    text: 'Focus on sales, client relationships, and closing deals',
+  },
+  {
+    number: '02',
+    title: 'We Build',
+    text: 'Our dedicated team handles all development and delivery',
+  },
+  {
+    number: '03',
+    title: 'Your Brand',
+    text: 'All deliverables branded with your company identity',
+  },
+  {
+    number: '04',
+    title: 'Shared Success',
+    text: 'Transparent pricing with healthy margins for your agency',
+  },
+];
+
+const benefits = [
+  {
+    title: 'Dedicated Development Team',
+    text: 'Experienced developers, designers, and PMs assigned to your projects',
+  },
+  {
+    title: 'White-Label Delivery',
+    text: 'All code, documentation, and communication under your brand',
+  },
+  {
+    title: 'Transparent Process',
+    text: 'Regular sprint reviews, demos, and progress updates you can share',
+  },
+  {
+    title: 'Flexible Engagement',
+    text: 'Project-based, retainer, or dedicated team models available',
+  },
+  {
+    title: 'Quality Assurance',
+    text: 'Comprehensive testing before every client delivery',
+  },
+  {
+    title: 'Ongoing Support',
+    text: "Maintenance and updates for your clients' projects",
+  },
+  {
+    title: 'Technical Consulting',
+    text: 'Help with proposals, estimates, and technical scoping',
+  },
+  {
+    title: 'Revenue Growth',
+    text: 'Expand service offerings and increase project values',
+  },
+];
 
 export default function BecomePartner() {
   return (
-    <div className="w-full min-h-screen bg-[#0B0F1A] overflow-x-hidden" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#020617]" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2F80ED]/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#2D9CDB]/10 rounded-full blur-[120px]" />
-        
-        <div className="max-w-[1140px] mx-auto px-4 py-16 md:py-20 lg:px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h1
-              id="white-label-partnership-heading"
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F9FAFB] leading-tight mb-6"
-              style={{ fontFamily: 'Sora, sans-serif' }}
-            >
+      <main className="relative">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.14),transparent_42%)]" />
+
+        <div className="relative z-10 mx-auto w-full max-w-[1140px] px-4 pb-16 pt-28 md:pb-20 md:pt-32">
+          <motion.section initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="mx-auto mb-12 max-w-4xl text-center">
+            <h1 id="white-label-partnership-heading" className="mb-5 text-4xl font-bold leading-tight text-[#E5E7EB] sm:text-5xl md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
               Scale Your Agency Without Hiring Developers
             </h1>
-            <p className="text-base md:text-xl text-[#9CA3AF] leading-relaxed mb-8">
-              Partner with Tachflux as your dedicated SaaS, AI & On-Demand development team.
+            <p className="mx-auto max-w-2xl text-base leading-relaxed text-[#94A3B8] md:text-lg">
+              Partner with TechFlux to deliver enterprise-grade development services to your clients under your brand.
+              Focus on growth while we handle the technical execution.
             </p>
-            <Link 
-              to="/book-strategy-call"
-              className="inline-flex w-full sm:w-auto justify-center px-8 py-4 md:px-10 md:py-5 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all items-center gap-2"
-            >
-              Schedule Partnership Call
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+          </motion.section>
 
-      {/* Who This Is For */}
-      <section className="py-16 md:py-24 relative bg-[#111827]/30">
-        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 
-              className="text-4xl md:text-5xl font-bold text-[#F9FAFB] mb-4"
-              style={{ fontFamily: 'Sora, sans-serif' }}
-            >
-              Who This Is For
+          <section className="mb-12">
+            <h2 className="mb-6 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              Perfect For
             </h2>
-            <p className="text-lg text-[#9CA3AF]">
-              Perfect for agencies and consultants looking to scale
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              'Web Agencies',
-              'Marketing Agencies',
-              'SaaS Consultants',
-              'Startups Without Tech Team'
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-8 rounded-2xl backdrop-blur-xl border border-white/5 text-center"
-                style={{ background: 'rgba(255,255,255,0.03)' }}
-              >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D9CDB]/20 to-[#2F80ED]/20 flex items-center justify-center mx-auto mb-4">
-                  <Check className="w-6 h-6 text-[#2F80ED]" />
+            <div className="grid gap-4 md:grid-cols-3">
+              {perfectFor.map((item) => (
+                <div key={item.title} className="rounded-2xl border border-white/6 bg-[#101A31] p-6 text-center">
+                  <item.icon className="mx-auto mb-3 h-7 w-7 text-[#2F80ED]" />
+                  <h3 className="mb-2 text-lg font-semibold text-[#E5E7EB]">{item.title}</h3>
+                  <p className="text-sm text-[#94A3B8]">{item.text}</p>
                 </div>
-                <h3 
-                  className="text-xl font-bold text-[#F9FAFB]"
-                  style={{ fontFamily: 'Sora, sans-serif' }}
-                >
-                  {item}
-                </h3>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What We Offer */}
-      <section className="py-16 md:py-24 relative">
-        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 
-              className="text-4xl md:text-5xl font-bold text-[#F9FAFB] mb-4"
-              style={{ fontFamily: 'Sora, sans-serif' }}
-            >
-              What We Offer
-            </h2>
-            <p className="text-lg text-[#9CA3AF]">
-              Everything you need to deliver world-class solutions
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                icon: Users,
-                title: 'Dedicated Team',
-                desc: 'Assigned developers who work exclusively on your projects'
-              },
-              {
-                icon: Shield,
-                title: 'NDA Protection',
-                desc: 'Complete confidentiality and IP protection guaranteed'
-              },
-              {
-                icon: TrendingUp,
-                title: 'Transparent Pricing',
-                desc: 'Clear, predictable costs with no hidden fees'
-              },
-              {
-                icon: Check,
-                title: 'In-House QA',
-                desc: 'Rigorous testing to ensure bug-free deliverables'
-              },
-              {
-                icon: Clock,
-                title: 'Scalable Engagement',
-                desc: 'Scale team size up or down based on your needs'
-              },
-              {
-                icon: Code2,
-                title: 'Full-Stack Expertise',
-                desc: 'SaaS, AI, mobile, and on-demand development'
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-8 rounded-2xl backdrop-blur-xl border border-white/5 hover:border-[#2F80ED]/30 transition-all"
-                style={{ background: 'rgba(255,255,255,0.03)' }}
-              >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#2D9CDB]/20 to-[#2F80ED]/20 flex items-center justify-center mb-6">
-                  <item.icon className="w-7 h-7 text-[#2F80ED]" />
-                </div>
-                <h3 
-                  className="text-xl font-bold text-[#F9FAFB] mb-3"
-                  style={{ fontFamily: 'Sora, sans-serif' }}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-[#9CA3AF] leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How Partnership Works */}
-      <section className="py-16 md:py-24 relative bg-[#111827]/30">
-        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 
-              className="text-4xl md:text-5xl font-bold text-[#F9FAFB] mb-4"
-              style={{ fontFamily: 'Sora, sans-serif' }}
-            >
-              How Partnership Works
-            </h2>
-            <p className="text-lg text-[#9CA3AF]">
-              Simple, transparent collaboration process
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              {
-                step: '1',
-                title: 'You Close Client',
-                desc: 'Focus on sales and client relationships'
-              },
-              {
-                step: '2',
-                title: 'We Deliver Tech',
-                desc: 'Our team builds the solution to spec'
-              },
-              {
-                step: '3',
-                title: 'You Manage Brand',
-                desc: 'White-label delivery under your brand'
-              },
-              {
-                step: '4',
-                title: 'We Support Growth',
-                desc: 'Ongoing maintenance and scaling support'
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="relative mb-6">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] flex items-center justify-center font-bold text-white text-3xl mx-auto shadow-lg shadow-[#2F80ED]/30">
-                    {item.step}
-                  </div>
-                  {index < 3 && (
-                    <div className="hidden md:block absolute top-1/2 left-full w-[100%] h-[2px] bg-gradient-to-r from-[#2F80ED] to-transparent" />
-                  )}
-                </div>
-                <h3 
-                  className="text-xl font-bold text-[#F9FAFB] mb-3"
-                  style={{ fontFamily: 'Sora, sans-serif' }}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-[#9CA3AF]">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="py-16 md:py-24 relative">
-        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto p-8 rounded-2xl backdrop-blur-xl border border-white/8"
-            style={{ background: 'rgba(255,255,255,0.04)' }}
-          >
-            <div className="flex gap-1 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-[#2F80ED] text-[#2F80ED]" />
               ))}
             </div>
-            
-            <p className="text-[#F9FAFB] leading-relaxed mb-6 text-lg">
-              "The white-label partnership with Tachflux has allowed us to scale our agency significantly. Their team is reliable, skilled, and truly understands enterprise development. We can now take on larger projects with confidence."
-            </p>
-            
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] flex items-center justify-center text-white font-bold">
-                E
-              </div>
-              <div>
-                <div className="text-[#F9FAFB] font-semibold">Emily Rodriguez</div>
-                <div className="text-sm text-[#9CA3AF]">CTO, Digital Ventures Agency</div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+          </section>
 
-      {/* Final CTA */}
-      <section className="py-16 md:py-20 relative bg-[#111827]/30">
-        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative rounded-3xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] p-12 md:p-16 text-center overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-20" />
-            <div className="relative z-10">
-              <h2 
-                className="text-4xl md:text-5xl font-bold text-white mb-6"
-                style={{ fontFamily: 'Sora, sans-serif' }}
-              >
-                Become a Tech Partner Today
-              </h2>
-              <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                Let's discuss how we can help you scale your agency's development capacity.
-              </p>
-              <Link 
-                to="/book-strategy-call"
-              className="inline-flex w-full sm:w-auto justify-center px-8 py-4 md:px-10 md:py-5 rounded-xl bg-white text-[#2F80ED] font-bold hover:bg-[#F9FAFB] transition-all shadow-2xl hover:shadow-white/20 items-center gap-2"
-              >
-                Schedule Partnership Call
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+          <section className="mb-12">
+            <h2 className="mb-6 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              How Partnership Works
+            </h2>
+            <div className="grid gap-4 md:grid-cols-4">
+              {steps.map((item) => (
+                <div key={item.number} className="rounded-2xl border border-white/6 bg-[#101A31] p-5">
+                  <p className="mb-2 text-4xl font-bold text-[#2F80ED]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                    {item.number}
+                  </p>
+                  <h3 className="mb-2 text-base font-semibold text-[#E5E7EB]">{item.title}</h3>
+                  <p className="text-xs text-[#94A3B8]">{item.text}</p>
+                </div>
+              ))}
             </div>
-          </motion.div>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="mb-6 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              Partnership Benefits
+            </h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              {benefits.map((item) => (
+                <div key={item.title} className="rounded-2xl border border-white/6 bg-[#101A31] p-5">
+                  <p className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#2F80ED]" />
+                    <span>
+                      <span className="block text-base font-semibold text-[#E5E7EB]">{item.title}</span>
+                      <span className="block text-sm text-[#94A3B8]">{item.text}</span>
+                    </span>
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="grid items-start gap-6 lg:grid-cols-[1fr_0.95fr]">
+            <div className="rounded-2xl border border-white/6 bg-[#101A31] p-6">
+              <h2 className="mb-5 text-3xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                Partner Application
+              </h2>
+              <form className="space-y-4">
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Contact Name *</label>
+                  <input type="text" placeholder="Your name" className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]" />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Email *</label>
+                  <input type="email" placeholder="your.email@agency.com" className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]" />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Agency/Company Name *</label>
+                  <input type="text" placeholder="Your company name" className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]" />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Website (optional)</label>
+                  <input type="text" placeholder="https://yourwebsite.com" className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]" />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Current Services *</label>
+                  <textarea rows={3} placeholder="What services do you currently offer?" className="w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]" />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Why Partner With Us? *</label>
+                  <textarea rows={4} placeholder="Tell us about your goals and what you're looking for in a development partner..." className="w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]" />
+                </div>
+                <button type="submit" className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white">
+                  <Send className="h-4 w-4" />
+                  Submit Partnership Application
+                </button>
+              </form>
+            </div>
+
+            <div className="space-y-5">
+              <div className="rounded-2xl border border-white/6 bg-[#101A31] p-6">
+                <h3 className="mb-4 text-2xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  Partner Success Story
+                </h3>
+                <p className="mb-5 text-sm leading-relaxed text-[#94A3B8]">
+                  "Working with TechFlux as our white-label partner has allowed us to scale our agency without the overhead of hiring developers. We have tripled our revenue in the past year by offering development services we couldn't provide before. Their team is professional, reliable, and consistently delivers quality work on time."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#2F80ED] text-xs font-semibold text-white">DM</div>
+                  <div>
+                    <p className="text-sm font-semibold text-[#E5E7EB]">David Martinez</p>
+                    <p className="text-xs text-[#94A3B8]">Founder, Digital Agency Co.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-white/6 bg-[#101A31] p-6">
+                <h3 className="mb-4 text-2xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  Next Steps
+                </h3>
+                <ol className="space-y-2 text-xs text-[#94A3B8]">
+                  <li><span className="mr-2 font-semibold text-[#2F80ED]">1.</span>Submit your partnership application</li>
+                  <li><span className="mr-2 font-semibold text-[#2F80ED]">2.</span>Schedule an introductory call (usually within 24 hours)</li>
+                  <li><span className="mr-2 font-semibold text-[#2F80ED]">3.</span>Discuss partnership terms and engagement models</li>
+                  <li><span className="mr-2 font-semibold text-[#2F80ED]">4.</span>Sign partnership agreement and start collaborating</li>
+                </ol>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
+      </main>
 
       <Footer />
     </div>
   );
 }
-

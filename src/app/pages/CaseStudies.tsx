@@ -24,6 +24,7 @@ type CaseStudy = {
   tags: string[];
   tab: CaseTab;
   categoryLabel: string;
+  caseStudyUrl?: string;
   inProgress?: boolean;
 };
 
@@ -41,7 +42,7 @@ const tabs: CaseTab[] = [
 
 const caseStudies: CaseStudy[] = [
   {
-    name: 'Servgo',
+    name: 'Servyo',
     headline: 'Service Marketplace',
     description: 'Multi-role platform with real-time booking & subscriptions',
     image:
@@ -49,6 +50,7 @@ const caseStudies: CaseStudy[] = [
     tags: ['Flutter', 'Web App', 'Payment Gateway'],
     tab: 'Marketplace',
     categoryLabel: 'Service Marketplace',
+    caseStudyUrl: '/case-studies/servyo',
   },
   {
     name: 'Dine Right',
@@ -59,6 +61,7 @@ const caseStudies: CaseStudy[] = [
     tags: ['Flutter', 'React', 'Booking System'],
     tab: 'Hospitality',
     categoryLabel: 'Luxury Dining',
+    caseStudyUrl: '/case-studies/dine-right',
     inProgress: true,
   },
   {
@@ -70,6 +73,7 @@ const caseStudies: CaseStudy[] = [
     tags: ['Custom Inventory', 'Analytics', 'Lead Generation'],
     tab: 'Marketplace',
     categoryLabel: 'Automotive',
+    caseStudyUrl: '/case-studies/allstar-premier-auto',
   },
   {
     name: 'MyObscur',
@@ -80,6 +84,7 @@ const caseStudies: CaseStudy[] = [
     tags: ['eCommerce Platform', 'Logistics', 'UX Optimization'],
     tab: 'eCommerce',
     categoryLabel: 'Fashion',
+    caseStudyUrl: '/case-studies/myobscur',
   },
   {
     name: 'Leave Certificate',
@@ -90,6 +95,7 @@ const caseStudies: CaseStudy[] = [
     tags: ['SaaS Platform', 'Digital Records', 'Role-Based Access'],
     tab: 'Education',
     categoryLabel: 'Education',
+    caseStudyUrl: '/case-studies/leave-certificate',
   },
   {
     name: 'FuzTech',
@@ -100,6 +106,7 @@ const caseStudies: CaseStudy[] = [
     tags: ['Booking Platform', 'Real-Time Pricing', 'Localization'],
     tab: 'On-Demand',
     categoryLabel: 'Repair Services',
+    caseStudyUrl: '/case-studies/fuztech',
   },
   {
     name: 'Etern 8',
@@ -110,6 +117,7 @@ const caseStudies: CaseStudy[] = [
     tags: ['AI Engine', 'Smartwatch Integration', 'Health Analytics'],
     tab: 'Healthcare',
     categoryLabel: 'AI Wellness',
+    caseStudyUrl: '/case-studies/etern8',
   },
   {
     name: 'Studio New Media',
@@ -120,6 +128,7 @@ const caseStudies: CaseStudy[] = [
     tags: ['PHP', 'CodeIgniter', 'Multi-Tenant'],
     tab: 'White-Label',
     categoryLabel: 'SaaS CMS',
+    caseStudyUrl: '/case-studies/studio-new-media',
   },
 ];
 
@@ -220,10 +229,17 @@ export default function CaseStudies() {
                   </div>
 
                   <p className="mb-4 text-sm leading-relaxed text-[#94A3B8]">{item.description}</p>
-                  <button type="button" className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F80ED]">
-                    View Case Study
-                    <ArrowRight className="h-4 w-4" />
-                  </button>
+                  {item.caseStudyUrl ? (
+                    <Link to={item.caseStudyUrl} className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F80ED] transition-colors hover:text-[#6DB6FF]">
+                      View Case Study
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  ) : (
+                    <button type="button" className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F80ED]">
+                      View Case Study
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  )}
                 </div>
               </motion.article>
             ))}

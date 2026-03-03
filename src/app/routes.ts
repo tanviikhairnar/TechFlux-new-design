@@ -11,6 +11,14 @@ import UnityGameDevelopment from "./pages/UnityGameDevelopment";
 import EcommerceSolutions from "./pages/EcommerceSolutions";
 import CaseStudies from "./pages/CaseStudies";
 import Blog from "./pages/Blog";
+import ServyoCaseStudy from "./pages/ServyoCaseStudy";
+import DineRightCaseStudy from "./pages/DineRightCaseStudy";
+import AllstarPremierAutoCaseStudy from "./pages/AllstarPremierAutoCaseStudy";
+import MyObscurCaseStudy from "./pages/MyObscurCaseStudy";
+import LeaveCertificateCaseStudy from "./pages/LeaveCertificateCaseStudy";
+import FuzTechCaseStudy from "./pages/FuzTechCaseStudy";
+import Etern8CaseStudy from "./pages/Etern8CaseStudy";
+import StudioNewMediaCaseStudy from "./pages/StudioNewMediaCaseStudy";
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +64,38 @@ export const router = createBrowserRouter([
   {
     path: "/case-studies",
     Component: CaseStudies,
+  },
+  {
+    path: "/case-studies/servyo",
+    Component: ServyoCaseStudy,
+  },
+  {
+    path: "/case-studies/dine-right",
+    Component: DineRightCaseStudy,
+  },
+  {
+    path: "/case-studies/allstar-premier-auto",
+    Component: AllstarPremierAutoCaseStudy,
+  },
+  {
+    path: "/case-studies/myobscur",
+    Component: MyObscurCaseStudy,
+  },
+  {
+    path: "/case-studies/leave-certificate",
+    Component: LeaveCertificateCaseStudy,
+  },
+  {
+    path: "/case-studies/fuztech",
+    Component: FuzTechCaseStudy,
+  },
+  {
+    path: "/case-studies/etern8",
+    Component: Etern8CaseStudy,
+  },
+  {
+    path: "/case-studies/studio-new-media",
+    Component: StudioNewMediaCaseStudy,
   },
   {
     path: "/blog",

@@ -1,225 +1,206 @@
 import { motion } from 'motion/react';
-import { Star, CheckCircle2 } from 'lucide-react';
-import { Navigation } from '../components/Navigation';
+import { CheckCircle2, Send } from 'lucide-react';
 import { Footer } from '../components/Footer';
+import { Navigation } from '../components/Navigation';
+
+const nextSteps = [
+  { title: 'We Review', text: 'Our team analyzes your project requirements' },
+  { title: 'Estimate Prepared', text: 'Detailed breakdown of timeline and investment' },
+  { title: 'Follow-up Call', text: 'We discuss the estimate and answer questions' },
+];
+
+const whyItems = [
+  '8+ years of experience',
+  '200+ projects delivered',
+  'Transparent pricing',
+  'No hidden costs',
+  'Flexible engagement models',
+];
 
 export default function GetEstimate() {
   return (
-    <div className="w-full min-h-screen bg-[#0B0F1A] overflow-x-hidden" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#020617]" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
 
-      {/* Hero Section with Form */}
-      <section className="relative min-h-screen flex items-center pt-20">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2F80ED]/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#2D9CDB]/10 rounded-full blur-[120px]" />
-        
-        <div className="max-w-[1140px] mx-auto px-4 py-16 md:py-20 lg:px-6 relative z-10">
+      <main className="relative">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.14),transparent_42%)]" />
+
+        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-24 pt-28 md:pt-32 lg:px-5">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto mb-12"
+            transition={{ duration: 0.6 }}
+            className="mx-auto mb-14 max-w-4xl text-center"
           >
-            <h1 
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#F9FAFB] leading-tight mb-6"
-              style={{ fontFamily: 'Sora, sans-serif' }}
-            >
+            <h1 className="mb-6 text-4xl font-bold leading-tight text-[#E5E7EB] sm:text-5xl md:text-6xl lg:text-7xl" style={{ fontFamily: 'Sora, sans-serif' }}>
               Get a Clear Project Estimate Within 24 Hours
             </h1>
-            <p className="text-base md:text-xl text-[#9CA3AF] leading-relaxed">
-              Share your requirements and receive structured guidance.
+            <p className="mx-auto max-w-3xl text-base leading-relaxed text-[#94A3B8] md:text-xl">
+              Share your project details and receive a detailed estimate including timeline, investment, and recommended
+              approach.
             </p>
           </motion.div>
 
-          {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-4xl mx-auto rounded-2xl backdrop-blur-xl border border-white/5 p-6 md:p-12"
-            style={{ background: 'rgba(255,255,255,0.03)' }}
-          >
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-[#F9FAFB] font-medium mb-2">Name</label>
-                  <input 
-                    type="text"
-                    className="w-full px-4 py-3 rounded-xl bg-[#111827] border border-white/10 text-[#F9FAFB] focus:border-[#2F80ED] focus:outline-none transition-colors"
-                    placeholder="Your full name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-[#F9FAFB] font-medium mb-2">Email</label>
-                  <input 
-                    type="email"
-                    className="w-full px-4 py-3 rounded-xl bg-[#111827] border border-white/10 text-[#F9FAFB] focus:border-[#2F80ED] focus:outline-none transition-colors"
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
+          <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-6 transition-all duration-300 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:p-8"
+            >
+              <h2 className="mb-6 text-4xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                Project Details
+              </h2>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <form className="space-y-5">
+                <div className="grid gap-5 md:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Name *</label>
+                    <input
+                      type="text"
+                      placeholder="Your name"
+                      className="h-12 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-base text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Email *</label>
+                    <input
+                      type="email"
+                      placeholder="your.email@company.com"
+                      className="h-12 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-base text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <label className="block text-[#F9FAFB] font-medium mb-2">Company</label>
-                  <input 
+                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Company</label>
+                  <input
                     type="text"
-                    className="w-full px-4 py-3 rounded-xl bg-[#111827] border border-white/10 text-[#F9FAFB] focus:border-[#2F80ED] focus:outline-none transition-colors"
-                    placeholder="Company name"
+                    placeholder="Your company name"
+                    className="h-12 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-base text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
                   />
                 </div>
+
                 <div>
-                  <label className="block text-[#F9FAFB] font-medium mb-2">Project Type</label>
-                  <select className="w-full px-4 py-3 rounded-xl bg-[#111827] border border-white/10 text-[#F9FAFB] focus:border-[#2F80ED] focus:outline-none transition-colors">
-                    <option>SaaS Platform</option>
-                    <option>AI Solution</option>
-                    <option>On-Demand App</option>
+                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Project Type *</label>
+                  <select className="h-12 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-base text-[#E5E7EB] outline-none transition-all focus:border-[#2F80ED]">
+                    <option>SaaS Development</option>
+                    <option>AI Solutions</option>
+                    <option>On-Demand Applications</option>
                     <option>White-Label Development</option>
-                    <option>Other</option>
+                    <option>E-Commerce Solutions</option>
                   </select>
                 </div>
-              </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[#F9FAFB] font-medium mb-2">Budget Range</label>
-                  <select className="w-full px-4 py-3 rounded-xl bg-[#111827] border border-white/10 text-[#F9FAFB] focus:border-[#2F80ED] focus:outline-none transition-colors">
-                    <option>$10k - $25k</option>
-                    <option>$25k - $50k</option>
-                    <option>$50k - $100k</option>
-                    <option>$100k+</option>
-                    <option>To be discussed</option>
+                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Budget Range *</label>
+                  <select className="h-12 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-base text-[#E5E7EB] outline-none transition-all focus:border-[#2F80ED]">
+                    <option>Under $50K</option>
+                    <option>$50K - $100K</option>
+                    <option>$100K - $250K</option>
+                    <option>$250K+</option>
+                    <option>Need Guidance</option>
                   </select>
                 </div>
+
                 <div>
-                  <label className="block text-[#F9FAFB] font-medium mb-2">Timeline</label>
-                  <select className="w-full px-4 py-3 rounded-xl bg-[#111827] border border-white/10 text-[#F9FAFB] focus:border-[#2F80ED] focus:outline-none transition-colors">
-                    <option>1-3 months</option>
+                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Desired Timeline *</label>
+                  <select className="h-12 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-base text-[#E5E7EB] outline-none transition-all focus:border-[#2F80ED]">
+                    <option>ASAP (within 3 months)</option>
                     <option>3-6 months</option>
                     <option>6-12 months</option>
                     <option>12+ months</option>
                     <option>Flexible</option>
                   </select>
                 </div>
-              </div>
 
-              <div>
-                <label className="block text-[#F9FAFB] font-medium mb-2">Project Description</label>
-                <textarea 
-                  rows={6}
-                  className="w-full px-4 py-3 rounded-xl bg-[#111827] border border-white/10 text-[#F9FAFB] focus:border-[#2F80ED] focus:outline-none transition-colors resize-none"
-                  placeholder="Tell us about your project requirements, goals, and any specific features you need..."
-                />
-              </div>
-
-              <button 
-                type="submit"
-                className="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all"
-              >
-                Submit Project Details
-              </button>
-            </form>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* What Happens Next */}
-      <section className="py-16 md:py-24 relative bg-[#111827]/30">
-        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 
-              className="text-4xl md:text-5xl font-bold text-[#F9FAFB] mb-4"
-              style={{ fontFamily: 'Sora, sans-serif' }}
-            >
-              What Happens Next
-            </h2>
-            <p className="text-lg text-[#9CA3AF]">
-              Our streamlined process ensures you get answers fast
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                step: '1',
-                title: 'Review',
-                desc: 'Our team reviews your requirements within 4 hours'
-              },
-              {
-                step: '2',
-                title: 'Strategy Alignment',
-                desc: 'We schedule a brief call to clarify details'
-              },
-              {
-                step: '3',
-                title: 'Estimate Shared',
-                desc: 'Receive detailed proposal within 24 hours'
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] flex items-center justify-center font-bold text-white text-2xl mx-auto mb-6 shadow-lg shadow-[#2F80ED]/30">
-                  {item.step}
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Project Details *</label>
+                  <textarea
+                    rows={6}
+                    placeholder="Tell us about your project: What problem does it solve? Who are your users? What are the key features? Any technical requirements or integrations?"
+                    className="w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 py-3 text-base leading-relaxed text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
+                  />
                 </div>
-                <h3 
-                  className="text-xl font-bold text-[#F9FAFB] mb-3"
-                  style={{ fontFamily: 'Sora, sans-serif' }}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-[#9CA3AF]">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Trust Signal */}
-      <section className="py-16 md:py-24 relative">
-        <div className="max-w-[1140px] mx-auto px-4 lg:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto p-8 rounded-2xl backdrop-blur-xl border border-white/8"
-            style={{ background: 'rgba(255,255,255,0.04)' }}
-          >
-            <div className="flex gap-1 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-[#2F80ED] text-[#2F80ED]" />
-              ))}
+                <button
+                  type="submit"
+                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_10px_28px_rgba(47,128,237,0.45)]"
+                >
+                  <Send className="h-4 w-4" />
+                  Submit Project Details
+                </button>
+              </form>
+            </motion.div>
+
+            <div className="space-y-5">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+              >
+                <h3 className="mb-4 text-4xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  What Happens Next
+                </h3>
+                <div className="space-y-5">
+                  {nextSteps.map((item, index) => (
+                    <div key={item.title} className="flex items-start gap-3">
+                      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#2F80ED] text-sm font-semibold text-white">
+                        {index + 1}
+                      </span>
+                      <div>
+                        <p className="text-xl font-semibold text-[#E5E7EB]">{item.title}</p>
+                        <p className="text-base text-[#94A3B8]">{item.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+              >
+                <h3 className="mb-4 text-4xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  Why TechFlux?
+                </h3>
+                <div className="space-y-3">
+                  {whyItems.map((item) => (
+                    <p key={item} className="flex items-center gap-3 text-base text-[#94A3B8]">
+                      <CheckCircle2 className="h-4 w-4 text-[#2F80ED]" />
+                      <span>{item}</span>
+                    </p>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+              >
+                <div className="text-center">
+                  <p className="text-5xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                    24 Hours
+                  </p>
+                  <p className="mt-1 text-base text-[#94A3B8]">Average response time</p>
+                  <div className="my-4 h-px w-full bg-white/10" />
+                  <p className="text-5xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                    98%
+                  </p>
+                  <p className="mt-1 text-base text-[#94A3B8]">Client satisfaction</p>
+                </div>
+              </motion.div>
             </div>
-            
-            <p className="text-[#F9FAFB] leading-relaxed mb-6 text-lg">
-              "Tachflux provided a detailed estimate that helped us understand exactly what we were getting. Their transparent approach and clear communication made the decision easy."
-            </p>
-            
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] flex items-center justify-center text-white font-bold">
-                A
-              </div>
-              <div>
-                <div className="text-[#F9FAFB] font-semibold">Alex Thompson</div>
-                <div className="text-sm text-[#9CA3AF]">Product Manager, TechVenture</div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
+      </main>
 
       <Footer />
     </div>
   );
 }
-

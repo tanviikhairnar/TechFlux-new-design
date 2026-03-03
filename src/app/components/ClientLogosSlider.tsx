@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const logoFiles = import.meta.glob("/src/assets/logos/*.{png,jpg,jpeg,webp,svg}", {
   eager: true,
   import: "default",
@@ -15,8 +13,6 @@ const clientLogos = Object.entries(logoFiles)
   });
 
 export function ClientLogosSlider() {
-  const [isPaused, setIsPaused] = useState(false);
-
   return (
     <section className="relative overflow-hidden bg-[#0B1220] py-16">
       <style>{`
@@ -34,20 +30,17 @@ export function ClientLogosSlider() {
           className="flex w-max items-center gap-20"
           style={{
             animation: "client-logo-marquee 28s linear infinite",
-            animationPlayState: isPaused ? "paused" : "running",
           }}
         >
           {[...clientLogos, ...clientLogos].map((logo, index) => (
             <div
               key={`${logo.alt}-${index}`}
               className="group flex h-24 w-[180px] shrink-0 items-center justify-center"
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
             >
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="max-h-14 w-auto object-contain grayscale brightness-150 contrast-110 opacity-70 transition-all duration-500 ease-out transform-gpu group-hover:grayscale-0 group-hover:brightness-100 group-hover:contrast-100 group-hover:opacity-100 group-hover:scale-105"
+                className="max-h-14 w-auto object-contain brightness-0 invert opacity-90 transition-transform duration-500 ease-out transform-gpu group-hover:scale-105"
               />
             </div>
           ))}

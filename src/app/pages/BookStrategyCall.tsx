@@ -93,7 +93,7 @@ export default function BookStrategyCall() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: 0.1 }}
-                className="rounded-2xl border border-white/5 p-6 md:p-7"
+                className="rounded-2xl border border-white/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:p-7"
                 style={{ background: 'rgba(255,255,255,0.03)' }}
               >
                 <h3 className="mb-4 text-2xl font-semibold text-[#E5E7EB] md:text-3xl" style={{ fontFamily: 'Sora, sans-serif' }}>
@@ -122,17 +122,17 @@ export default function BookStrategyCall() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="rounded-2xl border border-white/5 p-7 md:p-8"
+              className="rounded-2xl border border-white/5 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:p-8"
               style={{ background: 'rgba(255,255,255,0.03)' }}
             >
               <h3 className="mb-6 text-center text-2xl font-semibold text-[#E5E7EB] md:text-4xl" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Schedule Your Call
               </h3>
-              <div className="mx-auto min-h-[430px] max-w-[560px] overflow-hidden rounded-xl border border-[#1D8CFF]/10 bg-[#071427]/80">
+              <div className="mx-auto h-[920px] max-w-[560px] overflow-hidden rounded-xl border border-[#1D8CFF]/10 bg-[#071427]/80">
                 <iframe
                   src="https://calendly.com/soheltf/strategy-call-45min?hide_gdpr_banner=1&background_color=071427&text_color=e5e7eb&primary_color=2f80ed"
                   title="Book a strategy call"
-                  className="h-[720px] w-full"
+                  className="h-full w-full"
                 />
               </div>
             </motion.div>
@@ -156,7 +156,7 @@ export default function BookStrategyCall() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08 }}
-                  className="rounded-2xl border border-white/5 px-6 py-8"
+                  className="rounded-2xl border border-white/5 px-6 py-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
                   style={{ background: 'rgba(255,255,255,0.03)' }}
                 >
                   <div className="text-4xl font-bold text-[#E5E7EB] md:text-5xl" style={{ fontFamily: 'Sora, sans-serif' }}>
@@ -186,7 +186,7 @@ export default function BookStrategyCall() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="rounded-2xl border border-white/5 p-6 md:p-7"
+                  className="rounded-2xl border border-white/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:p-7"
                   style={{ background: 'rgba(255,255,255,0.03)' }}
                 >
                   <p className="mb-7 text-base leading-relaxed text-[#94A3B8] md:text-lg">&quot;{item.quote}&quot;</p>
@@ -214,7 +214,7 @@ export default function BookStrategyCall() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-20 rounded-3xl border border-white/5 p-10 text-center md:p-14"
+            className="mt-20 rounded-3xl border border-white/5 p-10 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:p-14"
             style={{ background: 'rgba(255,255,255,0.03)' }}
           >
             <h2 className="mb-4 text-4xl font-bold text-[#E5E7EB] md:text-5xl" style={{ fontFamily: 'Sora, sans-serif' }}>

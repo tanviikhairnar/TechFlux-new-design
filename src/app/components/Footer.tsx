@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Github, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 import TachfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
 
 const socialLinks = [
@@ -149,12 +150,12 @@ export function Footer() {
           </p>
 
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <button className="rounded-xl bg-[#2F80ED] px-7 py-3 text-base font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#1C6DD0] hover:shadow-lg hover:shadow-[#2F80ED]/30">
+            <Link to="/book-strategy-call" className="rounded-xl bg-[#2F80ED] px-7 py-3 text-base font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#1C6DD0] hover:shadow-lg hover:shadow-[#2F80ED]/30">
               Book Strategy Call
-            </button>
-            <button className="rounded-xl border border-[#2F80ED] px-7 py-3 text-base font-medium text-[#2F80ED] transition-all duration-300 hover:-translate-y-1 hover:bg-[#2F80ED]/10">
+            </Link>
+            <Link to="/become-partner" className="rounded-xl border border-[#2F80ED] px-7 py-3 text-base font-medium text-[#2F80ED] transition-all duration-300 hover:-translate-y-1 hover:bg-[#2F80ED]/10">
               Become a Partner
-            </button>
+            </Link>
           </div>
         </motion.div>
 
