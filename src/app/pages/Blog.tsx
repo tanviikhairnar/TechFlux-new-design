@@ -1,20 +1,20 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Clock3 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 
 const posts = [
   {
     category: 'SaaS Development',
-    readTime: '8 min read',
-    title: 'How to Build a SaaS MVP in 45-60 Days (Without Wasting Budget)',
+    readTime: '12 min read',
+    title: 'SaaS MVP Development in 2026: A Strategic Guide to Building a Scalable Software Product',
     excerpt:
-      "Launching a SaaS product is exciting but most founders lose months (and money) before reaching product-market fit. Here's how to build a lean, scalable SaaS MVP in 45-60 days.",
+      'A strategic framework for validating demand, designing core workflows, and building an MVP that is scalable, economically sustainable, and ready for long-term growth.',
     date: 'Feb 28, 2026',
     image:
       'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80',
-    link: '#',
+    link: '/blog/saas-mvp-development-2026',
   },
   {
     category: 'AI & Automation',
@@ -28,19 +28,21 @@ const posts = [
     link: '/blog/ai-integration-services-structured-approach',
   },
   {
-    category: 'On-Demand Platforms',
-    readTime: '9 min read',
-    title: 'How On-Demand Platforms Are Scaling Service Industries',
+    category: 'White-Label SaaS',
+    readTime: '13 min read',
+    title: 'White-Label SaaS Development: The Strategic Infrastructure Behind Sustainable Recurring Revenue',
     excerpt:
-      "The service industry is evolving rapidly. Platforms like ride-hailing apps, home service marketplaces, and luxury booking systems have changed user expectations forever. Here's how modern on-demand platforms scale successfully.",
-    date: 'Feb 22, 2026',
+      'A strategic breakdown of how white-label SaaS creates leverage, where dependency risk appears, and what drives long-term recurring revenue sustainability.',
+    date: 'Mar 4, 2026',
     image:
       'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1200&q=80',
-    link: '#',
+    link: '/blog/white-label-saas-development-strategic-infrastructure',
   },
 ];
 
 export default function Blog() {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full min-h-screen overflow-x-hidden bg-[#020617]" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
@@ -91,23 +93,26 @@ export default function Blog() {
 
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-[#8F9FB6] md:text-[13px]">{post.date}</span>
-                    {post.link === '#' ? (
-                      <button
-                        type="button"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F80ED] transition-all duration-300 hover:text-[#61B8FF] hover:[text-shadow:0_0_14px_rgba(47,128,237,0.75)] group-hover:[text-shadow:0_0_10px_rgba(47,128,237,0.55)]"
-                      >
-                        Read More
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </button>
-                    ) : (
-                      <Link
-                        to={post.link}
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F80ED] transition-all duration-300 hover:text-[#61B8FF] hover:[text-shadow:0_0_14px_rgba(47,128,237,0.75)] group-hover:[text-shadow:0_0_10px_rgba(47,128,237,0.55)]"
-                      >
-                        Read More
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </Link>
-                    )}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (index === 0) {
+                          navigate('/blog/saas-mvp-development-2026');
+                          return;
+                        }
+                        if (index === 2) {
+                          navigate('/blog/white-label-saas-development-strategic-infrastructure');
+                          return;
+                        }
+                        if (post.link && post.link !== '#') {
+                          navigate(post.link);
+                        }
+                      }}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F80ED] transition-all duration-300 hover:text-[#61B8FF] hover:[text-shadow:0_0_14px_rgba(47,128,237,0.75)] group-hover:[text-shadow:0_0_10px_rgba(47,128,237,0.55)]"
+                    >
+                      Read More
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </button>
                   </div>
                 </div>
               </motion.article>
