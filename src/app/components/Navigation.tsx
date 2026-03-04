@@ -130,7 +130,12 @@ export function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => {
+              setMobileMenuOpen(!mobileMenuOpen);
+              if (mobileMenuOpen) {
+                setMobileServicesOpen(false);
+              }
+            }}
             className="lg:hidden text-[#F9FAFB] p-2"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -147,7 +152,7 @@ export function Navigation() {
               className="lg:hidden border-t border-white/5 py-4 bg-[#030A1C]/95 backdrop-blur-md"
             >
               <div className="flex flex-col gap-3">
-                <Link to="/" className="text-[17px] text-gray-400 hover:text-white py-2">
+                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-[17px] text-gray-400 hover:text-white py-2">
                   Home
                 </Link>
 
@@ -177,6 +182,10 @@ export function Navigation() {
                           <Link
                             key={item.href}
                             to={item.href}
+                            onClick={() => {
+                              setMobileMenuOpen(false);
+                              setMobileServicesOpen(false);
+                            }}
                             className="block py-2 text-[16px] text-gray-400 transition-colors hover:text-white"
                           >
                             {item.label}
@@ -187,17 +196,18 @@ export function Navigation() {
                   </AnimatePresence>
                 </div>
 
-                <Link to="/case-studies" className="text-[17px] text-gray-400 hover:text-white py-2">
+                <Link to="/case-studies" onClick={() => setMobileMenuOpen(false)} className="text-[17px] text-gray-400 hover:text-white py-2">
                   Case Studies
                 </Link>
-                <Link to="/blog" className="text-[17px] text-gray-400 hover:text-white py-2">
+                <Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="text-[17px] text-gray-400 hover:text-white py-2">
                   Blog
                 </Link>
-                <Link to="/contact" className="text-[17px] text-gray-400 hover:text-white py-2">
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="text-[17px] text-gray-400 hover:text-white py-2">
                   Contact
                 </Link>
                 <Link
                   to="/book-strategy-call"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="mt-2 rounded-lg bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] px-5 py-3 text-center text-[15px] font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30"
                 >
                   Book Strategy Call
