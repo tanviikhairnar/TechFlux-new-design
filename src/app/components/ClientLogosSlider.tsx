@@ -40,7 +40,7 @@ export function ClientLogosSlider() {
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="max-h-14 w-auto object-contain brightness-0 invert opacity-90 transition-transform duration-500 ease-out transform-gpu group-hover:scale-105"
+                className="max-h-14 w-auto object-contain brightness-0 invert opacity-60 transition-all duration-500 ease-out transform-gpu group-hover:scale-105 group-hover:opacity-80"
               />
             </div>
           ))}

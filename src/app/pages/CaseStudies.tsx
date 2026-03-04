@@ -1,20 +1,8 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-
-type CaseTab =
-  | 'All'
-  | 'SaaS'
-  | 'On-Demand'
-  | 'Marketplace'
-  | 'eCommerce'
-  | 'Hospitality'
-  | 'Healthcare'
-  | 'Education'
-  | 'White-Label';
 
 type CaseStudy = {
   name: string;
@@ -22,23 +10,10 @@ type CaseStudy = {
   description: string;
   image: string;
   tags: string[];
-  tab: CaseTab;
   categoryLabel: string;
   caseStudyUrl?: string;
   inProgress?: boolean;
 };
-
-const tabs: CaseTab[] = [
-  'All',
-  'SaaS',
-  'On-Demand',
-  'Marketplace',
-  'eCommerce',
-  'Hospitality',
-  'Healthcare',
-  'Education',
-  'White-Label',
-];
 
 const caseStudies: CaseStudy[] = [
   {
@@ -48,7 +23,6 @@ const caseStudies: CaseStudy[] = [
     image:
       'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80',
     tags: ['Flutter', 'Web App', 'Payment Gateway'],
-    tab: 'Marketplace',
     categoryLabel: 'Service Marketplace',
     caseStudyUrl: '/case-studies/servyo',
   },
@@ -59,7 +33,6 @@ const caseStudies: CaseStudy[] = [
     image:
       'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80',
     tags: ['Flutter', 'React', 'Booking System'],
-    tab: 'Hospitality',
     categoryLabel: 'Luxury Dining',
     caseStudyUrl: '/case-studies/dine-right',
     inProgress: true,
@@ -71,7 +44,6 @@ const caseStudies: CaseStudy[] = [
     image:
       'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80',
     tags: ['Custom Inventory', 'Analytics', 'Lead Generation'],
-    tab: 'Marketplace',
     categoryLabel: 'Automotive',
     caseStudyUrl: '/case-studies/allstar-premier-auto',
   },
@@ -82,7 +54,6 @@ const caseStudies: CaseStudy[] = [
     image:
       'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80',
     tags: ['eCommerce Platform', 'Logistics', 'UX Optimization'],
-    tab: 'eCommerce',
     categoryLabel: 'Fashion',
     caseStudyUrl: '/case-studies/myobscur',
   },
@@ -93,7 +64,6 @@ const caseStudies: CaseStudy[] = [
     image:
       'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80',
     tags: ['SaaS Platform', 'Digital Records', 'Role-Based Access'],
-    tab: 'Education',
     categoryLabel: 'Education',
     caseStudyUrl: '/case-studies/leave-certificate',
   },
@@ -104,7 +74,6 @@ const caseStudies: CaseStudy[] = [
     image:
       'https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80',
     tags: ['Booking Platform', 'Real-Time Pricing', 'Localization'],
-    tab: 'On-Demand',
     categoryLabel: 'Repair Services',
     caseStudyUrl: '/case-studies/fuztech',
   },
@@ -115,7 +84,6 @@ const caseStudies: CaseStudy[] = [
     image:
       'https://images.unsplash.com/photo-1575311373937-040b8e1fd6b6?auto=format&fit=crop&w=1200&q=80',
     tags: ['AI Engine', 'Smartwatch Integration', 'Health Analytics'],
-    tab: 'Healthcare',
     categoryLabel: 'AI Wellness',
     caseStudyUrl: '/case-studies/etern8',
   },
@@ -126,20 +94,12 @@ const caseStudies: CaseStudy[] = [
     image:
       'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80',
     tags: ['PHP', 'CodeIgniter', 'Multi-Tenant'],
-    tab: 'White-Label',
     categoryLabel: 'SaaS CMS',
     caseStudyUrl: '/case-studies/studio-new-media',
   },
 ];
 
 export default function CaseStudies() {
-  const [activeTab, setActiveTab] = useState<CaseTab>('All');
-
-  const filteredCases = useMemo(() => {
-    if (activeTab === 'All') return caseStudies;
-    return caseStudies.filter((item) => item.tab === activeTab);
-  }, [activeTab]);
-
   return (
     <div className="w-full min-h-screen overflow-x-hidden bg-[#020617]" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
@@ -162,33 +122,8 @@ export default function CaseStudies() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.1 }}
-            className="mb-10 flex flex-wrap justify-center gap-2"
-          >
-            {tabs.map((tab) => {
-              const active = tab === activeTab;
-              return (
-                <button
-                  key={tab}
-                  type="button"
-                  onClick={() => setActiveTab(tab)}
-                  className={`rounded-xl border px-4 py-2 text-sm transition-all ${
-                    active
-                      ? 'border-[#2F80ED] bg-[#2F80ED] text-white shadow-[0_0_20px_rgba(47,128,237,0.25)]'
-                      : 'border-white/8 bg-[#101a30] text-[#9FB2CD] hover:border-[#2F80ED]/40 hover:text-[#E5E7EB]'
-                  }`}
-                >
-                  {tab}
-                </button>
-              );
-            })}
-          </motion.div>
-
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {filteredCases.map((item, index) => (
+            {caseStudies.map((item, index) => (
               <motion.article
                 key={item.name}
                 initial={{ opacity: 0, y: 20 }}
@@ -208,13 +143,9 @@ export default function CaseStudies() {
                 </div>
 
                 <div className="p-5">
-                  <button
-                    type="button"
-                    onClick={() => setActiveTab(item.tab)}
-                    className="mb-3 inline-flex rounded-full bg-[#10284D] px-3 py-1 text-xs text-[#6DB6FF]"
-                  >
+                  <span className="mb-3 inline-flex rounded-full bg-[#10284D] px-3 py-1 text-xs text-[#6DB6FF]">
                     {item.categoryLabel}
-                  </button>
+                  </span>
 
                   <h3 className="mb-2 text-2xl font-semibold text-[#E5E7EB] md:text-3xl" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {item.name}

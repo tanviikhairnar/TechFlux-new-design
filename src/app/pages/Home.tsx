@@ -66,12 +66,12 @@ const testimonialsData = [
   {
     text: 'Working with Techflux and his team has been an excellent experience. They showed strong technical capability, professionalism, and commitment throughout the EngMe platform development across backend, frontend, and integrations. I highly recommend Techflux as a reliable development partner.',
     name: 'Ashraf',
-    company: '',
+    company: 'Engme',
   },
   {
     text: 'I had a fantastic experience working with Techflux and his team. They demonstrated creativity, met deadlines consistently, delivered high-quality output, and provided clean documentation and smooth handoff. Great execution across website development and tooling.',
     name: 'Parth',
-    company: '',
+    company: 'Dine Right',
   },
 ];
 
@@ -80,6 +80,7 @@ export default function Home() {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [testimonialsPerView, setTestimonialsPerView] = useState(3);
   const [testimonialTransitionOn, setTestimonialTransitionOn] = useState(true);
+  const [expandedTestimonials, setExpandedTestimonials] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
     const onResize = () => {
@@ -129,6 +130,10 @@ export default function Home() {
       return () => window.clearTimeout(resetTimer);
     }
   }, [testimonialIndex, testimonialsData.length, canSlide]);
+
+  useEffect(() => {
+    setExpandedTestimonials({});
+  }, [testimonialIndex]);
 
   return (
     <div className="w-full min-h-screen bg-[#0B0F1A] overflow-x-hidden" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -835,7 +840,12 @@ export default function Home() {
                 animate={{ x: `-${(testimonialIndex * 100) / testimonialsPerView}%` }}
                 transition={testimonialTransitionOn ? { duration: 0.45, ease: 'easeInOut' } : { duration: 0 }}
               >
-                {loopedTestimonials.map((testimonial, index) => (
+                {loopedTestimonials.map((testimonial, index) => {
+                  const baseIndex = index % testimonialsData.length;
+                  const isExpanded = Boolean(expandedTestimonials[baseIndex]);
+                  const shouldShowReadMore = testimonial.text.length > 140;
+
+                  return (
                   <div key={`${testimonial.name}-${index}`} className="w-full px-3" style={{ flex: `0 0 ${100 / testimonialsPerView}%` }}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -843,7 +853,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                className="group relative min-h-[320px] rounded-2xl border border-white/8 p-8 shadow-lg backdrop-blur-xl transition-all hover:shadow-[#2F80ED]/20 flex flex-col"
+                className={`group relative rounded-2xl border border-white/8 p-8 shadow-lg backdrop-blur-xl transition-all hover:shadow-[#2F80ED]/20 flex flex-col ${isExpanded ? 'min-h-[320px]' : 'h-[320px]'}`}
                 style={{ background: 'rgba(255,255,255,0.04)' }}
               >
                 <div className="flex gap-1 mb-6">
@@ -852,9 +862,25 @@ export default function Home() {
                   ))}
                 </div>
 
-                <p className="text-[#F9FAFB] text-base leading-relaxed mb-8 flex-1">
+                <p className={`text-[#F9FAFB] text-base leading-relaxed mb-2 ${isExpanded ? '' : 'line-clamp-3'}`}>
                   "{testimonial.text}"
                 </p>
+                {shouldShowReadMore ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setExpandedTestimonials((prev) => ({
+                        ...prev,
+                        [baseIndex]: !prev[baseIndex],
+                      }));
+                    }}
+                    className="mb-6 w-fit text-sm font-semibold text-[#66B7FF] hover:text-[#8FCBFF] transition-colors"
+                  >
+                    {isExpanded ? 'Read less' : 'Read more'}
+                  </button>
+                ) : (
+                  <div className="mb-6" />
+                )}
 
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] flex items-center justify-center text-white font-bold">
@@ -869,7 +895,7 @@ export default function Home() {
                 </div>
               </motion.div>
                   </div>
-                ))}
+                )})}
               </motion.div>
             </div>
 
