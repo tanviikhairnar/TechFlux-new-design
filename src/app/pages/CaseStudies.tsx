@@ -158,7 +158,7 @@ export default function CaseStudies() {
               Real Products. Real Results.
             </h1>
             <p className="mx-auto max-w-3xl text-base text-[#94A3B8] md:text-lg">
-              Explore how Tachflux builds scalable SaaS, AI, On-Demand, eCommerce, and Enterprise systems.
+              Explore how Techflux builds scalable SaaS, AI, On-Demand, eCommerce, and Enterprise systems.
             </p>
           </motion.div>
 
@@ -283,4 +283,5 @@ export default function CaseStudies() {
     </div>
   );
 }
+
 

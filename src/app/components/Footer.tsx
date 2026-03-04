@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Github, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
-import TachfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
+import TechfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
 
 const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/company/techfluxsolution/", label: "LinkedIn" },
@@ -10,6 +10,8 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const contactIconClass = "mt-1 h-4 w-4 shrink-0 text-[#2F80ED]";
+
   return (
     <footer className="border-t border-white/5 bg-[#050d1d]">
       <div className="mx-auto max-w-[1260px] px-4 pb-10 pt-16 lg:px-5">
@@ -25,9 +27,9 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-6 flex items-center gap-3">
-              <img src={TachfluxLogo} alt="Tachflux Logo" className="h-9 w-9" />
+              <img src={TechfluxLogo} alt="Techflux Logo" className="h-9 w-9" />
               <span className="font-sora text-xl font-semibold text-white">
-                Tachflux Solutions
+                Techflux Solutions
               </span>
             </div>
 
@@ -108,23 +110,23 @@ export function Footer() {
             </h3>
             <ul className="space-y-4 text-base">
               <li className="flex items-start gap-3">
-                <Mail className="mt-1 h-4 w-4 text-[#2F80ED]" />
+                <Mail className={contactIconClass} />
                 <span className="text-[#9CA3AF]">sales@techflux.in</span>
               </li>
 
               <li className="flex items-start gap-3">
-                <Phone className="mt-1 h-4 w-4 text-[#2F80ED]" />
+                <Phone className={contactIconClass} />
                 <span className="text-[#9CA3AF]">+91 9730960043</span>
               </li>
 
               <li className="flex items-start gap-3">
-                <MapPin className="mt-1 h-4 w-4 text-[#2F80ED]" />
+                <MapPin className={contactIconClass} />
                 <span className="leading-relaxed text-[#9CA3AF]">
                   Office 1: Dhawan Apartment, Maneksha Nagar, Dwarka, Nashik, Maharashtra 422011
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="mt-1 h-4 w-4 text-[#2F80ED]" />
+                <MapPin className={contactIconClass} />
                 <span className="leading-relaxed text-[#9CA3AF]">
                   Office 2: Bavdhan, Pune
                 </span>
@@ -160,9 +162,10 @@ export function Footer() {
         </motion.div>
 
         <div className="border-t border-white/5 pt-6 text-center text-sm text-[#6B7280]">
-          &copy; 2026 Tachflux Solutions. All Rights Reserved.
+          &copy; 2026 Techflux Solutions. All Rights Reserved.
         </div>
       </div>
     </footer>
   );
 }
+

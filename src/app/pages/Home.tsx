@@ -71,7 +71,7 @@ export default function Home() {
             </h1>
 
             <p className="text-xl text-[#9CA3AF] leading-relaxed mb-10">
-              Tachflux Solutions partners with startups and agencies to design,
+              Techflux Solutions partners with startups and agencies to design,
               develop, and scale high-performance digital products.
             </p>
 
@@ -746,7 +746,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                text: "Tachflux transformed our idea into a fully functional SaaS platform in just 4 months. Their expertise in scalable architecture was exactly what we needed.",
+                text: "Techflux transformed our idea into a fully functional SaaS platform in just 4 months. Their expertise in scalable architecture was exactly what we needed.",
                 name: "Michael Chen",
                 company: "CEO, DataInsight"
               },
@@ -756,7 +756,7 @@ export default function Home() {
                 company: "VP Product, TechVentures"
               },
               {
-                text: "Working with Tachflux as our white-label partner has allowed us to scale our agency without the overhead of hiring developers.",
+                text: "Working with Techflux as our white-label partner has allowed us to scale our agency without the overhead of hiring developers.",
                 name: "David Martinez",
                 company: "Founder, Digital Agency Co."
               }
@@ -815,7 +815,7 @@ export default function Home() {
               Scale Your Agency Without Hiring Developers
             </h2>
             <p className="text-base md:text-lg text-[#9CA3AF] leading-relaxed mb-8 max-w-3xl mx-auto">
-              Partner with Tachflux Solutions and let our expert developers become an extension of your team. Build, launch, and scale while you focus on growth.
+              Partner with Techflux Solutions and let our expert developers become an extension of your team. Build, launch, and scale while you focus on growth.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
@@ -870,6 +870,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 

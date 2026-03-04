@@ -145,7 +145,7 @@ export default function BookStrategyCall() {
             className="pt-20 text-center"
           >
             <h2 className="mb-10 text-4xl font-bold text-[#E5E7EB] md:text-5xl" style={{ fontFamily: 'Sora, sans-serif' }}>
-              Why Choose Tachflux Solutions
+              Why Choose Techflux Solutions
             </h2>
 
             <div className="grid gap-5 md:grid-cols-3">
@@ -234,3 +234,4 @@ export default function BookStrategyCall() {
     </div>
   );
 }
+

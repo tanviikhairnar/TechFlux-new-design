@@ -87,61 +87,61 @@ export default function BecomePartner() {
       <main className="relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.14),transparent_42%)]" />
 
-        <div className="relative z-10 mx-auto w-full max-w-[1140px] px-4 pb-16 pt-28 md:pb-20 md:pt-32">
-          <motion.section initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="mx-auto mb-12 max-w-4xl text-center">
-            <h1 id="white-label-partnership-heading" className="mb-5 text-4xl font-bold leading-tight text-[#E5E7EB] sm:text-5xl md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
+        <div className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-20 pt-40 md:pb-24 md:pt-52 lg:px-5">
+          <motion.section initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="mx-auto mb-32 max-w-4xl text-center">
+            <h1 className="mb-7 text-4xl font-bold leading-[1.06] tracking-[-0.02em] text-[#E5E7EB] sm:text-5xl md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
               Scale Your Agency Without Hiring Developers
             </h1>
-            <p className="mx-auto max-w-2xl text-base leading-relaxed text-[#94A3B8] md:text-lg">
+            <p className="mx-auto max-w-2xl text-base leading-relaxed text-[#93A4BE] md:text-lg">
               Partner with TechFlux to deliver enterprise-grade development services to your clients under your brand.
               Focus on growth while we handle the technical execution.
             </p>
           </motion.section>
 
-          <section className="mb-12">
-            <h2 className="mb-6 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <section className="mb-16">
+            <h2 className="mb-7 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Perfect For
             </h2>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-3">
               {perfectFor.map((item) => (
-                <div key={item.title} className="rounded-2xl border border-white/6 bg-[#101A31] p-6 text-center">
-                  <item.icon className="mx-auto mb-3 h-7 w-7 text-[#2F80ED]" />
-                  <h3 className="mb-2 text-lg font-semibold text-[#E5E7EB]">{item.title}</h3>
-                  <p className="text-sm text-[#94A3B8]">{item.text}</p>
+                <div key={item.title} className="rounded-2xl border border-[#1F2D46] bg-[#111B31] p-7 text-center transition-all duration-300 hover:border-[#2C4B78] hover:bg-[#132039]">
+                  <item.icon className="mx-auto mb-5 h-8 w-8 text-[#2F80ED]" />
+                  <h3 className="mb-2.5 text-lg font-semibold text-[#E5E7EB]">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-[#93A4BE]">{item.text}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          <section className="mb-12">
-            <h2 className="mb-6 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <section className="mb-16">
+            <h2 className="mb-7 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
               How Partnership Works
             </h2>
-            <div className="grid gap-4 md:grid-cols-4">
+            <div className="grid gap-5 md:grid-cols-4">
               {steps.map((item) => (
-                <div key={item.number} className="rounded-2xl border border-white/6 bg-[#101A31] p-5">
-                  <p className="mb-2 text-4xl font-bold text-[#2F80ED]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                <div key={item.number} className="rounded-2xl border border-[#1F2D46] bg-[#111B31] p-6 transition-all duration-300 hover:border-[#2C4B78] hover:bg-[#132039]">
+                  <p className="mb-3 text-4xl font-bold text-[#2F80ED]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {item.number}
                   </p>
-                  <h3 className="mb-2 text-base font-semibold text-[#E5E7EB]">{item.title}</h3>
-                  <p className="text-xs text-[#94A3B8]">{item.text}</p>
+                  <h3 className="mb-2.5 text-base font-semibold text-[#E5E7EB]">{item.title}</h3>
+                  <p className="text-xs leading-relaxed text-[#93A4BE]">{item.text}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          <section className="mb-12">
-            <h2 className="mb-6 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <section className="mb-16">
+            <h2 className="mb-7 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Partnership Benefits
             </h2>
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-5 md:grid-cols-2">
               {benefits.map((item) => (
-                <div key={item.title} className="rounded-2xl border border-white/6 bg-[#101A31] p-5">
+                <div key={item.title} className="rounded-2xl border border-[#1F2D46] bg-[#111B31] p-6 transition-all duration-300 hover:border-[#2C4B78] hover:bg-[#132039]">
                   <p className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#2F80ED]" />
                     <span>
                       <span className="block text-base font-semibold text-[#E5E7EB]">{item.title}</span>
-                      <span className="block text-sm text-[#94A3B8]">{item.text}</span>
+                      <span className="mt-1 block text-sm leading-relaxed text-[#93A4BE]">{item.text}</span>
                     </span>
                   </p>
                 </div>
@@ -149,37 +149,37 @@ export default function BecomePartner() {
             </div>
           </section>
 
-          <section className="grid items-start gap-6 lg:grid-cols-[1fr_0.95fr]">
-            <div className="rounded-2xl border border-white/6 bg-[#101A31] p-6">
+          <section className="grid items-start gap-7 lg:grid-cols-[1fr_0.95fr]">
+            <div className="rounded-2xl border border-[#1F2D46] bg-[#111B31] p-6 md:p-7">
               <h2 className="mb-5 text-3xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Partner Application
               </h2>
-              <form className="space-y-4">
+              <form className="space-y-4.5">
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Contact Name *</label>
-                  <input type="text" placeholder="Your name" className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]" />
+                  <input type="text" placeholder="Your name" className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]" />
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Email *</label>
-                  <input type="email" placeholder="your.email@agency.com" className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]" />
+                  <input type="email" placeholder="your.email@agency.com" className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]" />
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Agency/Company Name *</label>
-                  <input type="text" placeholder="Your company name" className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]" />
+                  <input type="text" placeholder="Your company name" className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]" />
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Website (optional)</label>
-                  <input type="text" placeholder="https://yourwebsite.com" className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]" />
+                  <input type="text" placeholder="https://yourwebsite.com" className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]" />
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Current Services *</label>
-                  <textarea rows={3} placeholder="What services do you currently offer?" className="w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]" />
+                  <textarea rows={3} placeholder="What services do you currently offer?" className="w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]" />
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Why Partner With Us? *</label>
-                  <textarea rows={4} placeholder="Tell us about your goals and what you're looking for in a development partner..." className="w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]" />
+                  <textarea rows={4} placeholder="Tell us about your goals and what you're looking for in a development partner..." className="w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]" />
                 </div>
-                <button type="submit" className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white">
+                <button type="submit" className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110">
                   <Send className="h-4 w-4" />
                   Submit Partnership Application
                 </button>
@@ -187,27 +187,27 @@ export default function BecomePartner() {
             </div>
 
             <div className="space-y-5">
-              <div className="rounded-2xl border border-white/6 bg-[#101A31] p-6">
+              <div className="rounded-2xl border border-[#1F2D46] bg-[#111B31] p-6 md:p-7">
                 <h3 className="mb-4 text-2xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                   Partner Success Story
                 </h3>
-                <p className="mb-5 text-sm leading-relaxed text-[#94A3B8]">
+                <p className="mb-5 text-sm leading-relaxed text-[#93A4BE]">
                   "Working with TechFlux as our white-label partner has allowed us to scale our agency without the overhead of hiring developers. We have tripled our revenue in the past year by offering development services we couldn't provide before. Their team is professional, reliable, and consistently delivers quality work on time."
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#2F80ED] text-xs font-semibold text-white">DM</div>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-xs font-semibold text-white">DM</div>
                   <div>
                     <p className="text-sm font-semibold text-[#E5E7EB]">David Martinez</p>
-                    <p className="text-xs text-[#94A3B8]">Founder, Digital Agency Co.</p>
+                    <p className="text-xs text-[#93A4BE]">Founder, Digital Agency Co.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-white/6 bg-[#101A31] p-6">
+              <div className="rounded-2xl border border-[#1F2D46] bg-[#111B31] p-6 md:p-7">
                 <h3 className="mb-4 text-2xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                   Next Steps
                 </h3>
-                <ol className="space-y-2 text-xs text-[#94A3B8]">
+                <ol className="space-y-2.5 text-xs leading-relaxed text-[#93A4BE]">
                   <li><span className="mr-2 font-semibold text-[#2F80ED]">1.</span>Submit your partnership application</li>
                   <li><span className="mr-2 font-semibold text-[#2F80ED]">2.</span>Schedule an introductory call (usually within 24 hours)</li>
                   <li><span className="mr-2 font-semibold text-[#2F80ED]">3.</span>Discuss partnership terms and engagement models</li>

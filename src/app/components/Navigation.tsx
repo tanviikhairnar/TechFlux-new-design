@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import TachfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
+import TechfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
 
 export function Navigation() {
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -11,7 +11,7 @@ export function Navigation() {
     { label: "SaaS Development", href: "/saas-development#saas-development-heading", useRoute: true },
     { label: "AI Solutions", href: "/ai-solutions#ai-solutions-heading", useRoute: true },
     { label: "On-Demand Applications", href: "/on-demand-solutions#on-demand-applications-heading", useRoute: true },
-    { label: "White-Label Partnership", href: "/become-partner#white-label-partnership-heading", useRoute: true },
+    { label: "White-Label Partnership", href: "/services/white-label-partnership#white-label-partnership-heading", useRoute: true },
     { label: "Unity Game Development", href: "/unity-game-development#unity-game-development-heading", useRoute: true },
     { label: "E-Commerce Solutions", href: "/e-commerce-solutions#ecommerce-solutions-heading", useRoute: true },
   ] as const;
@@ -21,19 +21,18 @@ export function Navigation() {
       <div className="mx-auto max-w-[1260px] px-4 lg:px-5">
         <div className="flex h-[84px] items-center justify-between">
           
-          {/* Logo */}
           <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
             <Link to="/" className="flex items-center gap-3">
               <img
-                src={TachfluxLogo}
-                alt="Tachflux Logo"
+                src={TechfluxLogo}
+                alt="Techflux Logo"
                 className="h-9 w-9 object-contain"
               />
               <span
                 className="text-[20px] font-semibold tracking-[-0.01em] text-[#F9FAFB]"
                 style={{ fontFamily: 'Sora, sans-serif' }}
               >
-                Tachflux Solutions
+                Techflux Solutions
               </span>
             </Link>
           </motion.div>
@@ -159,7 +158,7 @@ export function Navigation() {
                 <Link to="/on-demand-solutions#on-demand-applications-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
                   On-Demand Applications
                 </Link>
-                <Link to="/become-partner#white-label-partnership-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
+                <Link to="/services/white-label-partnership#white-label-partnership-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
                   White-Label Partnership
                 </Link>
                 <Link to="/unity-game-development#unity-game-development-heading" className="text-[17px] text-gray-400 hover:text-white py-2">

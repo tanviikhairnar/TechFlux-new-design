@@ -32,10 +32,10 @@ export default function GetEstimate() {
             transition={{ duration: 0.6 }}
             className="mx-auto mb-14 max-w-4xl text-center"
           >
-            <h1 className="mb-6 text-4xl font-bold leading-tight text-[#E5E7EB] sm:text-5xl md:text-6xl lg:text-7xl" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h1 className="mb-5 text-3xl font-bold leading-tight text-[#E5E7EB] sm:text-4xl md:text-[44px] lg:text-5xl" style={{ fontFamily: 'Sora, sans-serif' }}>
               Get a Clear Project Estimate Within 24 Hours
             </h1>
-            <p className="mx-auto max-w-3xl text-base leading-relaxed text-[#94A3B8] md:text-xl">
+            <p className="mx-auto max-w-3xl text-base leading-relaxed text-[#94A3B8] md:text-lg">
               Share your project details and receive a detailed estimate including timeline, investment, and recommended
               approach.
             </p>
@@ -46,9 +46,9 @@ export default function GetEstimate() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-6 transition-all duration-300 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:p-8"
+              className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:p-7"
             >
-              <h2 className="mb-6 text-4xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="mb-5 text-3xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Project Details
               </h2>
 
@@ -59,7 +59,7 @@ export default function GetEstimate() {
                     <input
                       type="text"
                       placeholder="Your name"
-                      className="h-12 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-base text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
+                      className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
                     />
                   </div>
                   <div>
@@ -67,7 +67,7 @@ export default function GetEstimate() {
                     <input
                       type="email"
                       placeholder="your.email@company.com"
-                      className="h-12 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-base text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
+                      className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
                     />
                   </div>
                 </div>
@@ -77,13 +77,13 @@ export default function GetEstimate() {
                   <input
                     type="text"
                     placeholder="Your company name"
-                    className="h-12 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-base text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
+                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
                   />
                 </div>
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Project Type *</label>
-                  <select className="h-12 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-base text-[#E5E7EB] outline-none transition-all focus:border-[#2F80ED]">
+                  <select className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 ease-out hover:border-[#2A4B7E] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]">
                     <option>SaaS Development</option>
                     <option>AI Solutions</option>
                     <option>On-Demand Applications</option>
@@ -94,7 +94,7 @@ export default function GetEstimate() {
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Budget Range *</label>
-                  <select className="h-12 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-base text-[#E5E7EB] outline-none transition-all focus:border-[#2F80ED]">
+                  <select className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 ease-out hover:border-[#2A4B7E] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]">
                     <option>Under $50K</option>
                     <option>$50K - $100K</option>
                     <option>$100K - $250K</option>
@@ -105,7 +105,7 @@ export default function GetEstimate() {
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Desired Timeline *</label>
-                  <select className="h-12 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-base text-[#E5E7EB] outline-none transition-all focus:border-[#2F80ED]">
+                  <select className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 ease-out hover:border-[#2A4B7E] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]">
                     <option>ASAP (within 3 months)</option>
                     <option>3-6 months</option>
                     <option>6-12 months</option>
@@ -119,13 +119,13 @@ export default function GetEstimate() {
                   <textarea
                     rows={6}
                     placeholder="Tell us about your project: What problem does it solve? Who are your users? What are the key features? Any technical requirements or integrations?"
-                    className="w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 py-3 text-base leading-relaxed text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
+                    className="w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 py-3 text-sm leading-relaxed text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-base font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_10px_28px_rgba(47,128,237,0.45)]"
+                  className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_10px_28px_rgba(47,128,237,0.45)]"
                 >
                   <Send className="h-4 w-4" />
                   Submit Project Details
@@ -140,7 +140,7 @@ export default function GetEstimate() {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
               >
-                <h3 className="mb-4 text-4xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                <h3 className="mb-4 text-3xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                   What Happens Next
                 </h3>
                 <div className="space-y-5">
@@ -150,8 +150,8 @@ export default function GetEstimate() {
                         {index + 1}
                       </span>
                       <div>
-                        <p className="text-xl font-semibold text-[#E5E7EB]">{item.title}</p>
-                        <p className="text-base text-[#94A3B8]">{item.text}</p>
+                        <p className="text-lg font-semibold text-[#E5E7EB]">{item.title}</p>
+                        <p className="text-sm text-[#94A3B8]">{item.text}</p>
                       </div>
                     </div>
                   ))}
@@ -164,12 +164,12 @@ export default function GetEstimate() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
               >
-                <h3 className="mb-4 text-4xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                <h3 className="mb-4 text-3xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                   Why TechFlux?
                 </h3>
                 <div className="space-y-3">
                   {whyItems.map((item) => (
-                    <p key={item} className="flex items-center gap-3 text-base text-[#94A3B8]">
+                    <p key={item} className="flex items-center gap-3 text-sm text-[#94A3B8]">
                       <CheckCircle2 className="h-4 w-4 text-[#2F80ED]" />
                       <span>{item}</span>
                     </p>
@@ -184,15 +184,15 @@ export default function GetEstimate() {
                 className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
               >
                 <div className="text-center">
-                  <p className="text-5xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  <p className="text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     24 Hours
                   </p>
-                  <p className="mt-1 text-base text-[#94A3B8]">Average response time</p>
+                  <p className="mt-1 text-sm text-[#94A3B8]">Average response time</p>
                   <div className="my-4 h-px w-full bg-white/10" />
-                  <p className="text-5xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  <p className="text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     98%
                   </p>
-                  <p className="mt-1 text-base text-[#94A3B8]">Client satisfaction</p>
+                  <p className="mt-1 text-sm text-[#94A3B8]">Client satisfaction</p>
                 </div>
               </motion.div>
             </div>
