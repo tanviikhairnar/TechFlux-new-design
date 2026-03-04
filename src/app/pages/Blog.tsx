@@ -14,16 +14,18 @@ const posts = [
     date: 'Feb 28, 2026',
     image:
       'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80',
+    link: '#',
   },
   {
     category: 'AI & Automation',
-    readTime: '10 min read',
-    title: 'How AI is Transforming SaaS and On-Demand Applications in 2026',
+    readTime: '14 min read',
+    title: 'AI Integration Services: A Structured Approach to Embedding AI Into Real Business Systems',
     excerpt:
-      "AI is no longer optional. It's becoming the competitive advantage inside modern digital products. From SaaS dashboards to on-demand platforms, AI is reshaping how users interact with technology.",
-    date: 'Feb 25, 2026',
+      'A workflow-first framework for integrating AI into production systems with measurable ROI, cost control, compliance, and long-term scalability.',
+    date: 'Mar 4, 2026',
     image:
       'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80',
+    link: '/blog/ai-integration-services-structured-approach',
   },
   {
     category: 'On-Demand Platforms',
@@ -34,6 +36,7 @@ const posts = [
     date: 'Feb 22, 2026',
     image:
       'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1200&q=80',
+    link: '#',
   },
 ];
 
@@ -88,13 +91,23 @@ export default function Blog() {
 
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-[#8F9FB6] md:text-[13px]">{post.date}</span>
-                    <button
-                      type="button"
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F80ED] transition-all duration-300 hover:text-[#61B8FF] hover:[text-shadow:0_0_14px_rgba(47,128,237,0.75)] group-hover:[text-shadow:0_0_10px_rgba(47,128,237,0.55)]"
-                    >
-                      Read More
-                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </button>
+                    {post.link === '#' ? (
+                      <button
+                        type="button"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F80ED] transition-all duration-300 hover:text-[#61B8FF] hover:[text-shadow:0_0_14px_rgba(47,128,237,0.75)] group-hover:[text-shadow:0_0_10px_rgba(47,128,237,0.55)]"
+                      >
+                        Read More
+                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </button>
+                    ) : (
+                      <Link
+                        to={post.link}
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F80ED] transition-all duration-300 hover:text-[#61B8FF] hover:[text-shadow:0_0_14px_rgba(47,128,237,0.75)] group-hover:[text-shadow:0_0_10px_rgba(47,128,237,0.55)]"
+                      >
+                        Read More
+                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </motion.article>

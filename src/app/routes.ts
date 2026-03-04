@@ -12,6 +12,7 @@ import UnityGameDevelopment from "./pages/UnityGameDevelopment";
 import EcommerceSolutions from "./pages/EcommerceSolutions";
 import CaseStudies from "./pages/CaseStudies";
 import Blog from "./pages/Blog";
+import AIIntegrationServicesArticle from "./pages/AIIntegrationServicesArticle";
 import ServyoCaseStudy from "./pages/ServyoCaseStudy";
 import DineRightCaseStudy from "./pages/DineRightCaseStudy";
 import AllstarPremierAutoCaseStudy from "./pages/AllstarPremierAutoCaseStudy";
@@ -113,6 +114,10 @@ export const router = createBrowserRouter([
       {
         path: "/blog",
         Component: Blog,
+      },
+      {
+        path: "/blog/ai-integration-services-structured-approach",
+        Component: AIIntegrationServicesArticle,
       },
     ],
   },
