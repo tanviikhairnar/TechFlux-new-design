@@ -5,6 +5,9 @@ import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 
 export default function Contact() {
+  const contactIconWrapClass = 'mt-0.5 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#13376A]';
+  const contactIconClass = 'h-5 w-5 text-[#2F80ED] stroke-[2.1]';
+
   return (
     <div className="w-full min-h-screen overflow-x-hidden bg-[#020617]" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
@@ -119,8 +122,8 @@ export default function Contact() {
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#13376A]">
-                      <Mail className="h-6 w-6 text-[#2F80ED]" />
+                    <div className={contactIconWrapClass}>
+                      <Mail className={contactIconClass} />
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-[#E5E7EB] md:text-lg">Email</h3>
@@ -129,8 +132,8 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#13376A]">
-                      <Phone className="h-6 w-6 text-[#2F80ED]" />
+                    <div className={contactIconWrapClass}>
+                      <Phone className={contactIconClass} />
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-[#E5E7EB] md:text-lg">Phone</h3>
@@ -139,8 +142,8 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#13376A]">
-                      <MapPin className="h-6 w-6 text-[#2F80ED]" />
+                    <div className={contactIconWrapClass}>
+                      <MapPin className={contactIconClass} />
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-[#E5E7EB] md:text-lg">Office 1</h3>
@@ -151,8 +154,8 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#13376A]">
-                      <MapPin className="h-6 w-6 text-[#2F80ED]" />
+                    <div className={contactIconWrapClass}>
+                      <MapPin className={contactIconClass} />
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-[#E5E7EB] md:text-lg">Office 2</h3>

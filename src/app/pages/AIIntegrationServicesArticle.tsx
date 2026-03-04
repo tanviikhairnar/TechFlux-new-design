@@ -165,21 +165,6 @@ export default function AIIntegrationServicesArticle() {
             </p>
           </motion.header>
 
-          <div className="mb-12 grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl border border-[#21314b] bg-[#101A31] p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#56A9F5]">Read Time</p>
-              <p className="mt-1 text-base font-semibold text-[#E5E7EB]">14 min</p>
-            </div>
-            <div className="rounded-2xl border border-[#21314b] bg-[#101A31] p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#56A9F5]">Published</p>
-              <p className="mt-1 text-base font-semibold text-[#E5E7EB]">March 4, 2026</p>
-            </div>
-            <div className="rounded-2xl border border-[#21314b] bg-[#101A31] p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#56A9F5]">Focus</p>
-              <p className="mt-1 text-base font-semibold text-[#E5E7EB]">Workflow-first AI strategy</p>
-            </div>
-          </div>
-
           <div className="rounded-2xl border border-[#21314b] bg-[#101A31] p-6 md:p-8">
             <Section title="Defining AI Integration in a Business Context">
               <p>
