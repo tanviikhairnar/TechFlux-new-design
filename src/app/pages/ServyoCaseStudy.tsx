@@ -52,8 +52,8 @@ export default function ServyoCaseStudy() {
       <main className="relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.14),transparent_42%)]" />
 
-        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-16 pt-28 md:pb-20 md:pt-32 lg:px-5">
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.1fr]">
+        <section className="relative z-10 mx-auto flex w-full max-w-[1260px] min-h-[680px] items-center px-4 pb-24 pt-[7.5rem] md:min-h-[760px] md:pb-28 md:pt-[8.5rem] lg:px-5">
+          <div className="grid w-full items-center gap-10 lg:grid-cols-[1fr_1.1fr]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -110,7 +110,7 @@ export default function ServyoCaseStudy() {
               <img
                 src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1600&q=80"
                 alt="Servyo app showcase"
-                className="h-full w-full object-cover"
+                className="h-[340px] w-full object-cover"
               />
             </motion.div>
           </div>
@@ -174,8 +174,8 @@ export default function ServyoCaseStudy() {
                   key={feature}
                   className="rounded-xl border border-white/6 bg-[#111D33] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
                 >
-                  <div className="mb-4 inline-flex rounded-lg bg-[#123667] p-2">
-                    <Circle className="h-4 w-4 text-[#6DB6FF]" />
+                  <div className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[#26497A] bg-[#122C4D]">
+                    <CheckCircle2 className="h-5 w-5 text-[#3B82F6]" />
                   </div>
                   <p className="text-base font-semibold text-[#E5E7EB]">{feature}</p>
                 </div>

@@ -1,7 +1,7 @@
 import { AnimatePresence, motion, useMotionValue, useTransform, animate } from 'motion/react';
 import {
   Users, Brain, Zap, Layers, ArrowRight, Check,
-  Star
+  Star, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -42,8 +42,93 @@ const processSteps = [
   { icon: '06', short: 'Launch & Scale', label: 'Launch & Support', desc: 'Deploy to production with monitoring, maintenance, and continuous improvements.' }
 ];
 
+const testimonialsData = [
+  {
+    text: 'Techflux transformed our idea into a fully functional SaaS platform in just 4 months. Their expertise in scalable architecture was exactly what we needed.',
+    name: 'Michael Chen',
+    company: 'CEO, DataInsight',
+  },
+  {
+    text: 'The AI integration they built for our platform has been a game-changer. Customer engagement increased by 60% within the first month.',
+    name: 'Sarah Johnson',
+    company: 'VP Product, TechVentures',
+  },
+  {
+    text: 'Working with Techflux as our white-label partner has allowed us to scale our agency without the overhead of hiring developers.',
+    name: 'David Martinez',
+    company: 'Founder, Digital Agency Co.',
+  },
+  {
+    text: 'Techflux delivered an excellent experience from start to finish. I hired Techflux to build a Next.js ticket PDF generation system and he handled it with strong technical proficiency, clean implementation, proactive communication, and clear accountability. I can confidently recommend him.',
+    name: 'Mantas',
+    company: '',
+  },
+  {
+    text: 'Working with Techflux and his team has been an excellent experience. They showed strong technical capability, professionalism, and commitment throughout the EngMe platform development across backend, frontend, and integrations. I highly recommend Techflux as a reliable development partner.',
+    name: 'Ashraf',
+    company: '',
+  },
+  {
+    text: 'I had a fantastic experience working with Techflux and his team. They demonstrated creativity, met deadlines consistently, delivered high-quality output, and provided clean documentation and smooth handoff. Great execution across website development and tooling.',
+    name: 'Parth',
+    company: '',
+  },
+];
+
 export default function Home() {
   const [activeProcessStep, setActiveProcessStep] = useState<number | null>(null);
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [testimonialsPerView, setTestimonialsPerView] = useState(3);
+  const [testimonialTransitionOn, setTestimonialTransitionOn] = useState(true);
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth < 768) {
+        setTestimonialsPerView(1);
+      } else if (window.innerWidth < 1024) {
+        setTestimonialsPerView(2);
+      } else {
+        setTestimonialsPerView(3);
+      }
+    };
+
+    onResize();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  const canSlide = testimonialsData.length > testimonialsPerView;
+  const loopedTestimonials = canSlide
+    ? [...testimonialsData, ...testimonialsData.slice(0, testimonialsPerView)]
+    : testimonialsData;
+
+  useEffect(() => {
+    if (!canSlide) return;
+
+    const timer = window.setInterval(() => {
+      setTestimonialIndex((prev) => prev + 1);
+    }, 4200);
+
+    return () => window.clearInterval(timer);
+  }, [canSlide]);
+
+  useEffect(() => {
+    if (!canSlide) return;
+
+    if (testimonialIndex === testimonialsData.length) {
+      const resetTimer = window.setTimeout(() => {
+        setTestimonialTransitionOn(false);
+        setTestimonialIndex(0);
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => {
+            setTestimonialTransitionOn(true);
+          });
+        });
+      }, 470);
+
+      return () => window.clearTimeout(resetTimer);
+    }
+  }, [testimonialIndex, testimonialsData.length, canSlide]);
 
   return (
     <div className="w-full min-h-screen bg-[#0B0F1A] overflow-x-hidden" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -725,12 +810,12 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <section className="py-24 relative">
-        <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
+        <div className="w-full max-w-[1260px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-16 px-4 lg:px-5"
           >
             <h2
               className="text-3xl md:text-4xl font-bold text-[#F9FAFB] mb-4"
@@ -743,32 +828,22 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                text: "Techflux transformed our idea into a fully functional SaaS platform in just 4 months. Their expertise in scalable architecture was exactly what we needed.",
-                name: "Michael Chen",
-                company: "CEO, DataInsight"
-              },
-              {
-                text: "The AI integration they built for our platform has been a game-changer. Customer engagement increased by 60% within the first month.",
-                name: "Sarah Johnson",
-                company: "VP Product, TechVentures"
-              },
-              {
-                text: "Working with Techflux as our white-label partner has allowed us to scale our agency without the overhead of hiring developers.",
-                name: "David Martinez",
-                company: "Founder, Digital Agency Co."
-              }
-            ].map((testimonial, index) => (
+          <div className="relative group">
+            <div className="overflow-hidden">
               <motion.div
-                key={index}
+                className="-mx-3 flex"
+                animate={{ x: `-${(testimonialIndex * 100) / testimonialsPerView}%` }}
+                transition={testimonialTransitionOn ? { duration: 0.45, ease: 'easeInOut' } : { duration: 0 }}
+              >
+                {loopedTestimonials.map((testimonial, index) => (
+                  <div key={`${testimonial.name}-${index}`} className="w-full px-3" style={{ flex: `0 0 ${100 / testimonialsPerView}%` }}>
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                className="group relative p-8 rounded-2xl backdrop-blur-xl border border-white/8 transition-all shadow-lg hover:shadow-[#2F80ED]/20 min-h-[320px] flex flex-col"
+                className="group relative min-h-[320px] rounded-2xl border border-white/8 p-8 shadow-lg backdrop-blur-xl transition-all hover:shadow-[#2F80ED]/20 flex flex-col"
                 style={{ background: 'rgba(255,255,255,0.04)' }}
               >
                 <div className="flex gap-1 mb-6">
@@ -787,11 +862,49 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="text-[#F9FAFB] font-semibold text-xl">{testimonial.name}</div>
-                    <div className="text-[#9CA3AF] text-base">{testimonial.company}</div>
+                    {testimonial.company ? (
+                      <div className="text-[#9CA3AF] text-base">{testimonial.company}</div>
+                    ) : null}
                   </div>
                 </div>
               </motion.div>
-            ))}
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {canSlide && (
+              <div className="pointer-events-none absolute left-1/2 top-1/2 z-20 w-screen -translate-x-1/2 -translate-y-1/2 px-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (testimonialIndex === 0) {
+                      setTestimonialTransitionOn(false);
+                      setTestimonialIndex(testimonialsData.length);
+                      window.requestAnimationFrame(() => {
+                        window.requestAnimationFrame(() => {
+                          setTestimonialTransitionOn(true);
+                          setTestimonialIndex(testimonialsData.length - 1);
+                        });
+                      });
+                    } else {
+                      setTestimonialIndex((prev) => prev - 1);
+                    }
+                  }}
+                  className="absolute left-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#111827]/95 text-[#E5E7EB] transition-all hover:border-[#2F80ED]/60 hover:text-[#2F80ED] pointer-events-none group-hover:pointer-events-auto"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setTestimonialIndex((prev) => prev + 1)}
+                  className="absolute right-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#111827]/95 text-[#E5E7EB] transition-all hover:border-[#2F80ED]/60 hover:text-[#2F80ED] pointer-events-none group-hover:pointer-events-auto"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </section>

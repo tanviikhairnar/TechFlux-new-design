@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle2, Circle, ShoppingBag, TrendingUp, Users, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle2, TrendingUp, Users, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
@@ -54,8 +54,8 @@ export default function MyObscurCaseStudy() {
       <main className="relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.14),transparent_42%)]" />
 
-        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-14 pt-28 md:pb-16 md:pt-32 lg:px-5">
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
+        <section className="relative z-10 mx-auto flex w-full max-w-[1260px] min-h-[680px] items-center px-4 pb-24 pt-[7.5rem] md:min-h-[760px] md:pb-28 md:pt-[8.5rem] lg:px-5">
+          <div className="grid w-full items-center gap-10 lg:grid-cols-[1fr_1.05fr]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -108,7 +108,7 @@ export default function MyObscurCaseStudy() {
               <img
                 src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80"
                 alt="MyObscur ecommerce interface"
-                className="h-full w-full object-cover"
+                className="h-[340px] w-full object-cover"
               />
             </motion.div>
           </div>
@@ -139,8 +139,8 @@ export default function MyObscurCaseStudy() {
                   key={item}
                   className="rounded-xl border border-white/6 bg-[#111D33] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
                 >
-                  <div className="mb-3 inline-flex rounded-lg bg-[#123667] p-2">
-                    <ShoppingBag className="h-4 w-4 text-[#6DB6FF]" />
+                  <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[#26497A] bg-[#122C4D]">
+                    <CheckCircle2 className="h-5 w-5 text-[#3B82F6]" />
                   </div>
                   <p className="text-sm text-[#C4D4EA] md:text-base">{item}</p>
                 </div>
@@ -160,8 +160,8 @@ export default function MyObscurCaseStudy() {
                   key={item.title}
                   className="rounded-xl border border-white/6 bg-[#111D33] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
                 >
-                  <div className="mb-3 inline-flex rounded-lg bg-[#123667] p-2">
-                    <Circle className="h-4 w-4 text-[#6DB6FF]" />
+                  <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[#26497A] bg-[#122C4D]">
+                    <CheckCircle2 className="h-5 w-5 text-[#3B82F6]" />
                   </div>
                   <p className="text-base font-semibold text-[#E5E7EB]">{item.title}</p>
                   <p className="mt-1 text-sm text-[#94A3B8]">{item.subtitle}</p>

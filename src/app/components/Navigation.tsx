@@ -7,6 +7,7 @@ import TechfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.
 export function Navigation() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const serviceItems = [
     { label: "SaaS Development", href: "/saas-development#saas-development-heading", useRoute: true },
     { label: "AI Solutions", href: "/ai-solutions#ai-solutions-heading", useRoute: true },
@@ -149,24 +150,43 @@ export function Navigation() {
                 <Link to="/" className="text-[17px] text-gray-400 hover:text-white py-2">
                   Home
                 </Link>
-                <Link to="/saas-development#saas-development-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
-                  SaaS Development
-                </Link>
-                <Link to="/ai-solutions#ai-solutions-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
-                  AI Solutions
-                </Link>
-                <Link to="/on-demand-solutions#on-demand-applications-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
-                  On-Demand Applications
-                </Link>
-                <Link to="/services/white-label-partnership#white-label-partnership-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
-                  White-Label Partnership
-                </Link>
-                <Link to="/unity-game-development#unity-game-development-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
-                  Unity Game Development
-                </Link>
-                <Link to="/e-commerce-solutions#ecommerce-solutions-heading" className="text-[17px] text-gray-400 hover:text-white py-2">
-                  E-Commerce Solutions
-                </Link>
+
+                <div className="py-1">
+                  <button
+                    type="button"
+                    onClick={() => setMobileServicesOpen((prev) => !prev)}
+                    className="flex w-full items-center justify-between py-2 text-[17px] text-gray-400 transition-colors hover:text-white"
+                  >
+                    <span>Services</span>
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform duration-200 ${
+                        mobileServicesOpen ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {mobileServicesOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="ml-3 mt-1 overflow-hidden border-l border-white/10 pl-4"
+                      >
+                        {serviceItems.map((item) => (
+                          <Link
+                            key={item.href}
+                            to={item.href}
+                            className="block py-2 text-[16px] text-gray-400 transition-colors hover:text-white"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
                 <Link to="/case-studies" className="text-[17px] text-gray-400 hover:text-white py-2">
                   Case Studies
                 </Link>

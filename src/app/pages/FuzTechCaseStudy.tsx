@@ -54,7 +54,8 @@ export default function FuzTechCaseStudy() {
       <main className="relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.14),transparent_42%)]" />
 
-        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-16 pt-28 md:pb-20 md:pt-32 lg:px-5">
+        <section className="relative z-10 mx-auto flex w-full max-w-[1260px] min-h-[680px] items-center px-4 pb-24 pt-[7.5rem] md:min-h-[760px] md:pb-28 md:pt-[8.5rem] lg:px-5">
+          <div className="w-full">
           <Link to="/case-studies" className="mb-6 inline-flex items-center gap-2 text-sm text-[#6DB6FF] hover:text-white">
             <ArrowLeft className="h-4 w-4" />
             Back to Case Studies
@@ -113,9 +114,10 @@ export default function FuzTechCaseStudy() {
               <img
                 src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1600&q=80"
                 alt="FuzTech repair booking platform"
-                className="h-full w-full object-cover"
+                className="h-[340px] w-full object-cover"
               />
             </motion.div>
+          </div>
           </div>
         </section>
 
