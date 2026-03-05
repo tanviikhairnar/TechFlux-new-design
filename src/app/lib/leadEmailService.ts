@@ -1,7 +1,7 @@
 import emailjs from '@emailjs/browser';
 
 const INTERNAL_RECEIVER_EMAILS_RAW =
-  import.meta.env.VITE_LEAD_RECEIVER_EMAIL || 'Sohel@techflux.in,Asrar@techflux.in';
+  import.meta.env.VITE_LEAD_RECEIVER_EMAIL || 'Sohel@techflux.in,Asrar@techflux.in,tanvikhairnar03@gmail.com';
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -41,7 +41,7 @@ function assertEmailConfig() {
   const receiverEmails = getInternalReceiverEmails();
   if (!receiverEmails.length || receiverEmails.some((email) => !isValidEmail(email))) {
     throw new Error(
-      'Invalid receiver email. Use real mailbox addresses like Sohel@techflux.in,Asrar@techflux.in.',
+      'Invalid receiver email. Use real mailbox addresses like Sohel@techflux.in,Asrar@techflux.in,tanvikhairnar03@gmail.com.',
     );
   }
 
@@ -81,6 +81,11 @@ async function openMailClientFallback(subject: string, internalMessage: string, 
   const body = `${internalMessage}\n\nReply-To: ${leadEmail}\nLead Name: ${leadName}`;
   const mailtoUrl = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   window.location.href = mailtoUrl;
+}
+
+function isEmailJsDeliveryError(error: unknown) {
+  if (!(error instanceof Error)) return false;
+  return error.message.startsWith('EmailJS error') || error.message === 'EmailJS request failed.';
 }
 
 function sendEmail(payload: EmailPayload) {
@@ -164,13 +169,15 @@ type ContactLead = {
   message: string;
 };
 
-export async function sendStrategyCallEmails(lead: StrategyCallLead) {
+export type LeadEmailDelivery = 'emailjs' | 'mailto';
+
+export async function sendStrategyCallEmails(lead: StrategyCallLead): Promise<LeadEmailDelivery> {
   const customerSubject = 'Your Strategy Call Request Received - Techflux Solutions';
   const customerMessage = `Hi ${lead.firstName},
 
 Thank you for reaching out to Techflux Solutions.
 
-We've received your request to schedule a strategy call with our team. One of our specialists will review your project details and get back to you shortly to confirm the meeting.
+We have received your request to schedule a strategy call with our team. One of our specialists will review your project details and get back to you shortly to confirm the meeting.
 
 During the call, we typically discuss:
 - Your product idea or current platform
@@ -210,22 +217,34 @@ Lead Source: Techflux Website - Strategy Call Form`;
       lead.email,
       `${lead.firstName} ${lead.lastName}`.trim(),
     );
-    return;
+    return 'mailto';
   }
 
-  await Promise.all([
-    sendEmail({
-      toEmail: lead.email,
-      toName: lead.firstName,
-      subject: customerSubject,
-      message: customerMessage,
-      replyTo: getPrimaryInternalEmail(),
-    }),
-    sendInternalEmails(internalSubject, internalMessage, lead.email),
-  ]);
+  try {
+    await Promise.all([
+      sendEmail({
+        toEmail: lead.email,
+        toName: lead.firstName,
+        subject: customerSubject,
+        message: customerMessage,
+        replyTo: getPrimaryInternalEmail(),
+      }),
+      sendInternalEmails(internalSubject, internalMessage, lead.email),
+    ]);
+    return 'emailjs';
+  } catch (error) {
+    if (!isEmailJsDeliveryError(error)) throw error;
+    await openMailClientFallback(
+      internalSubject,
+      internalMessage,
+      lead.email,
+      `${lead.firstName} ${lead.lastName}`.trim(),
+    );
+    return 'mailto';
+  }
 }
 
-export async function sendEstimateEmails(lead: EstimateLead) {
+export async function sendEstimateEmails(lead: EstimateLead): Promise<LeadEmailDelivery> {
   const customerSubject = 'Your Project Estimate Request - Techflux Solutions';
   const customerMessage = `Hi ${lead.firstName},
 
@@ -271,22 +290,34 @@ Lead Source: TechFlux Website - Project Estimate Form`;
       lead.email,
       `${lead.firstName} ${lead.lastName}`.trim(),
     );
-    return;
+    return 'mailto';
   }
 
-  await Promise.all([
-    sendEmail({
-      toEmail: lead.email,
-      toName: lead.firstName,
-      subject: customerSubject,
-      message: customerMessage,
-      replyTo: getPrimaryInternalEmail(),
-    }),
-    sendInternalEmails(internalSubject, internalMessage, lead.email),
-  ]);
+  try {
+    await Promise.all([
+      sendEmail({
+        toEmail: lead.email,
+        toName: lead.firstName,
+        subject: customerSubject,
+        message: customerMessage,
+        replyTo: getPrimaryInternalEmail(),
+      }),
+      sendInternalEmails(internalSubject, internalMessage, lead.email),
+    ]);
+    return 'emailjs';
+  } catch (error) {
+    if (!isEmailJsDeliveryError(error)) throw error;
+    await openMailClientFallback(
+      internalSubject,
+      internalMessage,
+      lead.email,
+      `${lead.firstName} ${lead.lastName}`.trim(),
+    );
+    return 'mailto';
+  }
 }
 
-export async function sendPartnerEmails(lead: PartnerLead) {
+export async function sendPartnerEmails(lead: PartnerLead): Promise<LeadEmailDelivery> {
   const customerSubject = 'Partnership Request Received - Techflux Solutions';
   const customerMessage = `Hi ${lead.firstName},
 
@@ -325,22 +356,34 @@ Lead Source: TechFlux Website - Partner Form`;
       lead.email,
       `${lead.firstName} ${lead.lastName}`.trim(),
     );
-    return;
+    return 'mailto';
   }
 
-  await Promise.all([
-    sendEmail({
-      toEmail: lead.email,
-      toName: lead.firstName,
-      subject: customerSubject,
-      message: customerMessage,
-      replyTo: getPrimaryInternalEmail(),
-    }),
-    sendInternalEmails(internalSubject, internalMessage, lead.email),
-  ]);
+  try {
+    await Promise.all([
+      sendEmail({
+        toEmail: lead.email,
+        toName: lead.firstName,
+        subject: customerSubject,
+        message: customerMessage,
+        replyTo: getPrimaryInternalEmail(),
+      }),
+      sendInternalEmails(internalSubject, internalMessage, lead.email),
+    ]);
+    return 'emailjs';
+  } catch (error) {
+    if (!isEmailJsDeliveryError(error)) throw error;
+    await openMailClientFallback(
+      internalSubject,
+      internalMessage,
+      lead.email,
+      `${lead.firstName} ${lead.lastName}`.trim(),
+    );
+    return 'mailto';
+  }
 }
 
-export async function sendContactEmails(lead: ContactLead) {
+export async function sendContactEmails(lead: ContactLead): Promise<LeadEmailDelivery> {
   const customerSubject = 'Thanks for Contacting Techflux Solutions';
   const customerMessage = `Hi ${lead.firstName},
 
@@ -381,17 +424,29 @@ Lead Source: TechFlux Website - Contact Form`;
       lead.email,
       `${lead.firstName} ${lead.lastName}`.trim(),
     );
-    return;
+    return 'mailto';
   }
 
-  await Promise.all([
-    sendEmail({
-      toEmail: lead.email,
-      toName: lead.firstName,
-      subject: customerSubject,
-      message: customerMessage,
-      replyTo: getPrimaryInternalEmail(),
-    }),
-    sendInternalEmails(internalSubject, internalMessage, lead.email),
-  ]);
+  try {
+    await Promise.all([
+      sendEmail({
+        toEmail: lead.email,
+        toName: lead.firstName,
+        subject: customerSubject,
+        message: customerMessage,
+        replyTo: getPrimaryInternalEmail(),
+      }),
+      sendInternalEmails(internalSubject, internalMessage, lead.email),
+    ]);
+    return 'emailjs';
+  } catch (error) {
+    if (!isEmailJsDeliveryError(error)) throw error;
+    await openMailClientFallback(
+      internalSubject,
+      internalMessage,
+      lead.email,
+      `${lead.firstName} ${lead.lastName}`.trim(),
+    );
+    return 'mailto';
+  }
 }

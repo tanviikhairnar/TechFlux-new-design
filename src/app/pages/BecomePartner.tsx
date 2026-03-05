@@ -107,9 +107,12 @@ export default function BecomePartner() {
 
     try {
       setIsSubmitting(true);
-      await sendPartnerEmails(formData);
-      setSubmitSuccess('Request submitted successfully.');
-      window.alert('Form submitted successfully.');
+      const delivery = await sendPartnerEmails(formData);
+      setSubmitSuccess(
+        delivery === 'emailjs'
+          ? 'Request submitted and email sent successfully.'
+          : 'Your email app was opened with a draft. Please click Send there to complete submission.',
+      );
       setFormData({
         firstName: '',
         lastName: '',

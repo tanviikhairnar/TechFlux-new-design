@@ -72,9 +72,12 @@ export default function BookStrategyCall() {
 
     try {
       setIsSubmitting(true);
-      await sendStrategyCallEmails(formData);
-      setSubmitSuccess('Request submitted successfully.');
-      window.alert('Form submitted successfully.');
+      const delivery = await sendStrategyCallEmails(formData);
+      setSubmitSuccess(
+        delivery === 'emailjs'
+          ? 'Request submitted and email sent successfully.'
+          : 'Your email app was opened with a draft. Please click Send there to complete submission.',
+      );
       setFormData({
         firstName: '',
         lastName: '',

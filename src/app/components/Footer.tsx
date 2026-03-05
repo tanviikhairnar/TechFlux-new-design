@@ -9,6 +9,15 @@ const socialLinks = [
   { icon: Github, href: "https://github.com/techfluxsolutions", label: "GitHub" },
 ];
 
+const quickLinks = [
+  { label: "Home", to: "/" },
+  { label: "Services", to: "/saas-development" },
+  { label: "Case Studies", to: "/case-studies" },
+  { label: "Careers", to: "/careers" },
+  { label: "Blog", to: "/blog" },
+  { label: "Contact", to: "/contact" },
+];
+
 export function Footer() {
   const contactIconClass = "mt-1 h-4 w-4 shrink-0 text-[#2F80ED]";
 
@@ -62,18 +71,16 @@ export function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-3 text-base">
-              {["Home", "Services", "Case Studies", "Careers", "Blog", "Contact"].map(
-                (item, i) => (
-                  <li key={i}>
-                    <a
-                      href="#"
-                      className="text-[#9CA3AF] transition-colors hover:text-[#2F80ED]"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              {quickLinks.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    to={item.to}
+                    className="text-[#9CA3AF] transition-colors hover:text-[#2F80ED]"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

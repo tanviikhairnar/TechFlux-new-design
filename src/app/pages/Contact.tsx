@@ -34,9 +34,12 @@ export default function Contact() {
 
     try {
       setIsSubmitting(true);
-      await sendContactEmails(formData);
-      setSubmitSuccess('Message submitted successfully.');
-      window.alert('Form submitted successfully.');
+      const delivery = await sendContactEmails(formData);
+      setSubmitSuccess(
+        delivery === 'emailjs'
+          ? 'Message submitted and email sent successfully.'
+          : 'Your email app was opened with a draft. Please click Send there to complete submission.',
+      );
       setFormData({
         firstName: '',
         lastName: '',
@@ -245,11 +248,26 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex h-[220px] items-center justify-center rounded-2xl border border-white/5 md:h-[260px]" style={{ background: 'rgba(24,50,88,0.45)' }}>
-                <div className="text-center">
-                  <MapPin className="mx-auto mb-3 h-12 w-12 text-[#2F80ED]" />
-                  <p className="text-base text-[#94A3B8] md:text-lg">Nashik & Pune, India</p>
-                </div>
+              <div
+                className="relative h-[220px] overflow-hidden rounded-2xl border border-white/5 md:h-[260px]"
+                style={{ background: 'rgba(24,50,88,0.45)' }}
+              >
+                <iframe
+                  title="Techflux location map"
+                  src="https://maps.google.com/maps?q=Dhawan%20Apartment%20Maneksha%20Nagar%20Dwarka%20Nashik%20Maharashtra%20422011&z=14&output=embed"
+                  className="h-full w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+                <a
+                  href="https://maps.app.goo.gl/QAvnrPPTXvqfCC2u6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open map in Google Maps"
+                  className="absolute bottom-3 right-3 rounded-lg bg-[#0b1f3f]/90 px-3 py-1.5 text-xs font-medium text-[#E5E7EB] backdrop-blur transition-colors hover:bg-[#12315f]"
+                >
+                  Open in Google Maps
+                </a>
               </div>
 
               <div className="rounded-2xl border border-white/5 p-6 text-center md:p-8" style={{ background: 'rgba(255,255,255,0.03)' }}>
@@ -273,4 +291,3 @@ export default function Contact() {
     </div>
   );
 }
-
