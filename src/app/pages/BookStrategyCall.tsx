@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
 import { Calendar, CheckCircle2, Clock3, Image, Video } from 'lucide-react';
+import { FormEvent, useState } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import { sendStrategyCallEmails } from '../lib/leadEmailService';
 
 const coverageItems = [
   'Product feasibility and technical approach',
@@ -45,6 +47,50 @@ const testimonials = [
 ];
 
 export default function BookStrategyCall() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    projectType: 'SaaS Development',
+    budget: 'Under $50K',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [submitSuccess, setSubmitSuccess] = useState('');
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmitError('');
+    setSubmitSuccess('');
+
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      setSubmitError('Please fill all required fields.');
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      await sendStrategyCallEmails(formData);
+      setSubmitSuccess('Request submitted successfully.');
+      window.alert('Form submitted successfully.');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        projectType: 'SaaS Development',
+        budget: 'Under $50K',
+        message: '',
+      });
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Failed to submit. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#020617]" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
@@ -126,15 +172,82 @@ export default function BookStrategyCall() {
               style={{ background: 'rgba(255,255,255,0.03)' }}
             >
               <h3 className="mb-6 text-center text-2xl font-semibold text-[#E5E7EB] md:text-4xl" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Schedule Your Call
+                Request Strategy Call
               </h3>
-              <div className="mx-auto h-[920px] max-w-[560px] overflow-hidden rounded-xl border border-[#1D8CFF]/10 bg-[#071427]/80">
-                <iframe
-                  src="https://calendly.com/soheltf/strategy-call-45min?hide_gdpr_banner=1&background_color=071427&text_color=e5e7eb&primary_color=2f80ed"
-                  title="Book a strategy call"
-                  className="h-full w-full"
+              <form className="space-y-4" onSubmit={onSubmit}>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <input
+                    type="text"
+                    placeholder="First name *"
+                    value={formData.firstName}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, firstName: event.target.value }))}
+                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Last name *"
+                    value={formData.lastName}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, lastName: event.target.value }))}
+                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]"
+                  />
+                </div>
+                <input
+                  type="email"
+                  placeholder="Business email *"
+                  value={formData.email}
+                  onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
+                  className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]"
                 />
-              </div>
+                <input
+                  type="text"
+                  placeholder="Company"
+                  value={formData.company}
+                  onChange={(event) => setFormData((prev) => ({ ...prev, company: event.target.value }))}
+                  className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]"
+                />
+                <div className="grid gap-4 md:grid-cols-2">
+                  <select
+                    value={formData.projectType}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, projectType: event.target.value }))}
+                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none focus:border-[#2F80ED]"
+                  >
+                    <option>SaaS Development</option>
+                    <option>AI Solutions</option>
+                    <option>On-Demand Applications</option>
+                    <option>White-Label Development</option>
+                    <option>E-Commerce Solutions</option>
+                  </select>
+                  <select
+                    value={formData.budget}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, budget: event.target.value }))}
+                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none focus:border-[#2F80ED]"
+                  >
+                    <option>Under $50K</option>
+                    <option>$50K - $100K</option>
+                    <option>$100K - $250K</option>
+                    <option>$250K+</option>
+                    <option>Need Guidance</option>
+                  </select>
+                </div>
+                <textarea
+                  rows={5}
+                  placeholder="Tell us about your project goals *"
+                  value={formData.message}
+                  onChange={(event) => setFormData((prev) => ({ ...prev, message: event.target.value }))}
+                  className="w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 py-3 text-sm leading-relaxed text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]"
+                />
+
+                {submitError ? <p className="text-sm text-[#f87171]">{submitError}</p> : null}
+                {submitSuccess ? <p className="text-sm text-[#4ade80]">{submitSuccess}</p> : null}
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="inline-flex h-11 w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white transition-all duration-200 hover:brightness-110"
+                >
+                  {isSubmitting ? 'Submitting...' : 'Send Strategy Call Request'}
+                </button>
+              </form>
             </motion.div>
           </div>
 

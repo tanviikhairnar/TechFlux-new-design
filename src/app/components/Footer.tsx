@@ -111,7 +111,10 @@ export function Footer() {
             <ul className="space-y-4 text-base">
               <li className="flex items-start gap-3">
                 <Mail className={contactIconClass} />
-                <span className="text-[#9CA3AF]">sales@techflux.in</span>
+                <div className="text-[#9CA3AF]">
+                  <p>Sohel@techflux.in</p>
+                  <p>Asrar@techflux.in</p>
+                </div>
               </li>
 
               <li className="flex items-start gap-3">

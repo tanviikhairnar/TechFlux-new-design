@@ -1,178 +1,270 @@
 import { motion } from 'motion/react';
 import {
-  Shield,
-  Zap,
+  BarChart3,
+  Building2,
+  CheckCircle2,
+  Cloud,
+  Cog,
+  CreditCard,
   Database,
-  Code2,
-  TrendingUp,
+  DollarSign,
+  GraduationCap,
+  Heart,
+  LayoutDashboard,
+  Lock,
+  Package,
+  Rocket,
+  Server,
+  Settings2,
+  ShieldCheck,
+  Target,
   Users,
+  Workflow,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 
-const challengePoints = [
-  'Scaling infrastructure as users grow',
-  'Managing complex subscription and billing logic',
-  'Ensuring data security and compliance (GDPR, SOC 2)',
-  'Building intuitive admin and user dashboards',
-  'Integrating with third-party APIs and tools',
-];
-
-const buildItems = [
+const saasSolutions = [
   {
-    title: 'Multi-Tenant Architecture',
-    desc: 'Efficient data isolation for each customer while sharing infrastructure for cost optimization.',
+    icon: Rocket,
+    title: 'SaaS MVP Development',
+    desc: 'Launch your idea fast with a validated MVP focused on core workflows and early traction.',
   },
   {
-    title: 'Subscription Management',
-    desc: 'Flexible billing plans, trial periods, upgrade/downgrade flows, and automated invoicing.',
+    icon: Cloud,
+    title: 'Multi-Tenant SaaS Platform',
+    desc: 'Scalable tenant architecture with clean data isolation and shared cloud infrastructure.',
   },
   {
-    title: 'Admin Dashboard',
-    desc: 'Comprehensive control panel for managing users, monitoring metrics, and system configuration.',
+    icon: CreditCard,
+    title: 'Subscription Platform',
+    desc: 'Recurring billing, plan upgrades, invoicing, trials, and payment gateway integration.',
   },
   {
-    title: 'User Management',
-    desc: 'Role-based permissions, team collaboration, SSO integration, and user provisioning.',
+    icon: LayoutDashboard,
+    title: 'Admin & Analytics Dashboards',
+    desc: 'Operational dashboards with business metrics, tenant monitoring, and reporting tools.',
   },
   {
-    title: 'Analytics & Reporting',
-    desc: 'Real-time dashboards, custom reports, usage tracking, and business intelligence.',
+    icon: Workflow,
+    title: 'B2B SaaS Products',
+    desc: 'Complex workflow products built for teams, approvals, integrations, and role-based access.',
   },
   {
-    title: 'API Integration',
-    desc: 'RESTful APIs, webhooks, third-party integrations, and developer documentation.',
-  },
-  {
-    title: 'Payment Processing',
-    desc: 'Stripe, PayPal integration, automatic billing, invoice generation, and tax handling.',
-  },
-  {
-    title: 'Notification System',
-    desc: 'Email, SMS, push notifications, in-app alerts, and customizable templates.',
+    icon: Building2,
+    title: 'Enterprise SaaS Systems',
+    desc: 'Enterprise-grade architecture with compliance, SSO, and long-term maintainability.',
   },
 ];
 
-const approachCards = [
+const stackItems = [
+  'React',
+  'Next.js',
+  'Node.js',
+  'Laravel',
+  'Python',
+  'Flutter',
+  'PostgreSQL',
+  'MongoDB',
+  'AWS',
+  'Stripe Billing',
+];
+
+const essentialFeatures = [
   {
     icon: Database,
-    title: 'Scalable Architecture',
-    desc: 'Multi-tenant database design, microservices architecture, and cloud-native infrastructure that grows with your business.',
+    title: 'Subscription Billing',
+    desc: 'Flexible plans, trial periods, upgrades, downgrades, and automated renewals.',
   },
   {
-    icon: Shield,
-    title: 'Enterprise Security',
-    desc: 'Role-based access control, data encryption, OWASP integration, and compliance with industry standards.',
+    icon: Cloud,
+    title: 'Cloud-Based Access',
+    desc: 'Secure SaaS access from anywhere with stable uptime and environment isolation.',
   },
   {
-    icon: Zap,
-    title: 'Fast Development',
-    desc: 'Agile methodology with bi-weekly sprints, continuous deployment, and rapid iteration based on user feedback.',
+    icon: Settings2,
+    title: 'API Integration',
+    desc: 'Connect with third-party tools, payment providers, CRMs, and internal systems.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Analytics Dashboard',
+    desc: 'Real-time data insights for revenue, usage trends, retention, and user behavior.',
+  },
+  {
+    icon: Users,
+    title: 'User Management',
+    desc: 'Role-based permissions, team accounts, onboarding, and secure access controls.',
+  },
+  {
+    icon: Server,
+    title: 'Multi-Tenant Architecture',
+    desc: 'Optimized infrastructure supporting multiple clients on one scalable platform.',
   },
 ];
 
-const techStack = [
-  { title: 'Frontend', stack: 'React, Next.js, TypeScript' },
-  { title: 'Backend', stack: 'Node.js, Python, PostgreSQL' },
-  { title: 'Cloud', stack: 'AWS, Azure, Google Cloud' },
-  { title: 'DevOps', stack: 'Docker, Kubernetes, CI/CD' },
+const pricingCards = [
+  {
+    title: 'SaaS MVP Development',
+    price: '$5,000',
+    bullets: ['Core feature set', 'User authentication', 'Admin dashboard', 'Payment integration'],
+  },
+  {
+    title: 'Custom SaaS Platform',
+    price: '$10,000',
+    bullets: ['Custom features', 'Multi-tenant setup', 'Advanced analytics', 'Third-party APIs'],
+  },
+  {
+    title: 'Enterprise SaaS Platform',
+    price: '$20,000',
+    bullets: ['Enterprise features', 'Custom integrations', 'Advanced security', 'Dedicated support'],
+  },
+];
+
+const industries = [
+  { icon: Heart, label: 'Healthcare', tone: 'bg-[#412246] text-[#D07AB9]' },
+  { icon: GraduationCap, label: 'EdTech', tone: 'bg-[#154366] text-[#67B7FF]' },
+  { icon: DollarSign, label: 'Finance', tone: 'bg-[#125340] text-[#5DD39D]' },
+  { icon: Package, label: 'Logistics', tone: 'bg-[#5B3C1A] text-[#E0B25E]' },
+  { icon: Target, label: 'Marketplaces', tone: 'bg-[#492960] text-[#C88DFF]' },
+  { icon: Cog, label: 'Productivity Tools', tone: 'bg-[#273A74] text-[#90AEFF]' },
+];
+
+const whyTechflux = [
+  {
+    icon: Cloud,
+    title: 'Scalable Architecture',
+    desc: 'Built to grow from MVP stage to enterprise usage without major rebuilds.',
+  },
+  {
+    icon: Rocket,
+    title: 'Fast Development',
+    desc: 'Agile delivery cycles with rapid iterations and transparent progress.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Enterprise Security',
+    desc: 'Security-first development with role controls and protected data flows.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Performance Optimized',
+    desc: 'Optimized backend and frontend performance for real-world production workloads.',
+  },
+  {
+    icon: Lock,
+    title: 'Long-Term Support',
+    desc: 'Ongoing maintenance and feature evolution for sustained product growth.',
+  },
+];
+
+const relatedServices = [
+  { title: 'AI Solutions', to: '/ai-solutions' },
+  { title: 'On-Demand Applications', to: '/on-demand-solutions' },
+  { title: 'E-commerce Development', to: '/e-commerce-solutions' },
+  { title: 'Game Development', to: '/unity-game-development' },
+  { title: 'White Label Partnership', to: '/become-partner' },
 ];
 
 export default function SaaSDevelopment() {
+  const ctaMailto = 'mailto:Sohel@techflux.in,Asrar@techflux.in?subject=Techflux%20Inquiry';
+
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-[#030914]" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#040B1B]" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
 
       <main className="relative">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-18%,rgba(38,132,255,0.22),transparent_40%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-18%,rgba(47,128,237,0.24),transparent_42%)]" />
 
-        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-24 pt-28 text-center md:pb-32 md:pt-40 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mx-auto flex min-h-[420px] w-full flex-col items-center justify-center lg:min-h-[520px]">
-              <div className="mx-auto mb-6 inline-flex rounded-full border border-[#2F80ED]/35 bg-[#0A1F43] px-4 py-1 text-sm text-[#7AB9FF]">
-                SaaS Development
-              </div>
+        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-24 pt-28 md:pb-32 md:pt-40 lg:px-5">
+          <div className="grid items-center gap-12 lg:min-h-[520px] md:grid-cols-2">
+            <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
               <h1
-                id="saas-development-heading"
-                className="mx-auto max-w-[820px] text-4xl font-bold leading-tight text-[#D8DEE8] sm:text-5xl md:text-6xl"
+                className="max-w-[520px] text-4xl font-bold leading-tight text-[#E5ECF8] md:text-5xl"
                 style={{ fontFamily: 'Sora, sans-serif' }}
               >
-                Build Scalable SaaS Platforms That Drive Growth
+                Scalable SaaS Product Development
               </h1>
-              <p className="mx-auto mt-5 max-w-[780px] text-base leading-relaxed text-[#8A96AA] md:text-lg">
-                From MVP to enterprise scale, we architect and develop software-as-a-service platforms with robust
-                subscription management, multi-tenant architecture, and enterprise-grade security.
+              <p className="mt-4 max-w-[550px] text-sm leading-7 text-[#9AA9C4] md:text-base">
+                We design and build robust SaaS platforms with subscription systems, multi-tenant architecture, and
+                secure admin workflows.
               </p>
-              <Link
-                to="/book-strategy-call"
-                className="mt-8 inline-flex h-[52px] items-center rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-sm font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.28)] transition-all hover:brightness-110"
-              >
-                Book Strategy Call
-              </Link>
-          </motion.div>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a
+                  href={ctaMailto}
+                  className="rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_20px_rgba(56,169,255,0.28)] transition-all hover:brightness-110"
+                >
+                  Get Project Estimate
+                </a>
+                <a
+                  href={ctaMailto}
+                  className="rounded-[10px] border border-[#2F80ED]/45 bg-[#112241] px-5 py-3 text-sm font-semibold text-[#DDE7F9] transition-all hover:bg-[#18325D]"
+                >
+                  Book Strategy Call
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.08 }}
+              className="overflow-hidden rounded-xl border border-white/10 bg-[#0D1B35]"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1551281044-8ca9f58b3b4c?auto=format&fit=crop&w=1400&q=80"
+                alt="SaaS analytics dashboard"
+                className="h-[360px] w-full object-cover lg:h-[430px]"
+              />
+            </motion.div>
+          </div>
         </section>
 
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                SaaS Solutions We Build
-              </h2>
-              <p className="text-sm text-[#8A96AA] md:text-[15px]">Complete SaaS platforms designed for scalability, security, and rapid growth.</p>
-            </motion.div>
-
+            <h2 className="mb-9 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              SaaS Solutions We Build
+            </h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {[
-                { title: 'SaaS MVP Development', desc: 'Launch your SaaS concept quickly with a validated MVP that proves market demand.' },
-                { title: 'Multi-Tenant Platforms', desc: 'Efficient data isolation and shared infrastructure for cost-optimized scaling.' },
-                { title: 'Subscription & Billing', desc: 'Flexible billing plans, automated invoicing, trial management, and payment processing.' },
-                { title: 'Admin & Analytics', desc: 'Comprehensive dashboards for system management, reporting, and business intelligence.' },
-                { title: 'User Management & SSO', desc: 'Role-based permissions, team collaboration, and enterprise authentication.' },
-                { title: 'API & Integrations', desc: 'RESTful APIs, webhooks, third-party integrations, and developer documentation.' },
-              ].map((item, i) => (
+              {saasSolutions.map((item, i) => (
                 <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 24 }}
+                  key={item.title}
+                  initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -5 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                  className="rounded-xl border border-white/5 bg-[#0F1B31] p-6 hover:border-[#2F80ED]/30 transition-all"
+                  transition={{ delay: i * 0.05 }}
+                  className="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
-                  <h3 className="mb-2 text-lg font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-[13px] leading-6 text-[#8A96AA]">{item.desc}</p>
+                  <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]">
+                    <item.icon className="h-4 w-4 text-[#2F80ED]" />
+                  </div>
+                  <h3 className="mb-2 text-[15px] font-semibold leading-6 text-[#E5ECF8]">{item.title}</h3>
+                  <p className="text-[13px] leading-6 text-[#95A4BF]">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#081327] py-20">
+        <section className="border-y border-white/5 bg-[#081427] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                SaaS Technology Stack
-              </h2>
-              <p className="text-sm text-[#8A96AA] md:text-[15px]">
-                We use battle-tested technologies that ensure reliability, performance, and scalability.
-              </p>
-            </motion.div>
-
-            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-              {techStack.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                  className="rounded-xl border border-white/5 bg-[#0C1527] p-6 text-center"
+            <h2 className="mb-3 text-center text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              SaaS Technology Stack
+            </h2>
+            <p className="mx-auto mb-10 max-w-[760px] text-center text-sm text-[#8A96AA] md:text-[15px]">
+              We leverage modern technologies to build scalable, maintainable, and high-performance SaaS platforms.
+            </p>
+            <div className="mb-8 h-px w-full bg-white/10" />
+            <div className="mx-auto flex max-w-[1400px] flex-wrap justify-center gap-4">
+              {stackItems.map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex min-h-[72px] min-w-[120px] items-center justify-center rounded-2xl border border-[#1E2D46] bg-[#121F39] px-8 py-4 text-[16px] font-semibold tracking-wide text-[#D8DEE8] transition-all hover:border-[#2F80ED]/45 hover:bg-[#152645]"
                 >
-                  <Code2 className="mx-auto mb-4 h-5 w-5 text-[#2F80ED]" />
-                  <h3 className="mb-1 text-[15px] font-semibold text-[#D8DEE8]">{item.title}</h3>
-                  <p className="text-xs text-[#8A96AA]">{item.stack}</p>
-                </motion.div>
+                  {item}
+                </span>
               ))}
             </div>
           </div>
@@ -180,68 +272,59 @@ export default function SaaSDevelopment() {
 
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Essential SaaS Features
-              </h2>
-              <p className="text-sm text-[#8A96AA] md:text-[15px]">Core capabilities we build into every enterprise SaaS platform.</p>
-            </motion.div>
-
+            <h2 className="mb-9 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              Essential SaaS Features
+            </h2>
             <div className="grid gap-4 md:grid-cols-3">
-              {buildItems.map((item, i) => (
+              {essentialFeatures.map((item, i) => (
                 <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  key={item.title}
+                  initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -5 }}
                   viewport={{ once: true }}
-                  transition={{ delay: (i % 3) * 0.06 }}
-                  className="rounded-xl border border-white/5 bg-[#0F1B31] p-5"
+                  transition={{ delay: i * 0.05 }}
+                  className="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
-                  <div className="mb-2 flex items-center gap-2.5">
-                    <span className="inline-flex h-3.5 w-3.5 items-center justify-center rounded-full border border-[#2F80ED]/80">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#2F80ED]" />
-                    </span>
-                    <h3 className="text-[15px] font-semibold text-[#D8DEE8]">{item.title}</h3>
+                  <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]">
+                    <item.icon className="h-4 w-4 text-[#2F80ED]" />
                   </div>
-                  <p className="text-[13px] leading-6 text-[#8A96AA]">{item.desc}</p>
+                  <h3 className="mb-2 text-[15px] font-semibold leading-6 text-[#E5ECF8]">{item.title}</h3>
+                  <p className="text-[13px] leading-6 text-[#95A4BF]">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#081327] py-20">
+        <section className="border-y border-white/5 bg-[#081427] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Choose Your SaaS Solution
-              </h2>
-            </motion.div>
-
-            <div className="overflow-x-auto rounded-xl border border-white/5 bg-[#0F1B31]">
-              <table className="w-full">
+            <h2 className="mb-8 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              Choose Your SaaS Solution
+            </h2>
+            <div className="overflow-x-auto rounded-xl border border-white/5 bg-[#0C1830]">
+              <table className="w-full min-w-[760px]">
                 <thead>
                   <tr className="border-b border-white/5">
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#D8DEE8]">Solution Type</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-[#D8DEE8]">MVP Development</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-[#D8DEE8]">Startup SaaS</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-[#D8DEE8]">Enterprise SaaS</th>
+                    {['Solution Type', 'Development Time', 'Scalability', 'Best For', 'Maintenance'].map((head) => (
+                      <th key={head} className="px-5 py-4 text-left text-xs font-semibold tracking-wide text-[#D5E0F3]">
+                        {head}
+                      </th>
+                    ))}
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { feature: 'Core Features', mvp: '✓', startup: '✓', enterprise: '✓' },
-                    { feature: 'Multi-Tenant', mvp: '—', startup: '✓', enterprise: '✓' },
-                    { feature: 'Subscription Billing', mvp: '—', startup: '✓', enterprise: '✓' },
-                    { feature: 'Admin Dashboard', mvp: 'Basic', startup: '✓', enterprise: '✓' },
-                    { feature: 'API & Webhooks', mvp: '—', startup: 'Basic', enterprise: '✓' },
-                    { feature: 'SSO/Security', mvp: 'Basic', startup: 'Standard', enterprise: 'Enterprise' },
-                  ].map((row, i) => (
-                    <tr key={i} className="border-b border-white/5">
-                      <td className="px-6 py-4 text-sm text-[#D8DEE8]">{row.feature}</td>
-                      <td className="px-6 py-4 text-center text-sm text-[#8A96AA]">{row.mvp}</td>
-                      <td className="px-6 py-4 text-center text-sm text-[#8A96AA]">{row.startup}</td>
-                      <td className="px-6 py-4 text-center text-sm text-[#8A96AA]">{row.enterprise}</td>
+                    ['MVP SaaS Platform', '2-3 months', 'Medium', 'Core feature launch', 'Standard'],
+                    ['Enterprise SaaS Platform', '4-6 months', 'Very High', 'Mid-size teams', 'Premium'],
+                    ['Marketplace SaaS', '3-5 months', 'High', 'Multi-vendor platforms', 'Enterprise'],
+                  ].map((row) => (
+                    <tr key={row[0]} className="border-b border-white/5">
+                      {row.map((cell) => (
+                        <td key={cell} className="px-5 py-4 text-sm text-[#9FB0CF]">
+                          {cell}
+                        </td>
+                      ))}
                     </tr>
                   ))}
                 </tbody>
@@ -252,66 +335,59 @@ export default function SaaSDevelopment() {
 
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Typical Project Investment
-              </h2>
-            </motion.div>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              {[
-                { title: 'SaaS MVP Development', price: '$15,000', features: ['Core workflow', 'Basic dashboard', 'User authentication', 'Payment processing'] },
-                { title: 'Custom SaaS Platform', price: '$50,000', features: ['Multi-tenant', 'Advanced analytics', 'API integration', 'Enterprise security'] },
-                { title: 'Enterprise SaaS Solution', price: '$100,000+', features: ['Full compliance', 'SSO integration', 'Custom workflows', 'Dedicated support'] },
-              ].map((item, i) => (
+            <h2 className="mb-9 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              Typical Project Investment
+            </h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              {pricingCards.map((card, i) => (
                 <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 24 }}
+                  key={card.title}
+                  initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="rounded-xl border border-white/5 bg-[#0F1B31] p-7"
+                  transition={{ delay: i * 0.06 }}
+                  className="rounded-2xl border border-[#1D2B44] bg-[#101B33] p-8 md:p-10"
                 >
-                  <h3 className="mb-2 text-lg font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                    {item.title}
-                  </h3>
-                  <p className="mb-5 text-2xl font-bold text-[#2F80ED]">{item.price}</p>
-                  <ul className="space-y-2">
-                    {item.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-[13px] text-[#8A96AA]">
-                        <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#2F80ED]" />
-                        {feature}
+                  <p className="text-[20px] font-semibold text-[#E7EDF9]">{card.title}</p>
+                  <p className="mt-4 text-sm text-[#95A4BF]">Starting from</p>
+                  <p className="text-[56px] font-bold leading-[1.1] text-[#2F80ED] md:text-[58px]">
+                    {card.price}
+                  </p>
+                  <ul className="mt-7 space-y-3.5">
+                    {card.bullets.map((bullet) => (
+                      <li key={bullet} className="flex items-center gap-3 text-[15px] text-[#9EABC2]">
+                        <CheckCircle2 className="h-5 w-5 shrink-0 text-[#2F80ED]" />
+                        {bullet}
                       </li>
                     ))}
                   </ul>
                 </motion.div>
               ))}
             </div>
+            <p className="mt-8 text-center text-sm text-[#9AA7BF] md:text-[15px]">
+              * Final pricing depends on features, integrations, and scalability requirements.
+            </p>
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#081327] py-20">
+        <section className="border-y border-white/5 bg-[#081427] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Industries Using Our SaaS Solutions
-              </h2>
-            </motion.div>
-
+            <h2 className="mb-9 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              Industries Using Our SaaS Solutions
+            </h2>
             <div className="grid gap-6 sm:grid-cols-3 md:grid-cols-6">
-              {['Healthcare', 'FinTech', 'Finance', 'Logistics', 'Manufacturing', 'Productivity'].map((industry, i) => (
+              {industries.map((item) => (
                 <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  key={item.label}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="flex flex-col items-center gap-3 rounded-xl border border-white/5 bg-[#0C1527] p-6 text-center"
+                  className="flex min-h-[200px] flex-col items-center justify-center rounded-2xl border border-[#1E2D45] bg-[#111D36] p-7 text-center"
                 >
-                  <div className="h-12 w-12 rounded-lg border border-[#2F80ED]/30 bg-[#0F2A5F] flex items-center justify-center">
-                    <Code2 className="h-5 w-5 text-[#2F80ED]" />
+                  <div className={`mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-2xl ${item.tone}`}>
+                    <item.icon className="h-8 w-8" />
                   </div>
-                  <p className="text-sm font-medium text-[#D8DEE8]">{industry}</p>
+                  <p className="max-w-[150px] text-[17px] font-semibold leading-snug text-[#E3EAF8]">{item.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -320,67 +396,56 @@ export default function SaaSDevelopment() {
 
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                SaaS Platform We've Built
-              </h2>
-            </motion.div>
-
-            <div className="rounded-xl border border-white/5 bg-[#0F1B31] overflow-hidden">
-              <div className="grid md:grid-cols-2">
-                <img src="https://images.unsplash.com/photo-1493857671505-72967e2ceb2d?auto=format&fit=crop&w=600&q=80" alt="Leave Certificate Platform" className="h-64 object-cover" />
-                <div className="p-8 flex flex-col justify-center">
-                  <h3 className="mb-4 text-2xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h2 className="mb-8 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              SaaS Platform We&apos;ve Built
+            </h2>
+            <div className="overflow-hidden rounded-2xl border border-white/5 bg-[#0C1830]">
+              <div className="grid md:grid-cols-[1.05fr_1fr]">
+                <img
+                  src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?auto=format&fit=crop&w=1200&q=80"
+                  alt="Leave Certificate SaaS platform"
+                  className="h-[280px] w-full object-cover md:h-[330px]"
+                />
+                <div className="p-7 md:p-8">
+                  <span className="inline-flex rounded-full border border-[#2F80ED]/40 bg-[#102548] px-3 py-1 text-xs text-[#7AB9FF]">
+                    Case Study
+                  </span>
+                  <h3 className="mt-4 text-xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     Leave Certificate - SaaS Platform
                   </h3>
-                  <p className="mb-6 text-[13px] leading-6 text-[#8A96AA]">
-                    Built a comprehensive leave management SaaS serving hundreds of companies, featuring automated leave tracking, approval workflows, and employee self-service portals with role-based access control.
+                  <p className="mt-3 text-sm leading-7 text-[#95A4BF]">
+                    Digital document management platform for educational institutions with secure records, multi-user
+                    workflows, and automated certificate generation.
                   </p>
-                  <div className="flex gap-3">
-                    <div>
-                      <p className="text-xs text-[#56A9F5] font-semibold">Companies</p>
-                      <p className="text-sm font-semibold text-[#D8DEE8]">500+</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-[#56A9F5] font-semibold">Active Users</p>
-                      <p className="text-sm font-semibold text-[#D8DEE8]">50K+</p>
-                    </div>
-                  </div>
+                  <Link to="/leave-certificate-case-study" className="mt-5 inline-block text-sm font-semibold text-[#4FB1FF] hover:text-[#79C5FF]">
+                    View Case Study
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#081327] py-20">
+        <section className="border-y border-white/5 bg-[#081427] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Why Businesses Choose TechFlux
-              </h2>
-            </motion.div>
-
-            <div className="grid gap-6 md:grid-cols-3">
-              {[
-                { title: 'Scalable Architecture', desc: 'Built from day one to scale from 100 to 100K+ users without rebuilds.' },
-                { title: 'Fast Development', desc: 'Proven frameworks and modular code enable rapid iterations and quick time-to-market.' },
-                { title: 'Enterprise Security', desc: 'SOC 2 ready, data encryption, compliance standards, and role-based access control.' },
-                { title: 'Performance Optimized', desc: 'Optimized databases, caching strategies, and CDN integration for sub-second responses.' },
-                { title: 'Long-Term Support', desc: 'Ongoing maintenance, feature roadmaps, and dedicated technical support included.' },
-                { title: 'Transparent Pricing', desc: 'No hidden costs. Clear cost projections and economic viability from the start.' },
-              ].map((item, i) => (
+            <h2 className="mb-9 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              Why Businesses Choose TechFlux
+            </h2>
+            <div className="grid gap-5 md:grid-cols-3">
+              {whyTechflux.map((item, i) => (
                 <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 24 }}
+                  key={item.title}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                  className="rounded-xl border border-white/5 bg-[#0C1527] p-6"
+                  transition={{ delay: i * 0.05 }}
+                  className="rounded-2xl border border-[#1E2D45] bg-[#111D36] p-8 transition-all duration-300 hover:border-[#2F80ED]/35"
                 >
-                  <h3 className="mb-2 text-lg font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-[13px] leading-6 text-[#8A96AA]">{item.desc}</p>
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center">
+                    <item.icon className="h-10 w-10 text-[#2F80ED]" />
+                  </div>
+                  <h3 className="mb-3 text-[17px] font-semibold leading-tight text-[#E5ECF8]">{item.title}</h3>
+                  <p className="text-[15px] leading-7 text-[#95A4BF]">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -389,31 +454,17 @@ export default function SaaSDevelopment() {
 
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Explore Related Services
-              </h2>
-            </motion.div>
-
-            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-              {[
-                { title: 'AI Solutions', link: '/ai-solutions' },
-                { title: 'On-Demand Solutions', link: '/on-demand-solutions' },
-                { title: 'E-Commerce Solutions', link: '/e-commerce-solutions' },
-                { title: 'White-Label Partnership', link: '/services/white-label-partnership' },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                >
+            <h2 className="mb-8 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              Explore Related Services
+            </h2>
+            <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-5">
+              {relatedServices.map((service) => (
+                <motion.div key={service.title} whileHover={{ y: -3 }} transition={{ duration: 0.2 }}>
                   <Link
-                    to={item.link}
-                    className="block rounded-xl border border-white/5 bg-[#0F1B31] p-6 text-center hover:border-[#2F80ED]/30 transition-all"
+                    to={service.to}
+                    className="flex min-h-[58px] items-center justify-center rounded-lg border border-white/5 bg-[#0C1830] px-4 py-3 text-center text-sm font-medium text-[#D7E2F6] transition-all duration-300 hover:border-[#2F80ED]/35 hover:bg-[#112241] hover:text-white"
                   >
-                    <p className="font-semibold text-[#D8DEE8]">{item.title}</p>
+                    {service.title}
                   </Link>
                 </motion.div>
               ))}
@@ -421,35 +472,30 @@ export default function SaaSDevelopment() {
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="pb-20 pt-6 md:pb-24 md:pt-8">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="rounded-2xl border border-white/5 bg-[#0D172B] px-8 py-12 text-center md:px-12"
-            >
-              <h2 className="mb-4 text-[40px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <div className="rounded-2xl border border-[#24406B] bg-[linear-gradient(135deg,#16345D_0%,#223C67_55%,#2A4775_100%)] px-8 py-12 text-center">
+              <h2 className="text-3xl font-semibold text-white md:text-4xl" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Ready to Build Your SaaS Platform?
               </h2>
-              <p className="mx-auto mb-8 max-w-[760px] text-sm text-[#8A96AA] md:text-[15px]">
-                Let&apos;s discuss your vision and create a roadmap to launch your SaaS product successfully.
+              <p className="mx-auto mb-8 mt-4 max-w-[700px] text-sm text-[#D0DDF1] md:text-base">
+                Let&apos;s discuss your SaaS product vision and build a roadmap for launch and long-term growth.
               </p>
-              <div className="flex flex-col justify-center gap-4 sm:flex-row">
-                <Link
-                  to="/book-strategy-call"
-                  className="rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 py-3 text-sm font-medium text-white"
-                >
-                  Book Strategy Call
-                </Link>
-                <Link
-                  to="/get-estimate"
-                  className="rounded-[10px] border border-[#2F80ED] px-8 py-3 text-sm font-medium text-[#4CA1FF] hover:bg-[#2F80ED]/10"
+              <div className="flex flex-col justify-center gap-3 sm:flex-row">
+                <a
+                  href={ctaMailto}
+                  className="rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-6 py-3 text-sm font-semibold text-white shadow-[0_0_16px_rgba(56,169,255,0.3)]"
                 >
                   Get Project Estimate
-                </Link>
+                </a>
+                <a
+                  href={ctaMailto}
+                  className="rounded-[10px] border border-[#8FBDF3]/40 bg-[#223F68] px-6 py-3 text-sm font-semibold text-[#E6F0FF]"
+                >
+                  Book Strategy Call
+                </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>

@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
 import { CheckCircle2, Send } from 'lucide-react';
+import { FormEvent, useState } from 'react';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
+import { sendEstimateEmails } from '../lib/leadEmailService';
 
 const nextSteps = [
   { title: 'We Review', text: 'Our team analyzes your project requirements' },
@@ -18,6 +20,52 @@ const whyItems = [
 ];
 
 export default function GetEstimate() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    projectType: 'SaaS Development',
+    budget: 'Under $50K',
+    timeline: 'ASAP (within 3 months)',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [submitSuccess, setSubmitSuccess] = useState('');
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmitError('');
+    setSubmitSuccess('');
+
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      setSubmitError('Please fill all required fields.');
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      await sendEstimateEmails(formData);
+      setSubmitSuccess('Request submitted successfully.');
+      window.alert('Form submitted successfully.');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        projectType: 'SaaS Development',
+        budget: 'Under $50K',
+        timeline: 'ASAP (within 3 months)',
+        message: '',
+      });
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Failed to submit. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#020617]" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
@@ -52,24 +100,39 @@ export default function GetEstimate() {
                 Project Details
               </h2>
 
-              <form className="space-y-5">
+              <form className="space-y-5" onSubmit={onSubmit}>
                 <div className="grid gap-5 md:grid-cols-2">
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Name *</label>
+                    <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">First Name *</label>
                     <input
                       type="text"
-                      placeholder="Your name"
+                      placeholder="First name"
+                      value={formData.firstName}
+                      onChange={(event) => setFormData((prev) => ({ ...prev, firstName: event.target.value }))}
                       className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
                     />
                   </div>
                   <div>
+                    <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Last Name *</label>
+                    <input
+                      type="text"
+                      placeholder="Last name"
+                      value={formData.lastName}
+                      onChange={(event) => setFormData((prev) => ({ ...prev, lastName: event.target.value }))}
+                      className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
+                    />
+                  </div>
+                </div>
+
+                <div>
                     <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Email *</label>
                     <input
                       type="email"
                       placeholder="your.email@company.com"
+                      value={formData.email}
+                      onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
                       className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
                     />
-                  </div>
                 </div>
 
                 <div>
@@ -77,13 +140,19 @@ export default function GetEstimate() {
                   <input
                     type="text"
                     placeholder="Your company name"
+                    value={formData.company}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, company: event.target.value }))}
                     className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
                   />
                 </div>
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Project Type *</label>
-                  <select className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 ease-out hover:border-[#2A4B7E] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]">
+                  <select
+                    value={formData.projectType}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, projectType: event.target.value }))}
+                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 ease-out hover:border-[#2A4B7E] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                  >
                     <option>SaaS Development</option>
                     <option>AI Solutions</option>
                     <option>On-Demand Applications</option>
@@ -94,7 +163,11 @@ export default function GetEstimate() {
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Budget Range *</label>
-                  <select className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 ease-out hover:border-[#2A4B7E] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]">
+                  <select
+                    value={formData.budget}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, budget: event.target.value }))}
+                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 ease-out hover:border-[#2A4B7E] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                  >
                     <option>Under $50K</option>
                     <option>$50K - $100K</option>
                     <option>$100K - $250K</option>
@@ -105,7 +178,11 @@ export default function GetEstimate() {
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Desired Timeline *</label>
-                  <select className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 ease-out hover:border-[#2A4B7E] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]">
+                  <select
+                    value={formData.timeline}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, timeline: event.target.value }))}
+                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 ease-out hover:border-[#2A4B7E] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                  >
                     <option>ASAP (within 3 months)</option>
                     <option>3-6 months</option>
                     <option>6-12 months</option>
@@ -119,16 +196,22 @@ export default function GetEstimate() {
                   <textarea
                     rows={6}
                     placeholder="Tell us about your project: What problem does it solve? Who are your users? What are the key features? Any technical requirements or integrations?"
+                    value={formData.message}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, message: event.target.value }))}
                     className="w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 py-3 text-sm leading-relaxed text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
                   />
                 </div>
 
+                {submitError ? <p className="text-sm text-[#f87171]">{submitError}</p> : null}
+                {submitSuccess ? <p className="text-sm text-[#4ade80]">{submitSuccess}</p> : null}
+
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_10px_28px_rgba(47,128,237,0.45)]"
                 >
                   <Send className="h-4 w-4" />
-                  Submit Project Details
+                  {isSubmitting ? 'Submitting...' : 'Submit Project Details'}
                 </button>
               </form>
             </motion.div>

@@ -1,12 +1,57 @@
 import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import { sendContactEmails } from '../lib/leadEmailService';
 
 export default function Contact() {
   const contactIconWrapClass = 'mt-0.5 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#13376A]';
   const contactIconClass = 'h-5 w-5 text-[#2F80ED] stroke-[2.1]';
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    projectType: 'SaaS Development',
+    budget: 'Under $50K',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [submitSuccess, setSubmitSuccess] = useState('');
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmitError('');
+    setSubmitSuccess('');
+
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      setSubmitError('Please fill all required fields.');
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      await sendContactEmails(formData);
+      setSubmitSuccess('Message submitted successfully.');
+      window.alert('Form submitted successfully.');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        projectType: 'SaaS Development',
+        budget: 'Under $50K',
+        message: '',
+      });
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Failed to submit. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="w-full min-h-screen overflow-x-hidden bg-[#020617]" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -42,14 +87,28 @@ export default function Contact() {
                 Send us a message
               </h2>
 
-              <form className="space-y-5">
-                <div>
-                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB] md:text-[15px]">Name</label>
-                  <input
-                    type="text"
-                    placeholder="Your name"
-                    className="w-full rounded-xl border border-[#203A64] bg-[#0E1A31] px-4 py-[11px] text-sm text-[#E5E7EB] placeholder:text-[#6F819E] focus:border-[#2F80ED] focus:outline-none md:text-[15px]"
-                  />
+              <form className="space-y-5" onSubmit={onSubmit}>
+                <div className="grid gap-5 md:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-[#E5E7EB] md:text-[15px]">First Name</label>
+                    <input
+                      type="text"
+                      placeholder="First name"
+                      value={formData.firstName}
+                      onChange={(event) => setFormData((prev) => ({ ...prev, firstName: event.target.value }))}
+                      className="w-full rounded-xl border border-[#203A64] bg-[#0E1A31] px-4 py-[11px] text-sm text-[#E5E7EB] placeholder:text-[#6F819E] focus:border-[#2F80ED] focus:outline-none md:text-[15px]"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-[#E5E7EB] md:text-[15px]">Last Name</label>
+                    <input
+                      type="text"
+                      placeholder="Last name"
+                      value={formData.lastName}
+                      onChange={(event) => setFormData((prev) => ({ ...prev, lastName: event.target.value }))}
+                      className="w-full rounded-xl border border-[#203A64] bg-[#0E1A31] px-4 py-[11px] text-sm text-[#E5E7EB] placeholder:text-[#6F819E] focus:border-[#2F80ED] focus:outline-none md:text-[15px]"
+                    />
+                  </div>
                 </div>
 
                 <div>
@@ -57,6 +116,8 @@ export default function Contact() {
                   <input
                     type="email"
                     placeholder="your.email@company.com"
+                    value={formData.email}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
                     className="w-full rounded-xl border border-[#203A64] bg-[#0E1A31] px-4 py-[11px] text-sm text-[#E5E7EB] placeholder:text-[#6F819E] focus:border-[#2F80ED] focus:outline-none md:text-[15px]"
                   />
                 </div>
@@ -66,13 +127,19 @@ export default function Contact() {
                   <input
                     type="text"
                     placeholder="Your company name"
+                    value={formData.company}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, company: event.target.value }))}
                     className="w-full rounded-xl border border-[#203A64] bg-[#0E1A31] px-4 py-[11px] text-sm text-[#E5E7EB] placeholder:text-[#6F819E] focus:border-[#2F80ED] focus:outline-none md:text-[15px]"
                   />
                 </div>
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB] md:text-[15px]">Project Type</label>
-                  <select className="w-full rounded-xl border border-[#203A64] bg-[#0E1A31] px-4 py-[11px] text-sm text-[#E5E7EB] focus:border-[#2F80ED] focus:outline-none md:text-[15px]">
+                  <select
+                    value={formData.projectType}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, projectType: event.target.value }))}
+                    className="w-full rounded-xl border border-[#203A64] bg-[#0E1A31] px-4 py-[11px] text-sm text-[#E5E7EB] focus:border-[#2F80ED] focus:outline-none md:text-[15px]"
+                  >
                     <option>SaaS Development</option>
                     <option>AI Solutions</option>
                     <option>On-Demand Applications</option>
@@ -82,7 +149,11 @@ export default function Contact() {
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB] md:text-[15px]">Budget</label>
-                  <select className="w-full rounded-xl border border-[#203A64] bg-[#0E1A31] px-4 py-[11px] text-sm text-[#E5E7EB] focus:border-[#2F80ED] focus:outline-none md:text-[15px]">
+                  <select
+                    value={formData.budget}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, budget: event.target.value }))}
+                    className="w-full rounded-xl border border-[#203A64] bg-[#0E1A31] px-4 py-[11px] text-sm text-[#E5E7EB] focus:border-[#2F80ED] focus:outline-none md:text-[15px]"
+                  >
                     <option>Under $50K</option>
                     <option>$50K - $100K</option>
                     <option>$100K - $250K</option>
@@ -95,16 +166,22 @@ export default function Contact() {
                   <textarea
                     rows={4}
                     placeholder="Tell us about your project..."
+                    value={formData.message}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, message: event.target.value }))}
                     className="w-full resize-none rounded-xl border border-[#203A64] bg-[#0E1A31] px-4 py-[11px] text-sm text-[#E5E7EB] placeholder:text-[#6F819E] focus:border-[#2F80ED] focus:outline-none md:text-[15px]"
                   />
                 </div>
 
+                {submitError ? <p className="text-sm text-[#f87171]">{submitError}</p> : null}
+                {submitSuccess ? <p className="text-sm text-[#4ade80]">{submitSuccess}</p> : null}
+
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#38A9FF] to-[#2B7BDF] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all hover:brightness-110 md:text-[15px]"
                 >
                   <Send className="h-5 w-5" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </motion.div>
@@ -127,7 +204,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-[#E5E7EB] md:text-lg">Email</h3>
-                      <p className="text-sm text-[#94A3B8] md:text-base">sales@techflux.in</p>
+                      <p className="text-sm text-[#94A3B8] md:text-base">Sohel@techflux.in</p>
+                      <p className="text-sm text-[#94A3B8] md:text-base">Asrar@techflux.in</p>
                     </div>
                   </div>
 

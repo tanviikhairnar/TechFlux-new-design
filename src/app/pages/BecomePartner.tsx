@@ -1,7 +1,9 @@
 import { motion } from 'motion/react';
 import { CheckCircle2, DollarSign, Handshake, Send, Users } from 'lucide-react';
+import { FormEvent, useState } from 'react';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
+import { sendPartnerEmails } from '../lib/leadEmailService';
 
 const perfectFor = [
   {
@@ -80,6 +82,50 @@ const benefits = [
 ];
 
 export default function BecomePartner() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    agencyType: '',
+    services: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [submitSuccess, setSubmitSuccess] = useState('');
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmitError('');
+    setSubmitSuccess('');
+
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.company || !formData.message) {
+      setSubmitError('Please fill all required fields.');
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      await sendPartnerEmails(formData);
+      setSubmitSuccess('Request submitted successfully.');
+      window.alert('Form submitted successfully.');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        agencyType: '',
+        services: '',
+        message: '',
+      });
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Failed to submit. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#020617]" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
@@ -154,34 +200,90 @@ export default function BecomePartner() {
               <h2 className="mb-5 text-3xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Partner Application
               </h2>
-              <form className="space-y-4.5">
-                <div>
-                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Contact Name *</label>
-                  <input type="text" placeholder="Your name" className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]" />
+              <form className="space-y-4.5" onSubmit={onSubmit}>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">First Name *</label>
+                    <input
+                      type="text"
+                      placeholder="First name"
+                      value={formData.firstName}
+                      onChange={(event) => setFormData((prev) => ({ ...prev, firstName: event.target.value }))}
+                      className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Last Name *</label>
+                    <input
+                      type="text"
+                      placeholder="Last name"
+                      value={formData.lastName}
+                      onChange={(event) => setFormData((prev) => ({ ...prev, lastName: event.target.value }))}
+                      className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                    />
+                  </div>
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Email *</label>
-                  <input type="email" placeholder="your.email@agency.com" className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]" />
+                  <input
+                    type="email"
+                    placeholder="your.email@agency.com"
+                    value={formData.email}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
+                    className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                  />
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Agency/Company Name *</label>
-                  <input type="text" placeholder="Your company name" className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]" />
+                  <input
+                    type="text"
+                    placeholder="Your company name"
+                    value={formData.company}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, company: event.target.value }))}
+                    className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                  />
                 </div>
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Website (optional)</label>
-                  <input type="text" placeholder="https://yourwebsite.com" className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]" />
+                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Agency Type</label>
+                  <input
+                    type="text"
+                    placeholder="Agency, Consultant, Reseller..."
+                    value={formData.agencyType}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, agencyType: event.target.value }))}
+                    className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                  />
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Current Services *</label>
-                  <textarea rows={3} placeholder="What services do you currently offer?" className="w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]" />
+                  <textarea
+                    rows={3}
+                    placeholder="What services do you currently offer?"
+                    value={formData.services}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, services: event.target.value }))}
+                    className="w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                  />
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Why Partner With Us? *</label>
-                  <textarea rows={4} placeholder="Tell us about your goals and what you're looking for in a development partner..." className="w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]" />
+                  <textarea
+                    rows={4}
+                    placeholder="Tell us about your goals and what you're looking for in a development partner..."
+                    value={formData.message}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, message: event.target.value }))}
+                    className="w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                  />
                 </div>
-                <button type="submit" className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110">
+
+                {submitError ? <p className="text-sm text-[#f87171]">{submitError}</p> : null}
+                {submitSuccess ? <p className="text-sm text-[#4ade80]">{submitSuccess}</p> : null}
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
+                >
                   <Send className="h-4 w-4" />
-                  Submit Partnership Application
+                  {isSubmitting ? 'Submitting...' : 'Submit Partnership Application'}
                 </button>
               </form>
             </div>
