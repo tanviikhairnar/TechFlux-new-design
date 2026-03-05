@@ -738,30 +738,30 @@ export default function Home() {
             {[
               {
                 image:
-                  "https://images.unsplash.com/photo-1575388902449-6bca946ad549?auto=format&fit=crop&w=1080&q=80",
-                category: "SaaS",
-                title: "Analytics Dashboard",
+                  "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80",
+                category: "Service Marketplace",
+                title: "Servyo",
                 description:
-                  "Built a multi-tenant analytics platform serving 10,000+ users with 99.9% uptime.",
-                metric: "300% revenue growth",
+                  "Multi-role platform with real-time booking and subscriptions.",
+                metric: "Booking + subscriptions",
               },
               {
                 image:
-                  "https://images.unsplash.com/photo-1707836868495-3307d371aba4?auto=format&fit=crop&w=1080&q=80",
-                category: "AI",
-                title: "AI Shopping Assistant",
+                  "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80",
+                category: "Automotive",
+                title: "Allstar Premier Auto",
                 description:
-                  "Developed an AI-powered recommendation engine that increased conversion by 45%.",
-                metric: "45% conversion increase",
+                  "Streamlined inventory management with improved lead conversion.",
+                metric: "Inventory + lead funnel",
               },
               {
                 image:
-                  "https://images.unsplash.com/photo-1768987439382-894ea4e2a736?auto=format&fit=crop&w=1080&q=80",
-                category: "On-Demand",
-                title: "Telemedicine Platform",
+                  "https://images.unsplash.com/photo-1575311373937-040b8e1fd6b6?auto=format&fit=crop&w=1200&q=80",
+                category: "AI Wellness",
+                title: "Etern 8",
                 description:
-                  "Created a secure healthcare booking platform connecting 5,000+ patients with doctors.",
-                metric: "5,000+ active users",
+                  "AI-powered personalized health insights generated from wearable data.",
+                metric: "Wearable AI insights",
               },
             ].map((project, index) => (
               <motion.div
@@ -882,7 +882,7 @@ export default function Home() {
                   <div className="mb-6" />
                 )}
 
-                <div className="flex items-center gap-4">
+                <div className="mt-auto flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] flex items-center justify-center text-white font-bold">
                     {testimonial.name.charAt(0)}
                   </div>

@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import {
   BriefcaseBusiness,
   CalendarClock,
@@ -125,6 +126,13 @@ function tagIcon(label: string) {
   return BriefcaseBusiness;
 }
 
+const scrollToOpenPositions = () => {
+  const element = document.getElementById('open-positions');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 export default function Careers() {
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#020617]" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -150,12 +158,12 @@ export default function Careers() {
                 We&apos;re building scalable SaaS platforms, AI systems, and digital products for global clients.
                 Join our team and help create impactful technology.
               </p>
-              <a
-                href="#open-positions"
+              <button
+                onClick={scrollToOpenPositions}
                 className="inline-flex rounded-2xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-10 py-4 text-base font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
               >
                 View Open Positions
-              </a>
+              </button>
             </motion.div>
 
             <motion.div
@@ -249,12 +257,12 @@ export default function Careers() {
                       <button className="min-w-[220px] rounded-2xl border border-[#35507C] bg-[#25334B] px-6 py-3 text-base font-medium text-[#D5E6FF] transition-all duration-300 hover:bg-[#2A3D5D]">
                         View Details
                       </button>
-                      <a
-                        href={`mailto:tanvikhairnar03@gmail.com?subject=${encodeURIComponent(`Application for ${position.title}`)}`}
+                      <Link
+                        to={`/careers/apply?position=${encodeURIComponent(position.title)}`}
                         className="min-w-[220px] rounded-2xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-6 py-3 text-center text-base font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:brightness-110"
                       >
                         Apply Now
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </motion.article>
@@ -352,12 +360,12 @@ export default function Careers() {
                   We&apos;re a distributed team of passionate engineers, designers, and product managers working
                   together to build exceptional digital products.
                 </p>
-                <a
-                  href="#open-positions"
+                <button
+                  onClick={scrollToOpenPositions}
                   className="inline-flex rounded-2xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-12 py-4 text-base font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
                 >
                   Explore Open Positions
-                </a>
+                </button>
               </div>
             </motion.div>
           </div>
