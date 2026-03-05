@@ -31,6 +31,7 @@ type EmailPayload = {
   message: string;
   templateId?: string;
   replyTo?: string;
+  params?: Record<string, string>;
 };
 
 function isValidEmail(value: string) {
@@ -125,6 +126,8 @@ function sendEmail(payload: EmailPayload) {
         to: payload.toEmail,
         email: payload.toEmail,
         to_email: payload.toEmail,
+        user_email: payload.toEmail,
+        customer_email: payload.toEmail,
         receiver_email: payload.toEmail,
         toEmail: payload.toEmail,
         to_name: payload.toName,
@@ -138,6 +141,7 @@ function sendEmail(payload: EmailPayload) {
         from_name: 'Techflux Solutions',
         sender_emails: senderEmails.join(', '),
         reply_to: payload.replyTo || getPrimaryInternalEmail(),
+        ...(payload.params || {}),
       },
       {
         publicKey: EMAILJS_PUBLIC_KEY,
@@ -262,6 +266,17 @@ Lead Source: Techflux Website - Strategy Call Form`;
         message: customerMessage,
         templateId: TEMPLATE_STRATEGY_CUSTOMER,
         replyTo: getPrimaryInternalEmail(),
+        params: {
+          first_name: lead.firstName,
+          last_name: lead.lastName,
+          FirstName: lead.firstName,
+          LastName: lead.lastName,
+          Email: lead.email,
+          Company: lead.company,
+          ProjectType: lead.projectType,
+          Budget: lead.budget,
+          Message: lead.message,
+        },
       }),
       Promise.all(
         getInternalReceiverEmails().map((email) =>
@@ -272,6 +287,17 @@ Lead Source: Techflux Website - Strategy Call Form`;
             message: internalMessage,
             templateId: TEMPLATE_STRATEGY_INTERNAL,
             replyTo: lead.email,
+            params: {
+              first_name: lead.firstName,
+              last_name: lead.lastName,
+              FirstName: lead.firstName,
+              LastName: lead.lastName,
+              Email: lead.email,
+              Company: lead.company,
+              ProjectType: lead.projectType,
+              Budget: lead.budget,
+              Message: lead.message,
+            },
           }),
         ),
       ),
@@ -337,6 +363,18 @@ Lead Source: TechFlux Website - Project Estimate Form`;
         message: customerMessage,
         templateId: TEMPLATE_ESTIMATE_CUSTOMER,
         replyTo: getPrimaryInternalEmail(),
+        params: {
+          first_name: lead.firstName,
+          last_name: lead.lastName,
+          FirstName: lead.firstName,
+          LastName: lead.lastName,
+          Email: lead.email,
+          Company: lead.company,
+          ProjectType: lead.projectType,
+          Budget: lead.budget,
+          Timeline: lead.timeline,
+          Message: lead.message,
+        },
       }),
       Promise.all(
         getInternalReceiverEmails().map((email) =>
@@ -347,6 +385,18 @@ Lead Source: TechFlux Website - Project Estimate Form`;
             message: internalMessage,
             templateId: TEMPLATE_ESTIMATE_INTERNAL,
             replyTo: lead.email,
+            params: {
+              first_name: lead.firstName,
+              last_name: lead.lastName,
+              FirstName: lead.firstName,
+              LastName: lead.lastName,
+              Email: lead.email,
+              Company: lead.company,
+              ProjectType: lead.projectType,
+              Budget: lead.budget,
+              Timeline: lead.timeline,
+              Message: lead.message,
+            },
           }),
         ),
       ),
@@ -405,6 +455,17 @@ Lead Source: TechFlux Website - Partner Form`;
         message: customerMessage,
         templateId: TEMPLATE_PARTNER_CUSTOMER,
         replyTo: getPrimaryInternalEmail(),
+        params: {
+          first_name: lead.firstName,
+          last_name: lead.lastName,
+          FirstName: lead.firstName,
+          LastName: lead.lastName,
+          Email: lead.email,
+          Company: lead.company,
+          AgencyType: lead.agencyType,
+          Services: lead.services,
+          Message: lead.message,
+        },
       }),
       Promise.all(
         getInternalReceiverEmails().map((email) =>
@@ -415,6 +476,17 @@ Lead Source: TechFlux Website - Partner Form`;
             message: internalMessage,
             templateId: TEMPLATE_PARTNER_INTERNAL,
             replyTo: lead.email,
+            params: {
+              first_name: lead.firstName,
+              last_name: lead.lastName,
+              FirstName: lead.firstName,
+              LastName: lead.lastName,
+              Email: lead.email,
+              Company: lead.company,
+              AgencyType: lead.agencyType,
+              Services: lead.services,
+              Message: lead.message,
+            },
           }),
         ),
       ),
@@ -475,6 +547,17 @@ Lead Source: TechFlux Website - Contact Form`;
         message: customerMessage,
         templateId: TEMPLATE_CONTACT_CUSTOMER,
         replyTo: getPrimaryInternalEmail(),
+        params: {
+          first_name: lead.firstName,
+          last_name: lead.lastName,
+          FirstName: lead.firstName,
+          LastName: lead.lastName,
+          Email: lead.email,
+          Company: lead.company,
+          ProjectType: lead.projectType,
+          Budget: lead.budget,
+          Message: lead.message,
+        },
       }),
       Promise.all(
         getInternalReceiverEmails().map((email) =>
@@ -485,6 +568,17 @@ Lead Source: TechFlux Website - Contact Form`;
             message: internalMessage,
             templateId: TEMPLATE_CONTACT_INTERNAL,
             replyTo: lead.email,
+            params: {
+              first_name: lead.firstName,
+              last_name: lead.lastName,
+              FirstName: lead.firstName,
+              LastName: lead.lastName,
+              Email: lead.email,
+              Company: lead.company,
+              ProjectType: lead.projectType,
+              Budget: lead.budget,
+              Message: lead.message,
+            },
           }),
         ),
       ),
