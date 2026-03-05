@@ -1,16 +1,35 @@
 import emailjs from '@emailjs/browser';
 
 const INTERNAL_RECEIVER_EMAILS_RAW =
-  import.meta.env.VITE_LEAD_RECEIVER_EMAIL || 'Sohel@techflux.in,Asrar@techflux.in,tanvikhairnar03@gmail.com';
+  import.meta.env.VITE_LEAD_RECEIVER_EMAIL || 'sohel@techflux.in,asrar@techflux.in,tanvikhairnar03@gmail.com';
+const INTERNAL_SENDER_EMAILS_RAW =
+  import.meta.env.VITE_LEAD_SENDER_EMAIL || 'sohel@techflux.in,asrar@techflux.in';
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const TEMPLATE_STRATEGY_CUSTOMER =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_STRATEGY_CUSTOMER || EMAILJS_TEMPLATE_ID;
+const TEMPLATE_STRATEGY_INTERNAL =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_STRATEGY_INTERNAL || EMAILJS_TEMPLATE_ID;
+const TEMPLATE_ESTIMATE_CUSTOMER =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ESTIMATE_CUSTOMER || EMAILJS_TEMPLATE_ID;
+const TEMPLATE_ESTIMATE_INTERNAL =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_ESTIMATE_INTERNAL || EMAILJS_TEMPLATE_ID;
+const TEMPLATE_PARTNER_CUSTOMER =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_PARTNER_CUSTOMER || EMAILJS_TEMPLATE_ID;
+const TEMPLATE_PARTNER_INTERNAL =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_PARTNER_INTERNAL || EMAILJS_TEMPLATE_ID;
+const TEMPLATE_CONTACT_CUSTOMER =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT_CUSTOMER || EMAILJS_TEMPLATE_ID;
+const TEMPLATE_CONTACT_INTERNAL =
+  import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT_INTERNAL || EMAILJS_TEMPLATE_ID;
 
 type EmailPayload = {
   toEmail: string;
   toName: string;
   subject: string;
   message: string;
+  templateId?: string;
   replyTo?: string;
 };
 
@@ -30,18 +49,28 @@ function parseReceiverEmails(raw: string) {
 }
 
 function getPrimaryInternalEmail() {
-  return parseReceiverEmails(INTERNAL_RECEIVER_EMAILS_RAW)[0] || 'Sohel@techflux.in';
+  return parseReceiverEmails(INTERNAL_RECEIVER_EMAILS_RAW)[0] || 'sohel@techflux.in';
 }
 
 function getInternalReceiverEmails() {
   return parseReceiverEmails(INTERNAL_RECEIVER_EMAILS_RAW);
 }
 
+function getInternalSenderEmails() {
+  return parseReceiverEmails(INTERNAL_SENDER_EMAILS_RAW);
+}
+
 function assertEmailConfig() {
   const receiverEmails = getInternalReceiverEmails();
+  const senderEmails = getInternalSenderEmails();
   if (!receiverEmails.length || receiverEmails.some((email) => !isValidEmail(email))) {
     throw new Error(
-      'Invalid receiver email. Use real mailbox addresses like Sohel@techflux.in,Asrar@techflux.in,tanvikhairnar03@gmail.com.',
+      'Invalid receiver email. Use real mailbox addresses like sohel@techflux.in,asrar@techflux.in,tanvikhairnar03@gmail.com.',
+    );
+  }
+  if (!senderEmails.length || senderEmails.some((email) => !isValidEmail(email))) {
+    throw new Error(
+      'Invalid sender email. Use real mailbox addresses like sohel@techflux.in,asrar@techflux.in.',
     );
   }
 
@@ -62,7 +91,9 @@ function assertEmailConfig() {
 
 function canUseEmailJs() {
   const receiverEmails = getInternalReceiverEmails();
+  const senderEmails = getInternalSenderEmails();
   const validReceivers = receiverEmails.length > 0 && receiverEmails.every((email) => isValidEmail(email));
+  const validSenders = senderEmails.length > 0 && senderEmails.every((email) => isValidEmail(email));
   const invalidEmailJsValues =
     looksLikeEmail(EMAILJS_SERVICE_ID) ||
     looksLikeEmail(EMAILJS_TEMPLATE_ID) ||
@@ -70,17 +101,10 @@ function canUseEmailJs() {
 
   return (
     validReceivers &&
+    validSenders &&
     !invalidEmailJsValues &&
     Boolean(EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY)
   );
-}
-
-async function openMailClientFallback(subject: string, internalMessage: string, leadEmail: string, leadName: string) {
-  if (typeof window === 'undefined') return;
-  const to = getInternalReceiverEmails().join(',');
-  const body = `${internalMessage}\n\nReply-To: ${leadEmail}\nLead Name: ${leadName}`;
-  const mailtoUrl = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  window.location.href = mailtoUrl;
 }
 
 function isEmailJsDeliveryError(error: unknown) {
@@ -90,16 +114,29 @@ function isEmailJsDeliveryError(error: unknown) {
 
 function sendEmail(payload: EmailPayload) {
   assertEmailConfig();
+  const senderEmails = getInternalSenderEmails();
+  const primarySender = senderEmails[0] || getPrimaryInternalEmail();
 
   return emailjs
     .send(
       EMAILJS_SERVICE_ID,
-      EMAILJS_TEMPLATE_ID,
+      payload.templateId || EMAILJS_TEMPLATE_ID,
       {
+        to: payload.toEmail,
+        email: payload.toEmail,
         to_email: payload.toEmail,
+        receiver_email: payload.toEmail,
+        toEmail: payload.toEmail,
         to_name: payload.toName,
+        receiver_name: payload.toName,
+        toName: payload.toName,
         subject: payload.subject,
+        email_subject: payload.subject,
         message: payload.message,
+        email_message: payload.message,
+        from_email: primarySender,
+        from_name: 'Techflux Solutions',
+        sender_emails: senderEmails.join(', '),
         reply_to: payload.replyTo || getPrimaryInternalEmail(),
       },
       {
@@ -169,7 +206,7 @@ type ContactLead = {
   message: string;
 };
 
-export type LeadEmailDelivery = 'emailjs' | 'mailto';
+export type LeadEmailDelivery = 'emailjs';
 
 export async function sendStrategyCallEmails(lead: StrategyCallLead): Promise<LeadEmailDelivery> {
   const customerSubject = 'Your Strategy Call Request Received - Techflux Solutions';
@@ -177,7 +214,7 @@ export async function sendStrategyCallEmails(lead: StrategyCallLead): Promise<Le
 
 Thank you for reaching out to Techflux Solutions.
 
-We have received your request to schedule a strategy call with our team. One of our specialists will review your project details and get back to you shortly to confirm the meeting.
+We've received your request to schedule a strategy call with our team. One of our specialists will review your project details and get back to you shortly to confirm the meeting.
 
 During the call, we typically discuss:
 - Your product idea or current platform
@@ -211,13 +248,9 @@ Please review the request and follow up with the lead within 12 hours.
 Lead Source: Techflux Website - Strategy Call Form`;
 
   if (!canUseEmailJs()) {
-    await openMailClientFallback(
-      internalSubject,
-      internalMessage,
-      lead.email,
-      `${lead.firstName} ${lead.lastName}`.trim(),
+    throw new Error(
+      'Direct email is not configured. Set EmailJS env keys and restart the app.',
     );
-    return 'mailto';
   }
 
   try {
@@ -227,20 +260,26 @@ Lead Source: Techflux Website - Strategy Call Form`;
         toName: lead.firstName,
         subject: customerSubject,
         message: customerMessage,
+        templateId: TEMPLATE_STRATEGY_CUSTOMER,
         replyTo: getPrimaryInternalEmail(),
       }),
-      sendInternalEmails(internalSubject, internalMessage, lead.email),
+      Promise.all(
+        getInternalReceiverEmails().map((email) =>
+          sendEmail({
+            toEmail: email,
+            toName: 'Techflux Team',
+            subject: internalSubject,
+            message: internalMessage,
+            templateId: TEMPLATE_STRATEGY_INTERNAL,
+            replyTo: lead.email,
+          }),
+        ),
+      ),
     ]);
     return 'emailjs';
   } catch (error) {
     if (!isEmailJsDeliveryError(error)) throw error;
-    await openMailClientFallback(
-      internalSubject,
-      internalMessage,
-      lead.email,
-      `${lead.firstName} ${lead.lastName}`.trim(),
-    );
-    return 'mailto';
+    throw error;
   }
 }
 
@@ -284,13 +323,9 @@ Please review and respond within 24 hours.
 Lead Source: TechFlux Website - Project Estimate Form`;
 
   if (!canUseEmailJs()) {
-    await openMailClientFallback(
-      internalSubject,
-      internalMessage,
-      lead.email,
-      `${lead.firstName} ${lead.lastName}`.trim(),
+    throw new Error(
+      'Direct email is not configured. Set EmailJS env keys and restart the app.',
     );
-    return 'mailto';
   }
 
   try {
@@ -300,20 +335,26 @@ Lead Source: TechFlux Website - Project Estimate Form`;
         toName: lead.firstName,
         subject: customerSubject,
         message: customerMessage,
+        templateId: TEMPLATE_ESTIMATE_CUSTOMER,
         replyTo: getPrimaryInternalEmail(),
       }),
-      sendInternalEmails(internalSubject, internalMessage, lead.email),
+      Promise.all(
+        getInternalReceiverEmails().map((email) =>
+          sendEmail({
+            toEmail: email,
+            toName: 'Techflux Team',
+            subject: internalSubject,
+            message: internalMessage,
+            templateId: TEMPLATE_ESTIMATE_INTERNAL,
+            replyTo: lead.email,
+          }),
+        ),
+      ),
     ]);
     return 'emailjs';
   } catch (error) {
     if (!isEmailJsDeliveryError(error)) throw error;
-    await openMailClientFallback(
-      internalSubject,
-      internalMessage,
-      lead.email,
-      `${lead.firstName} ${lead.lastName}`.trim(),
-    );
-    return 'mailto';
+    throw error;
   }
 }
 
@@ -350,13 +391,9 @@ Please review and schedule a partnership discussion.
 Lead Source: TechFlux Website - Partner Form`;
 
   if (!canUseEmailJs()) {
-    await openMailClientFallback(
-      internalSubject,
-      internalMessage,
-      lead.email,
-      `${lead.firstName} ${lead.lastName}`.trim(),
+    throw new Error(
+      'Direct email is not configured. Set EmailJS env keys and restart the app.',
     );
-    return 'mailto';
   }
 
   try {
@@ -366,20 +403,26 @@ Lead Source: TechFlux Website - Partner Form`;
         toName: lead.firstName,
         subject: customerSubject,
         message: customerMessage,
+        templateId: TEMPLATE_PARTNER_CUSTOMER,
         replyTo: getPrimaryInternalEmail(),
       }),
-      sendInternalEmails(internalSubject, internalMessage, lead.email),
+      Promise.all(
+        getInternalReceiverEmails().map((email) =>
+          sendEmail({
+            toEmail: email,
+            toName: 'Techflux Team',
+            subject: internalSubject,
+            message: internalMessage,
+            templateId: TEMPLATE_PARTNER_INTERNAL,
+            replyTo: lead.email,
+          }),
+        ),
+      ),
     ]);
     return 'emailjs';
   } catch (error) {
     if (!isEmailJsDeliveryError(error)) throw error;
-    await openMailClientFallback(
-      internalSubject,
-      internalMessage,
-      lead.email,
-      `${lead.firstName} ${lead.lastName}`.trim(),
-    );
-    return 'mailto';
+    throw error;
   }
 }
 
@@ -418,13 +461,9 @@ Please review and respond within 24 hours.
 Lead Source: TechFlux Website - Contact Form`;
 
   if (!canUseEmailJs()) {
-    await openMailClientFallback(
-      internalSubject,
-      internalMessage,
-      lead.email,
-      `${lead.firstName} ${lead.lastName}`.trim(),
+    throw new Error(
+      'Direct email is not configured. Set EmailJS env keys and restart the app.',
     );
-    return 'mailto';
   }
 
   try {
@@ -434,19 +473,25 @@ Lead Source: TechFlux Website - Contact Form`;
         toName: lead.firstName,
         subject: customerSubject,
         message: customerMessage,
+        templateId: TEMPLATE_CONTACT_CUSTOMER,
         replyTo: getPrimaryInternalEmail(),
       }),
-      sendInternalEmails(internalSubject, internalMessage, lead.email),
+      Promise.all(
+        getInternalReceiverEmails().map((email) =>
+          sendEmail({
+            toEmail: email,
+            toName: 'Techflux Team',
+            subject: internalSubject,
+            message: internalMessage,
+            templateId: TEMPLATE_CONTACT_INTERNAL,
+            replyTo: lead.email,
+          }),
+        ),
+      ),
     ]);
     return 'emailjs';
   } catch (error) {
     if (!isEmailJsDeliveryError(error)) throw error;
-    await openMailClientFallback(
-      internalSubject,
-      internalMessage,
-      lead.email,
-      `${lead.firstName} ${lead.lastName}`.trim(),
-    );
-    return 'mailto';
+    throw error;
   }
 }

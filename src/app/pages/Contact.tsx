@@ -34,12 +34,8 @@ export default function Contact() {
 
     try {
       setIsSubmitting(true);
-      const delivery = await sendContactEmails(formData);
-      setSubmitSuccess(
-        delivery === 'emailjs'
-          ? 'Message submitted and email sent successfully.'
-          : 'Your email app was opened with a draft. Please click Send there to complete submission.',
-      );
+      await sendContactEmails(formData);
+      setSubmitSuccess('Message submitted and email sent successfully.');
       setFormData({
         firstName: '',
         lastName: '',
@@ -207,8 +203,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-[#E5E7EB] md:text-lg">Email</h3>
-                      <p className="text-sm text-[#94A3B8] md:text-base">Sohel@techflux.in</p>
-                      <p className="text-sm text-[#94A3B8] md:text-base">Asrar@techflux.in</p>
+                      <p className="text-sm text-[#94A3B8] md:text-base">tanvikhairnar03@gmail.com</p>
                     </div>
                   </div>
 

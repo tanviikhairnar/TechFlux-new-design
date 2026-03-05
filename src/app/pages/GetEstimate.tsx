@@ -46,12 +46,8 @@ export default function GetEstimate() {
 
     try {
       setIsSubmitting(true);
-      const delivery = await sendEstimateEmails(formData);
-      setSubmitSuccess(
-        delivery === 'emailjs'
-          ? 'Request submitted and email sent successfully.'
-          : 'Your email app was opened with a draft. Please click Send there to complete submission.',
-      );
+      await sendEstimateEmails(formData);
+      setSubmitSuccess('Request submitted and email sent successfully.');
       setFormData({
         firstName: '',
         lastName: '',

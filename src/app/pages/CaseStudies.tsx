@@ -37,6 +37,7 @@ const caseStudies: CaseStudy[] = [
     caseStudyUrl: '/case-studies/dine-right',
     inProgress: true,
   },
+  
   {
     name: 'Allstar Premier Auto',
     headline: 'Marketplace',
