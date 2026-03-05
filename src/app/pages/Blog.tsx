@@ -7,33 +7,33 @@ import { Footer } from '../components/Footer';
 const posts = [
   {
     category: 'SaaS Development',
-    readTime: '12 min read',
-    title: 'SaaS MVP Development in 2026: A Strategic Guide to Building a Scalable Software Product',
+    readTime: '8 min read',
+    title: 'How to Build a SaaS MVP in 60 Days (A Practical Guide for Startups)',
     excerpt:
-      'A strategic framework for validating demand, designing core workflows, and building an MVP that is scalable, economically sustainable, and ready for long-term growth.',
-    date: 'Feb 28, 2026',
+      'A step-by-step 60-day execution plan covering scope, architecture, design, development, testing, and launch feedback.',
+    date: 'Mar 5, 2026',
     image:
       'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80',
     link: '/blog/saas-mvp-development-2026',
   },
   {
-    category: 'AI & Automation',
-    readTime: '14 min read',
-    title: 'AI Integration Services: A Structured Approach to Embedding AI Into Real Business Systems',
+    category: 'SaaS Strategy',
+    readTime: '7 min read',
+    title: '7 Major Problems SaaS Startups Face (And Practical Ways to Solve Them)',
     excerpt:
-      'A workflow-first framework for integrating AI into production systems with measurable ROI, cost control, compliance, and long-term scalability.',
-    date: 'Mar 4, 2026',
+      'A practical playbook for solving feature creep, scalability gaps, onboarding drop-offs, security risks, and weak analytics.',
+    date: 'Mar 5, 2026',
     image:
       'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80',
     link: '/blog/ai-integration-services-structured-approach',
   },
   {
-    category: 'White-Label SaaS',
-    readTime: '13 min read',
-    title: 'White-Label SaaS Development: The Strategic Infrastructure Behind Sustainable Recurring Revenue',
+    category: 'On-Demand Applications',
+    readTime: '7 min read',
+    title: 'On-Demand Applications: Common Challenges in Development and How to Solve Them',
     excerpt:
-      'A strategic breakdown of how white-label SaaS creates leverage, where dependency risk appears, and what drives long-term recurring revenue sustainability.',
-    date: 'Mar 4, 2026',
+      'Learn how to handle real-time operations, multi-role systems, payments, scalability, provider quality, and retention in on-demand platforms.',
+    date: 'Mar 5, 2026',
     image:
       'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1200&q=80',
     link: '/blog/white-label-saas-development-strategic-infrastructure',
@@ -74,10 +74,10 @@ export default function Blog() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                className="group overflow-hidden rounded-2xl border border-[#24314a] bg-[#101A31] shadow-[0_20px_35px_rgba(2,8,23,0.28)] transition-all hover:border-[#32598b]"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#24314a] bg-[#101A31] shadow-[0_20px_35px_rgba(2,8,23,0.28)] transition-all hover:border-[#32598b]"
               >
                 <img src={post.image} alt={post.title} className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                <div className="p-5">
+                <div className="flex flex-1 flex-col p-5">
                   <div className="mb-3 flex items-center gap-2.5 text-xs">
                     <span className="rounded-full bg-[#123562] px-2.5 py-1 text-[#56A9F5]">{post.category}</span>
                     <span className="flex items-center gap-1 text-[#9AA8BE]">
@@ -86,28 +86,16 @@ export default function Blog() {
                     </span>
                   </div>
 
-                  <h2 className="mb-2.5 text-xl font-semibold leading-[1.3] tracking-[-0.01em] text-[#E5E7EB] md:text-[28px]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  <h2 className="mb-2.5 line-clamp-3 min-h-[5.2rem] text-xl font-semibold leading-[1.3] tracking-[-0.01em] text-[#E5E7EB] md:text-[28px]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {post.title}
                   </h2>
-                  <p className="mb-5 text-sm leading-[1.65] text-[#93A4BE] md:text-[15px]">{post.excerpt}</p>
+                  <p className="mb-5 line-clamp-4 min-h-[6.4rem] text-sm leading-[1.65] text-[#93A4BE] md:text-[15px]">{post.excerpt}</p>
 
-                  <div className="flex items-center justify-between text-sm">
+                  <div className="mt-auto flex items-center justify-between text-sm">
                     <span className="text-[#8F9FB6] md:text-[13px]">{post.date}</span>
                     <button
                       type="button"
-                      onClick={() => {
-                        if (index === 0) {
-                          navigate('/blog/saas-mvp-development-2026');
-                          return;
-                        }
-                        if (index === 2) {
-                          navigate('/blog/white-label-saas-development-strategic-infrastructure');
-                          return;
-                        }
-                        if (post.link && post.link !== '#') {
-                          navigate(post.link);
-                        }
-                      }}
+                      onClick={() => navigate(post.link)}
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F80ED] transition-all duration-300 hover:text-[#61B8FF] hover:[text-shadow:0_0_14px_rgba(47,128,237,0.75)] group-hover:[text-shadow:0_0_10px_rgba(47,128,237,0.55)]"
                     >
                       Read More

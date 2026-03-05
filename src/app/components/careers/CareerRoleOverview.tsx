@@ -45,6 +45,7 @@ export function CareerRoleOverview({ role, showBackLink = false }: { role: Caree
         <div className="grid gap-12 lg:grid-cols-[1fr_340px] lg:items-start">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
             <RoleList title="About the Role" items={[role.summary, role.localPreference ?? 'Work From Office - Nashik']} />
+            <RoleList title="Key Skills" items={role.skills} />
             <RoleList title="Responsibilities" items={role.responsibilities} />
             <RoleList title="Required Skills" items={role.requiredSkills} />
             <RoleList title="Nice to Have" items={role.niceToHave} />

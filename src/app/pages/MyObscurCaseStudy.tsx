@@ -128,7 +128,7 @@ export default function MyObscurCaseStudy() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#08142A] py-14">
+        <section className="bg-[#08142A] py-14">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <h2 className="mb-10 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
               The Challenge
@@ -171,7 +171,7 @@ export default function MyObscurCaseStudy() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#08142A] py-16">
+        <section className="bg-[#08142A] py-16">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <h2 className="mb-8 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Technology Stack
@@ -213,7 +213,7 @@ export default function MyObscurCaseStudy() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#08142A] py-16">
+        <section className="bg-[#08142A] py-16">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <div className="rounded-3xl border border-white/6 bg-[linear-gradient(120deg,#10284B_0%,#1B2E54_55%,#223A66_100%)] px-8 py-14 text-center md:px-12">
               <h2 className="mb-4 text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>

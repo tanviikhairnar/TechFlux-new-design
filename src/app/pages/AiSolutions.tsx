@@ -87,7 +87,7 @@ export default function AiSolutions() {
       <Navigation />
 
       <main className="relative">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-18%,rgba(38,132,255,0.22),transparent_40%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-18%,rgba(47,128,237,0.24),transparent_42%)]" />
 
         <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-24 pt-28 text-center md:pb-32 md:pt-40 lg:px-5">
           <motion.div
@@ -130,7 +130,7 @@ export default function AiSolutions() {
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 AI Solutions We Build
               </h2>
               <p className="text-sm text-[#8A96AA] md:text-[15px]">Complete AI solutions designed for measurable business impact.</p>
@@ -144,20 +144,22 @@ export default function AiSolutions() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="group relative rounded-2xl border border-white/5 bg-[#0F1B31] p-6 hover:border-[#2F80ED]/30 transition-all"
+                  className="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
-                  <item.icon className="mb-4 h-6 w-6 text-[#2F80ED]" />
-                  <h3 className="mb-2 text-lg font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]">
+                    <item.icon className="h-4 w-4 text-[#2F80ED]" />
+                  </div>
+                  <h3 className="mb-2 text-[15px] font-semibold leading-6 text-[#E5ECF8]">
                     {item.title}
                   </h3>
-                  <p className="text-[13px] leading-6 text-[#8A96AA]">{item.desc}</p>
+                  <p className="text-[13px] leading-6 text-[#95A4BF]">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#081327] py-20">
+        <section className="bg-[#081327] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
               <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
@@ -167,10 +169,12 @@ export default function AiSolutions() {
                 We use cutting-edge AI frameworks and platforms to deliver powerful intelligence solutions.
               </p>
             </motion.div>
-
-            <div className="flex flex-wrap justify-center gap-2">
+<div className="mx-auto flex max-w-[1400px] flex-wrap justify-center gap-4">
               {techTags.map((tag, i) => (
-                <span key={i} className="whitespace-nowrap rounded-full bg-[#0F1B31] px-3 py-1 text-xs font-semibold text-[#D8DEE8]">
+                <span
+                  key={i}
+                  className="inline-flex min-h-[72px] min-w-[120px] items-center justify-center rounded-2xl border border-[#1E2D46] bg-[#121F39] px-8 py-4 text-[16px] font-semibold tracking-wide text-[#D8DEE8] transition-all hover:border-[#2F80ED]/45 hover:bg-[#152645]"
+                >
                   {tag}
                 </span>
               ))}
@@ -181,7 +185,7 @@ export default function AiSolutions() {
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 AI Features We Implement
               </h2>
             </motion.div>
@@ -194,10 +198,12 @@ export default function AiSolutions() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: (i % 3) * 0.06 }}
-                  className="group relative rounded-2xl border border-white/5 bg-[#0F1B31] p-6 hover:border-[#2F80ED]/30 transition-all"
+                  className="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
-                  <item.icon className="mx-auto mb-4 h-6 w-6 text-[#2F80ED]" />
-                  <h3 className="text-lg font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]">
+                    <item.icon className="h-4 w-4 text-[#2F80ED]" />
+                  </div>
+                  <h3 className="text-[15px] font-semibold leading-6 text-[#E5ECF8]">
                     {item.title}
                   </h3>
                 </motion.div>
@@ -206,32 +212,32 @@ export default function AiSolutions() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#081327] py-20">
+        <section className="bg-[#081327] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Choose Your AI Solution
               </h2>
             </motion.div>
 
-            <div className="overflow-x-auto rounded-xl border border-white/5 bg-[#0F1B31]">
-              <table className="w-full">
+            <div className="overflow-x-auto rounded-[24px] border border-[#263550] bg-[#141F36]">
+              <table className="w-full min-w-[760px]">
                 <thead>
-                  <tr className="border-b border-white/5">
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-[#D8DEE8]">Solution Type</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-[#D8DEE8]">Development Time</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-[#D8DEE8]">Complexity</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-[#D8DEE8]">Customization</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-[#D8DEE8]">Integration</th>
+                  <tr className="border-b border-[#2A3954]">
+                    <th className="px-6 py-5 text-left text-xl font-semibold tracking-[-0.01em] text-[#E5ECF8]">Solution Type</th>
+                    <th className="px-6 py-5 text-center text-xl font-semibold tracking-[-0.01em] text-[#E5ECF8]">Development Time</th>
+                    <th className="px-6 py-5 text-center text-xl font-semibold tracking-[-0.01em] text-[#E5ECF8]">Complexity</th>
+                    <th className="px-6 py-5 text-center text-xl font-semibold tracking-[-0.01em] text-[#E5ECF8]">Customization</th>
+                    <th className="px-6 py-5 text-center text-xl font-semibold tracking-[-0.01em] text-[#E5ECF8]">Integration</th>
                   </tr>
                 </thead>
                 <tbody>
                   {tableRows.map((row, i) => (
-                    <tr key={i} className="border-b border-white/5">
-                      <td className="px-6 py-4 text-sm text-[#D8DEE8]">{row.feature}</td>
-                      <td className="px-6 py-4 text-center text-sm text-[#8A96AA]">{row.aiChatbot}</td>
-                      <td className="px-6 py-4 text-center text-sm text-[#8A96AA]">{row.automation}</td>
-                      <td className="px-6 py-4 text-center text-sm text-[#8A96AA]">{row.analytics}</td>
+                    <tr key={i} className="border-b border-[#2A3954] last:border-b-0">
+                      <td className="px-6 py-5 text-lg text-[#E5ECF8]">{row.feature}</td>
+                      <td className="px-6 py-5 text-center text-lg text-[#9AA7BF]">{row.aiChatbot}</td>
+                      <td className="px-6 py-5 text-center text-lg text-[#9AA7BF]">{row.automation}</td>
+                      <td className="px-6 py-5 text-center text-lg text-[#9AA7BF]">{row.analytics}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -243,16 +249,16 @@ export default function AiSolutions() {
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Typical Project Investment
               </h2>
             </motion.div>
 
             <div className="grid gap-6 md:grid-cols-3">
               {[
-                { title: 'AI Chatbot Integration', price: '$3,000', features: ['GPT integration', 'Custom training', 'Chat interface', 'Basic analytics'] },
-                { title: 'AI Automation Systems', price: '$6,000', features: ['Workflow automation', 'ML models', 'API integrations', 'Dashboard'] },
-                { title: 'Custom AI Platforms', price: '$12,000', features: ['Custom AI models', 'Advanced features', 'Full integration', 'Data pipelines'] },
+                { title: 'AI Chatbot Integration', features: ['GPT integration', 'Custom training', 'Chat interface', 'Basic analytics'] },
+                { title: 'AI Automation Systems', features: ['Workflow automation', 'ML models', 'API integrations', 'Dashboard'] },
+                { title: 'Custom AI Platforms', features: ['Custom AI models', 'Advanced features', 'Full integration', 'Data pipelines'] },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -265,7 +271,6 @@ export default function AiSolutions() {
                   <h3 className="mb-2 text-lg font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {item.title}
                   </h3>
-                  <p className="mb-5 text-2xl font-bold text-[#2F80ED]">{item.price}</p>
                   <ul className="space-y-2">
                     {item.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-[13px] text-[#8A96AA]">
@@ -280,10 +285,10 @@ export default function AiSolutions() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#081327] py-20">
+        <section className="bg-[#081327] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Industries Using AI Solutions
               </h2>
             </motion.div>
@@ -296,10 +301,10 @@ export default function AiSolutions() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="flex flex-col items-center gap-3 rounded-xl border border-white/5 bg-[#0C1527] p-6 text-center"
+                  className="group flex flex-col items-center gap-3 rounded-xl border border-white/5 bg-[#0C1527] p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30"
                 >
-                  <div className="h-12 w-12 rounded-lg border border-[#2F80ED]/30 bg-[#0F2A5F] flex items-center justify-center">
-                    <Sparkles className="h-5 w-5 text-[#2F80ED]" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[#2F80ED]/30 bg-[#0F2A5F] transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_18px_rgba(90,170,255,0.35)]">
+                    <Sparkles className="h-5 w-5 text-[#2F80ED] transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(117,192,255,0.55)]" />
                   </div>
                   <p className="text-sm font-medium text-[#D8DEE8]">{industry}</p>
                 </motion.div>
@@ -311,7 +316,7 @@ export default function AiSolutions() {
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 AI Platform We've Built
               </h2>
             </motion.div>
@@ -342,10 +347,10 @@ export default function AiSolutions() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#081327] py-20">
+        <section className="bg-[#081327] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Why Businesses Choose TechFlux
               </h2>
             </motion.div>
@@ -380,7 +385,7 @@ export default function AiSolutions() {
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Explore Related Services
               </h2>
             </motion.div>
@@ -401,7 +406,7 @@ export default function AiSolutions() {
                 >
                   <Link
                     to={item.link}
-                    className="block rounded-xl border border-white/5 bg-[#0F1B31] p-6 text-center hover:border-[#2F80ED]/30 transition-all"
+                    className="block rounded-2xl border border-white/5 bg-[#0C1830] p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/35 hover:bg-[#112241] hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                   >
                     <p className="font-semibold text-[#D8DEE8]">{item.title}</p>
                   </Link>
@@ -443,10 +448,10 @@ export default function AiSolutions() {
           </div>
         </section>
 
-        <section className="border-t border-white/5 bg-[#081327] py-20">
+        <section className="bg-[#081327] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Ready to Build Something Scalable?
               </h2>
               <p className="mx-auto mb-8 max-w-[760px] text-sm text-[#8A96AA] md:text-[15px]">
@@ -467,3 +472,5 @@ export default function AiSolutions() {
     </div>
   );
 }
+
+

@@ -35,7 +35,7 @@ export default function EcommerceSolutions() {
       <Navigation />
 
       <main className="relative">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-18%,rgba(38,132,255,0.22),transparent_40%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-18%,rgba(47,128,237,0.24),transparent_42%)]" />
 
         <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-24 pt-28 text-center md:pb-32 md:pt-40 lg:px-5">
           <motion.div
@@ -70,10 +70,10 @@ export default function EcommerceSolutions() {
           </motion.div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#081327] py-20">
+        <section className="bg-[#081327] py-20">
           <div className="mx-auto grid w-full max-w-[1260px] items-center gap-10 px-4 lg:grid-cols-[1fr_1.02fr] lg:px-5">
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h2 className="mb-5 text-[54px] font-semibold leading-tight text-[#D8DEE8]" style={{ fontFamily: "Sora, sans-serif" }}>
+              <h2 className="mb-5 text-3xl font-semibold leading-tight text-[#E5ECF8]" style={{ fontFamily: "Sora, sans-serif" }}>
                 Modern E-Commerce Solutions
               </h2>
 
@@ -110,7 +110,7 @@ export default function EcommerceSolutions() {
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: "Sora, sans-serif" }}>
+              <h2 className="text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: "Sora, sans-serif" }}>
                 E-Commerce Features
               </h2>
             </motion.div>
@@ -123,10 +123,10 @@ export default function EcommerceSolutions() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="rounded-xl border border-white/5 bg-[#0F1B31] p-8 transition-all hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-[0_20px_50px_rgba(47,128,237,0.2)]"
+                  className="rounded-2xl border border-white/5 bg-[#0C1830] p-8 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <item.icon className="mb-4 h-7 w-7 text-[#2F80ED]" />
-                  <h3 className="mb-3 text-[34px] font-semibold leading-tight text-[#D8DEE8]" style={{ fontFamily: "Sora, sans-serif" }}>
+                  <h3 className="mb-3 text-xl font-semibold leading-tight text-[#E5ECF8]" style={{ fontFamily: "Sora, sans-serif" }}>
                     {item.title}
                   </h3>
                   <p className="text-[14px] leading-7 text-[#8A96AA]">{item.desc}</p>
@@ -177,3 +177,4 @@ export default function EcommerceSolutions() {
     </div>
   );
 }
+

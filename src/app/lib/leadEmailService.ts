@@ -4,6 +4,8 @@ const INTERNAL_RECEIVER_EMAILS_RAW =
   import.meta.env.VITE_LEAD_RECEIVER_EMAIL || 'sohel@techflux.in,asrar@techflux.in,tanvikhairnar03@gmail.com';
 const INTERNAL_SENDER_EMAILS_RAW =
   import.meta.env.VITE_LEAD_SENDER_EMAIL || 'sohel@techflux.in,asrar@techflux.in';
+const CUSTOMER_SENDER_EMAIL = import.meta.env.VITE_CUSTOMER_SENDER_EMAIL || 'sales@techflux.in';
+const CAREER_RECEIVER_EMAIL = import.meta.env.VITE_CAREER_RECEIVER_EMAIL || 'hr@techflux.in';
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -31,6 +33,7 @@ type EmailPayload = {
   message: string;
   templateId?: string;
   replyTo?: string;
+  fromEmail?: string;
   params?: Record<string, string>;
 };
 
@@ -74,6 +77,9 @@ function assertEmailConfig() {
       'Invalid sender email. Use real mailbox addresses like sohel@techflux.in,asrar@techflux.in.',
     );
   }
+  if (!isValidEmail(CUSTOMER_SENDER_EMAIL)) {
+    throw new Error('Invalid customer sender email. Use a real mailbox address like sales@techflux.in.');
+  }
 
   if (
     looksLikeEmail(EMAILJS_SERVICE_ID) ||
@@ -116,7 +122,7 @@ function isEmailJsDeliveryError(error: unknown) {
 function sendEmail(payload: EmailPayload) {
   assertEmailConfig();
   const senderEmails = getInternalSenderEmails();
-  const primarySender = senderEmails[0] || getPrimaryInternalEmail();
+  const primarySender = payload.fromEmail || senderEmails[0] || getPrimaryInternalEmail();
 
   return emailjs
     .send(
@@ -210,6 +216,18 @@ type ContactLead = {
   message: string;
 };
 
+type CareerApplicationLead = {
+  fullName: string;
+  email: string;
+  phone: string;
+  location: string;
+  yearsOfExperience: string;
+  position: string;
+  portfolioUrl: string;
+  coverLetter: string;
+  resumeFileName: string;
+};
+
 export type LeadEmailDelivery = 'emailjs';
 
 export async function sendStrategyCallEmails(lead: StrategyCallLead): Promise<LeadEmailDelivery> {
@@ -265,6 +283,7 @@ Lead Source: Techflux Website - Strategy Call Form`;
         subject: customerSubject,
         message: customerMessage,
         templateId: TEMPLATE_STRATEGY_CUSTOMER,
+        fromEmail: CUSTOMER_SENDER_EMAIL,
         replyTo: getPrimaryInternalEmail(),
         params: {
           first_name: lead.firstName,
@@ -362,6 +381,7 @@ Lead Source: TechFlux Website - Project Estimate Form`;
         subject: customerSubject,
         message: customerMessage,
         templateId: TEMPLATE_ESTIMATE_CUSTOMER,
+        fromEmail: CUSTOMER_SENDER_EMAIL,
         replyTo: getPrimaryInternalEmail(),
         params: {
           first_name: lead.firstName,
@@ -454,6 +474,7 @@ Lead Source: TechFlux Website - Partner Form`;
         subject: customerSubject,
         message: customerMessage,
         templateId: TEMPLATE_PARTNER_CUSTOMER,
+        fromEmail: CUSTOMER_SENDER_EMAIL,
         replyTo: getPrimaryInternalEmail(),
         params: {
           first_name: lead.firstName,
@@ -583,6 +604,57 @@ Lead Source: TechFlux Website - Contact Form`;
         ),
       ),
     ]);
+    return 'emailjs';
+  } catch (error) {
+    if (!isEmailJsDeliveryError(error)) throw error;
+    throw error;
+  }
+}
+
+export async function sendCareerApplicationEmail(lead: CareerApplicationLead): Promise<LeadEmailDelivery> {
+  const internalSubject = `New Career Application - ${lead.position}`;
+  const internalMessage = `A new career application has been submitted.
+
+Applicant Details:
+Full Name: ${lead.fullName}
+Email: ${lead.email}
+Phone: ${lead.phone}
+Location: ${lead.location}
+Years of Experience: ${lead.yearsOfExperience}
+Position Applied For: ${lead.position}
+Portfolio/GitHub: ${lead.portfolioUrl || 'N/A'}
+Resume File: ${lead.resumeFileName}
+Cover Letter: ${lead.coverLetter || 'N/A'}
+
+Lead Source: TechFlux Website - Career Apply Form`;
+
+  if (!canUseEmailJs()) {
+    throw new Error('Direct email is not configured. Set EmailJS env keys and restart the app.');
+  }
+
+  if (!isValidEmail(CAREER_RECEIVER_EMAIL)) {
+    throw new Error('Invalid career receiver email. Use a real mailbox address like hr@techflux.in.');
+  }
+
+  try {
+    await sendEmail({
+      toEmail: CAREER_RECEIVER_EMAIL,
+      toName: 'HR Team',
+      subject: internalSubject,
+      message: internalMessage,
+      replyTo: lead.email,
+      params: {
+        FullName: lead.fullName,
+        Email: lead.email,
+        Phone: lead.phone,
+        Location: lead.location,
+        YearsOfExperience: lead.yearsOfExperience,
+        Position: lead.position,
+        Portfolio: lead.portfolioUrl || 'N/A',
+        ResumeFileName: lead.resumeFileName,
+        CoverLetter: lead.coverLetter || 'N/A',
+      },
+    });
     return 'emailjs';
   } catch (error) {
     if (!isEmailJsDeliveryError(error)) throw error;

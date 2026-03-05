@@ -13,10 +13,11 @@ import EcommerceSolutions from "./pages/EcommerceSolutions";
 import CaseStudies from "./pages/CaseStudies";
 import Blog from "./pages/Blog";
 import Careers from "./pages/Careers";
+import CareerDetails from "./pages/CareerDetails";
 import CareerApply from "./pages/CareerApply";
-import AIIntegrationServicesArticle from "./pages/AIIntegrationServicesArticle";
-import SaaSMVPDevelopmentArticle from "./pages/SaaSMVPDevelopmentArticle";
-import WhiteLabelSaaSDevelopmentArticle from "./pages/WhiteLabelSaaSDevelopmentArticle";
+import SaaSStartupChallengesArticle from "./pages/SaaSStartupChallengesArticle";
+import SaaSMVPIn60DaysArticle from "./pages/SaaSMVPIn60DaysArticle";
+import OnDemandAppChallengesArticle from "./pages/OnDemandAppChallengesArticle";
 import ServyoCaseStudy from "./pages/ServyoCaseStudy";
 import DineRightCaseStudy from "./pages/DineRightCaseStudy";
 import AllstarPremierAutoCaseStudy from "./pages/AllstarPremierAutoCaseStudy";
@@ -124,20 +125,24 @@ export const router = createBrowserRouter([
         Component: Careers,
       },
       {
+        path: "/careers/:slug",
+        Component: CareerDetails,
+      },
+      {
         path: "/careers/apply",
         Component: CareerApply,
       },
       {
         path: "/blog/ai-integration-services-structured-approach",
-        Component: AIIntegrationServicesArticle,
+        Component: SaaSStartupChallengesArticle,
       },
       {
         path: "/blog/saas-mvp-development-2026",
-        Component: SaaSMVPDevelopmentArticle,
+        Component: SaaSMVPIn60DaysArticle,
       },
       {
         path: "/blog/white-label-saas-development-strategic-infrastructure",
-        Component: WhiteLabelSaaSDevelopmentArticle,
+        Component: OnDemandAppChallengesArticle,
       },
     ],
   },

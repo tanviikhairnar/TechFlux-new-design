@@ -1,3 +1,4 @@
+import { Building2, Globe, MapPin, Phone } from 'lucide-react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { CareerRoleOverview } from '../components/careers/CareerRoleOverview';
 import { Footer } from '../components/Footer';
@@ -16,9 +17,42 @@ export default function CareerDetails() {
 
       <main className="relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.16),transparent_42%)]" />
+        <section className="relative z-10 bg-[#0A152B]">
+          <div className="mx-auto w-full max-w-[1260px] px-4 pb-6 pt-28 lg:px-5">
+            <div className="rounded-2xl border border-[#23406A] bg-[#11213B] px-5 py-4 text-[#D4E3F8] md:px-6">
+              <p className="text-sm font-medium md:text-base">
+                We Are Hiring - Techflux Solutions | Nashik (Work From Office)
+              </p>
+            </div>
+          </div>
+        </section>
         <CareerRoleOverview role={role} showBackLink />
 
         <section className="mx-auto w-full max-w-[1260px] px-4 pb-20 lg:px-5">
+          <div className="mb-8 rounded-3xl border border-white/8 bg-[#12213C] p-7 md:p-8">
+            <h2 className="mb-4 text-2xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              Hiring Details
+            </h2>
+            <div className="grid gap-3 text-sm text-[#9AB0CF] md:grid-cols-2 md:text-base">
+              <p className="inline-flex items-center gap-2">
+                <Building2 className="h-4 w-4 text-[#2F80ED]" />
+                Company: Techflux Solutions
+              </p>
+              <p className="inline-flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-[#2F80ED]" />
+                Location: Nashik
+              </p>
+              <p className="inline-flex items-center gap-2">
+                <Phone className="h-4 w-4 text-[#2F80ED]" />
+                HR Contact: (+91) 9096698947
+              </p>
+              <p className="inline-flex items-center gap-2">
+                <Globe className="h-4 w-4 text-[#2F80ED]" />
+                Website: Techflux Solutions
+              </p>
+            </div>
+          </div>
+
           <div className="rounded-3xl border border-white/8 bg-[#12213C] p-10 text-center md:p-14">
             <h2 className="mb-4 text-4xl font-bold text-[#E5E7EB] md:text-[50px]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Ready to Apply?

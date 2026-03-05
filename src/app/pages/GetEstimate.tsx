@@ -270,8 +270,7 @@ export default function GetEstimate() {
                     24 Hours
                   </p>
                   <p className="mt-1 text-sm text-[#94A3B8]">Average response time</p>
-                  <div className="my-4 h-px w-full bg-white/10" />
-                  <p className="text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+<p className="text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     98%
                   </p>
                   <p className="mt-1 text-sm text-[#94A3B8]">Client satisfaction</p>

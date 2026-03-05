@@ -204,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* Trust Strip */}
-      <section className="py-16 border-y border-white/5 bg-[#111827]/30">
+      <section className="py-16 bg-[#111827]/30">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[

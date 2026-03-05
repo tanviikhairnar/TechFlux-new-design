@@ -107,17 +107,14 @@ const essentialFeatures = [
 const pricingCards = [
   {
     title: 'SaaS MVP Development',
-    price: '$5,000',
     bullets: ['Core feature set', 'User authentication', 'Admin dashboard', 'Payment integration'],
   },
   {
     title: 'Custom SaaS Platform',
-    price: '$10,000',
     bullets: ['Custom features', 'Multi-tenant setup', 'Advanced analytics', 'Third-party APIs'],
   },
   {
     title: 'Enterprise SaaS Platform',
-    price: '$20,000',
     bullets: ['Enterprise features', 'Custom integrations', 'Advanced security', 'Dedicated support'],
   },
 ];
@@ -169,7 +166,6 @@ const relatedServices = [
 
 export default function SaaSDevelopment() {
   const ctaMailto = 'mailto:tanvikhairnar03@gmail.com?subject=Techflux%20Inquiry';
-  const ctaMailto = 'mailto:sohel@techflux.in?subject=Techflux%20Inquiry';
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#040B1B]" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -249,7 +245,7 @@ export default function SaaSDevelopment() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#081427] py-20">
+        <section className="bg-[#081427] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <h2 className="mb-3 text-center text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
               SaaS Technology Stack
@@ -257,8 +253,7 @@ export default function SaaSDevelopment() {
             <p className="mx-auto mb-10 max-w-[760px] text-center text-sm text-[#8A96AA] md:text-[15px]">
               We leverage modern technologies to build scalable, maintainable, and high-performance SaaS platforms.
             </p>
-            <div className="mb-8 h-px w-full bg-white/10" />
-            <div className="mx-auto flex max-w-[1400px] flex-wrap justify-center gap-4">
+<div className="mx-auto flex max-w-[1400px] flex-wrap justify-center gap-4">
               {stackItems.map((item) => (
                 <span
                   key={item}
@@ -298,17 +293,17 @@ export default function SaaSDevelopment() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#081427] py-20">
+        <section className="bg-[#081427] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <h2 className="mb-8 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h2 className="mb-8 text-center text-3xl font-semibold leading-[1.15] text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Choose Your SaaS Solution
             </h2>
-            <div className="overflow-x-auto rounded-xl border border-white/5 bg-[#0C1830]">
+            <div className="overflow-x-auto rounded-[24px] border border-[#263550] bg-[#141F36]">
               <table className="w-full min-w-[760px]">
                 <thead>
-                  <tr className="border-b border-white/5">
-                    {['Solution Type', 'Development Time', 'Scalability', 'Best For', 'Maintenance'].map((head) => (
-                      <th key={head} className="px-5 py-4 text-left text-xs font-semibold tracking-wide text-[#D5E0F3]">
+                  <tr className="border-b border-[#2A3954]">
+                    {['Solution Type', 'Development Time', 'Scalability', 'Custom Features', 'Maintenance'].map((head) => (
+                      <th key={head} className="px-6 py-5 text-left text-xl font-semibold tracking-[-0.01em] text-[#E5ECF8]">
                         {head}
                       </th>
                     ))}
@@ -316,13 +311,13 @@ export default function SaaSDevelopment() {
                 </thead>
                 <tbody>
                   {[
-                    ['MVP SaaS Platform', '2-3 months', 'Medium', 'Core feature launch', 'Standard'],
-                    ['Enterprise SaaS Platform', '4-6 months', 'Very High', 'Mid-size teams', 'Premium'],
-                    ['Marketplace SaaS', '3-5 months', 'High', 'Multi-vendor platforms', 'Enterprise'],
+                    ['MVP SaaS Platform', '2-3 months', 'Medium', 'Core features', 'Standard'],
+                    ['Enterprise SaaS Platform', '4-6 months', 'Very High', 'Fully custom', 'Premium'],
+                    ['Marketplace SaaS', '3-5 months', 'High', 'Custom + integrations', 'Standard+'],
                   ].map((row) => (
-                    <tr key={row[0]} className="border-b border-white/5">
+                    <tr key={row[0]} className="border-b border-[#2A3954] last:border-b-0">
                       {row.map((cell) => (
-                        <td key={cell} className="px-5 py-4 text-sm text-[#9FB0CF]">
+                        <td key={cell} className="px-6 py-5 text-lg text-[#9AA7BF]">
                           {cell}
                         </td>
                       ))}
@@ -350,10 +345,6 @@ export default function SaaSDevelopment() {
                   className="rounded-2xl border border-[#1D2B44] bg-[#101B33] p-8 md:p-10"
                 >
                   <p className="text-[20px] font-semibold text-[#E7EDF9]">{card.title}</p>
-                  <p className="mt-4 text-sm text-[#95A4BF]">Starting from</p>
-                  <p className="text-[56px] font-bold leading-[1.1] text-[#2F80ED] md:text-[58px]">
-                    {card.price}
-                  </p>
                   <ul className="mt-7 space-y-3.5">
                     {card.bullets.map((bullet) => (
                       <li key={bullet} className="flex items-center gap-3 text-[15px] text-[#9EABC2]">
@@ -365,13 +356,10 @@ export default function SaaSDevelopment() {
                 </motion.div>
               ))}
             </div>
-            <p className="mt-8 text-center text-sm text-[#9AA7BF] md:text-[15px]">
-              * Final pricing depends on features, integrations, and scalability requirements.
-            </p>
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#081427] py-20">
+        <section className="bg-[#081427] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <h2 className="mb-9 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Industries Using Our SaaS Solutions
@@ -383,10 +371,10 @@ export default function SaaSDevelopment() {
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="flex min-h-[200px] flex-col items-center justify-center rounded-2xl border border-[#1E2D45] bg-[#111D36] p-7 text-center"
+                  className="group flex min-h-[200px] flex-col items-center justify-center rounded-2xl border border-[#1E2D45] bg-[#111D36] p-7 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30"
                 >
-                  <div className={`mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-2xl ${item.tone}`}>
-                    <item.icon className="h-8 w-8" />
+                  <div className={`mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-2xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_22px_rgba(122,185,255,0.35)] ${item.tone}`}>
+                    <item.icon className="h-8 w-8 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.35)]" />
                   </div>
                   <p className="max-w-[150px] text-[17px] font-semibold leading-snug text-[#E3EAF8]">{item.label}</p>
                 </motion.div>
@@ -427,7 +415,7 @@ export default function SaaSDevelopment() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#081427] py-20">
+        <section className="bg-[#081427] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <h2 className="mb-9 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Why Businesses Choose TechFlux
@@ -463,7 +451,7 @@ export default function SaaSDevelopment() {
                 <motion.div key={service.title} whileHover={{ y: -3 }} transition={{ duration: 0.2 }}>
                   <Link
                     to={service.to}
-                    className="flex min-h-[58px] items-center justify-center rounded-lg border border-white/5 bg-[#0C1830] px-4 py-3 text-center text-sm font-medium text-[#D7E2F6] transition-all duration-300 hover:border-[#2F80ED]/35 hover:bg-[#112241] hover:text-white"
+                    className="flex min-h-[58px] items-center justify-center rounded-lg border border-white/5 bg-[#0C1830] px-4 py-3 text-center text-sm font-medium text-[#D7E2F6] transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/35 hover:bg-[#112241] hover:text-white"
                   >
                     {service.title}
                   </Link>

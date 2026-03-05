@@ -178,7 +178,7 @@ export default function CaseStudies() {
           </div>
         </section>
 
-        <section className="border-t border-white/5 bg-[#0E1A31] py-20">
+        <section className="bg-[#0E1A31] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

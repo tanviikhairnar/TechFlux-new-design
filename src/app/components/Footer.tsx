@@ -119,7 +119,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Mail className={contactIconClass} />
                 <div className="text-[#9CA3AF]">
-                  <p>tanvikhairnar03@gmail.com</p>
+                  <p>sales@techflux.in</p>
                 </div>
               </li>
 

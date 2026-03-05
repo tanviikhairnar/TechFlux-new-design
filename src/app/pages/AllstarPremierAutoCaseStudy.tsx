@@ -157,7 +157,7 @@ export default function AllstarPremierAutoCaseStudy() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#08142A] py-14">
+        <section className="bg-[#08142A] py-14">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <h2 className="mb-10 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
               The Challenge
@@ -201,7 +201,7 @@ export default function AllstarPremierAutoCaseStudy() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#08142A] py-16">
+        <section className="bg-[#08142A] py-16">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <h2 className="mb-10 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Key Features Delivered
@@ -240,7 +240,7 @@ export default function AllstarPremierAutoCaseStudy() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#08142A] py-16">
+        <section className="bg-[#08142A] py-16">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <h2 className="mb-10 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Business Impact

@@ -203,7 +203,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-[#E5E7EB] md:text-lg">Email</h3>
-                      <p className="text-sm text-[#94A3B8] md:text-base">tanvikhairnar03@gmail.com</p>
+                      <p className="text-sm text-[#94A3B8] md:text-base">sales@techflux.in</p>
                     </div>
                   </div>
 

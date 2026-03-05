@@ -121,7 +121,7 @@ export default function FuzTechCaseStudy() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#08142A] py-16">
+        <section className="bg-[#08142A] py-16">
           <div className="mx-auto w-full max-w-[1260px] space-y-14 px-4 lg:px-5">
             <div>
               <h2 className="mb-5 text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
@@ -183,7 +183,7 @@ export default function FuzTechCaseStudy() {
           </div>
         </section>
 
-        <section className="border-y border-white/5 bg-[#08142A] py-16">
+        <section className="bg-[#08142A] py-16">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <h2 className="mb-10 text-center text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Results & Impact

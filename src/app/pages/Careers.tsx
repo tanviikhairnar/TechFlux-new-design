@@ -183,7 +183,7 @@ export default function Careers() {
           </motion.section>
         </div>
 
-        <section id="open-positions" className="border-y border-white/5 bg-[#0A152B] py-24">
+        <section id="open-positions" className="bg-[#0A152B] py-24">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -230,7 +230,7 @@ export default function Careers() {
 
                     <div className="flex shrink-0 gap-3 md:flex-col">
                       <Link
-                        to={`/careers/apply?position=${encodeURIComponent(position.title)}`}
+                        to={`/careers/${position.slug}`}
                         className="min-w-[220px] rounded-2xl border border-[#35507C] bg-[#25334B] px-6 py-3 text-center text-base font-medium text-[#D5E6FF] transition-all duration-300 hover:bg-[#2A3D5D]"
                       >
                         View Details
@@ -292,7 +292,7 @@ export default function Careers() {
           </motion.section>
         </div>
 
-        <section className="border-y border-white/5 bg-[#0A152B] py-24">
+        <section className="bg-[#0A152B] py-24">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

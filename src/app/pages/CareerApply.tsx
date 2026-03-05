@@ -15,6 +15,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
 import { careerRoles, getCareerRoleByTitle, roleOptions } from '../data/careers';
+import { sendCareerApplicationEmail } from '../lib/leadEmailService';
 
 type ApplyFormState = {
   fullName: string;
@@ -64,7 +65,7 @@ export default function CareerApply() {
     setResumeFile(event.target.files?.[0] ?? null);
   };
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitError('');
     setSubmitMessage('');
@@ -74,16 +75,31 @@ export default function CareerApply() {
       return;
     }
 
-    setIsSubmitting(true);
-    window.setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      setIsSubmitting(true);
+      await sendCareerApplicationEmail({
+        fullName: form.fullName,
+        email: form.email,
+        phone: form.phone,
+        location: form.location,
+        yearsOfExperience: form.yearsOfExperience,
+        position: form.position,
+        portfolioUrl: form.portfolioUrl,
+        coverLetter: form.coverLetter,
+        resumeFileName: resumeFile.name,
+      });
+
       setSubmitMessage('Application submitted successfully. Our HR team will contact you within 2-3 business days.');
       setForm({
         ...defaultFormState,
         position: selectedRole.title,
       });
       setResumeFile(null);
-    }, 750);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Failed to submit. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -93,7 +109,7 @@ export default function CareerApply() {
       <main className="relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.16),transparent_42%)]" />
 
-        <section className="relative z-10 border-b border-white/5 bg-[#09152B]/80">
+        <section className="relative z-10 bg-[#09152B]/80">
           <div className="mx-auto w-full max-w-[1260px] px-4 pb-14 pt-28 md:pt-32 lg:px-5">
             <Link
               to="/careers"
@@ -111,7 +127,7 @@ export default function CareerApply() {
           </div>
         </section>
 
-        <section id="apply-form" className="relative z-10 border-t border-white/5 py-16 md:py-20">
+        <section id="apply-form" className="relative z-10 py-16 md:py-20">
           <div className="mx-auto w-full max-w-[760px] px-4 lg:px-5">
             <motion.form
               initial={{ opacity: 0, y: 20 }}
