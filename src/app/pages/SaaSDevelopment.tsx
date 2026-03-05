@@ -169,6 +169,7 @@ const relatedServices = [
 
 export default function SaaSDevelopment() {
   const ctaMailto = 'mailto:tanvikhairnar03@gmail.com?subject=Techflux%20Inquiry';
+  const ctaMailto = 'mailto:sohel@techflux.in?subject=Techflux%20Inquiry';
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#040B1B]" style={{ fontFamily: 'Inter, sans-serif' }}>

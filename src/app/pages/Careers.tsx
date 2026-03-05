@@ -14,6 +14,7 @@ import {
 import teamPhoto from '../../assets/images/159a7f79-3802-497b-ae5e-ac1f83a54e60.webp';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
+import { careerRoles } from '../data/careers';
 
 const whyWorkItems = [
   {
@@ -38,33 +39,7 @@ const whyWorkItems = [
   },
 ];
 
-const positions = [
-  {
-    title: 'Flutter Developer',
-    tags: ['Remote', '2-4 years', 'Mobile Development'],
-    description: 'Build high-quality cross-platform mobile applications using Flutter and Dart for global clients.',
-  },
-  {
-    title: 'React Developer',
-    tags: ['Remote / Hybrid', '3-5 years', 'Frontend Development'],
-    description: 'Develop modern, scalable web apps using React, Next.js, and latest frontend technologies.',
-  },
-  {
-    title: 'Backend Developer',
-    tags: ['Remote', '3-6 years', 'Backend Development'],
-    description: 'Build scalable APIs and backend systems using Node.js, Python, or Laravel with cloud infrastructure.',
-  },
-  {
-    title: 'QA Tester',
-    tags: ['Remote', '1-3 years', 'Quality Assurance'],
-    description: 'Ensure software quality through comprehensive manual and automated testing.',
-  },
-  {
-    title: 'UI/UX Designer',
-    tags: ['Remote', '2-4 years', 'Design'],
-    description: 'Craft beautiful and intuitive user experiences for web and mobile applications.',
-  },
-];
+const positions = careerRoles;
 
 const hiringProcess = [
   {
@@ -121,8 +96,8 @@ const lifeCards = [
 ];
 
 function tagIcon(label: string) {
-  if (label.includes('Remote')) return Monitor;
-  if (label.includes('years')) return CalendarClock;
+  if (label.includes('Work From Office') || label.includes('Remote')) return Monitor;
+  if (label.includes('Year') || label.includes('Month') || label.includes('Fresher')) return CalendarClock;
   return BriefcaseBusiness;
 }
 
@@ -240,7 +215,7 @@ export default function Careers() {
                         {position.title}
                       </h3>
                       <div className="mb-5 flex flex-wrap gap-x-6 gap-y-2 text-base text-[#90A8CB] md:text-lg">
-                        {position.tags.map((tag) => {
+                        {[position.mode, position.experience, position.department].map((tag) => {
                           const Icon = tagIcon(tag);
                           return (
                             <span key={tag} className="inline-flex items-center gap-1.5">
@@ -250,13 +225,16 @@ export default function Careers() {
                           );
                         })}
                       </div>
-                      <p className="max-w-[760px] text-base text-[#9AB0CF] md:text-lg">{position.description}</p>
+                      <p className="max-w-[760px] text-base text-[#9AB0CF] md:text-lg">{position.summary}</p>
                     </div>
 
                     <div className="flex shrink-0 gap-3 md:flex-col">
-                      <button className="min-w-[220px] rounded-2xl border border-[#35507C] bg-[#25334B] px-6 py-3 text-base font-medium text-[#D5E6FF] transition-all duration-300 hover:bg-[#2A3D5D]">
+                      <Link
+                        to={`/careers/apply?position=${encodeURIComponent(position.title)}`}
+                        className="min-w-[220px] rounded-2xl border border-[#35507C] bg-[#25334B] px-6 py-3 text-center text-base font-medium text-[#D5E6FF] transition-all duration-300 hover:bg-[#2A3D5D]"
+                      >
                         View Details
-                      </button>
+                      </Link>
                       <Link
                         to={`/careers/apply?position=${encodeURIComponent(position.title)}`}
                         className="min-w-[220px] rounded-2xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-6 py-3 text-center text-base font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:brightness-110"

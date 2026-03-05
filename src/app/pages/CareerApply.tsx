@@ -14,14 +14,7 @@ import { ChangeEvent, ComponentType, FormEvent, useEffect, useMemo, useState } f
 import { Link, useSearchParams } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-
-const roleOptions = [
-  'Flutter Developer',
-  'React Developer',
-  'Backend Developer',
-  'QA Tester',
-  'UI/UX Designer',
-];
+import { careerRoles, getCareerRoleByTitle, roleOptions } from '../data/careers';
 
 type ApplyFormState = {
   fullName: string;
@@ -47,15 +40,12 @@ const defaultFormState: ApplyFormState = {
 
 export default function CareerApply() {
   const [searchParams] = useSearchParams();
-  const preselectedRole = searchParams.get('position');
-  const matchedRole = useMemo(() => {
-    if (!preselectedRole) return roleOptions[0];
-    return roleOptions.includes(preselectedRole) ? preselectedRole : roleOptions[0];
-  }, [preselectedRole]);
+  const preselectedRole = searchParams.get('position') ?? '';
+  const selectedRole = useMemo(() => getCareerRoleByTitle(preselectedRole) ?? careerRoles[0], [preselectedRole]);
 
   const [form, setForm] = useState<ApplyFormState>({
     ...defaultFormState,
-    position: matchedRole,
+    position: selectedRole.title,
   });
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -63,8 +53,8 @@ export default function CareerApply() {
   const [submitError, setSubmitError] = useState('');
 
   useEffect(() => {
-    setForm((prev) => ({ ...prev, position: matchedRole }));
-  }, [matchedRole]);
+    setForm((prev) => ({ ...prev, position: selectedRole.title }));
+  }, [selectedRole.title]);
 
   const updateField = (field: keyof ApplyFormState, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -90,7 +80,7 @@ export default function CareerApply() {
       setSubmitMessage('Application submitted successfully. Our HR team will contact you within 2-3 business days.');
       setForm({
         ...defaultFormState,
-        position: matchedRole,
+        position: selectedRole.title,
       });
       setResumeFile(null);
     }, 750);
@@ -116,12 +106,12 @@ export default function CareerApply() {
               Apply for This Position
             </h1>
             <p className="text-base text-[#9FB2CD] md:text-[22px]">
-              Submit your details and our HR team will get back to you within 2-3 business days.
+              You are applying for <span className="font-semibold text-[#E5E7EB]">{selectedRole.title}</span>.
             </p>
           </div>
         </section>
 
-        <section className="relative z-10 py-16 md:py-20">
+        <section id="apply-form" className="relative z-10 border-t border-white/5 py-16 md:py-20">
           <div className="mx-auto w-full max-w-[760px] px-4 lg:px-5">
             <motion.form
               initial={{ opacity: 0, y: 20 }}
@@ -131,14 +121,14 @@ export default function CareerApply() {
               className="rounded-3xl border border-white/8 bg-[#0D172B]/95 p-7 md:p-10"
             >
               <h2 className="mb-7 text-3xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Personal Information
+                Application Form
               </h2>
 
               <div className="space-y-5">
                 <InputLabel label="Full Name" required />
                 <InputWithIcon
                   icon={User}
-                  placeholder="John Doe"
+                  placeholder="Your name"
                   value={form.fullName}
                   onChange={(value) => updateField('fullName', value)}
                 />
@@ -147,7 +137,7 @@ export default function CareerApply() {
                 <InputWithIcon
                   icon={Mail}
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder="Your email"
                   value={form.email}
                   onChange={(value) => updateField('email', value)}
                 />
@@ -155,7 +145,7 @@ export default function CareerApply() {
                 <InputLabel label="Phone Number" required />
                 <InputWithIcon
                   icon={Phone}
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="Contact number"
                   value={form.phone}
                   onChange={(value) => updateField('phone', value)}
                 />
@@ -163,7 +153,7 @@ export default function CareerApply() {
                 <InputLabel label="Current Location" required />
                 <InputWithIcon
                   icon={MapPin}
-                  placeholder="San Francisco, CA"
+                  placeholder="Current Location"
                   value={form.location}
                   onChange={(value) => updateField('location', value)}
                 />
@@ -171,7 +161,7 @@ export default function CareerApply() {
                 <InputLabel label="Years of Experience" required />
                 <InputWithIcon
                   icon={BriefcaseBusiness}
-                  placeholder="e.g., 3 years"
+                  placeholder="e.g., 1 year"
                   value={form.yearsOfExperience}
                   onChange={(value) => updateField('yearsOfExperience', value)}
                 />
