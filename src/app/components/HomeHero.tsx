@@ -2,6 +2,7 @@ import React from "react"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { ArrowRight } from "lucide-react"
+import homeHeroImage from "../../assets/images/AI (1).jpg"
 
 const HomeHero = () => {
   return (
@@ -53,11 +54,11 @@ const HomeHero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-3xl shadow-2xl md:aspect-[5/4]">
             <img
-              src="https://images.unsplash.com/photo-1770169272345-9636d5ef2681?auto=format&fit=crop&w=1080&q=80"
+              src={homeHeroImage}
               alt="AI Technology"
-              className="w-full h-auto object-cover"
+              className="h-full w-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F1A] via-transparent to-transparent" />
           </div>

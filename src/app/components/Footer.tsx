@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Github, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BecomePartnerButton, BookStrategyCallButton } from "./GetProjectEstimateButton";
 import TechfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
 
 const socialLinks = [
@@ -161,12 +162,8 @@ export function Footer() {
           </p>
 
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Link to="/book-strategy-call" className="rounded-xl bg-[#2F80ED] px-7 py-3 text-base font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#1C6DD0] hover:shadow-lg hover:shadow-[#2F80ED]/30">
-              Book Strategy Call
-            </Link>
-            <Link to="/become-partner" className="rounded-xl border border-[#2F80ED] px-7 py-3 text-base font-medium text-[#2F80ED] transition-all duration-300 hover:-translate-y-1 hover:bg-[#2F80ED]/10">
-              Become a Partner
-            </Link>
+            <BookStrategyCallButton className="rounded-xl bg-[#2F80ED] px-7 py-3 text-base font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#1C6DD0] hover:shadow-lg hover:shadow-[#2F80ED]/30" />
+            <BecomePartnerButton className="rounded-xl border border-[#2F80ED] px-7 py-3 text-base font-medium text-[#2F80ED] transition-all duration-300 hover:-translate-y-1 hover:bg-[#2F80ED]/10" />
           </div>
         </motion.div>
 
@@ -177,4 +174,3 @@ export function Footer() {
     </footer>
   );
 }
-

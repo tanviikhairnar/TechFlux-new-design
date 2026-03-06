@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Code2, TrendingUp, Users, 
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
+import fuztechImage from '../../assets/images/repair.jpg';
 
 const challengeItems = [
   'Complex repair service categorization',
@@ -112,9 +113,9 @@ export default function FuzTechCaseStudy() {
               className="overflow-hidden rounded-2xl border border-white/8 bg-[#101A31]"
             >
               <img
-                src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1600&q=80"
+                src={fuztechImage}
                 alt="FuzTech repair booking platform"
-                className="h-[340px] w-full object-cover"
+                className="h-[260px] w-full object-cover object-center md:h-[340px]"
               />
             </motion.div>
           </div>

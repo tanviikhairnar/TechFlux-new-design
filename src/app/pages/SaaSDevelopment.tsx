@@ -29,6 +29,7 @@ import { CaseStudySection } from '../components/CaseStudySection';
 import { CardsSection } from '../components/CardsSection';
 import { InvestmentCardsSection } from '../components/InvestmentCardsSection';
 import { TechnologyStackSection } from '../components/TechnologyStackSection';
+import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
 import saasHeroImage from '../../assets/images/SaaS.jpg';
 import leaveCertificateImage from '../../assets/images/WhatsApp Image 2026-03-06 at 12.15.24.jpeg';
 
@@ -172,8 +173,6 @@ const relatedServices = [
 ];
 
 export default function SaaSDevelopment() {
-  const ctaMailto = 'mailto:tanvikhairnar03@gmail.com?subject=Techflux%20Inquiry';
-
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#030914]" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
@@ -198,7 +197,7 @@ export default function SaaSDevelopment() {
           ctaContainerClassName="mt-8 flex flex-wrap gap-4"
           primaryCta={{
             label: 'Get Project Estimate',
-            href: ctaMailto,
+            to: '/get-estimate',
             className:
               'inline-flex h-[56px] items-center justify-center rounded-[16px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-[18px] font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.34)] transition-all hover:brightness-110',
           }}
@@ -210,9 +209,8 @@ export default function SaaSDevelopment() {
           }}
           imageSrc={saasHeroImage}
           imageAlt="SaaS analytics dashboard"
-          imageContainerClassName="relative min-h-[260px] overflow-hidden rounded-[28px] border border-white/10 bg-[#E9E6EA] shadow-[0_22px_56px_rgba(3,11,27,0.32)] md:min-h-[470px]"
-          imageOverlayClassName="absolute left-0 top-0 h-full w-full rounded-[28px] bg-[#E9E6EA]"
-          imageClassName="absolute bottom-0 left-0 h-[82%] w-[95%] rounded-r-[18px] rounded-tl-[18px] object-cover"
+          imageVariant="framed"
+          imageFit="cover"
           textMotionInitial={{ opacity: 0, y: 22 }}
           imageMotionInitial={{ opacity: 0, y: 22 }}
         />
@@ -372,12 +370,7 @@ export default function SaaSDevelopment() {
                 Let&apos;s discuss your SaaS product vision and build a roadmap for launch and long-term growth.
               </p>
               <div className="flex flex-col justify-center gap-3 sm:flex-row">
-                <a
-                  href={ctaMailto}
-                  className="rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-6 py-3 text-sm font-semibold text-white shadow-[0_0_16px_rgba(56,169,255,0.3)]"
-                >
-                  Get Project Estimate
-                </a>
+                <GetProjectEstimateButton className="rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-6 py-3 text-sm font-semibold text-white shadow-[0_0_16px_rgba(56,169,255,0.3)]" />
                 <Link
                   to="/book-strategy-call"
                   className="rounded-[10px] border border-[#8FBDF3]/40 bg-[#223F68] px-6 py-3 text-sm font-semibold text-[#E6F0FF]"

@@ -3,6 +3,9 @@ import { ArrowRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
+import dineRightImage from '../../assets/images/dineright.jpg';
+import diningPreviewOne from '../../assets/images/smiling-models-posing-clothing-shop.jpg';
+import diningPreviewTwo from '../../assets/images/hand-touching-mobile-with-applications.jpg';
 
 const challengePoints = [
   'Traditional restaurant booking lacks curated experiences',
@@ -102,9 +105,9 @@ export default function DineRightCaseStudy() {
               className="overflow-hidden rounded-2xl border border-[#1F3150] bg-[#101A31]"
             >
               <img
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80"
+                src={dineRightImage}
                 alt="Dine Right platform"
-                className="h-[340px] w-full object-cover"
+                className="h-[260px] w-full object-cover object-center md:h-[340px]"
               />
             </motion.div>
           </div>
@@ -239,14 +242,14 @@ export default function DineRightCaseStudy() {
           <div className="mx-auto grid w-full max-w-[1260px] gap-4 px-4 md:grid-cols-2 lg:px-5">
             <div className="overflow-hidden rounded-xl border border-[#1E2E49] bg-[#101A31]">
               <img
-                src="https://images.unsplash.com/photo-1598514983318-2f64f8f4796c?auto=format&fit=crop&w=1400&q=80"
+                src={diningPreviewOne}
                 alt="Dine Right experience preview 1"
                 className="h-52 w-full object-cover"
               />
             </div>
             <div className="overflow-hidden rounded-xl border border-[#1E2E49] bg-[#101A31]">
               <img
-                src="https://images.unsplash.com/photo-1556742049-9086b7f2c48e?auto=format&fit=crop&w=1400&q=80"
+                src={diningPreviewTwo}
                 alt="Dine Right experience preview 2"
                 className="h-52 w-full object-cover"
               />

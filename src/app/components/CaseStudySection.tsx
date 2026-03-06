@@ -12,6 +12,7 @@ type CaseStudySectionProps = {
   imageWrapClassName?: string;
   imageSrc: string;
   imageAlt: string;
+  imageFit?: 'cover' | 'contain';
   imageClassName?: string;
   contentClassName?: string;
   badgeText?: string;
@@ -36,7 +37,8 @@ export function CaseStudySection({
   imageWrapClassName,
   imageSrc,
   imageAlt,
-  imageClassName = 'h-[280px] w-full object-cover md:h-[330px]',
+  imageFit = 'cover',
+  imageClassName,
   contentClassName = 'p-7 md:p-8',
   badgeText,
   badgeClassName = 'inline-flex rounded-full border border-[#2F80ED]/40 bg-[#102548] px-3 py-1 text-xs text-[#7AB9FF]',
@@ -49,6 +51,17 @@ export function CaseStudySection({
   linkLabel = 'View Case Study',
   linkSuffix,
 }: CaseStudySectionProps) {
+  const resolvedImageWrapClassName =
+    imageWrapClassName || (imageFit === 'contain' ? 'flex h-[280px] items-center justify-center overflow-hidden bg-[#0E1B34] md:h-[330px]' : undefined);
+
+  const resolvedImageClassName =
+    imageClassName ||
+    (imageFit === 'contain'
+      ? 'h-full w-full object-contain p-4 md:p-6'
+      : imageWrapClassName
+        ? 'h-full w-full object-cover'
+        : 'h-[280px] w-full object-cover md:h-[330px]');
+
   return (
     <section className={sectionClassName}>
       <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
@@ -60,8 +73,8 @@ export function CaseStudySection({
 
         <div className={cardClassName}>
           <div className={gridClassName}>
-            <div className={imageWrapClassName}>
-              <img src={imageSrc} alt={imageAlt} className={imageClassName} />
+            <div className={resolvedImageWrapClassName}>
+              <img src={imageSrc} alt={imageAlt} className={resolvedImageClassName} />
             </div>
             <div className={contentClassName}>
               {badgeText ? <span className={badgeClassName}>{badgeText}</span> : null}

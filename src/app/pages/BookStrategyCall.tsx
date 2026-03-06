@@ -5,6 +5,8 @@ import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
 import { sendStrategyCallEmails } from '../lib/leadEmailService';
+import avatarOne from '../../assets/images/WhatsApp Image 2026-03-05 at 12.37.05.jpeg';
+import avatarTwo from '../../assets/images/159a7f79-3802-497b-ae5e-ac1f83a54e60.webp';
 
 const coverageItems = [
   'Product feasibility and technical approach',
@@ -34,16 +36,14 @@ const testimonials = [
       'Their transparent approach to pricing and timeline helped us make an informed decision about our project.',
     name: 'Michael Chen',
     role: 'CEO, DataInsight',
-    avatar:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&q=80',
+    avatar: avatarOne,
   },
   {
     quote:
       'Best decision we made was booking that initial call. They guided us through the entire process professionally.',
     name: 'David Martinez',
     role: 'Founder, Digital Agency Co.',
-    avatar:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&q=80',
+    avatar: avatarTwo,
   },
 ];
 

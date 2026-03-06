@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2, TrendingUp, Users, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
+import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
 import { Navigation } from '../components/Navigation';
 import myObscurImage from '../../assets/images/3577047_edit.webp';
 
@@ -109,7 +110,7 @@ export default function MyObscurCaseStudy() {
               <img
                 src={myObscurImage}
                 alt="MyObscur ecommerce interface"
-                className="h-[340px] w-full object-cover"
+                className="h-[260px] w-full object-cover object-center md:h-[340px]"
               />
             </motion.div>
           </div>
@@ -230,12 +231,7 @@ export default function MyObscurCaseStudy() {
                 >
                   Book Strategy Call
                 </Link>
-                <Link
-                  to="/get-estimate"
-                  className="rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-8 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#23406B]"
-                >
-                  Get Project Estimate
-                </Link>
+                <GetProjectEstimateButton className="rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-8 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#23406B]" />
               </div>
             </div>
           </div>

@@ -3,6 +3,9 @@ import { CheckCircle2, CreditCard, Package, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
+import { ServiceHeroSection } from "../components/ServiceHeroSection";
+import { GetProjectEstimateButton } from "../components/GetProjectEstimateButton";
+import ecommerceImage from "../../assets/images/smiling-models-posing-clothing-shop.jpg";
 
 const solutionPoints = [
   "Custom storefronts with intuitive product browsing",
@@ -37,38 +40,31 @@ export default function EcommerceSolutions() {
       <main className="relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-18%,rgba(47,128,237,0.24),transparent_42%)]" />
 
-        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-24 pt-28 text-center md:pb-32 md:pt-40 lg:px-5">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mx-auto flex min-h-[420px] w-full flex-col items-center justify-center lg:min-h-[520px]"
-          >
-            <div className="mx-auto mb-6 inline-flex rounded-full border border-[#2F80ED]/35 bg-[#0A1F43] px-4 py-1 text-sm text-[#7AB9FF]">
-              E-Commerce Solutions
-            </div>
-
-            <h1
-              id="ecommerce-solutions-heading"
-              className="mx-auto max-w-[820px] text-4xl font-bold leading-tight text-[#D8DEE8] sm:text-5xl md:text-6xl"
-              style={{ fontFamily: "Sora, sans-serif" }}
-            >
-              Build Complete E-Commerce Experiences
-            </h1>
-
-            <p className="mx-auto mt-5 max-w-[780px] text-base leading-relaxed text-[#8A96AA] md:text-lg">
-              Create custom e-commerce platforms with seamless checkout experiences, inventory management, payment
-              processing, and mobile commerce capabilities.
-            </p>
-
-            <Link
-              to="/book-strategy-call"
-              className="mt-8 inline-flex h-[52px] items-center rounded-[10px] bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-8 text-sm font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.28)] transition-all hover:brightness-110"
-            >
-              Book Strategy Call
-            </Link>
-          </motion.div>
-        </section>
+        <ServiceHeroSection
+          containerClassName="grid items-center gap-10 md:grid-cols-[0.95fr_1.05fr] md:gap-12 lg:min-h-[520px]"
+          textWrapClassName="text-center lg:text-left"
+          badgeText="E-Commerce Solutions"
+          title="Build Complete E-Commerce Experiences"
+          titleId="ecommerce-solutions-heading"
+          description="Create custom e-commerce platforms with seamless checkout experiences, inventory management, payment processing, and mobile commerce capabilities."
+          ctaContainerClassName="mt-8 flex flex-col gap-4 sm:flex-row lg:justify-start"
+          primaryCta={{
+            label: "Get Project Estimate",
+            to: "/get-estimate",
+            className:
+              "inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#2F80ED] px-8 text-sm font-semibold text-[#4CA1FF] transition-all hover:bg-[#2F80ED]/10",
+          }}
+          secondaryCta={{
+            label: "Book Strategy Call",
+            to: "/book-strategy-call",
+            className:
+              "inline-flex h-[52px] items-center justify-center rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-sm font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.28)] transition-all hover:brightness-110",
+          }}
+          imageSrc={ecommerceImage}
+          imageAlt="E-commerce solution showcase"
+          imageVariant="framed"
+          imageFit="cover"
+        />
 
         <section className="bg-[#081327] py-20">
           <div className="mx-auto grid w-full max-w-[1260px] items-center gap-10 px-4 lg:grid-cols-[1fr_1.02fr] lg:px-5">
@@ -99,7 +95,7 @@ export default function EcommerceSolutions() {
               className="rounded-xl border border-white/10 bg-[#101D34] p-2"
             >
               <img
-                src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1400&q=80"
+                src={ecommerceImage}
                 alt="E-commerce mobile"
                 className="h-[300px] w-full rounded-lg object-cover md:h-[320px]"
               />
@@ -161,12 +157,7 @@ export default function EcommerceSolutions() {
                   Book Strategy Call
                 </Link>
 
-                <Link
-                  to="/get-estimate"
-                  className="inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#2F80ED] px-8 text-sm font-medium text-[#4CA1FF] transition-all hover:bg-[#2F80ED]/10"
-                >
-                  Get Project Estimate
-                </Link>
+                <GetProjectEstimateButton className="inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#2F80ED] px-8 text-sm font-medium text-[#4CA1FF] transition-all hover:bg-[#2F80ED]/10" />
               </div>
             </motion.div>
           </div>

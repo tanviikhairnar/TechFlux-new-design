@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowLeft, BriefcaseBusiness, CheckCircle2, Clock3, MapPin, Monitor } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { CareerApplyNowButton } from '../GetProjectEstimateButton';
 import type { CareerRole } from '../../data/careers';
 
 export function CareerRoleOverview({ role, showBackLink = false }: { role: CareerRole; showBackLink?: boolean }) {
@@ -63,13 +64,11 @@ export function CareerRoleOverview({ role, showBackLink = false }: { role: Caree
             <p className="mb-6 text-sm text-[#8FA5C7]">
               Submit your application and our HR team will contact you within 2-3 business days.
             </p>
-            <Link
-              to={`/careers/apply?position=${encodeURIComponent(role.title)}`}
-              state={{ roleTitle: role.title, role }}
+            <CareerApplyNowButton
+              positionTitle={role.title}
+              role={role}
               className="inline-flex h-12 w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-base font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:brightness-110"
-            >
-              Apply Now
-            </Link>
+            />
           </motion.aside>
         </div>
       </section>

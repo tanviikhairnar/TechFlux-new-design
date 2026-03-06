@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Circle, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
+import servyoImage from '../../assets/images/WhatsApp Image 2026-03-06 at 12.15.24.jpeg';
 
 const challengePoints = [
   'Lack of centralized service booking system',
@@ -108,9 +109,9 @@ export default function ServyoCaseStudy() {
               className="overflow-hidden rounded-2xl border border-white/8 bg-[#101A31]"
             >
               <img
-                src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1600&q=80"
+                src={servyoImage}
                 alt="Servyo app showcase"
-                className="h-[340px] w-full object-cover"
+                className="h-[260px] w-full object-cover object-center md:h-[340px]"
               />
             </motion.div>
           </div>

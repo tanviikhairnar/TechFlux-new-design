@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Code2, TrendingUp, Users, 
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
+import etern8Image from '../../assets/images/AI.jpg';
 
 const challengeItems = [
   'Complex smartwatch data integration',
@@ -113,9 +114,9 @@ export default function Etern8CaseStudy() {
               className="overflow-hidden rounded-2xl border border-white/8 bg-[#101A31]"
             >
               <img
-                src="https://images.unsplash.com/photo-1575311373937-040b8e1fd6b6?auto=format&fit=crop&w=1600&q=80"
+                src={etern8Image}
                 alt="Etern 8 wellness platform"
-                className="h-[340px] w-full object-cover"
+                className="h-[260px] w-full object-cover object-center md:h-[340px]"
               />
             </motion.div>
           </div>

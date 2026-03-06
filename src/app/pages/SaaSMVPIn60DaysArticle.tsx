@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
+import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
 import { Navigation } from '../components/Navigation';
 
 type SectionProps = {
@@ -143,10 +144,10 @@ export default function SaaSMVPIn60DaysArticle() {
                 <Link to="/book-strategy-call" className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#38A9FF] to-[#2B7BDF] px-8 py-3 text-sm font-semibold text-white shadow-[0_10px_25px_rgba(47,128,237,0.35)]">
                   Book Strategy Call
                 </Link>
-                <Link to="/get-estimate" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#364B69] px-8 py-3 text-sm font-semibold text-[#E5E7EB] hover:bg-[#466087]">
-                  Get Project Estimate
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+                <GetProjectEstimateButton
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#364B69] px-8 py-3 text-sm font-semibold text-[#E5E7EB] hover:bg-[#466087]"
+                  after={<ArrowRight className="h-4 w-4" />}
+                />
               </div>
             </div>
           </section>

@@ -12,10 +12,11 @@ type EmailPayload = {
 };
 
 const INTERNAL_RECEIVER_EMAILS_RAW =
-  import.meta.env.VITE_LEAD_RECEIVER_EMAIL || 'sohel@techflux.in,asrar@techflux.in,tanvikhairnar03@gmail.com';
+  import.meta.env.VITE_LEAD_RECEIVER_EMAIL || 'sohel@techflux.in,asrar@techflux.in';
 const INTERNAL_SENDER_EMAILS_RAW =
   import.meta.env.VITE_LEAD_SENDER_EMAIL || 'sohel@techflux.in,asrar@techflux.in';
-const CUSTOMER_SENDER_EMAIL = import.meta.env.VITE_CUSTOMER_SENDER_EMAIL || 'sales@techflux.in';
+// Always use the business mailbox for customer/partner-facing mails.
+const CUSTOMER_SENDER_EMAIL = 'sales@techflux.in';
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -37,7 +38,7 @@ function assertEmailConfig() {
 
   if (!receiverEmails.length || receiverEmails.some((email) => !isValidEmail(email))) {
     throw new Error(
-      'Invalid receiver email. Use real mailbox addresses like sohel@techflux.in,asrar@techflux.in,tanvikhairnar03@gmail.com.',
+      'Invalid receiver email. Use real mailbox addresses like sohel@techflux.in,asrar@techflux.in.',
     );
   }
 

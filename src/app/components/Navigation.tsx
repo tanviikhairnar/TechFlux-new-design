@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { BookStrategyCallButton } from './GetProjectEstimateButton';
 import TechfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
 
 export function Navigation() {
@@ -119,12 +120,7 @@ export function Navigation() {
 
             {/* CTA Button */}
             <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-              <Link
-                to="/book-strategy-call"
-                className="inline-flex h-[48px] items-center rounded-xl bg-gradient-to-r from-[#3AAEFE] to-[#2F80ED] px-6 text-[15px] font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30"
-              >
-                Book Strategy Call
-              </Link>
+              <BookStrategyCallButton className="inline-flex h-[48px] items-center rounded-xl bg-gradient-to-r from-[#3AAEFE] to-[#2F80ED] px-6 text-[15px] font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30" />
             </motion.div>
           </div>
 
@@ -205,13 +201,10 @@ export function Navigation() {
                 <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="text-[17px] text-gray-400 hover:text-white py-2">
                   Contact
                 </Link>
-                <Link
-                  to="/book-strategy-call"
+                <BookStrategyCallButton
                   onClick={() => setMobileMenuOpen(false)}
                   className="mt-2 rounded-lg bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] px-5 py-3 text-center text-[15px] font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30"
-                >
-                  Book Strategy Call
-                </Link>
+                />
               </div>
             </motion.div>
           )}
@@ -221,4 +214,3 @@ export function Navigation() {
     </nav>
   );
 }
-

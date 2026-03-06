@@ -18,6 +18,9 @@ import { CaseStudySection } from '../components/CaseStudySection';
 import { CardsSection } from '../components/CardsSection';
 import { InvestmentCardsSection } from '../components/InvestmentCardsSection';
 import { TechnologyStackSection } from '../components/TechnologyStackSection';
+import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
+import onDemandImage from '../../assets/images/On Demand.jpg';
+import onDemandHeroImage from '../../assets/images/hand-touching-mobile-with-applications.jpg';
 
 const buildItems = [
   {
@@ -146,7 +149,7 @@ const industries = [
 const caseStudy = {
   title: 'Servyo – Service Marketplace',
   desc: 'Multi-service booking platform connecting clients, cleaners, and technicians with features like live booking, subscriptions, and payment gateway integration.',
-  img: 'https://images.unsplash.com/photo-1621683637033-5a8de4daee2a?auto=format&fit=crop&w=1200&q=80',
+  img: onDemandImage,
 };
 
 // reasons businesses choose TechFlux
@@ -178,15 +181,13 @@ export default function OnDemandSolutions() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-18%,rgba(47,128,237,0.24),transparent_42%)]" />
 
         <ServiceHeroSection
-          containerClassName="mx-auto flex min-h-[420px] w-full flex-col justify-center lg:min-h-[520px] lg:flex-row lg:items-center lg:justify-between"
-          textWrapClassName="w-full text-center lg:w-1/2 lg:text-left"
+          containerClassName="grid items-center gap-10 md:grid-cols-[0.95fr_1.05fr] md:gap-12 lg:min-h-[520px]"
+          textWrapClassName="text-center lg:text-left"
           badgeText="On-Demand Applications"
           title="Build Scalable On-Demand Platforms"
           titleId="on-demand-applications-heading"
-          titleClassName="max-w-[820px] text-4xl font-bold leading-tight text-[#D8DEE8] sm:text-5xl md:text-6xl"
           description="We develop real-time booking and marketplace platforms for service businesses, delivery systems, and multi-vendor marketplaces."
-          descriptionClassName="mt-5 max-w-[780px] text-base leading-relaxed text-[#8A96AA] md:text-lg"
-          ctaContainerClassName="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-start"
+          ctaContainerClassName="mt-8 flex flex-col gap-4 sm:flex-row lg:justify-start"
           primaryCta={{
             label: 'Get Project Estimate',
             to: '/get-estimate',
@@ -199,11 +200,10 @@ export default function OnDemandSolutions() {
             className:
               'inline-flex h-[52px] items-center justify-center rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-sm font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.28)] transition-all hover:brightness-110',
           }}
-          imageSrc="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
+          imageSrc={onDemandHeroImage}
           imageAlt="On-demand app screen"
-          imageContainerClassName="hidden w-1/2 lg:block"
-          imageClassName="rounded-xl shadow-lg"
-          imageMotionInitial={{ opacity: 0, x: 24 }}
+          imageVariant="framed"
+          imageFit="cover"
         />
 
         <CardsSection
@@ -390,12 +390,7 @@ export default function OnDemandSolutions() {
                 >
                   Book Strategy Call
                 </Link>
-                <Link
-                  to="/get-estimate"
-                  className="rounded-[10px] border border-[#2F80ED] px-8 py-3 text-sm font-medium text-[#4CA1FF] hover:bg-[#2F80ED]/10"
-                >
-                  Get Project Estimate
-                </Link>
+                <GetProjectEstimateButton className="rounded-[10px] border border-[#2F80ED] px-8 py-3 text-sm font-medium text-[#4CA1FF] hover:bg-[#2F80ED]/10" />
               </div>
             </motion.div>
           </div>

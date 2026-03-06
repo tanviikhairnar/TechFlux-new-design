@@ -19,6 +19,11 @@ import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { CardsSection } from '../components/CardsSection';
+import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
+import unityHeroImage from '../../assets/images/AI (1).jpg';
+import unityCaseImageOne from '../../assets/images/On Demand.jpg';
+import unityCaseImageTwo from '../../assets/images/AI.jpg';
+import unityCaseImageThree from '../../assets/images/SaaS.jpg';
 
 const whyChooseUnity = [
   {
@@ -112,22 +117,19 @@ const process = [
 
 const projects = [
   {
-    image:
-      'https://images.unsplash.com/photo-1511882150382-421056c89033?auto=format&fit=crop&w=1200&q=80',
+    image: unityCaseImageOne,
     tag: 'Mobile Shooter',
     title: 'Arena Legends: Battle Royale',
     desc: 'Fast-paced mobile shooter with progression loops and weekly live events.',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1626379953822-baec19c3accd?auto=format&fit=crop&w=1200&q=80',
+    image: unityCaseImageTwo,
     tag: 'VR Racing',
     title: 'Speed Throne VR',
     desc: 'Low-latency VR racing title with multiplayer rooms and ranked leaderboard.',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1592478411213-6153e4ebc696?auto=format&fit=crop&w=1200&q=80',
+    image: unityCaseImageThree,
     tag: 'Simulation',
     title: 'Hyperreal World',
     desc: 'Interactive simulation game with modular worlds and social experiences.',
@@ -194,12 +196,7 @@ export default function UnityGameDevelopment() {
                 >
                   Book Strategy Call
                 </Link>
-                <Link
-                  to="/get-estimate"
-                  className="inline-flex h-[52px] items-center rounded-xl border border-[#2F80ED] px-7 text-sm font-semibold text-[#6EB8FF] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2F80ED]/10 hover:shadow-[0_8px_24px_rgba(19,77,151,0.3)]"
-                >
-                  Get Project Estimate
-                </Link>
+                <GetProjectEstimateButton className="inline-flex h-[52px] items-center rounded-xl border border-[#2F80ED] px-7 text-sm font-semibold text-[#6EB8FF] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2F80ED]/10 hover:shadow-[0_8px_24px_rgba(19,77,151,0.3)]" />
               </div>
             </motion.div>
 
@@ -210,9 +207,9 @@ export default function UnityGameDevelopment() {
               className="unity-card overflow-hidden rounded-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+                src={unityHeroImage}
                 alt="Unity game development architecture"
-                className="h-[360px] w-full object-cover lg:h-[430px]"
+                className="h-[280px] w-full object-cover object-center md:h-[360px] lg:h-[430px]"
               />
             </motion.div>
           </div>
@@ -361,7 +358,9 @@ export default function UnityGameDevelopment() {
                   transition={{ delay: i * 0.08 }}
                   className="group overflow-hidden rounded-2xl border border-white/5 bg-[#0F172A] transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
-                  <img src={item.image} alt={item.title} className="h-44 w-full object-cover" />
+                  <div className="relative aspect-[16/10] w-full overflow-hidden">
+                    <img src={item.image} alt={item.title} className="h-full w-full object-cover object-center" />
+                  </div>
                   <div className="p-6">
                     <span className="rounded-full bg-[#11294F] px-2 py-1 text-xs text-[#6FB9FF]">{item.tag}</span>
                     <h3 className="mt-3 text-lg font-semibold text-[#F9FAFB]">{item.title}</h3>
@@ -425,12 +424,7 @@ export default function UnityGameDevelopment() {
                 >
                   Book Strategy Call
                 </Link>
-                <Link
-                  to="/get-estimate"
-                  className="inline-flex h-[50px] items-center justify-center rounded-xl border border-[#2F80ED] px-8 text-sm font-semibold text-[#69B7FF] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2F80ED]/10 hover:shadow-[0_8px_24px_rgba(19,77,151,0.3)]"
-                >
-                  Get Project Estimate
-                </Link>
+                <GetProjectEstimateButton className="inline-flex h-[50px] items-center justify-center rounded-xl border border-[#2F80ED] px-8 text-sm font-semibold text-[#69B7FF] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2F80ED]/10 hover:shadow-[0_8px_24px_rgba(19,77,151,0.3)]" />
               </div>
             </motion.div>
           </div>

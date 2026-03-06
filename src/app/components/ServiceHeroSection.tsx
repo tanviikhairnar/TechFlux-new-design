@@ -25,6 +25,8 @@ type ServiceHeroSectionProps = {
   secondaryCta: CtaItem;
   imageSrc: string;
   imageAlt: string;
+  imageVariant?: 'default' | 'framed';
+  imageFit?: 'cover' | 'contain';
   imageContainerClassName?: string;
   imageOverlayClassName?: string;
   imageClassName?: string;
@@ -64,12 +66,35 @@ export function ServiceHeroSection({
   secondaryCta,
   imageSrc,
   imageAlt,
-  imageContainerClassName = 'overflow-hidden rounded-2xl border border-white/10 bg-[#0E1B34] shadow-[0_20px_50px_rgba(2,10,28,0.35)]',
+  imageVariant = 'default',
+  imageFit = 'cover',
+  imageContainerClassName,
   imageOverlayClassName,
-  imageClassName = 'h-[300px] w-full object-cover md:h-[380px] lg:h-[460px]',
+  imageClassName,
   textMotionInitial = { opacity: 0, y: 30 },
   imageMotionInitial = { opacity: 0, y: 22 },
 }: ServiceHeroSectionProps) {
+  const resolvedImageContainerClassName =
+    imageContainerClassName ||
+    (imageVariant === 'framed'
+      ? `relative min-h-[260px] overflow-hidden rounded-[28px] border border-white/10 bg-[#0E1B34] shadow-[0_22px_56px_rgba(3,11,27,0.32)] md:min-h-[470px] ${
+          imageFit === 'contain' ? 'flex items-center justify-center' : ''
+        }`
+      : 'overflow-hidden rounded-2xl border border-white/10 bg-[#0E1B34] shadow-[0_20px_50px_rgba(2,10,28,0.35)]');
+
+  const resolvedImageOverlayClassName =
+    imageOverlayClassName;
+
+  const resolvedImageClassName =
+    imageClassName ||
+    (imageVariant === 'framed'
+      ? imageFit === 'contain'
+        ? 'relative z-10 h-[82%] w-[95%] rounded-r-[18px] rounded-tl-[18px] object-contain'
+        : 'absolute inset-0 h-full w-full object-cover'
+      : imageFit === 'contain'
+        ? 'h-[300px] w-full object-contain md:h-[380px] lg:h-[460px]'
+        : 'h-[300px] w-full object-cover md:h-[380px] lg:h-[460px]');
+
   return (
     <section className={sectionClassName}>
       <div className={containerClassName}>
@@ -89,10 +114,10 @@ export function ServiceHeroSection({
           initial={imageMotionInitial}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ duration: 0.55, delay: 0.08 }}
-          className={imageContainerClassName}
+          className={resolvedImageContainerClassName}
         >
-          {imageOverlayClassName ? <div className={imageOverlayClassName} /> : null}
-          <img src={imageSrc} alt={imageAlt} className={imageClassName} />
+          {resolvedImageOverlayClassName ? <div className={resolvedImageOverlayClassName} /> : null}
+          <img src={imageSrc} alt={imageAlt} className={resolvedImageClassName} />
         </motion.div>
       </div>
     </section>

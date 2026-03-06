@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
 import servyoImage from '../../assets/images/WhatsApp Image 2026-03-06 at 12.15.24.jpeg';
 import dinerightImage from '../../assets/images/dineright.jpg';
 import allstarImage from '../../assets/images/car.jpg';
@@ -10,6 +11,7 @@ import myobscurImage from '../../assets/images/3577047_edit.webp';
 import fuztechImage from '../../assets/images/On Demand.jpg';
 import etern8Image from '../../assets/images/AI.jpg';
 import studioNewMediaImage from '../../assets/images/4824548.jpg';
+import leaveCertificateImage from '../../assets/images/WhatsApp Image 2026-03-06 at 12.15.24.jpeg';
 
 type CaseStudy = {
   name: string;
@@ -65,8 +67,7 @@ const caseStudies: CaseStudy[] = [
     name: 'Leave Certificate',
     headline: 'Education',
     description: 'Automated certificate management for educational institutions',
-    image:
-      'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80',
+    image: leaveCertificateImage,
     tags: ['SaaS Platform', 'Digital Records', 'Role-Based Access'],
     categoryLabel: 'Education',
     caseStudyUrl: '/case-studies/leave-certificate',
@@ -199,12 +200,7 @@ export default function CaseStudies() {
                 >
                   Book Strategy Call
                 </Link>
-                <Link
-                  to="/get-estimate"
-                  className="rounded-xl border border-[#2F80ED] bg-[#2A3E5D] px-8 py-3 text-sm font-semibold text-[#E5E7EB] hover:bg-[#334b70]"
-                >
-                  Get Project Estimate
-                </Link>
+                <GetProjectEstimateButton className="rounded-xl border border-[#2F80ED] bg-[#2A3E5D] px-8 py-3 text-sm font-semibold text-[#E5E7EB] hover:bg-[#334b70]" />
               </div>
             </motion.div>
           </div>

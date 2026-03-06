@@ -12,6 +12,9 @@ import homeHeroAiImage from '../../assets/images/AI (1).jpg';
 import homeSaasImage from '../../assets/images/SaaS.jpg';
 import homeAiGradientImage from '../../assets/images/photo-1760629863094-5b1e8d1aae74.jpg';
 import onDemandImage from '../../assets/images/On Demand (1).jpg';
+import servyoCaseImage from '../../assets/images/159a7f79-3802-497b-ae5e-ac1f83a54e60.webp';
+import allstarCaseImage from '../../assets/images/car.jpg';
+import eternCaseImage from '../../assets/images/3649760.jpg';
 
 function Counter({
   value,
@@ -741,8 +744,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                image:
-                  "../../assets/images/159a7f79-3802-497b-ae5e-ac1f83a54e60.webp",
+                image: servyoCaseImage,
                 category: "Service Marketplace",
                 title: "Servyo",
                 description:
@@ -750,8 +752,7 @@ export default function Home() {
                 metric: "Booking + subscriptions",
               },
               {
-                image:
-                  "../../assets/images/car.jpg",
+                image: allstarCaseImage,
                 category: "Automotive",
                 title: "Allstar Premier Auto",
                 description:
@@ -759,8 +760,7 @@ export default function Home() {
                 metric: "Inventory + lead funnel",
               },
               {
-                image:
-                  "../../assets/images/3649760.jpg",
+                image: eternCaseImage,
                 category: "AI Wellness",
                 title: "Etern 8",
                 description:

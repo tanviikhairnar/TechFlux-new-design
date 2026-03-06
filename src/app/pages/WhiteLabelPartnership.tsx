@@ -12,10 +12,16 @@ import {
   Cloud,
   ShoppingCart,
   ChevronRight,
+  Award,
+  Rocket,
+  Handshake,
+  CheckCircle2,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
+import { ServiceHeroSection } from '../components/ServiceHeroSection';
+import whiteLabelImage from '../../assets/images/4824548.jpg';
 
 // data for sections based on screenshot
 const builtFor = [
@@ -73,50 +79,89 @@ const techTags = [
 ];
 
 const collaborationSteps = [
-  { icon: Users, title: 'Initial Partnership Discussion' },
-  { icon: Shield, title: 'NDA & Collaboration Setup' },
-  { icon: Layers, title: 'Project Planning & Architecture' },
-  { icon: Code, title: 'Development & Delivery' },
-  { icon: Repeat, title: 'Long-Term Partnership Support' },
+  {
+    icon: Users,
+    step: '01',
+    title: 'Initial Partnership Discussion',
+    desc: "We discuss your agency's needs, project types, and collaboration expectations.",
+  },
+  {
+    icon: Shield,
+    step: '02',
+    title: 'NDA & Collaboration Setup',
+    desc: 'Sign confidentiality agreements and set up white-label project workflows.',
+  },
+  {
+    icon: Layers,
+    step: '03',
+    title: 'Project Planning & Architecture',
+    desc: 'Detailed technical planning, timeline estimation, and resource allocation.',
+  },
+  {
+    icon: Code,
+    step: '04',
+    title: 'Development & Delivery',
+    desc: 'Agile development with regular updates, code reviews, and quality assurance.',
+  },
+  {
+    icon: Repeat,
+    step: '05',
+    title: 'Long-Term Partnership Support',
+    desc: 'Ongoing maintenance, feature updates, and dedicated technical support.',
+  },
 ];
 
 const whyItems = [
-  { title: '8+ Years Experience', desc: 'Proven track record in software development.' },
-  { title: 'Global Clients', desc: 'Serving agencies and enterprises worldwide.' },
-  { title: 'Dedicated Development Team', desc: 'Experienced engineers and designers.' },
-  { title: 'Scalable Architecture', desc: 'Enterprise-grade technical solutions.' },
+  {
+    icon: Award,
+    titleLine1: '8+',
+    titleLine2: 'Years Experience',
+    desc: 'Proven track record in software development',
+  },
+  {
+    icon: Globe,
+    titleLine1: 'Global',
+    titleLine2: 'Clients',
+    desc: 'Serving agencies and businesses worldwide',
+  },
+  {
+    icon: Users,
+    titleLine1: 'Dedicated',
+    titleLine2: 'Development Team',
+    desc: 'Experienced engineers and designers',
+  },
+  {
+    icon: Layers,
+    titleLine1: 'Scalable',
+    titleLine2: 'Architecture Expertise',
+    desc: 'Enterprise-grade technical solutions',
+  },
 ];
 
 const caseStudy = {
   title: 'Studio New Media – SaaS CMS Platform',
   desc: 'Custom SaaS CMS platform built for a European digital agency to manage multiple client websites, including multi-tenant architecture, role-based access, and automated billing.',
-  img: 'https://images.unsplash.com/photo-1581091870620-e7eea88644bb?auto=format&fit=crop&w=1200&q=80',
+  img: whiteLabelImage,
 };
 
 const partnershipModels = [
   {
+    icon: Rocket,
     title: 'Project-Based Development',
-    items: [
-      'Fixed scope projects with clear milestones.',
-      'Ideal for one-time client engagements.',
-      'Dedicated project manager.',
-    ],
+    description: 'Fixed-scope projects with clear timelines and deliverables. Perfect for one-time client engagements.',
+    items: ['Fixed pricing structure', 'Defined project scope', 'Clear milestones', 'Flexible engagement'],
   },
   {
+    icon: Users,
     title: 'Dedicated Development Team',
-    items: [
-      'Your own remote team of developers.',
-      'Scale up or down as needed.',
-      'Priority delivery and sprint ownership.',
-    ],
+    description: 'Your own remote team of developers working exclusively on your projects. Scale up or down as needed.',
+    items: ['Monthly retainer model', 'Dedicated resources', 'Priority support', 'Flexible team size'],
   },
   {
+    icon: Handshake,
     title: 'Long-Term Technical Partnership',
-    items: [
-      'Ongoing maintenance and enhancements.',
-      'Co-development and reseller opportunities.',
-      'Revenue sharing options.',
-    ],
+    description: 'Strategic partnership for ongoing development needs. We become your extended technical team.',
+    items: ['Discounted rates', 'Priority access', 'Joint planning', 'Revenue sharing options'],
   },
 ];
 
@@ -178,13 +223,15 @@ export default function WhiteLabelPartnership() {
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="hidden w-1/2 lg:block"
+              className="hidden w-full lg:block lg:w-1/2"
             >
-              <img
-                src="https://images.unsplash.com/photo-1581091870620-e7eea88644bb?auto=format&fit=crop&w=800&q=80"
-                alt="Handshake on laptop screen"
-                className="rounded-xl shadow-lg"
-              />
+              <div className="mx-auto w-full max-w-[620px] rounded-[22px] border border-[#2F80ED]/20 bg-[#0B1E60] p-6 shadow-[0_24px_60px_rgba(5,20,56,0.45)]">
+                <img
+                  src={whiteLabelImage}
+                  alt="Handshake on laptop screen"
+                  className="h-[320px] w-full rounded-xl object-cover object-center lg:h-[350px]"
+                />
+              </div>
             </motion.div>
           </motion.div>
         </section>
@@ -284,8 +331,12 @@ export default function WhiteLabelPartnership() {
               <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Our Collaboration Process
               </h2>
+              <p className="mx-auto max-w-[820px] text-[17px] leading-8 text-[#8EA2BF]">
+                A transparent and structured approach to white-label development partnerships.
+              </p>
             </motion.div>
-            <div className="grid gap-6 md:grid-cols-5">
+            <div className="relative grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+              <div className="pointer-events-none absolute left-[10%] right-[10%] top-14 hidden h-px bg-[#1B3E72] xl:block" />
               {collaborationSteps.map((step, i) => (
                 <motion.div
                   key={i}
@@ -293,10 +344,18 @@ export default function WhiteLabelPartnership() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="flex flex-col items-center gap-3 rounded-xl border border-white/5 bg-[#0F1B31] p-6 text-center"
+                  className="relative z-10 flex flex-col items-center rounded-2xl border border-white/10 bg-[linear-gradient(145deg,#161F34_0%,#141C2F_100%)] px-7 pb-8 pt-7 text-center"
                 >
-                  <step.icon className="h-8 w-8 text-[#2F80ED]" />
-                  <p className="text-sm font-medium text-[#D8DEE8]">{step.title}</p>
+                  <div className="relative mb-5 flex h-[78px] w-[78px] items-center justify-center rounded-full bg-gradient-to-b from-[#3FAAF7] to-[#2B84E3]">
+                    <step.icon className="h-8 w-8 text-white" />
+                    <span className="absolute right-[-6px] top-[-8px] inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#2E86E9] bg-[#061733] text-sm font-bold leading-none text-[#3EA4FF]">
+                      {step.step}
+                    </span>
+                  </div>
+                  <h3 className="mb-3 text-[22px] font-semibold leading-[1.35] text-[#E6EBF5]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                    {step.title}
+                  </h3>
+                  <p className="text-[16px] leading-[1.6] text-[#95A4BC]">{step.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -307,11 +366,11 @@ export default function WhiteLabelPartnership() {
         <section className="bg-[#081327] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="mb-3 text-3xl font-semibold text-[#F2F5FA] md:text-[46px]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Why Partner With TechFlux
               </h2>
             </motion.div>
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
               {whyItems.map((item, i) => (
                 <motion.div
                   key={i}
@@ -319,12 +378,16 @@ export default function WhiteLabelPartnership() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="rounded-xl border border-white/5 bg-[#0C1527] p-6"
+                  className="flex min-h-[300px] flex-col items-center rounded-[20px] border border-[#1E2D46] bg-[#111A2E] px-7 py-8 text-center"
                 >
-                  <h3 className="mb-2 text-lg font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                    {item.title}
+                  <item.icon className="mx-auto mb-6 h-12 w-12 text-[#2F80ED]" />
+                  <h3 className="mb-2 text-[42px] font-semibold leading-[1.08] text-[#F2F5FA]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                    {item.titleLine1}
                   </h3>
-                  <p className="text-[13px] leading-6 text-[#8A96AA]">{item.desc}</p>
+                  <h4 className="mb-4 text-[21px] font-semibold leading-[1.25] text-[#F2F5FA]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                    {item.titleLine2}
+                  </h4>
+                  <p className="max-w-[260px] text-[15px] leading-7 text-[#9BA7BC]">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -341,7 +404,7 @@ export default function WhiteLabelPartnership() {
             </motion.div>
             <div className="rounded-xl border border-white/5 bg-[#0F1B31] overflow-hidden">
               <div className="grid md:grid-cols-2">
-                <img src={caseStudy.img} alt={caseStudy.title} className="h-64 object-cover" />
+                <img src={caseStudy.img} alt={caseStudy.title} className="h-64 w-full object-cover object-center md:h-full" />
                 <div className="p-8 flex flex-col justify-center">
                   <h3 className="mb-4 text-2xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {caseStudy.title}
@@ -363,24 +426,35 @@ export default function WhiteLabelPartnership() {
               <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Flexible Partnership Models
               </h2>
+              <p className="mx-auto max-w-[760px] text-sm text-[#8A96AA] md:text-[15px]">
+                Choose the engagement model that best fits your agency&apos;s needs.
+              </p>
             </motion.div>
-            <div className="overflow-x-auto rounded-[24px] border border-[#263550] bg-[#141F36]">
-              <table className="w-full min-w-[760px]">
-                <thead>
-                  <tr className="border-b border-[#2A3954]">
-                    <th className="px-6 py-5 text-left text-xl font-semibold tracking-[-0.01em] text-[#E5ECF8]">Model</th>
-                    <th className="px-6 py-5 text-left text-xl font-semibold tracking-[-0.01em] text-[#E5ECF8]">Includes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {partnershipModels.map((model) => (
-                    <tr key={model.title} className="border-b border-[#2A3954] last:border-b-0">
-                      <td className="px-6 py-5 text-lg text-[#E5ECF8]">{model.title}</td>
-                      <td className="px-6 py-5 text-lg text-[#9AA7BF]">{model.items.join(' | ')}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {partnershipModels.map((model, i) => (
+                <motion.div
+                  key={model.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06 }}
+                  className="rounded-3xl border border-[#1D2C48] bg-[linear-gradient(180deg,#111C32_0%,#101A2F_100%)] p-8"
+                >
+                  <model.icon className="mb-6 h-10 w-10 text-[#2F80ED]" />
+                  <h3 className="mb-4 text-[27px] font-semibold leading-[1.2] text-[#E6EBF5]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                    {model.title}
+                  </h3>
+                  <p className="mb-7 text-[15px] leading-7 text-[#95A4BC]">{model.description}</p>
+                  <ul className="space-y-3">
+                    {model.items.map((item) => (
+                      <li key={item} className="flex items-center gap-3 text-[15px] text-[#A4B2C9]">
+                        <CheckCircle2 className="h-4 w-4 shrink-0 text-[#2F80ED]" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -454,5 +528,6 @@ export default function WhiteLabelPartnership() {
     </div>
   );
 }
+
 
 

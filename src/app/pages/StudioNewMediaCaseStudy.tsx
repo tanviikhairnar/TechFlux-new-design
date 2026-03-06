@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Code2, TrendingUp, Users, 
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
+import studioImage from '../../assets/images/4824548.jpg';
 
 const challengeItems = [
   'Complex multi-tenant architecture requirements',
@@ -112,9 +113,9 @@ export default function StudioNewMediaCaseStudy() {
               className="overflow-hidden rounded-2xl border border-white/8 bg-[#101A31]"
             >
               <img
-                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80"
+                src={studioImage}
                 alt="Studio New Media CMS platform"
-                className="h-[340px] w-full object-cover"
+                className="h-[260px] w-full object-cover object-center md:h-[340px]"
               />
             </motion.div>
           </div>

@@ -12,7 +12,11 @@ import {
   Users,
 } from 'lucide-react';
 import teamPhoto from '../../assets/images/159a7f79-3802-497b-ae5e-ac1f83a54e60.webp';
+import culturePhoto from '../../assets/images/cloud-storage-background-business-network-design.jpg';
+import workspacePhoto from '../../assets/images/hand-touching-mobile-with-applications.jpg';
+import growthPhoto from '../../assets/images/pexels-cottonbro-5483071.jpg';
 import { Footer } from '../components/Footer';
+import { CareerApplyNowButton, CareerViewDetailsButton } from '../components/GetProjectEstimateButton';
 import { Navigation } from '../components/Navigation';
 import { careerRoles } from '../data/careers';
 
@@ -76,20 +80,17 @@ const lifeCards = [
     text: 'Work together on challenging projects.',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80',
+    image: culturePhoto,
     title: 'Remote-First',
     text: 'Flexible work environment',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=900&q=80',
+    image: workspacePhoto,
     title: 'Innovation Culture',
     text: 'Brainstorm and create together',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80',
+    image: growthPhoto,
     title: 'Cutting-Edge Tech',
     text: 'Work with modern technologies',
   },
@@ -147,7 +148,7 @@ export default function Careers() {
               transition={{ duration: 0.65, delay: 0.1 }}
               className="overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
             >
-              <img src={teamPhoto} alt="Techflux team at work" className="h-[360px] w-full object-cover md:h-[520px] lg:h-[620px]" />
+              <img src={teamPhoto} alt="Techflux team at work" className="h-[300px] w-full object-cover object-center md:h-[520px] lg:h-[620px]" />
             </motion.div>
           </section>
 
@@ -229,20 +230,16 @@ export default function Careers() {
                     </div>
 
                     <div className="flex w-full shrink-0 flex-col gap-3 sm:flex-row md:w-auto md:flex-col">
-                      <Link
-                        to={`/careers/${position.slug}`}
-                        state={{ role: position }}
+                      <CareerViewDetailsButton
+                        slug={position.slug}
+                        role={position}
                         className="w-full rounded-2xl border border-[#35507C] bg-[#25334B] px-6 py-3 text-center text-base font-medium text-[#D5E6FF] transition-all duration-300 hover:bg-[#2A3D5D] sm:flex-1 md:min-w-[220px] md:flex-none"
-                      >
-                        View Details
-                      </Link>
-                      <Link
-                        to={`/careers/apply?position=${encodeURIComponent(position.title)}`}
-                        state={{ roleTitle: position.title, role: position }}
+                      />
+                      <CareerApplyNowButton
+                        positionTitle={position.title}
+                        role={position}
                         className="w-full rounded-2xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-6 py-3 text-center text-base font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:brightness-110 sm:flex-1 md:min-w-[220px] md:flex-none"
-                      >
-                        Apply Now
-                      </Link>
+                      />
                     </div>
                   </div>
                 </motion.article>
@@ -320,8 +317,8 @@ export default function Careers() {
                     className="overflow-hidden rounded-3xl border border-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
                     style={{ background: 'rgba(255,255,255,0.03)' }}
                   >
-                    <div className="relative">
-                      <img src={card.image} alt={card.title} className="h-56 w-full object-cover" />
+                    <div className="relative aspect-[16/10] w-full overflow-hidden">
+                      <img src={card.image} alt={card.title} className="h-full w-full object-cover object-center" />
                       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0E1B34] to-transparent" />
                     </div>
                     <div className="p-5">

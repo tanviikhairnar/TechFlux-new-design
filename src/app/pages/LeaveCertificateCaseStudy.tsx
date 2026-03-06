@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Code2, TrendingUp, Users, 
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
+import leaveCertificateImage from '../../assets/images/WhatsApp Image 2026-03-06 at 12.15.24.jpeg';
 
 const challengeItems = [
   'Manual certificate management consuming excessive administrative time',
@@ -113,9 +114,9 @@ export default function LeaveCertificateCaseStudy() {
               className="overflow-hidden rounded-2xl border border-white/8 bg-[#101A31]"
             >
               <img
-                src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=80"
+                src={leaveCertificateImage}
                 alt="Leave Certificate platform"
-                className="h-[340px] w-full object-cover"
+                className="h-[260px] w-full object-cover object-center md:h-[340px]"
               />
             </motion.div>
           </div>

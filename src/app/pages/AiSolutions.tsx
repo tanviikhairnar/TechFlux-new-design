@@ -26,7 +26,9 @@ import { CaseStudySection } from '../components/CaseStudySection';
 import { CardsSection } from '../components/CardsSection';
 import { InvestmentCardsSection } from '../components/InvestmentCardsSection';
 import { TechnologyStackSection } from '../components/TechnologyStackSection';
+import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
 import aiHeroImage from '../../assets/images/AI.jpg';
+import aiCaseImage from '../../assets/images/3649760.jpg';
 
 const aiSolutions = [
   {
@@ -80,7 +82,7 @@ const techTags = [
 const successStories = [
   {
     resultIcon: TrendingUp,
-    img: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80',
+    img: aiCaseImage,
     title: 'Etern 8 – AI Wellness Platform',
     desc: 'AI-powered wellness platform analyzing smartwatch data to deliver personalized health recommendations using machine learning algorithms.',
     result: '100K+ users, 85% engagement',
@@ -159,7 +161,7 @@ export default function AiSolutions() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-18%,rgba(47,128,237,0.24),transparent_42%)]" />
 
         <ServiceHeroSection
-          containerClassName="mx-auto grid min-h-[420px] w-full items-center gap-10 lg:min-h-[520px] lg:grid-cols-[1fr_1.05fr] lg:gap-12"
+          containerClassName="grid items-center gap-10 md:grid-cols-[0.95fr_1.05fr] md:gap-12 lg:min-h-[520px]"
           textWrapClassName="text-center lg:text-left"
           badgeText="AI Solutions"
           title="AI-Powered Digital Products"
@@ -180,6 +182,8 @@ export default function AiSolutions() {
           }}
           imageSrc={aiHeroImage}
           imageAlt="AI brain visual"
+          imageVariant="framed"
+          imageFit="cover"
         />
 
         <CardsSection
@@ -273,9 +277,9 @@ export default function AiSolutions() {
           cardClassName="overflow-hidden rounded-2xl border border-white/5 bg-[linear-gradient(110deg,#0F1B31_0%,#101A2D_55%,#0E1728_100%)]"
           gridClassName="grid items-stretch md:grid-cols-[1.05fr_1fr]"
           imageWrapClassName="h-[280px] md:h-[440px]"
-          imageSrc="https://images.unsplash.com/photo-1510017803434-a899398421b3?auto=format&fit=crop&w=1400&q=80"
+          imageSrc={aiCaseImage}
           imageAlt="AI wellness platform"
-          imageClassName="h-full w-full object-cover"
+          imageFit="cover"
           contentClassName="flex flex-col justify-center p-7 md:p-12"
           badgeText="AI Wellness Platform"
           badgeClassName="mb-6 inline-flex w-fit rounded-full border border-[#2F80ED]/30 bg-[#0F2A5F] px-5 py-2 text-sm font-medium text-[#56A9F5]"
@@ -377,12 +381,7 @@ export default function AiSolutions() {
                 >
                   Book Strategy Call
                 </Link>
-                <Link
-                  to="/get-estimate"
-                  className="rounded-[10px] border border-[#2F80ED] px-8 py-3 text-sm font-medium text-[#4CA1FF] hover:bg-[#2F80ED]/10"
-                >
-                  Get Project Estimate
-                </Link>
+                <GetProjectEstimateButton className="rounded-[10px] border border-[#2F80ED] px-8 py-3 text-sm font-medium text-[#4CA1FF] hover:bg-[#2F80ED]/10" />
               </div>
             </motion.div>
           </div>

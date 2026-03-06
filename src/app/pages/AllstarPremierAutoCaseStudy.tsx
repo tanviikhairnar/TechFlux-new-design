@@ -2,7 +2,9 @@ import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2, Circle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
+import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
 import { Navigation } from '../components/Navigation';
+import allstarImage from '../../assets/images/car.jpg';
 
 const challengeItems = [
   'Inefficient manual inventory tracking system',
@@ -124,9 +126,9 @@ export default function AllstarPremierAutoCaseStudy() {
               className="overflow-hidden rounded-2xl border border-white/8 bg-[#101A31]"
             >
               <img
-                src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1600&q=80"
+                src={allstarImage}
                 alt="Allstar Premier Auto inventory"
-                className="h-[340px] w-full object-cover"
+                className="h-[260px] w-full object-cover object-center md:h-[340px]"
               />
             </motion.div>
           </div>
@@ -302,12 +304,7 @@ export default function AllstarPremierAutoCaseStudy() {
                 >
                   Book Strategy Call
                 </Link>
-                <Link
-                  to="/get-estimate"
-                  className="rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-8 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#23406B]"
-                >
-                  Get Project Estimate
-                </Link>
+                <GetProjectEstimateButton className="rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-8 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#23406B]" />
               </div>
             </div>
           </div>

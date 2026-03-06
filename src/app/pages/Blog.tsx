@@ -3,6 +3,10 @@ import { ArrowRight, Clock3 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
+import saasBlogImage from '../../assets/images/saas-concept-collage.jpg';
+import aiBlogImage from '../../assets/images/AI.jpg';
+import onDemandBlogImage from '../../assets/images/On Demand.jpg';
 
 const posts = [
   {
@@ -12,8 +16,7 @@ const posts = [
     excerpt:
       'A step-by-step 60-day execution plan covering scope, architecture, design, development, testing, and launch feedback.',
     date: 'Mar 5, 2026',
-    image:
-      'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80',
+    image: saasBlogImage,
     link: '/blog/saas-mvp-development-2026',
   },
   {
@@ -23,8 +26,7 @@ const posts = [
     excerpt:
       'A practical playbook for solving feature creep, scalability gaps, onboarding drop-offs, security risks, and weak analytics.',
     date: 'Mar 5, 2026',
-    image:
-      'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80',
+    image: aiBlogImage,
     link: '/blog/ai-integration-services-structured-approach',
   },
   {
@@ -34,8 +36,7 @@ const posts = [
     excerpt:
       'Learn how to handle real-time operations, multi-role systems, payments, scalability, provider quality, and retention in on-demand platforms.',
     date: 'Mar 5, 2026',
-    image:
-      'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1200&q=80',
+    image: onDemandBlogImage,
     link: '/blog/white-label-saas-development-strategic-infrastructure',
   },
 ];
@@ -76,7 +77,9 @@ export default function Blog() {
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#24314a] bg-[#101A31] shadow-[0_20px_35px_rgba(2,8,23,0.28)] transition-all hover:border-[#32598b]"
               >
-                <img src={post.image} alt={post.title} className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                  <img src={post.image} alt={post.title} className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
+                </div>
                 <div className="flex flex-1 flex-col p-5">
                   <div className="mb-3 flex items-center gap-2.5 text-xs">
                     <span className="rounded-full bg-[#123562] px-2.5 py-1 text-[#56A9F5]">{post.category}</span>
@@ -130,12 +133,7 @@ export default function Blog() {
                 >
                   Book Strategy Call
                 </Link>
-                <Link
-                  to="/get-estimate"
-                  className="rounded-xl bg-[#364B69] px-8 py-3 text-sm font-semibold text-[#E5E7EB] hover:bg-[#466087]"
-                >
-                  Get Project Estimate
-                </Link>
+                <GetProjectEstimateButton className="rounded-xl bg-[#364B69] px-8 py-3 text-sm font-semibold text-[#E5E7EB] hover:bg-[#466087]" />
               </div>
             </motion.div>
           </div>
