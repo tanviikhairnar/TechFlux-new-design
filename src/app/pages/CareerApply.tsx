@@ -14,6 +14,7 @@ import { ChangeEvent, ComponentType, FormEvent, useEffect, useMemo, useState } f
 import { Link, useSearchParams } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
+import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
 import { careerRoles, getCareerRoleByTitle, roleOptions } from '../data/careers';
 import { sendCareerApplicationEmail } from '../lib/leadEmailService';
 
@@ -50,8 +51,9 @@ export default function CareerApply() {
   });
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
   const [submitError, setSubmitError] = useState('');
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [showSuccessOnButton, setShowSuccessOnButton] = useState(false);
 
   useEffect(() => {
     setForm((prev) => ({ ...prev, position: selectedRole.title }));
@@ -68,7 +70,7 @@ export default function CareerApply() {
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitError('');
-    setSubmitMessage('');
+    setShowSuccessPopup(false);
 
     if (!form.fullName || !form.email || !form.phone || !form.location || !form.yearsOfExperience || !resumeFile) {
       setSubmitError('Please fill all required fields and upload your resume.');
@@ -89,7 +91,9 @@ export default function CareerApply() {
         resumeFileName: resumeFile.name,
       });
 
-      setSubmitMessage('Application submitted successfully. Our HR team will contact you within 2-3 business days.');
+      setShowSuccessPopup(true);
+      setShowSuccessOnButton(true);
+      window.setTimeout(() => setShowSuccessOnButton(false), 2500);
       setForm({
         ...defaultFormState,
         position: selectedRole.title,
@@ -236,7 +240,6 @@ export default function CareerApply() {
               </label>
 
               {submitError ? <p className="mt-4 text-sm text-[#F87171]">{submitError}</p> : null}
-              {submitMessage ? <p className="mt-4 text-sm text-[#4ADE80]">{submitMessage}</p> : null}
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 <button
@@ -244,7 +247,7 @@ export default function CareerApply() {
                   disabled={isSubmitting}
                   className="h-12 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-base font-semibold text-white transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Submit Application'}
+                  {isSubmitting ? 'Submitting...' : showSuccessOnButton ? 'Application Submitted' : 'Submit Application'}
                 </button>
                 <Link
                   to="/careers"
@@ -261,6 +264,13 @@ export default function CareerApply() {
           </div>
         </section>
       </main>
+
+      <SubmissionSuccessPopup
+        open={showSuccessPopup}
+        onClose={() => setShowSuccessPopup(false)}
+        title="Application Submitted"
+        message="Your application has been sent to our HR team. We will contact you within 2-3 business days."
+      />
 
       <Footer />
     </div>

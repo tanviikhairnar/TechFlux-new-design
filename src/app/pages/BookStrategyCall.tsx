@@ -3,6 +3,7 @@ import { Calendar, CheckCircle2, Clock3, Image, Video } from 'lucide-react';
 import { FormEvent, useState } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
 import { sendStrategyCallEmails } from '../lib/leadEmailService';
 
 const coverageItems = [
@@ -58,12 +59,13 @@ export default function BookStrategyCall() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
-  const [submitSuccess, setSubmitSuccess] = useState('');
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [showSuccessOnButton, setShowSuccessOnButton] = useState(false);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitError('');
-    setSubmitSuccess('');
+    setShowSuccessPopup(false);
 
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
       setSubmitError('Please fill all required fields.');
@@ -73,7 +75,9 @@ export default function BookStrategyCall() {
     try {
       setIsSubmitting(true);
       await sendStrategyCallEmails(formData);
-      setSubmitSuccess('Request submitted and email sent successfully.');
+      setShowSuccessPopup(true);
+      setShowSuccessOnButton(true);
+      window.setTimeout(() => setShowSuccessOnButton(false), 2500);
       setFormData({
         firstName: '',
         lastName: '',
@@ -237,14 +241,13 @@ export default function BookStrategyCall() {
                 />
 
                 {submitError ? <p className="text-sm text-[#f87171]">{submitError}</p> : null}
-                {submitSuccess ? <p className="text-sm text-[#4ade80]">{submitSuccess}</p> : null}
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
                   className="inline-flex h-11 w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white transition-all duration-200 hover:brightness-110"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Send Strategy Call Request'}
+                  {isSubmitting ? 'Submitting...' : showSuccessOnButton ? 'Request Sent' : 'Send Strategy Call Request'}
                 </button>
               </form>
             </motion.div>
@@ -341,6 +344,13 @@ export default function BookStrategyCall() {
           </motion.div>
         </div>
       </main>
+
+      <SubmissionSuccessPopup
+        open={showSuccessPopup}
+        onClose={() => setShowSuccessPopup(false)}
+        title="Strategy Call Request Sent"
+        message="Your request has been submitted. Our team will contact you shortly to confirm your call slot."
+      />
 
       <Footer />
     </div>

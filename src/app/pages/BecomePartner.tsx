@@ -3,6 +3,7 @@ import { CheckCircle2, DollarSign, Handshake, Send, Users } from 'lucide-react';
 import { FormEvent, useState } from 'react';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
+import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
 import { sendPartnerEmails } from '../lib/leadEmailService';
 
 const perfectFor = [
@@ -93,12 +94,13 @@ export default function BecomePartner() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
-  const [submitSuccess, setSubmitSuccess] = useState('');
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [showSuccessOnButton, setShowSuccessOnButton] = useState(false);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitError('');
-    setSubmitSuccess('');
+    setShowSuccessPopup(false);
 
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.company || !formData.message) {
       setSubmitError('Please fill all required fields.');
@@ -108,7 +110,9 @@ export default function BecomePartner() {
     try {
       setIsSubmitting(true);
       await sendPartnerEmails(formData);
-      setSubmitSuccess('Request submitted and email sent successfully.');
+      setShowSuccessPopup(true);
+      setShowSuccessOnButton(true);
+      window.setTimeout(() => setShowSuccessOnButton(false), 2500);
       setFormData({
         firstName: '',
         lastName: '',
@@ -274,15 +278,14 @@ export default function BecomePartner() {
                 </div>
 
                 {submitError ? <p className="text-sm text-[#f87171]">{submitError}</p> : null}
-                {submitSuccess ? <p className="text-sm text-[#4ade80]">{submitSuccess}</p> : null}
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
                   className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
                 >
-                  <Send className="h-4 w-4" />
-                  {isSubmitting ? 'Submitting...' : 'Submit Partnership Application'}
+                  {showSuccessOnButton && !isSubmitting ? <CheckCircle2 className="h-4 w-4" /> : <Send className="h-4 w-4" />}
+                  {isSubmitting ? 'Submitting...' : showSuccessOnButton ? 'Application Sent' : 'Submit Partnership Application'}
                 </button>
               </form>
             </div>
@@ -319,6 +322,13 @@ export default function BecomePartner() {
           </section>
         </div>
       </main>
+
+      <SubmissionSuccessPopup
+        open={showSuccessPopup}
+        onClose={() => setShowSuccessPopup(false)}
+        title="Partnership Request Sent"
+        message="Thanks for your interest in partnering with TechFlux. We will review your application and connect with you soon."
+      />
 
       <Footer />
     </div>

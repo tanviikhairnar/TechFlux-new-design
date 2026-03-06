@@ -1,9 +1,10 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { CheckCircle2, Mail, Phone, MapPin, Send } from 'lucide-react';
 import { FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
 import { sendContactEmails } from '../lib/leadEmailService';
 
 export default function Contact() {
@@ -20,12 +21,13 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
-  const [submitSuccess, setSubmitSuccess] = useState('');
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [showSuccessOnButton, setShowSuccessOnButton] = useState(false);
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitError('');
-    setSubmitSuccess('');
+    setShowSuccessPopup(false);
 
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
       setSubmitError('Please fill all required fields.');
@@ -35,7 +37,9 @@ export default function Contact() {
     try {
       setIsSubmitting(true);
       await sendContactEmails(formData);
-      setSubmitSuccess('Message submitted and email sent successfully.');
+      setShowSuccessPopup(true);
+      setShowSuccessOnButton(true);
+      window.setTimeout(() => setShowSuccessOnButton(false), 2500);
       setFormData({
         firstName: '',
         lastName: '',
@@ -172,15 +176,14 @@ export default function Contact() {
                 </div>
 
                 {submitError ? <p className="text-sm text-[#f87171]">{submitError}</p> : null}
-                {submitSuccess ? <p className="text-sm text-[#4ade80]">{submitSuccess}</p> : null}
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
                   className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#38A9FF] to-[#2B7BDF] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all hover:brightness-110 md:text-[15px]"
                 >
-                  <Send className="h-5 w-5" />
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {showSuccessOnButton && !isSubmitting ? <CheckCircle2 className="h-5 w-5" /> : <Send className="h-5 w-5" />}
+                  {isSubmitting ? 'Sending...' : showSuccessOnButton ? 'Message Sent' : 'Send Message'}
                 </button>
               </form>
             </motion.div>
@@ -281,6 +284,13 @@ export default function Contact() {
           </div>
         </section>
       </main>
+
+      <SubmissionSuccessPopup
+        open={showSuccessPopup}
+        onClose={() => setShowSuccessPopup(false)}
+        title="Message Sent Successfully"
+        message="Thanks for reaching out. Our team will review your request and get back to you within 24 hours."
+      />
 
       <Footer />
     </div>
