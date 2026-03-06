@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, TrendingUp, Users, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
+import myObscurImage from '../../assets/images/3577047_edit.webp';
 
 const challengeItems = [
   'Generic product discovery experience',
@@ -106,7 +107,7 @@ export default function MyObscurCaseStudy() {
               className="overflow-hidden rounded-2xl border border-white/8 bg-[#101A31]"
             >
               <img
-                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80"
+                src={myObscurImage}
                 alt="MyObscur ecommerce interface"
                 className="h-[340px] w-full object-cover"
               />

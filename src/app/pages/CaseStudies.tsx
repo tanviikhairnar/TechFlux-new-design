@@ -3,6 +3,13 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import servyoImage from '../../assets/images/WhatsApp Image 2026-03-06 at 12.15.24.jpeg';
+import dinerightImage from '../../assets/images/dineright.jpg';
+import allstarImage from '../../assets/images/car.jpg';
+import myobscurImage from '../../assets/images/3577047_edit.webp';
+import fuztechImage from '../../assets/images/On Demand.jpg';
+import etern8Image from '../../assets/images/AI.jpg';
+import studioNewMediaImage from '../../assets/images/4824548.jpg';
 
 type CaseStudy = {
   name: string;
@@ -20,8 +27,7 @@ const caseStudies: CaseStudy[] = [
     name: 'Servyo',
     headline: 'Service Marketplace',
     description: 'Multi-role platform with real-time booking & subscriptions',
-    image:
-      'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80',
+    image: servyoImage,
     tags: ['Flutter', 'Web App', 'Payment Gateway'],
     categoryLabel: 'Service Marketplace',
     caseStudyUrl: '/case-studies/servyo',
@@ -30,8 +36,7 @@ const caseStudies: CaseStudy[] = [
     name: 'Dine Right',
     headline: 'Hospitality',
     description: 'Premium multi-course booking experience with loyalty rewards',
-    image:
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80',
+    image: dinerightImage,
     tags: ['Flutter', 'React', 'Booking System'],
     categoryLabel: 'Luxury Dining',
     caseStudyUrl: '/case-studies/dine-right',
@@ -42,8 +47,7 @@ const caseStudies: CaseStudy[] = [
     name: 'Allstar Premier Auto',
     headline: 'Marketplace',
     description: 'Streamlined inventory management & enhanced lead conversion',
-    image:
-      'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80',
+    image: allstarImage,
     tags: ['Custom Inventory', 'Analytics', 'Lead Generation'],
     categoryLabel: 'Automotive',
     caseStudyUrl: '/case-studies/allstar-premier-auto',
@@ -52,8 +56,7 @@ const caseStudies: CaseStudy[] = [
     name: 'MyObscur',
     headline: 'eCommerce',
     description: 'Personalized fashion discovery with European brand curation',
-    image:
-      'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80',
+    image: myobscurImage,
     tags: ['eCommerce Platform', 'Logistics', 'UX Optimization'],
     categoryLabel: 'Fashion',
     caseStudyUrl: '/case-studies/myobscur',
@@ -72,8 +75,7 @@ const caseStudies: CaseStudy[] = [
     name: 'FuzTech',
     headline: 'On-Demand',
     description: 'Simplified repair booking with instant pricing & scheduling',
-    image:
-      'https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80',
+    image: fuztechImage,
     tags: ['Booking Platform', 'Real-Time Pricing', 'Localization'],
     categoryLabel: 'Repair Services',
     caseStudyUrl: '/case-studies/fuztech',
@@ -82,8 +84,7 @@ const caseStudies: CaseStudy[] = [
     name: 'Etern 8',
     headline: 'Healthcare',
     description: 'AI-powered personalized health insights from wearable data',
-    image:
-      'https://images.unsplash.com/photo-1575311373937-040b8e1fd6b6?auto=format&fit=crop&w=1200&q=80',
+    image: etern8Image,
     tags: ['AI Engine', 'Smartwatch Integration', 'Health Analytics'],
     categoryLabel: 'AI Wellness',
     caseStudyUrl: '/case-studies/etern8',
@@ -92,8 +93,7 @@ const caseStudies: CaseStudy[] = [
     name: 'Studio New Media',
     headline: 'White-Label',
     description: 'White-label CMS platform with centralized hosting control',
-    image:
-      'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80',
+    image: studioNewMediaImage,
     tags: ['PHP', 'CodeIgniter', 'Multi-Tenant'],
     categoryLabel: 'SaaS CMS',
     caseStudyUrl: '/case-studies/studio-new-media',
@@ -134,8 +134,8 @@ export default function CaseStudies() {
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 className="group overflow-hidden rounded-2xl border border-white/6 bg-[#101A31] transition-all hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
               >
-                <div className="relative">
-                  <img src={item.image} alt={item.name} className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                  <img src={item.image} alt={item.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   {item.inProgress && (
                     <span className="absolute right-3 top-3 rounded-full bg-[#2F80ED] px-2.5 py-1 text-xs font-medium text-white">
                       Work In Progress
@@ -215,5 +215,3 @@ export default function CaseStudies() {
     </div>
   );
 }
-
-

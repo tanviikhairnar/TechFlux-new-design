@@ -1,13 +1,15 @@
 import { Building2, Globe, MapPin, Phone } from 'lucide-react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import { CareerRoleOverview } from '../components/careers/CareerRoleOverview';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-import { getCareerRoleBySlug } from '../data/careers';
+import { CareerRole, getCareerRoleBySlug } from '../data/careers';
 
 export default function CareerDetails() {
   const { slug = '' } = useParams();
-  const role = getCareerRoleBySlug(slug);
+  const location = useLocation();
+  const roleFromState = (location.state as { role?: CareerRole } | null)?.role;
+  const role = roleFromState?.slug === slug ? roleFromState : getCareerRoleBySlug(slug);
 
   if (!role) return <Navigate to="/careers" replace />;
 
@@ -62,6 +64,7 @@ export default function CareerDetails() {
             </p>
             <Link
               to={`/careers/apply?position=${encodeURIComponent(role.title)}`}
+              state={{ roleTitle: role.title, role }}
               className="inline-flex h-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-9 text-base font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:brightness-110"
             >
               Apply for This Position

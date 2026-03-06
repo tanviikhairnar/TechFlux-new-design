@@ -11,7 +11,7 @@ import {
   User,
 } from 'lucide-react';
 import { ChangeEvent, ComponentType, FormEvent, useEffect, useMemo, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
 import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
@@ -41,8 +41,10 @@ const defaultFormState: ApplyFormState = {
 };
 
 export default function CareerApply() {
+  const location = useLocation();
   const [searchParams] = useSearchParams();
-  const preselectedRole = searchParams.get('position') ?? '';
+  const roleFromState = (location.state as { roleTitle?: string; role?: { title: string } } | null);
+  const preselectedRole = roleFromState?.role?.title ?? roleFromState?.roleTitle ?? searchParams.get('position') ?? '';
   const selectedRole = useMemo(() => getCareerRoleByTitle(preselectedRole) ?? careerRoles[0], [preselectedRole]);
 
   const [form, setForm] = useState<ApplyFormState>({

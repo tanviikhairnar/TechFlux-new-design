@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { ClientLogosSlider } from '../components/ClientLogosSlider';
-import homeHeroAiImage from '../../assets/images/home/AI (1).jpg';
-import homeSaasImage from '../../assets/images/home/SaaS.jpg';
-import homeAiGradientImage from '../../assets/images/home/photo-1760629863094-5b1e8d1aae74.jpg';
+import homeHeroAiImage from '../../assets/images/AI (1).jpg';
+import homeSaasImage from '../../assets/images/SaaS.jpg';
+import homeAiGradientImage from '../../assets/images/photo-1760629863094-5b1e8d1aae74.jpg';
 import onDemandImage from '../../assets/images/On Demand (1).jpg';
 
 function Counter({
@@ -742,7 +742,7 @@ export default function Home() {
             {[
               {
                 image:
-                  "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80",
+                  "../../assets/images/159a7f79-3802-497b-ae5e-ac1f83a54e60.webp",
                 category: "Service Marketplace",
                 title: "Servyo",
                 description:
@@ -751,7 +751,7 @@ export default function Home() {
               },
               {
                 image:
-                  "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80",
+                  "../../assets/images/car.jpg",
                 category: "Automotive",
                 title: "Allstar Premier Auto",
                 description:
@@ -760,7 +760,7 @@ export default function Home() {
               },
               {
                 image:
-                  "https://images.unsplash.com/photo-1575311373937-040b8e1fd6b6?auto=format&fit=crop&w=1200&q=80",
+                  "../../assets/images/3649760.jpg",
                 category: "AI Wellness",
                 title: "Etern 8",
                 description:

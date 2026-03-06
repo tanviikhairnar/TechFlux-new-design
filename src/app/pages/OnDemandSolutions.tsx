@@ -12,6 +12,12 @@ import {
 import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import { IndustriesSection } from '../components/IndustriesSection';
+import { ServiceHeroSection } from '../components/ServiceHeroSection';
+import { CaseStudySection } from '../components/CaseStudySection';
+import { CardsSection } from '../components/CardsSection';
+import { InvestmentCardsSection } from '../components/InvestmentCardsSection';
+import { TechnologyStackSection } from '../components/TechnologyStackSection';
 
 const buildItems = [
   {
@@ -99,7 +105,7 @@ const solutionTableRows = [
 const pricingCards = [
   {
     title: 'Booking Platform',
-    items: [
+    bullets: [
       'Appointment scheduling',
       'Payment integration',
       'User management',
@@ -108,7 +114,7 @@ const pricingCards = [
   },
   {
     title: 'Marketplace Platform',
-    items: [
+    bullets: [
       'Multi-vendor system',
       'Real-time tracking',
       'Admin dashboard',
@@ -117,7 +123,7 @@ const pricingCards = [
   },
   {
     title: 'On-Demand Super App',
-    items: [
+    bullets: [
       'Multiple services',
       'Advanced features',
       'Full ecosystem',
@@ -128,12 +134,12 @@ const pricingCards = [
 
 // industries using on-demand apps
 const industries = [
-  'Home Services',
-  'Food Delivery',
-  'Transportation',
-  'Healthcare',
-  'Hospitality',
-  'Freelance Marketplaces',
+  { label: 'Home Services', icon: Layers, tone: 'bg-[#4B2C5C] text-[#C79AF2]' },
+  { label: 'Food Delivery', icon: Truck, tone: 'bg-[#185345] text-[#66D5AE]' },
+  { label: 'Transportation', icon: MapPin, tone: 'bg-[#19486A] text-[#71B8F5]' },
+  { label: 'Healthcare', icon: Calendar, tone: 'bg-[#4C2747] text-[#C77DB0]' },
+  { label: 'Hospitality', icon: ShoppingCart, tone: 'bg-[#5A3F1F] text-[#E0B26B]' },
+  { label: 'Freelance Marketplaces', icon: Users, tone: 'bg-[#2F2E74] text-[#9897FF]' },
 ];
 
 // example platform case study
@@ -171,111 +177,49 @@ export default function OnDemandSolutions() {
       <main className="relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-18%,rgba(47,128,237,0.24),transparent_42%)]" />
 
-        <section className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-24 pt-28 md:pb-32 md:pt-40 lg:px-5">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mx-auto flex min-h-[420px] w-full flex-col justify-center lg:min-h-[520px] lg:flex-row lg:items-center lg:justify-between"
-          >
-            <div className="w-full lg:w-1/2 text-center lg:text-left">
-              <div className="inline-flex mb-6 rounded-full border border-[#2F80ED]/35 bg-[#0A1F43] px-4 py-1 text-sm text-[#7AB9FF]">
-                On-Demand Applications
-              </div>
-              <h1
-                id="on-demand-applications-heading"
-                className="max-w-[820px] text-4xl font-bold leading-tight text-[#D8DEE8] sm:text-5xl md:text-6xl"
-                style={{ fontFamily: 'Sora, sans-serif' }}
-              >
-                Build Scalable On-Demand Platforms
-              </h1>
-              <p className="mt-5 max-w-[780px] text-base leading-relaxed text-[#8A96AA] md:text-lg">
-                We develop real-time booking and marketplace platforms for service businesses, delivery systems, and multi-vendor marketplaces.
-              </p>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-start">
-                <Link
-                  to="/get-estimate"
-                  className="inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#2F80ED] px-8 text-sm font-semibold text-[#4CA1FF] hover:bg-[#2F80ED]/10 transition-all"
-                >
-                  Get Project Estimate
-                </Link>
-                <Link
-                  to="/book-strategy-call"
-                  className="inline-flex h-[52px] items-center justify-center rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-sm font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.28)] transition-all hover:brightness-110"
-                >
-                  Book Strategy Call
-                </Link>
-              </div>
-            </div>
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="hidden w-1/2 lg:block"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
-                alt="On-demand app screen"
-                className="rounded-xl shadow-lg"
-              />
-            </motion.div>
-          </motion.div>
-        </section>
+        <ServiceHeroSection
+          containerClassName="mx-auto flex min-h-[420px] w-full flex-col justify-center lg:min-h-[520px] lg:flex-row lg:items-center lg:justify-between"
+          textWrapClassName="w-full text-center lg:w-1/2 lg:text-left"
+          badgeText="On-Demand Applications"
+          title="Build Scalable On-Demand Platforms"
+          titleId="on-demand-applications-heading"
+          titleClassName="max-w-[820px] text-4xl font-bold leading-tight text-[#D8DEE8] sm:text-5xl md:text-6xl"
+          description="We develop real-time booking and marketplace platforms for service businesses, delivery systems, and multi-vendor marketplaces."
+          descriptionClassName="mt-5 max-w-[780px] text-base leading-relaxed text-[#8A96AA] md:text-lg"
+          ctaContainerClassName="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-start"
+          primaryCta={{
+            label: 'Get Project Estimate',
+            to: '/get-estimate',
+            className:
+              'inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#2F80ED] px-8 text-sm font-semibold text-[#4CA1FF] transition-all hover:bg-[#2F80ED]/10',
+          }}
+          secondaryCta={{
+            label: 'Book Strategy Call',
+            to: '/book-strategy-call',
+            className:
+              'inline-flex h-[52px] items-center justify-center rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-sm font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.28)] transition-all hover:brightness-110',
+          }}
+          imageSrc="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80"
+          imageAlt="On-demand app screen"
+          imageContainerClassName="hidden w-1/2 lg:block"
+          imageClassName="rounded-xl shadow-lg"
+          imageMotionInitial={{ opacity: 0, x: 24 }}
+        />
 
-        <section className="bg-[#081327] py-20">
-          <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                On-Demand Solutions We Build
-              </h2>
-            </motion.div>
+        <CardsSection
+          title="On-Demand Solutions We Build"
+          items={buildItems}
+          sectionClassName="bg-[#081327] py-20"
+          headingWrapClassName="mb-14 text-center"
+          transitionStep={0.07}
+          transitionOffsetFn={(i) => i % 3}
+        />
 
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {buildItems.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: (i % 3) * 0.07 }}
-                  className="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
-                >
-                  <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]">
-                    <item.icon className="h-4 w-4 text-[#2F80ED]" />
-                  </div>
-                  <h3 className="mb-2 text-[15px] font-semibold leading-6 text-[#E5ECF8]">
-                    {item.title}
-                  </h3>
-                  <p className="text-[13px] leading-6 text-[#95A4BF]">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* technology stack section */}
-        <section className="bg-[#081327] py-20">
-          <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                On-Demand Technology Stack
-              </h2>
-              <p className="text-sm text-[#8A96AA] md:text-[15px]">
-                We use proven technologies to build real-time, scalable platforms that handle high traffic and complex workflows.
-              </p>
-            </motion.div>
-<div className="mx-auto flex max-w-[1400px] flex-wrap justify-center gap-4">
-              {techTags.map((tag, i) => (
-                <span
-                  key={i}
-                  className="inline-flex min-h-[72px] min-w-[120px] items-center justify-center rounded-2xl border border-[#1E2D46] bg-[#121F39] px-8 py-4 text-[16px] font-semibold tracking-wide text-[#D8DEE8] transition-all hover:border-[#2F80ED]/45 hover:bg-[#152645]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
+        <TechnologyStackSection
+          title="On-Demand Technology Stack"
+          description="We use proven technologies to build real-time, scalable platforms that handle high traffic and complex workflows."
+          items={techTags}
+        />
 
         {/* core features section */}
         <section className="py-20">
@@ -341,93 +285,31 @@ export default function OnDemandSolutions() {
           </div>
         </section>
 
-        {/* pricing cards */}
-        <section className="py-20">
-          <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Typical Project Investment
-              </h2>
-            </motion.div>
-            <div className="grid gap-6 md:grid-cols-3">
-              {pricingCards.map((card, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
-                  className="rounded-xl border border-white/5 bg-[#0F1B31] p-7"
-                >
-                  <h3 className="mb-2 text-lg font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                    {card.title}
-                  </h3>
-                  <ul className="space-y-2">
-                    {card.items.map((feat, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-[13px] text-[#8A96AA]">
-                        <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#2F80ED]" />
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <InvestmentCardsSection title="Typical Project Investment" cards={pricingCards} />
 
-        {/* industries grid */}
-        <section className="bg-[#081327] py-20">
-          <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Industries Using On-Demand Apps
-              </h2>
-            </motion.div>
-            <div className="grid gap-6 sm:grid-cols-3 md:grid-cols-6">
-              {industries.map((ind, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="group flex flex-col items-center gap-3 rounded-xl border border-white/5 bg-[#0C1527] p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[#2F80ED]/30 bg-[#0F2A5F] transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_18px_rgba(90,170,255,0.35)]">
-                    <ShoppingCart className="h-5 w-5 text-[#2F80ED] transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(117,192,255,0.55)]" />
-                  </div>
-                  <p className="text-sm font-medium text-[#D8DEE8]">{ind}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <IndustriesSection title="Industries Using On-Demand Apps" items={industries} />
 
-        {/* case study */}
-        <section className="py-20">
-          <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
-              <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                On-Demand Platform We've Built
-              </h2>
-            </motion.div>
-            <div className="rounded-xl border border-white/5 bg-[#0F1B31] overflow-hidden">
-              <div className="grid md:grid-cols-2">
-                <img src={caseStudy.img} alt={caseStudy.title} className="h-64 object-cover" />
-                <div className="p-8 flex flex-col justify-center">
-                  <h3 className="mb-4 text-2xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                    {caseStudy.title}
-                  </h3>
-                  <p className="mb-6 text-[13px] leading-6 text-[#8A96AA]">{caseStudy.desc}</p>
-                  <Link to="/case-studies/servyo" className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CA1FF]">
-                    View Case Study <ArrowUpRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CaseStudySection
+          title="On-Demand Platform We've Built"
+          headingWrapClassName="mb-14 text-center"
+          headingClassName="mb-3 text-3xl font-semibold text-[#D8DEE8]"
+          cardClassName="overflow-hidden rounded-2xl border border-white/5 bg-[linear-gradient(110deg,#0F1B31_0%,#101A2D_55%,#0E1728_100%)]"
+          gridClassName="grid items-stretch md:grid-cols-[1.05fr_1fr]"
+          imageWrapClassName="h-[280px] md:h-[440px]"
+          imageSrc={caseStudy.img}
+          imageAlt={caseStudy.title}
+          imageClassName="h-full w-full object-cover"
+          contentClassName="flex flex-col justify-center p-7 md:p-12"
+          badgeText="On-Demand Platform"
+          badgeClassName="mb-6 inline-flex w-fit rounded-full border border-[#2F80ED]/30 bg-[#0F2A5F] px-5 py-2 text-sm font-medium text-[#56A9F5]"
+          cardTitle={caseStudy.title}
+          cardTitleClassName="mb-4 text-2xl font-semibold leading-tight text-[#D8DEE8] md:text-[44px]"
+          description={caseStudy.desc}
+          descriptionClassName="mb-8 max-w-[620px] text-sm leading-8 text-[#8A96AA] md:text-[17px]"
+          linkTo="/case-studies/servyo"
+          linkClassName="inline-flex items-center gap-2 text-xl font-semibold text-[#2F80ED] transition-colors hover:text-[#66B7FF]"
+          linkSuffix={<ArrowUpRight className="h-5 w-5" />}
+        />
 
         {/* why choose TechFlux */}
         <section className="bg-[#081327] py-20">

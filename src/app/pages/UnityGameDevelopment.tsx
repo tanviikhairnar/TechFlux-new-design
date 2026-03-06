@@ -18,6 +18,7 @@ import {
 import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import { CardsSection } from '../components/CardsSection';
 
 const whyChooseUnity = [
   {
@@ -217,34 +218,23 @@ export default function UnityGameDevelopment() {
           </div>
         </section>
 
-        <section className="bg-[#111827]/30 py-20">
-          <div className="mx-auto w-full max-w-[1320px] px-4 lg:px-5">
-            <div className="mb-14 text-center">
-              <h2 className="text-3xl font-semibold text-[#F9FAFB]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Why Choose Unity for Game Development?
-              </h2>
-              <p className="mx-auto mt-3 max-w-3xl text-sm text-[#9CA3AF] md:text-[15px]">Unity remains one of the most robust engines for modern interactive products.</p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {whyChooseUnity.map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                  className="group rounded-2xl border border-white/5 bg-[#0F172A] p-10 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
-                >
-                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1B3F73]">
-                    <item.icon className="h-7 w-7 text-[#2F80ED]" />
-                  </div>
-                  <h3 className="mb-3 text-[18px] font-semibold leading-tight text-[#F9FAFB]">{item.title}</h3>
-                  <p className="text-[14px] leading-7 text-[#9CA3AF]">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <CardsSection
+          title="Why Choose Unity for Game Development?"
+          subtitle="Unity remains one of the most robust engines for modern interactive products."
+          items={whyChooseUnity}
+          sectionClassName="bg-[#111827]/30 py-20"
+          containerClassName="mx-auto w-full max-w-[1320px] px-4 lg:px-5"
+          headingWrapClassName="mb-14 text-center"
+          headingClassName="text-3xl font-semibold text-[#F9FAFB]"
+          subtitleClassName="mx-auto mt-3 max-w-3xl text-sm text-[#9CA3AF] md:text-[15px]"
+          gridClassName="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          cardClassName="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+          iconWrapperClassName="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]"
+          iconClassName="h-4 w-4 text-[#2F80ED]"
+          titleClassName="mb-2 text-[15px] font-semibold leading-6 text-[#E5ECF8]"
+          descClassName="text-[13px] leading-6 text-[#95A4BF]"
+          transitionStep={0.06}
+        />
 
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
