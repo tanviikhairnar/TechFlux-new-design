@@ -8,6 +8,10 @@ import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { ClientLogosSlider } from '../components/ClientLogosSlider';
+import homeHeroAiImage from '../../assets/images/home/AI (1).jpg';
+import homeSaasImage from '../../assets/images/home/SaaS.jpg';
+import homeAiGradientImage from '../../assets/images/home/photo-1760629863094-5b1e8d1aae74.jpg';
+import onDemandImage from '../../assets/images/On Demand (1).jpg';
 
 function Counter({
   value,
@@ -190,12 +194,12 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1770169272345-9636d5ef2681?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMEFJJTIwdGVjaG5vbG9neSUyMG5ldXJhbCUyMG5ldHdvcmt8ZW58MXx8fHwxNzcyMDQ0NTQ4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="AI Technology"
-                className="w-full max-w-[640px] h-auto rounded-2xl ml-auto"
-              />
+              <div className="relative rounded-2xl overflow-hidden">
+                <img
+                  src={homeHeroAiImage}
+                  alt="AI Technology"
+                  className="w-full max-w-[640px] h-auto rounded-2xl ml-auto"
+                />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F1A] via-transparent to-transparent" />
             </div>
           </motion.div>
@@ -330,12 +334,12 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
-                <img
-                  src="https://images.unsplash.com/photo-1575388902449-6bca946ad549?auto=format&fit=crop&w=1080&q=80"
-                  alt="SaaS Dashboard"
-                  className="w-full h-[420px] object-cover rounded-2xl"
-                />
+                <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
+                  <img
+                    src={homeSaasImage}
+                    alt="SaaS Dashboard"
+                    className="w-full h-[420px] object-cover rounded-2xl"
+                  />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
               </div>
             </motion.div>
@@ -458,12 +462,12 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
-                <img
-                  src="https://images.unsplash.com/photo-1597600159211-d6c104f408d1?auto=format&fit=crop&w=1080&q=80"
-                  alt="AI Gradient"
-                  className="w-full h-[420px] object-cover rounded-2xl"
-                />
+                <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
+                  <img
+                    src={homeAiGradientImage}
+                    alt="AI Gradient"
+                    className="w-full h-[420px] object-cover rounded-2xl"
+                  />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
               </div>
             </motion.div>
@@ -485,12 +489,12 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
-                <img
-                  src="https://images.unsplash.com/photo-1707836868495-3307d371aba4?auto=format&fit=crop&w=1080&q=80"
-                  alt="On-Demand App"
-                  className="w-full h-[420px] object-cover rounded-2xl"
-                />
+                <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
+                  <img
+                    src={onDemandImage}
+                    alt="On-Demand App"
+                    className="w-full h-[420px] object-cover rounded-2xl"
+                  />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
               </div>
             </motion.div>

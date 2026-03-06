@@ -1,4 +1,4 @@
-import { canUseEmailJs, getDefaultTemplateId, getInternalReceiverEmails, getPrimaryInternalEmail, isEmailJsDeliveryError, sendEmail } from './sharedEmailClient';
+import { canUseEmailJs, getCustomerSenderEmail, getDefaultTemplateId, getInternalReceiverEmails, getPrimaryInternalEmail, isEmailJsDeliveryError, sendEmail } from './sharedEmailClient';
 import { ContactLead, LeadEmailDelivery } from './types';
 
 const TEMPLATE_CONTACT_CUSTOMER = import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT_CUSTOMER || getDefaultTemplateId();
@@ -50,6 +50,7 @@ Lead Source: TechFlux Website - Contact Form`;
         subject: customerSubject,
         message: customerMessage,
         templateId: TEMPLATE_CONTACT_CUSTOMER,
+        fromEmail: getCustomerSenderEmail(),
         replyTo: getPrimaryInternalEmail(),
         params: {
           first_name: lead.firstName,

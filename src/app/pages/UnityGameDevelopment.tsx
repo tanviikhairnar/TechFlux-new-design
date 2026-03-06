@@ -167,7 +167,7 @@ const exploreServices = [
 
 export default function UnityGameDevelopment() {
   return (
-    <div className="w-full min-h-screen overflow-x-hidden bg-[#030914]" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div className="w-full min-h-screen overflow-x-hidden bg-[#0B0F1A]" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
 
       <main className="relative overflow-hidden">
@@ -182,7 +182,7 @@ export default function UnityGameDevelopment() {
               <h1 id="unity-game-development-heading" className="max-w-[560px] text-4xl font-bold leading-tight text-[#F8FAFC] sm:text-5xl md:text-6xl" style={{ fontFamily: 'Sora, sans-serif' }}>
                 High-Performance Unity Game Development
               </h1>
-              <p className="mt-5 max-w-[620px] text-base leading-relaxed text-[#8A96AA] md:text-lg">
+              <p className="mt-5 max-w-[620px] text-base leading-relaxed text-[#9CA3AF] md:text-lg">
                 We build scalable, immersive, and cross-platform games using Unity for mobile, PC, and multiplayer
                 ecosystems.
               </p>
@@ -217,13 +217,13 @@ export default function UnityGameDevelopment() {
           </div>
         </section>
 
-        <section className="bg-[#081327] py-20">
+        <section className="bg-[#111827]/30 py-20">
           <div className="mx-auto w-full max-w-[1320px] px-4 lg:px-5">
             <div className="mb-14 text-center">
-              <h2 className="text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="text-3xl font-semibold text-[#F9FAFB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Why Choose Unity for Game Development?
               </h2>
-              <p className="mx-auto mt-3 max-w-3xl text-sm text-[#8A96AA] md:text-[15px]">Unity remains one of the most robust engines for modern interactive products.</p>
+              <p className="mx-auto mt-3 max-w-3xl text-sm text-[#9CA3AF] md:text-[15px]">Unity remains one of the most robust engines for modern interactive products.</p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {whyChooseUnity.map((item, i) => (
@@ -233,13 +233,13 @@ export default function UnityGameDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="group rounded-2xl border border-white/5 bg-[#0C1830] p-10 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                  className="group rounded-2xl border border-white/5 bg-[#0F172A] p-10 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1B3F73]">
                     <item.icon className="h-7 w-7 text-[#2F80ED]" />
                   </div>
-                  <h3 className="mb-3 text-[18px] font-semibold leading-tight text-[#D8DEE8]">{item.title}</h3>
-                  <p className="text-[14px] leading-7 text-[#8A96AA]">{item.desc}</p>
+                  <h3 className="mb-3 text-[18px] font-semibold leading-tight text-[#F9FAFB]">{item.title}</h3>
+                  <p className="text-[14px] leading-7 text-[#9CA3AF]">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -249,10 +249,10 @@ export default function UnityGameDevelopment() {
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <div className="mb-14 text-center">
-              <h2 className="text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="text-3xl font-semibold text-[#F9FAFB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Our Unity Game Expertise
               </h2>
-              <p className="mt-3 text-sm text-[#8A96AA] md:text-[15px]">From casual mobile experiences to production multiplayer ecosystems.</p>
+              <p className="mt-3 text-sm text-[#9CA3AF] md:text-[15px]">From casual mobile experiences to production multiplayer ecosystems.</p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {expertise.map((item, i) => (
@@ -262,24 +262,24 @@ export default function UnityGameDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="group rounded-2xl border border-white/5 bg-[#0C1830] p-10 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                  className="group rounded-2xl border border-white/5 bg-[#0F172A] p-10 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <item.icon className="mb-6 h-8 w-8 text-[#2F80ED]" />
-                  <h3 className="mb-3 text-[18px] font-semibold leading-tight text-[#D8DEE8]">{item.title}</h3>
-                  <p className="text-[14px] leading-7 text-[#8A96AA]">{item.desc}</p>
+                  <h3 className="mb-3 text-[18px] font-semibold leading-tight text-[#F9FAFB]">{item.title}</h3>
+                  <p className="text-[14px] leading-7 text-[#9CA3AF]">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-[#081327] py-20">
+        <section className="bg-[#111827]/30 py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <div className="mb-14 text-center">
-              <h2 className="text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="text-3xl font-semibold text-[#F9FAFB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Our Unity Technology Stack
               </h2>
-              <p className="mt-3 text-sm text-[#8A96AA] md:text-[15px]">We leverage battle-tested tools and frameworks to build scalable games.</p>
+              <p className="mt-3 text-sm text-[#9CA3AF] md:text-[15px]">We leverage battle-tested tools and frameworks to build scalable games.</p>
             </div>
             <div className="grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-3 lg:grid-cols-6">
               {techStack.map((item, i) => (
@@ -305,7 +305,7 @@ export default function UnityGameDevelopment() {
             {/* Header */}
             <div className="mb-14 text-center">
               <h2
-                className="text-3xl font-semibold tracking-tight text-[#E5ECF8]"
+                className="text-3xl font-semibold tracking-tight text-[#F9FAFB]"
                 style={{ fontFamily: "Sora, sans-serif" }}
               >
                 Our Development Process
@@ -353,13 +353,13 @@ export default function UnityGameDevelopment() {
           </div>
         </section>
 
-        <section className="bg-[#081327] py-20">
+        <section className="bg-[#111827]/30 py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <div className="mb-14 text-center">
-              <h2 className="text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="text-3xl font-semibold text-[#F9FAFB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Featured Gaming Projects
               </h2>
-              <p className="mt-3 text-sm text-[#8A96AA] md:text-[15px]">See some of our high-impact gaming case studies.</p>
+              <p className="mt-3 text-sm text-[#9CA3AF] md:text-[15px]">See some of our high-impact gaming case studies.</p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {projects.map((item, i) => (
@@ -369,13 +369,13 @@ export default function UnityGameDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="group overflow-hidden rounded-2xl border border-white/5 bg-[#0C1830] transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                  className="group overflow-hidden rounded-2xl border border-white/5 bg-[#0F172A] transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <img src={item.image} alt={item.title} className="h-44 w-full object-cover" />
                   <div className="p-6">
                     <span className="rounded-full bg-[#11294F] px-2 py-1 text-xs text-[#6FB9FF]">{item.tag}</span>
-                    <h3 className="mt-3 text-lg font-semibold text-[#D8DEE8]">{item.title}</h3>
-                    <p className="mt-2 text-[13px] leading-6 text-[#8A96AA]">{item.desc}</p>
+                    <h3 className="mt-3 text-lg font-semibold text-[#F9FAFB]">{item.title}</h3>
+                    <p className="mt-2 text-[13px] leading-6 text-[#9CA3AF]">{item.desc}</p>
                     <Link to="/case-studies" className="unity-link mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#56AEFF]">
                       View Case Study
                       <ArrowRight className="h-4 w-4" />
@@ -390,10 +390,10 @@ export default function UnityGameDevelopment() {
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <div className="mb-14 text-center">
-              <h2 className="text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="text-3xl font-semibold text-[#F9FAFB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Why Techflux for Unity Development?
               </h2>
-              <p className="mt-3 text-sm text-[#8A96AA] md:text-[15px]">Trusted game engineering with performance and scale at the core.</p>
+              <p className="mt-3 text-sm text-[#9CA3AF] md:text-[15px]">Trusted game engineering with performance and scale at the core.</p>
             </div>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {whyTechflux.map((item, i) => (
@@ -403,18 +403,18 @@ export default function UnityGameDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                  className="group rounded-2xl border border-white/5 bg-[#0F172A] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <item.icon className="mb-3 h-5 w-5 text-[#2F80ED]" />
-                  <h3 className="mb-2 text-lg font-semibold text-[#D8DEE8]">{item.title}</h3>
-                  <p className="text-[13px] leading-6 text-[#8A96AA]">{item.desc}</p>
+                  <h3 className="mb-2 text-lg font-semibold text-[#F9FAFB]">{item.title}</h3>
+                  <p className="text-[13px] leading-6 text-[#9CA3AF]">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-[#081327] py-20">
+        <section className="bg-[#111827]/30 py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -422,10 +422,10 @@ export default function UnityGameDevelopment() {
               viewport={{ once: true }}
               className="rounded-2xl border border-white/5 bg-[#0D172B] px-8 py-12 text-center md:px-12"
             >
-              <h2 className="text-[40px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="text-[40px] font-semibold text-[#F9FAFB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Ready to Build Your Next Unity Game?
               </h2>
-              <p className="mx-auto mt-4 max-w-3xl text-sm text-[#8A96AA] md:text-[15px]">
+              <p className="mx-auto mt-4 max-w-3xl text-sm text-[#9CA3AF] md:text-[15px]">
                 Let&apos;s discuss your game concept, timeline, and technical strategy with our Unity engineering team.
               </p>
               <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
@@ -449,7 +449,7 @@ export default function UnityGameDevelopment() {
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <div className="mb-14 text-center">
-              <h2 className="text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="text-3xl font-semibold text-[#F9FAFB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Explore Other Services
               </h2>
             </div>
@@ -461,10 +461,10 @@ export default function UnityGameDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                  className="group rounded-2xl border border-white/5 bg-[#0F172A] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
-                  <h3 className="text-base font-semibold text-[#D8DEE8]">{item.title}</h3>
-                  <p className="mt-2 text-[13px] leading-6 text-[#8A96AA]">{item.desc}</p>
+                  <h3 className="text-base font-semibold text-[#F9FAFB]">{item.title}</h3>
+                  <p className="mt-2 text-[13px] leading-6 text-[#9CA3AF]">{item.desc}</p>
                   <Link to={item.to} className="unity-link mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#62B4FF]">
                     Learn More
                     <ArrowRight className="h-4 w-4" />
@@ -480,4 +480,5 @@ export default function UnityGameDevelopment() {
     </div>
   );
 }
+
 

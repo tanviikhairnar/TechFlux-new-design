@@ -10,51 +10,51 @@ import {
   DollarSign,
   GraduationCap,
   Heart,
-  LayoutDashboard,
   Lock,
   Package,
   Rocket,
-  Server,
-  Settings2,
+  Shield,
   ShieldCheck,
   Target,
   Users,
   Workflow,
+  Zap,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
+import saasHeroImage from '../../assets/images/services/pexels-cottonbro-5483071.jpg';
 
 const saasSolutions = [
   {
-    icon: Rocket,
+    icon: Zap,
     title: 'SaaS MVP Development',
-    desc: 'Launch your idea fast with a validated MVP focused on core workflows and early traction.',
-  },
-  {
-    icon: Cloud,
-    title: 'Multi-Tenant SaaS Platform',
-    desc: 'Scalable tenant architecture with clean data isolation and shared cloud infrastructure.',
-  },
-  {
-    icon: CreditCard,
-    title: 'Subscription Platform',
-    desc: 'Recurring billing, plan upgrades, invoicing, trials, and payment gateway integration.',
-  },
-  {
-    icon: LayoutDashboard,
-    title: 'Admin & Analytics Dashboards',
-    desc: 'Operational dashboards with business metrics, tenant monitoring, and reporting tools.',
-  },
-  {
-    icon: Workflow,
-    title: 'B2B SaaS Products',
-    desc: 'Complex workflow products built for teams, approvals, integrations, and role-based access.',
+    desc: 'Launch your Minimum Viable Product quickly to validate your idea and attract early users.',
   },
   {
     icon: Building2,
+    title: 'Multi-Tenant SaaS Platforms',
+    desc: 'Scalable multi-tenant architecture with complete data isolation and customization.',
+  },
+  {
+    icon: CreditCard,
+    title: 'Subscription Platforms',
+    desc: 'Recurring billing, payment processing, and subscription management systems.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Admin & Analytics Dashboards',
+    desc: 'Powerful admin panels with real-time analytics and business intelligence.',
+  },
+  {
+    icon: Users,
+    title: 'B2B SaaS Products',
+    desc: 'Enterprise-focused SaaS solutions with advanced features and integrations.',
+  },
+  {
+    icon: Shield,
     title: 'Enterprise SaaS Systems',
-    desc: 'Enterprise-grade architecture with compliance, SSO, and long-term maintainability.',
+    desc: 'Large-scale SaaS platforms with enterprise security and compliance.',
   },
 ];
 
@@ -73,34 +73,34 @@ const stackItems = [
 
 const essentialFeatures = [
   {
-    icon: Database,
+    icon: CreditCard,
     title: 'Subscription Billing',
-    desc: 'Flexible plans, trial periods, upgrades, downgrades, and automated renewals.',
+    desc: 'Automated recurring payments and invoicing.',
   },
   {
-    icon: Cloud,
-    title: 'Cloud-Based Access',
-    desc: 'Secure SaaS access from anywhere with stable uptime and environment isolation.',
+    icon: Shield,
+    title: 'Role-Based Access',
+    desc: 'Granular permissions and user management.',
   },
   {
-    icon: Settings2,
-    title: 'API Integration',
-    desc: 'Connect with third-party tools, payment providers, CRMs, and internal systems.',
+    icon: Cog,
+    title: 'API Integrations',
+    desc: 'Connect with third-party services seamlessly.',
   },
   {
     icon: BarChart3,
-    title: 'Analytics Dashboard',
-    desc: 'Real-time data insights for revenue, usage trends, retention, and user behavior.',
+    title: 'Analytics Dashboards',
+    desc: 'Real-time insights and reporting.',
   },
   {
     icon: Users,
     title: 'User Management',
-    desc: 'Role-based permissions, team accounts, onboarding, and secure access controls.',
+    desc: 'Complete user lifecycle management.',
   },
   {
-    icon: Server,
+    icon: Database,
     title: 'Multi-Tenant Architecture',
-    desc: 'Optimized infrastructure supporting multiple clients on one scalable platform.',
+    desc: 'Secure data isolation per customer.',
   },
 ];
 
@@ -168,7 +168,7 @@ export default function SaaSDevelopment() {
   const ctaMailto = 'mailto:tanvikhairnar03@gmail.com?subject=Techflux%20Inquiry';
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-[#040B1B]" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#030914]" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
 
       <main className="relative">
@@ -178,14 +178,14 @@ export default function SaaSDevelopment() {
           <div className="grid items-center gap-12 lg:min-h-[520px] md:grid-cols-2">
             <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }}>
               <h1
-                className="max-w-[520px] text-4xl font-bold leading-tight text-[#E5ECF8] md:text-5xl"
+                className="max-w-[520px] text-4xl font-bold leading-tight text-[#D8DEE8] md:text-5xl"
                 style={{ fontFamily: 'Sora, sans-serif' }}
               >
                 Scalable SaaS Product Development
               </h1>
-              <p className="mt-4 max-w-[550px] text-sm leading-7 text-[#9AA9C4] md:text-base">
-                We design and build robust SaaS platforms with subscription systems, multi-tenant architecture, and
-                secure admin workflows.
+              <p className="mt-4 max-w-[550px] text-sm leading-7 text-[#8A96AA] md:text-base">
+                We design and build scalable Software-as-a-Service platforms with subscription systems, multi-tenant
+                architecture, and enterprise-grade performance.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
@@ -210,7 +210,7 @@ export default function SaaSDevelopment() {
               className="overflow-hidden rounded-xl border border-white/10 bg-[#0D1B35]"
             >
               <img
-                src="https://images.unsplash.com/photo-1551281044-8ca9f58b3b4c?auto=format&fit=crop&w=1400&q=80"
+                src={saasHeroImage}
                 alt="SaaS analytics dashboard"
                 className="h-[360px] w-full object-cover lg:h-[430px]"
               />
@@ -220,7 +220,7 @@ export default function SaaSDevelopment() {
 
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <h2 className="mb-9 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h2 className="mb-9 text-center text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
               SaaS Solutions We Build
             </h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -245,7 +245,7 @@ export default function SaaSDevelopment() {
           </div>
         </section>
 
-        <section className="bg-[#081427] py-20">
+        <section className="bg-[#081327] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <h2 className="mb-3 text-center text-[42px] font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
               SaaS Technology Stack
@@ -268,7 +268,7 @@ export default function SaaSDevelopment() {
 
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <h2 className="mb-9 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h2 className="mb-9 text-center text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Essential SaaS Features
             </h2>
             <div className="grid gap-4 md:grid-cols-3">
@@ -293,9 +293,9 @@ export default function SaaSDevelopment() {
           </div>
         </section>
 
-        <section className="bg-[#081427] py-20">
+        <section className="bg-[#081327] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
-            <h2 className="mb-8 text-center text-3xl font-semibold leading-[1.15] text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h2 className="mb-8 text-center text-3xl font-semibold leading-[1.15] text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Choose Your SaaS Solution
             </h2>
             <div className="overflow-x-auto rounded-[24px] border border-[#263550] bg-[#141F36]">
@@ -359,7 +359,7 @@ export default function SaaSDevelopment() {
           </div>
         </section>
 
-        <section className="bg-[#081427] py-20">
+        <section className="bg-[#081327] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <h2 className="mb-9 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Industries Using Our SaaS Solutions
@@ -391,7 +391,7 @@ export default function SaaSDevelopment() {
             <div className="overflow-hidden rounded-2xl border border-white/5 bg-[#0C1830]">
               <div className="grid md:grid-cols-[1.05fr_1fr]">
                 <img
-                  src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?auto=format&fit=crop&w=1200&q=80"
+                  src="../../assets/images/services/WhatsApp Image 2026-03-06 at 12.15.24.jpeg"
                   alt="Leave Certificate SaaS platform"
                   className="h-[280px] w-full object-cover md:h-[330px]"
                 />
@@ -400,7 +400,7 @@ export default function SaaSDevelopment() {
                     Case Study
                   </span>
                   <h3 className="mt-4 text-xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                    Leave Certificate - SaaS Platform
+                    servyo - SaaS Platform
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-[#95A4BF]">
                     Digital document management platform for educational institutions with secure records, multi-user
@@ -415,7 +415,7 @@ export default function SaaSDevelopment() {
           </div>
         </section>
 
-        <section className="bg-[#081427] py-20">
+        <section className="bg-[#081327] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <h2 className="mb-9 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Why Businesses Choose TechFlux
@@ -493,3 +493,4 @@ export default function SaaSDevelopment() {
     </div>
   );
 }
+

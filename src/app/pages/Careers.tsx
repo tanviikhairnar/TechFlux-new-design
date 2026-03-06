@@ -11,7 +11,7 @@ import {
   TrendingUp,
   Users,
 } from 'lucide-react';
-import teamPhoto from '../../assets/images/159a7f79-3802-497b-ae5e-ac1f83a54e60.webp';
+import teamPhoto from '../../assets/images/services/159a7f79-3802-497b-ae5e-ac1f83a54e60.webp';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
 import { careerRoles } from '../data/careers';
@@ -228,16 +228,16 @@ export default function Careers() {
                       <p className="max-w-[760px] text-base text-[#9AB0CF] md:text-lg">{position.summary}</p>
                     </div>
 
-                    <div className="flex shrink-0 gap-3 md:flex-col">
+                    <div className="flex w-full shrink-0 flex-col gap-3 sm:flex-row md:w-auto md:flex-col">
                       <Link
                         to={`/careers/${position.slug}`}
-                        className="min-w-[220px] rounded-2xl border border-[#35507C] bg-[#25334B] px-6 py-3 text-center text-base font-medium text-[#D5E6FF] transition-all duration-300 hover:bg-[#2A3D5D]"
+                        className="w-full rounded-2xl border border-[#35507C] bg-[#25334B] px-6 py-3 text-center text-base font-medium text-[#D5E6FF] transition-all duration-300 hover:bg-[#2A3D5D] sm:flex-1 md:min-w-[220px] md:flex-none"
                       >
                         View Details
                       </Link>
                       <Link
                         to={`/careers/apply?position=${encodeURIComponent(position.title)}`}
-                        className="min-w-[220px] rounded-2xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-6 py-3 text-center text-base font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:brightness-110"
+                        className="w-full rounded-2xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-6 py-3 text-center text-base font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:brightness-110 sm:flex-1 md:min-w-[220px] md:flex-none"
                       >
                         Apply Now
                       </Link>
