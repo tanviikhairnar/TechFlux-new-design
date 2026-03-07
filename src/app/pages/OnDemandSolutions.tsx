@@ -55,7 +55,6 @@ const buildItems = [
   },
 ];
 
-// technology stack tags used in screenshot
 const techTags = [
   'Flutter',
   'React Native',
@@ -69,7 +68,6 @@ const techTags = [
   'Payment Gateways',
 ];
 
-// core features for on-demand platforms
 const coreFeatures = [
   { title: 'Real-Time Tracking', desc: 'Live GPS tracking and status updates.' },
   { title: 'Smart Booking System', desc: 'Automated scheduling and availability management.' },
@@ -79,7 +77,6 @@ const coreFeatures = [
   { title: 'Vendor Management', desc: 'Control over providers, commissions, and ratings.' },
 ];
 
-// table of solution types
 const solutionTableRows = [
   {
     type: 'Booking Platform',
@@ -104,7 +101,6 @@ const solutionTableRows = [
   },
 ];
 
-// typical project investment cards
 const pricingCards = [
   {
     title: 'Booking Platform',
@@ -135,7 +131,6 @@ const pricingCards = [
   },
 ];
 
-// industries using on-demand apps
 const industries = [
   { label: 'Home Services', icon: Layers, tone: 'bg-[#4B2C5C] text-[#C79AF2]' },
   { label: 'Food Delivery', icon: Truck, tone: 'bg-[#185345] text-[#66D5AE]' },
@@ -145,14 +140,12 @@ const industries = [
   { label: 'Freelance Marketplaces', icon: Users, tone: 'bg-[#2F2E74] text-[#9897FF]' },
 ];
 
-// example platform case study
 const caseStudy = {
   title: 'Servyo – Service Marketplace',
   desc: 'Multi-service booking platform connecting clients, cleaners, and technicians with features like live booking, subscriptions, and payment gateway integration.',
   img: onDemandImage,
 };
 
-// reasons businesses choose TechFlux
 const whyItems = [
   { title: 'Real Time Technology', desc: 'Fast, responsive user experiences' },
   { title: 'Location Intelligence', desc: 'Advanced GPS and mapping features' },
@@ -161,7 +154,6 @@ const whyItems = [
   { title: 'Proven Architecture', desc: 'Battle-tested platform designs' },
 ];
 
-// related service links
 const relatedServices = [
   { title: 'SaaS Development', link: '/saas-development' },
   { title: 'AI Solutions', link: '/ai-solutions' },
@@ -221,7 +213,6 @@ export default function OnDemandSolutions() {
           items={techTags}
         />
 
-        {/* core features section */}
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
@@ -249,7 +240,6 @@ export default function OnDemandSolutions() {
           </div>
         </section>
 
-        {/* solutions table */}
         <section className="bg-[#081327] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
@@ -311,7 +301,6 @@ export default function OnDemandSolutions() {
           linkSuffix={<ArrowUpRight className="h-5 w-5" />}
         />
 
-        {/* why choose TechFlux */}
         <section className="bg-[#081327] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
@@ -339,7 +328,6 @@ export default function OnDemandSolutions() {
           </div>
         </section>
 
-        {/* related services */}
         <section className="py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">

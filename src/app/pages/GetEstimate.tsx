@@ -128,14 +128,14 @@ export default function GetEstimate() {
                 </div>
 
                 <div>
-                    <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Email *</label>
-                    <input
-                      type="email"
-                      placeholder="your.email@company.com"
-                      value={formData.email}
-                      onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
-                      className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
-                    />
+                  <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Email *</label>
+                  <input
+                    type="email"
+                    placeholder="your.email@company.com"
+                    value={formData.email}
+                    onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
+                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all placeholder:text-[#64748B] focus:border-[#2F80ED]"
+                  />
                 </div>
 
                 <div>
@@ -273,7 +273,7 @@ export default function GetEstimate() {
                     24 Hours
                   </p>
                   <p className="mt-1 text-sm text-[#94A3B8]">Average response time</p>
-<p className="text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  <p className="text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     98%
                   </p>
                   <p className="mt-1 text-sm text-[#94A3B8]">Client satisfaction</p>

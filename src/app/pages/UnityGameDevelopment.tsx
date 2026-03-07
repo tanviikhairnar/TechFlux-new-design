@@ -289,7 +289,6 @@ export default function UnityGameDevelopment() {
         <section className="relative py-24 bg-[#070F1F]">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
 
-            {/* Header */}
             <div className="mb-14 text-center">
               <h2
                 className="text-3xl font-semibold tracking-tight text-[#F9FAFB]"
@@ -303,7 +302,6 @@ export default function UnityGameDevelopment() {
               </p>
             </div>
 
-            {/* Cards */}
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {process.map((item, i) => (
                 <motion.div
@@ -314,22 +312,18 @@ export default function UnityGameDevelopment() {
                   transition={{ delay: i * 0.05 }}
                   className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#0E1628] p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/25 hover:shadow-[0_20px_50px_rgba(0,0,0,0.45)]"
                 >
-                  {/* Step Badge */}
                   <span className="inline-flex rounded-full bg-[#132B52] px-4 py-1 text-[12px] font-semibold tracking-wide text-[#4DA3FF]">
                     STEP {item.step.toString().padStart(2, "0")}
                   </span>
 
-                  {/* Big Step Number */}
                   <span className="pointer-events-none absolute right-5 top-4 text-[84px] font-bold leading-none text-[#1E3A6D]/16 sm:right-6 sm:top-5 sm:text-[94px] md:text-[104px]">
                     {item.step.toString().padStart(2, "0")}
                   </span>
 
-                  {/* Title */}
                   <h3 className="mb-3 mt-6 max-w-[90%] text-[30px] font-semibold leading-snug text-[#E6EDF7]">
                     {item.title}
                   </h3>
 
-                  {/* Description */}
                   <p className="text-[16px] leading-7 text-[#8B97AC]">
                     {item.desc}
                   </p>

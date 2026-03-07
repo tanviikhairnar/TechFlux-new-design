@@ -39,7 +39,6 @@ export function Navigation() {
             </Link>
           </motion.div>
 
-          {/* Desktop Nav Links */}
           <div className="hidden items-center gap-7 lg:flex">
 
             <Link
@@ -49,7 +48,6 @@ export function Navigation() {
               Home
             </Link>
 
-            {/* Services Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setServicesOpen(true)}
@@ -118,13 +116,11 @@ export function Navigation() {
               Contact
             </Link>
 
-            {/* CTA Button */}
             <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
               <BookStrategyCallButton className="inline-flex h-[48px] items-center rounded-xl bg-gradient-to-r from-[#3AAEFE] to-[#2F80ED] px-6 text-[15px] font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30" />
             </motion.div>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => {
               setMobileMenuOpen(!mobileMenuOpen);
@@ -138,7 +134,6 @@ export function Navigation() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div

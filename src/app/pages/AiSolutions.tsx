@@ -63,7 +63,6 @@ const aiSolutions = [
   },
 ];
 
-// removed unused approachCards — not needed for updated layout
 
 
 const techTags = [

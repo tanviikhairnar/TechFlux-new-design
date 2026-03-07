@@ -8,13 +8,11 @@ const HomeHero = () => {
   return (
     <section className="relative min-h-[calc(100vh-80px)] flex items-center overflow-hidden bg-[#0B0F1A]">
       
-      {/* Background Glow Effects */}
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#2F80ED]/10 rounded-full blur-[140px]" />
       <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] bg-[#2D9CDB]/10 rounded-full blur-[140px]" />
 
       <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative z-10">
         
-        {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,7 +45,6 @@ const HomeHero = () => {
           </div>
         </motion.div>
 
-        {/* Right Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}

@@ -23,7 +23,6 @@ import { Navigation } from '../components/Navigation';
 import { ServiceHeroSection } from '../components/ServiceHeroSection';
 import whiteLabelImage from '../../assets/images/4824548.jpg';
 
-// data for sections based on screenshot
 const builtFor = [
   {
     icon: Globe,

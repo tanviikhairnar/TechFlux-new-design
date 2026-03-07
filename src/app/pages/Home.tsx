@@ -146,14 +146,12 @@ export default function Home() {
     <div className="w-full min-h-screen bg-[#0B0F1A] overflow-x-hidden" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
 
-      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2F80ED]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#2D9CDB]/10 rounded-full blur-[120px]" />
 
         <div className="w-full max-w-[1320px] mx-auto px-6 lg:px-8 py-24 grid md:grid-cols-2 gap-16 items-center relative z-10">
 
-          {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -190,7 +188,6 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* RIGHT IMAGE */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -210,7 +207,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Strip */}
       <section className="py-16 bg-[#111827]/30">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -242,7 +238,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Core Expertise - 3 Glass Cards */}
       <section className="py-24 relative">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <motion.div
@@ -296,7 +291,6 @@ export default function Home() {
                 className="group relative p-8 rounded-2xl border border-[#1B263B] hover:border-[#2F80ED]/60 transition-all"
                 style={{ background: '#0F172A' }}
               >
-                {/* Icon */}
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] flex items-center justify-center mb-6 shadow-lg shadow-[#2F80ED]/25 transition-all">
                   <service.icon className="w-7 h-7 text-white" />
                 </div>
@@ -325,12 +319,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Deep SaaS Section */}
       <section id="saas" className="py-24 relative bg-[#111827]/30">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <div className="grid md:grid-cols-2 gap-12 items-start">
 
-            {/* IMAGE (LEFT) */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -347,7 +339,6 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* CONTENT (RIGHT) */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -401,13 +392,10 @@ export default function Home() {
       </section>
 
 
-      {/* AI Section */}
-
       <section id="ai" className="py-24 relative">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <div className="grid md:grid-cols-2 gap-12 items-center">
 
-            {/* CONTENT (LEFT) */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -458,7 +446,6 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            {/* IMAGE (RIGHT) */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -479,13 +466,10 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* On-Demand Section (UNCHANGED – Already Correct) */}
       <section id="ondemand" className="py-24 relative bg-[#111827]/30">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <div className="grid md:grid-cols-2 gap-12 items-center">
 
-            {/* IMAGE (LEFT) */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -502,7 +486,6 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* CONTENT (RIGHT) */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -555,7 +538,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Development Process */}
       <section id="process" className="py-12 relative">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <motion.div
@@ -709,7 +691,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Case Studies Preview */}
       <section id="portfolio" className="py-24 relative bg-[#0B1220]">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <motion.div
@@ -774,7 +755,6 @@ export default function Home() {
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 className="group rounded-2xl overflow-hidden border border-white/5 bg-[#111827] hover:border-[#2F80ED]/30 transition-all shadow-lg"
               >
-                {/* Image */}
                 <div className="relative h-56 overflow-hidden">
                   <img
                     src={project.image}
@@ -783,9 +763,7 @@ export default function Home() {
                   />
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
-                  {/* Category Badge */}
                   <span className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full bg-[#1E293B] text-[#2F80ED]">
                     {project.category}
                   </span>
@@ -801,7 +779,6 @@ export default function Home() {
                     {project.description}
                   </p>
 
-                  {/* Metric Line */}
                   <div className="text-[#2F80ED] font-semibold flex items-center gap-2">
                     ↗ {project.metric}
                   </div>
@@ -814,7 +791,6 @@ export default function Home() {
 
       <ClientLogosSlider />
 
-      {/* Testimonials Section */}
       <section className="py-24 relative">
         <div className="w-full max-w-[1260px] mx-auto">
           <motion.div
@@ -936,7 +912,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* White Label Partnership */}
       <section id="whitelabel" className="py-24 relative bg-[#0D1730]">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5 relative z-10">
           <motion.div
@@ -975,7 +950,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
       <section className="py-20 relative bg-[#12385A]">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <motion.div
