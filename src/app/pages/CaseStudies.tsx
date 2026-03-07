@@ -7,10 +7,10 @@ import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton
 import servyoImage from '../../assets/images/WhatsApp Image 2026-03-06 at 12.15.24.jpeg';
 import dinerightImage from '../../assets/images/dineright.jpg';
 import allstarImage from '../../assets/images/car.jpg';
-import myobscurImage from '../../assets/images/3577047_edit.webp';
+import fashionStoreImage from '../../assets/images/smiling-models-posing-clothing-shop.jpg';
 import fuztechImage from '../../assets/images/On Demand.jpg';
 import etern8Image from '../../assets/images/AI.jpg';
-import studioNewMediaImage from '../../assets/images/4824548.jpg';
+import mobileTechImage from '../../assets/images/hand-touching-mobile-with-applications.jpg';
 import leaveCertificateImage from '../../assets/images/WhatsApp Image 2026-03-06 at 12.15.24.jpeg';
 
 type CaseStudy = {
@@ -58,7 +58,7 @@ const caseStudies: CaseStudy[] = [
     name: 'MyObscur',
     headline: 'eCommerce',
     description: 'Personalized fashion discovery with European brand curation',
-    image: myobscurImage,
+    image: fashionStoreImage,
     tags: ['eCommerce Platform', 'Logistics', 'UX Optimization'],
     categoryLabel: 'Fashion',
     caseStudyUrl: '/case-studies/myobscur',
@@ -94,7 +94,7 @@ const caseStudies: CaseStudy[] = [
     name: 'Studio New Media',
     headline: 'White-Label',
     description: 'White-label CMS platform with centralized hosting control',
-    image: studioNewMediaImage,
+    image: mobileTechImage,
     tags: ['PHP', 'CodeIgniter', 'Multi-Tenant'],
     categoryLabel: 'SaaS CMS',
     caseStudyUrl: '/case-studies/studio-new-media',

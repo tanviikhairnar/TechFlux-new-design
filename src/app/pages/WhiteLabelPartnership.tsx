@@ -395,17 +395,17 @@ export default function WhiteLabelPartnership() {
         </section>
 
         {/* case study */}
-        <section className="py-20">
+        <section className="py-24 md:py-28">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
               <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 White-Label Platform We&apos;ve Built
               </h2>
             </motion.div>
-            <div className="rounded-xl border border-white/5 bg-[#0F1B31] overflow-hidden">
+            <div className="overflow-hidden rounded-2xl border border-white/5 bg-[#0F1B31]">
               <div className="grid md:grid-cols-2">
-                <img src={caseStudy.img} alt={caseStudy.title} className="h-64 w-full object-cover object-center md:h-full" />
-                <div className="p-8 flex flex-col justify-center">
+                <img src={caseStudy.img} alt={caseStudy.title} className="h-[320px] w-full object-cover object-center md:h-full md:min-h-[460px]" />
+                <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12">
                   <h3 className="mb-4 text-2xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {caseStudy.title}
                   </h3>

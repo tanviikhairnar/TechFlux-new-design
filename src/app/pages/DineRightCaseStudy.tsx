@@ -238,21 +238,23 @@ export default function DineRightCaseStudy() {
           </div>
         </section>
 
-        <section className="bg-[#0A152B] py-16">
-          <div className="mx-auto grid w-full max-w-[1260px] gap-4 px-4 md:grid-cols-2 lg:px-5">
-            <div className="overflow-hidden rounded-xl border border-[#1E2E49] bg-[#101A31]">
+        <section className="bg-[#0A152B] py-20 md:py-24">
+          <div className="mx-auto grid w-full max-w-[1260px] gap-6 px-4 md:grid-cols-2 lg:px-5">
+            <div className="group relative overflow-hidden rounded-2xl border border-[#24406A] bg-[#101A31] shadow-[0_14px_36px_rgba(5,20,56,0.35)] transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/45 hover:shadow-[0_18px_44px_rgba(47,128,237,0.28)]">
               <img
                 src={diningPreviewOne}
                 alt="Dine Right experience preview 1"
-                className="h-52 w-full object-cover"
+                className="h-[280px] w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-[360px]"
               />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#071227]/85 to-transparent" />
             </div>
-            <div className="overflow-hidden rounded-xl border border-[#1E2E49] bg-[#101A31]">
+            <div className="group relative overflow-hidden rounded-2xl border border-[#24406A] bg-[#101A31] shadow-[0_14px_36px_rgba(5,20,56,0.35)] transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/45 hover:shadow-[0_18px_44px_rgba(47,128,237,0.28)]">
               <img
                 src={diningPreviewTwo}
                 alt="Dine Right experience preview 2"
-                className="h-52 w-full object-cover"
+                className="h-[280px] w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-[360px]"
               />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#071227]/85 to-transparent" />
             </div>
           </div>
         </section>

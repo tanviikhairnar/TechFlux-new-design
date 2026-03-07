@@ -72,7 +72,7 @@ export function ArticlePageTemplate({
         <div className={leftOrbClassName} />
         <div className={rightOrbClassName} />
 
-        <article className="relative z-10 mx-auto w-full max-w-[1260px] px-0 pb-20 pt-28 md:px-1 lg:px-2 md:pt-32">
+        <article className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-20 pt-28 md:px-6 md:pt-32 lg:px-5">
           <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-7">
             <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-[#56A9F5] transition-colors hover:text-[#87CBFF]">
               <ArrowLeft className="h-4 w-4" />
@@ -84,7 +84,7 @@ export function ArticlePageTemplate({
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="relative mb-12 overflow-hidden rounded-3xl border border-[#274468]/70 bg-[#0B1426] px-2 py-8 md:px-3 md:py-10"
+            className="relative mb-12 overflow-hidden rounded-3xl border border-[#274468]/70 bg-[#0B1426] px-5 py-8 md:px-8 md:py-10"
           >
             {headingBackgroundImage ? (
               <img src={headingBackgroundImage} alt="" aria-hidden="true" className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center" />
@@ -104,7 +104,7 @@ export function ArticlePageTemplate({
           ))}
 
           <section className="mt-8 border-t border-white/10 pt-10">
-            <div className="rounded-2xl border border-[#29446A] bg-gradient-to-r from-[#182A45] to-[#213554] px-7 py-8 text-center md:px-10">
+            <div className="rounded-2xl border border-[#29446A] bg-gradient-to-r from-[#182A45] to-[#213554] px-5 py-8 text-center sm:px-7 md:px-10">
               <h3 className="mb-3 text-2xl font-bold text-[#E5E7EB] md:text-3xl" style={{ fontFamily: 'Sora, sans-serif' }}>
                 {ctaTitle}
               </h3>
