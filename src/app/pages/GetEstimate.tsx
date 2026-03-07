@@ -13,7 +13,7 @@ const nextSteps = [
 ];
 
 const whyItems = [
-  '8+ years of experience',
+  '12+ years of experience',
   '200+ projects delivered',
   'Transparent pricing',
   'No hidden costs',

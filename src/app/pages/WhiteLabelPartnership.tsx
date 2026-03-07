@@ -114,7 +114,7 @@ const collaborationSteps = [
 const whyItems = [
   {
     icon: Award,
-    titleLine1: '8+',
+    titleLine1: '12+',
     titleLine2: 'Years Experience',
     desc: 'Proven track record in software development',
   },

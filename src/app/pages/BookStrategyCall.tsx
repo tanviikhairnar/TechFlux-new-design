@@ -5,8 +5,6 @@ import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
 import { sendStrategyCallEmails } from '../lib/leadEmailService';
-import avatarOne from '../../assets/images/WhatsApp Image 2026-03-05 at 12.37.05.jpeg';
-import avatarTwo from '../../assets/images/159a7f79-3802-497b-ae5e-ac1f83a54e60.webp';
 
 const coverageItems = [
   'Product feasibility and technical approach',
@@ -29,23 +27,53 @@ const testimonials = [
       'The strategy call was incredibly valuable. They understood our vision immediately and provided clear recommendations.',
     name: 'Sarah Johnson',
     role: 'VP Product, TechVentures',
-    avatar: null,
   },
   {
     quote:
       'Their transparent approach to pricing and timeline helped us make an informed decision about our project.',
     name: 'Michael Chen',
     role: 'CEO, DataInsight',
-    avatar: avatarOne,
   },
   {
     quote:
       'Best decision we made was booking that initial call. They guided us through the entire process professionally.',
     name: 'David Martinez',
     role: 'Founder, Digital Agency Co.',
-    avatar: avatarTwo,
   },
 ];
+
+type TestimonialCardProps = {
+  quote: string;
+  name: string;
+  role: string;
+  delay: number;
+};
+
+function TestimonialCard({ quote, name, role, delay }: TestimonialCardProps) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay }}
+      className="flex h-full flex-col rounded-2xl border border-white/5 p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:p-7"
+      style={{ background: 'rgba(255,255,255,0.03)' }}
+    >
+      <p className="mb-7 text-base leading-relaxed text-[#94A3B8] md:text-lg">&quot;{quote}&quot;</p>
+      <div className="mt-auto flex items-center gap-3">
+        <div className="h-12 w-12 overflow-hidden rounded-full bg-[#1F2937] ring-1 ring-white/10">
+          <div className="flex h-full w-full items-center justify-center text-[#94A3B8]">
+            <Image className="h-6 w-6" />
+          </div>
+        </div>
+        <div>
+          <p className="text-base font-semibold text-[#E5E7EB] md:text-lg">{name}</p>
+          <p className="text-sm text-[#64748B]">{role}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function BookStrategyCall() {
   const [formData, setFormData] = useState({
@@ -257,70 +285,24 @@ export default function BookStrategyCall() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="pt-20 text-center"
+            className="pt-20"
           >
-            <h2 className="mb-10 text-4xl font-bold text-[#E5E7EB] md:text-5xl" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h2
+              className="mb-10 text-center text-4xl font-bold text-[#E5E7EB] md:text-5xl"
+              style={{ fontFamily: 'Sora, sans-serif' }}
+            >
               Why Choose Techflux Solutions
             </h2>
 
-            <div className="grid gap-5 md:grid-cols-3">
-              {stats.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.08 }}
-                  className="rounded-2xl border border-white/5 px-6 py-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
-                  style={{ background: 'rgba(255,255,255,0.03)' }}
-                >
-                  <div className="text-4xl font-bold text-[#E5E7EB] md:text-5xl" style={{ fontFamily: 'Sora, sans-serif' }}>
-                    {item.value}
-                  </div>
-                  <p className="mt-3 text-sm text-[#64748B] md:text-base">{item.label}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.section>
-
-          <motion.section
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="pt-20"
-          >
-            <h2 className="mb-10 text-center text-4xl font-bold text-[#E5E7EB] md:text-5xl" style={{ fontFamily: 'Sora, sans-serif' }}>
-              What Our Clients Say
-            </h2>
-
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="grid items-stretch gap-5 md:grid-cols-3">
               {testimonials.map((item, index) => (
-                <motion.div
+                <TestimonialCard
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="rounded-2xl border border-white/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:p-7"
-                  style={{ background: 'rgba(255,255,255,0.03)' }}
-                >
-                  <p className="mb-7 text-base leading-relaxed text-[#94A3B8] md:text-lg">&quot;{item.quote}&quot;</p>
-                  <div className="flex items-center gap-3">
-                    <div className="h-12 w-12 overflow-hidden rounded-full bg-[#1F2937] ring-1 ring-white/10">
-                      {item.avatar ? (
-                        <img src={item.avatar} alt={item.name} className="h-full w-full object-cover" />
-                      ) : (
-                        <div className="flex h-full w-full items-center justify-center text-[#94A3B8]">
-                          <Image className="h-6 w-6" />
-                        </div>
-                      )}
-                    </div>
-                    <div>
-                      <p className="text-base font-semibold text-[#E5E7EB] md:text-lg">{item.name}</p>
-                      <p className="text-sm text-[#64748B]">{item.role}</p>
-                    </div>
-                  </div>
-                </motion.div>
+                  quote={item.quote}
+                  name={item.name}
+                  role={item.role}
+                  delay={index * 0.1}
+                />
               ))}
             </div>
           </motion.section>
@@ -356,4 +338,3 @@ export default function BookStrategyCall() {
     </div>
   );
 }
-

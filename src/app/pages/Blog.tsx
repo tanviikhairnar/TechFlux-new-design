@@ -15,7 +15,7 @@ const posts = [
     title: 'How to Build a SaaS MVP in 60 Days (A Practical Guide for Startups)',
     excerpt:
       'A step-by-step 60-day execution plan covering scope, architecture, design, development, testing, and launch feedback.',
-    date: 'Mar 5, 2026',
+    date: 'Feb 6, 2026',
     image: saasBlogImage,
     link: '/blog/saas-mvp-development-2026',
   },
@@ -25,7 +25,7 @@ const posts = [
     title: '7 Major Problems SaaS Startups Face (And Practical Ways to Solve Them)',
     excerpt:
       'A practical playbook for solving feature creep, scalability gaps, onboarding drop-offs, security risks, and weak analytics.',
-    date: 'Mar 5, 2026',
+    date: 'Feb 15, 2026',
     image: aiBlogImage,
     link: '/blog/ai-integration-services-structured-approach',
   },
@@ -35,7 +35,7 @@ const posts = [
     title: 'On-Demand Applications: Common Challenges in Development and How to Solve Them',
     excerpt:
       'Learn how to handle real-time operations, multi-role systems, payments, scalability, provider quality, and retention in on-demand platforms.',
-    date: 'Mar 5, 2026',
+    date: 'Mar 3, 2026',
     image: onDemandBlogImage,
     link: '/blog/white-label-saas-development-strategic-infrastructure',
   },

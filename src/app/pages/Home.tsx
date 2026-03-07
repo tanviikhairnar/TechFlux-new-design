@@ -579,7 +579,7 @@ export default function Home() {
             className="mb-12"
             onMouseLeave={() => setActiveProcessStep(null)}
           >
-            <div className="hidden lg:grid lg:grid-cols-6 gap-8 pb-32">
+            <div className="hidden lg:grid lg:grid-cols-6 gap-6 pb-10 pt-56 xl:gap-8">
               {processSteps.map((step, index) => (
                 <motion.div
                   key={step.icon}
@@ -590,64 +590,61 @@ export default function Home() {
                     duration: 0.6,
                     delay: index * 0.2
                   }}
-                  className="relative"
+                  className="relative flex min-h-[138px] flex-col items-center text-center"
                   onMouseEnter={() => setActiveProcessStep(index)}
                 >
-                  <div className="relative mb-5 flex items-center">
+                  <div className="relative mb-5 flex w-full items-center justify-center">
                     <button
                       type="button"
                       onFocus={() => setActiveProcessStep(index)}
                       onBlur={() => setActiveProcessStep(null)}
-                      className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] flex items-center justify-center font-bold text-white text-3xl shadow-lg shadow-[#2F80ED]/30 outline-none"
+                      className="h-16 w-16 rounded-full bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] text-3xl font-bold text-white shadow-lg shadow-[#2F80ED]/30 outline-none"
                       style={{ fontFamily: 'Sora, sans-serif' }}
                     >
                       {step.icon}
                     </button>
 
                     {index < processSteps.length - 1 && (
-                      <div className="ml-4 h-[2px] flex-1 bg-gradient-to-r from-[#2F80ED]/70 to-transparent" />
+                      <div className="pointer-events-none absolute left-[calc(50%+40px)] top-1/2 h-[2px] w-[calc(100%-80px)] -translate-y-1/2 bg-gradient-to-r from-[#2F80ED]/70 to-transparent" />
                     )}
+
+                    <AnimatePresence>
+                      {activeProcessStep === index && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                          transition={{ duration: 0.22 }}
+                          className="absolute bottom-[calc(100%+14px)] left-1/2 z-30 w-[252px] -translate-x-1/2 rounded-2xl border border-[#2F80ED]/35 bg-[#0F1C35]/95 p-5 text-left shadow-[0_16px_45px_rgba(47,128,237,0.22)] backdrop-blur-xl xl:w-[272px]"
+                        >
+                          <div className="pointer-events-none absolute left-1/2 top-full h-3 w-3 -translate-x-1/2 -translate-y-1/2 rotate-45 border-b border-r border-[#2F80ED]/35 bg-[#0F1C35]/95" />
+                          <div
+                            className="mb-2 text-xl font-bold text-[#2F80ED]"
+                            style={{ fontFamily: 'Sora, sans-serif' }}
+                          >
+                            {step.icon}
+                          </div>
+                          <h3
+                            className="mb-2 text-lg font-semibold text-[#F9FAFB]"
+                            style={{ fontFamily: 'Sora, sans-serif' }}
+                          >
+                            {step.label}
+                          </h3>
+                          <p className="text-sm leading-relaxed text-[#9CA3AF]">
+                            {step.desc}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
 
                   <p
-                    className="text-[#F9FAFB] text-xl font-semibold leading-tight"
+                    className="min-h-[56px] text-xl font-semibold leading-tight text-[#F9FAFB]"
                     style={{ fontFamily: 'Sora, sans-serif' }}
                   >
                     {step.short}
                   </p>
 
-                  <AnimatePresence>
-                    {activeProcessStep === index && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 14, scale: 0.98 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.98 }}
-                        transition={{ duration: 0.22 }}
-                        className={`absolute top-[118px] z-30 w-[320px] rounded-2xl border border-[#2F80ED]/35 bg-[#0F1C35]/95 p-5 shadow-[0_16px_45px_rgba(47,128,237,0.22)] backdrop-blur-xl ${index === 0
-                          ? 'left-0'
-                          : index === processSteps.length - 1
-                            ? 'right-0'
-                            : 'left-1/2 -translate-x-1/2'
-                          }`}
-                      >
-                        <div
-                          className="text-[#2F80ED] font-bold text-xl mb-2"
-                          style={{ fontFamily: 'Sora, sans-serif' }}
-                        >
-                          {step.icon}
-                        </div>
-                        <h3
-                          className="text-[#F9FAFB] font-semibold text-lg mb-2"
-                          style={{ fontFamily: 'Sora, sans-serif' }}
-                        >
-                          {step.label}
-                        </h3>
-                        <p className="text-[#9CA3AF] text-sm leading-relaxed">
-                          {step.desc}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </motion.div>
               ))}
             </div>
