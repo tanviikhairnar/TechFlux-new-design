@@ -126,7 +126,7 @@ export default function Careers() {
               >
                 Join the Team at
                 <br />
-                TechFlux
+                Techflux
                 <br />
                 Solutions
               </h1>
@@ -160,7 +160,7 @@ export default function Careers() {
             className="mb-24 pt-2"
           >
             <h2 className="mb-12 text-center text-4xl font-bold text-[#E5E7EB] md:text-[44px]" style={{ fontFamily: 'Sora, sans-serif' }}>
-              Why Work With TechFlux
+              Why Work With Techflux
             </h2>
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
               {whyWorkItems.map((item, index) => (
@@ -184,7 +184,7 @@ export default function Careers() {
           </motion.section>
         </div>
 
-        <section id="open-positions" className="bg-[#0A152B] py-24">
+        <section id="open-positions" className="bg-[#0A152B] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -291,7 +291,7 @@ export default function Careers() {
           </motion.section>
         </div>
 
-        <section className="bg-[#0A152B] py-24">
+        <section className="bg-[#0A152B] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -300,7 +300,7 @@ export default function Careers() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="mb-3 text-center text-4xl font-bold text-[#E5E7EB] md:text-[44px]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Life at TechFlux
+                Life at Techflux
               </h2>
               <p className="mb-12 text-center text-base text-[#93A4BE] md:text-[17px]">
                 Join a collaborative environment where innovation meets culture.

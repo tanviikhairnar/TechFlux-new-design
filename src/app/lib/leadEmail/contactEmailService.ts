@@ -24,7 +24,7 @@ Best regards,
 Techflux Solutions
 https://techflux.in`;
 
-  const internalSubject = 'New Contact Form Inquiry - TechFlux Website';
+  const internalSubject = 'New Contact Form Inquiry - Techflux Website';
   const internalMessage = `A new contact form inquiry has been submitted.
 
 Lead Details:
@@ -36,7 +36,7 @@ Budget: ${lead.budget}
 Message: ${lead.message}
 
 Please review and respond within 24 hours.
-Lead Source: TechFlux Website - Contact Form`;
+Lead Source: Techflux Website - Contact Form`;
 
   if (!canUseEmailJs()) {
     throw new Error('Direct email is not configured. Set EmailJS env keys and restart the app.');

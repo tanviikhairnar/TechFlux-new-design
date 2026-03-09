@@ -250,7 +250,7 @@ export default function GetEstimate() {
                 className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
               >
                 <h3 className="mb-4 text-3xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                  Why TechFlux?
+                  Why Techflux?
                 </h3>
                 <div className="space-y-3">
                   {whyItems.map((item) => (

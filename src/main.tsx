@@ -4,6 +4,40 @@ import "./styles/index.css";
 
 const FALLBACK_IMAGE_SRC = "/images/fallback-image.svg";
 
+function applyImagePerformanceDefaults(img: HTMLImageElement) {
+  if (!img.loading) {
+    img.loading = "lazy";
+  }
+  if (!img.decoding) {
+    img.decoding = "async";
+  }
+}
+
+function enableGlobalLazyLoading() {
+  const existingImages = document.querySelectorAll("img");
+  existingImages.forEach((img) => applyImagePerformanceDefaults(img));
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (!(node instanceof HTMLElement)) return;
+
+        if (node.tagName === "IMG") {
+          applyImagePerformanceDefaults(node as HTMLImageElement);
+          return;
+        }
+
+        node.querySelectorAll("img").forEach((img) => applyImagePerformanceDefaults(img));
+      });
+    });
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+}
+
 // Global safety net: if any image fails to load, swap to a local fallback asset.
 document.addEventListener(
   "error",
@@ -18,5 +52,7 @@ document.addEventListener(
   },
   true,
 );
+
+enableGlobalLazyLoading();
 
 createRoot(document.getElementById("root")!).render(<App />);

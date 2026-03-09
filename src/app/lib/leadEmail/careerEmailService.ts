@@ -18,7 +18,7 @@ Portfolio/GitHub: ${lead.portfolioUrl || 'N/A'}
 Resume File: ${lead.resumeFileName}
 Cover Letter: ${lead.coverLetter || 'N/A'}
 
-Lead Source: TechFlux Website - Career Apply Form`;
+Lead Source: Techflux Website - Career Apply Form`;
 
   if (!canUseEmailJs()) {
     throw new Error('Direct email is not configured. Set EmailJS env keys and restart the app.');

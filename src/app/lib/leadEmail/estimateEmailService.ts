@@ -28,7 +28,7 @@ Best regards,
 Techflux Solutions
 https://techflux.in`;
 
-  const internalSubject = 'New Project Estimate Request - TechFlux Website';
+  const internalSubject = 'New Project Estimate Request - Techflux Website';
   const internalMessage = `New project estimate request received.
 
 Lead Details:
@@ -41,7 +41,7 @@ Timeline: ${lead.timeline}
 Project Details: ${lead.message}
 
 Please review and respond within 24 hours.
-Lead Source: TechFlux Website - Project Estimate Form`;
+Lead Source: Techflux Website - Project Estimate Form`;
 
   if (!canUseEmailJs()) {
     throw new Error('Direct email is not configured. Set EmailJS env keys and restart the app.');

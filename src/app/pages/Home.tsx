@@ -72,7 +72,7 @@ const testimonialsData = [
   },
   {
     text: 'Working with Techflux and his team has been an excellent experience. They showed strong technical capability, professionalism, and commitment throughout the EngMe platform development across backend, frontend, and integrations. I highly recommend Techflux as a reliable development partner.',
-    name: 'Ashraf',
+    name: 'Dr. Ashraf',
     company: 'Engme',
   },
   {
@@ -194,12 +194,12 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-              <div className="relative rounded-2xl overflow-hidden">
-                <img
-                  src={homeHeroAiImage}
-                  alt="AI Technology"
-                  className="w-full max-w-[640px] h-auto rounded-2xl ml-auto"
-                />
+            <div className="relative rounded-2xl overflow-hidden">
+              <img
+                src={homeHeroAiImage}
+                alt="AI Technology"
+                className="w-full max-w-[640px] h-auto rounded-2xl ml-auto"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F1A] via-transparent to-transparent" />
             </div>
           </motion.div>
@@ -207,7 +207,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 bg-[#111827]/30">
+      <section className="py-20 bg-[#111827]/30">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -238,7 +238,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 relative">
+      <section className="py-20 relative">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -319,7 +319,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="saas" className="py-24 relative bg-[#111827]/30">
+      <section id="saas" className="py-20 relative bg-[#111827]/30">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <div className="grid md:grid-cols-2 gap-12 items-start">
 
@@ -329,12 +329,12 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-                <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
-                  <img
-                    src={homeSaasImage}
-                    alt="SaaS Dashboard"
-                    className="w-full h-[420px] object-cover rounded-2xl"
-                  />
+              <div className="relative overflow-hidden rounded-3xl">
+                <img
+                  src={homeSaasImage}
+                  alt="SaaS Dashboard"
+                  className="w-full h-[420px] object-cover rounded-2xl"
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
               </div>
             </motion.div>
@@ -392,7 +392,7 @@ export default function Home() {
       </section>
 
 
-      <section id="ai" className="py-24 relative">
+      <section id="ai" className="py-20 relative">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <div className="grid md:grid-cols-2 gap-12 items-center">
 
@@ -452,12 +452,12 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-                <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
-                  <img
-                    src={homeAiGradientImage}
-                    alt="AI Gradient"
-                    className="w-full h-[420px] object-cover rounded-2xl"
-                  />
+              <div className="relative overflow-hidden rounded-3xl">
+                <img
+                  src={homeAiGradientImage}
+                  alt="AI Gradient"
+                  className="w-full h-[420px] object-cover rounded-2xl"
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
               </div>
             </motion.div>
@@ -466,7 +466,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="ondemand" className="py-24 relative bg-[#111827]/30">
+      <section id="ondemand" className="py-20 relative bg-[#111827]/30">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <div className="grid md:grid-cols-2 gap-12 items-center">
 
@@ -476,12 +476,12 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-                <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#111F39] p-3">
-                  <img
-                    src={onDemandImage}
-                    alt="On-Demand App"
-                    className="w-full h-[420px] object-cover rounded-2xl"
-                  />
+              <div className="relative overflow-hidden rounded-3xl">
+                <img
+                  src={onDemandImage}
+                  alt="On-Demand App"
+                  className="w-full h-[420px] object-cover rounded-2xl"
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
               </div>
             </motion.div>
@@ -548,20 +548,15 @@ export default function Home() {
           >
             <h2
               className="text-4xl md:text-5xl font-bold text-[#F9FAFB] mb-4"
-              style={{ fontFamily: 'Sora, sans-serif' }}
+              style={{ fontFamily: "Sora, sans-serif" }}
             >
               Our Development Process
             </h2>
-            <p className="text-lg text-[#9CA3AF]">
-              Our proven 6-step methodology
-            </p>
+            <p className="text-lg text-[#9CA3AF]">Our proven 6-step methodology</p>
           </motion.div>
 
-          <div
-            className="mb-12"
-            onMouseLeave={() => setActiveProcessStep(null)}
-          >
-            <div className="hidden lg:grid lg:grid-cols-6 gap-6 pb-10 pt-56 xl:gap-8">
+          <div className="mb-12" onMouseLeave={() => setActiveProcessStep(null)}>
+            <div className="hidden lg:grid lg:grid-cols-6 gap-6 pb-10 pt-16 xl:gap-8">
               {processSteps.map((step, index) => (
                 <motion.div
                   key={step.icon}
@@ -570,7 +565,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{
                     duration: 0.6,
-                    delay: index * 0.2
+                    delay: index * 0.2,
                   }}
                   className="relative flex min-h-[138px] flex-col items-center text-center"
                   onMouseEnter={() => setActiveProcessStep(index)}
@@ -581,7 +576,7 @@ export default function Home() {
                       onFocus={() => setActiveProcessStep(index)}
                       onBlur={() => setActiveProcessStep(null)}
                       className="h-16 w-16 rounded-full bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] text-3xl font-bold text-white shadow-lg shadow-[#2F80ED]/30 outline-none"
-                      style={{ fontFamily: 'Sora, sans-serif' }}
+                      style={{ fontFamily: "Sora, sans-serif" }}
                     >
                       {step.icon}
                     </button>
@@ -593,25 +588,28 @@ export default function Home() {
                     <AnimatePresence>
                       {activeProcessStep === index && (
                         <motion.div
-                          initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                          initial={{ opacity: 0, y: -10, scale: 0.98 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                          exit={{ opacity: 0, y: -8, scale: 0.98 }}
                           transition={{ duration: 0.22 }}
-                          className="absolute bottom-[calc(100%+14px)] left-1/2 z-30 w-[252px] -translate-x-1/2 rounded-2xl border border-[#2F80ED]/35 bg-[#0F1C35]/95 p-5 text-left shadow-[0_16px_45px_rgba(47,128,237,0.22)] backdrop-blur-xl xl:w-[272px]"
+                          className="absolute top-[calc(100%+14px)] left-1/2 z-30 w-[252px] -translate-x-1/2 rounded-2xl border border-[#2F80ED]/35 bg-[#0F1C35]/95 p-5 text-left shadow-[0_16px_45px_rgba(47,128,237,0.22)] backdrop-blur-xl xl:w-[272px]"
                         >
-                          <div className="pointer-events-none absolute left-1/2 top-full h-3 w-3 -translate-x-1/2 -translate-y-1/2 rotate-45 border-b border-r border-[#2F80ED]/35 bg-[#0F1C35]/95" />
+                          <div className="pointer-events-none absolute left-1/2 bottom-full h-3 w-3 -translate-x-1/2 translate-y-1/2 rotate-45 border-t border-l border-[#2F80ED]/35 bg-[#0F1C35]/95" />
+
                           <div
                             className="mb-2 text-xl font-bold text-[#2F80ED]"
-                            style={{ fontFamily: 'Sora, sans-serif' }}
+                            style={{ fontFamily: "Sora, sans-serif" }}
                           >
                             {step.icon}
                           </div>
+
                           <h3
                             className="mb-2 text-lg font-semibold text-[#F9FAFB]"
-                            style={{ fontFamily: 'Sora, sans-serif' }}
+                            style={{ fontFamily: "Sora, sans-serif" }}
                           >
                             {step.label}
                           </h3>
+
                           <p className="text-sm leading-relaxed text-[#9CA3AF]">
                             {step.desc}
                           </p>
@@ -622,11 +620,10 @@ export default function Home() {
 
                   <p
                     className="min-h-[56px] text-xl font-semibold leading-tight text-[#F9FAFB]"
-                    style={{ fontFamily: 'Sora, sans-serif' }}
+                    style={{ fontFamily: "Sora, sans-serif" }}
                   >
                     {step.short}
                   </p>
-
                 </motion.div>
               ))}
             </div>
@@ -641,20 +638,19 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{
                     duration: 0.5,
-                    delay: index * 0.15
+                    delay: index * 0.15,
                   }}
                   onClick={() => setActiveProcessStep(index)}
                   className="rounded-xl border border-white/10 bg-[#0F1C35] px-4 py-5 text-left"
                 >
                   <div
                     className="text-[#2F80ED] text-2xl font-bold mb-2"
-                    style={{ fontFamily: 'Sora, sans-serif' }}
+                    style={{ fontFamily: "Sora, sans-serif" }}
                   >
                     {step.icon}
                   </div>
-                  <div className="text-[#F9FAFB] font-semibold">
-                    {step.short}
-                  </div>
+
+                  <div className="text-[#F9FAFB] font-semibold">{step.short}</div>
                 </motion.button>
               ))}
             </div>
@@ -672,16 +668,18 @@ export default function Home() {
               >
                 <div
                   className="text-[#2F80ED] font-bold text-2xl mb-2"
-                  style={{ fontFamily: 'Sora, sans-serif' }}
+                  style={{ fontFamily: "Sora, sans-serif" }}
                 >
                   {processSteps[activeProcessStep].icon}
                 </div>
+
                 <h3
                   className="text-[#F9FAFB] font-semibold text-2xl mb-2"
-                  style={{ fontFamily: 'Sora, sans-serif' }}
+                  style={{ fontFamily: "Sora, sans-serif" }}
                 >
                   {processSteps[activeProcessStep].label}
                 </h3>
+
                 <p className="text-[#9CA3AF] text-base leading-relaxed">
                   {processSteps[activeProcessStep].desc}
                 </p>
@@ -691,7 +689,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="portfolio" className="py-24 relative bg-[#0B1220]">
+      <section id="portfolio" className="py-20 relative bg-[#0B1220]">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -791,7 +789,7 @@ export default function Home() {
 
       <ClientLogosSlider />
 
-      <section className="py-24 relative">
+      <section className="py-20 relative">
         <div className="w-full max-w-[1260px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -823,56 +821,57 @@ export default function Home() {
                   const shouldShowReadMore = testimonial.text.length > 140;
 
                   return (
-                  <div key={`${testimonial.name}-${index}`} className="w-full px-3" style={{ flex: `0 0 ${100 / testimonialsPerView}%` }}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                className={`group relative rounded-2xl border border-white/8 p-8 shadow-lg backdrop-blur-xl transition-all hover:shadow-[#2F80ED]/20 flex flex-col ${isExpanded ? 'min-h-[320px]' : 'h-[320px]'}`}
-                style={{ background: 'rgba(255,255,255,0.04)' }}
-              >
-                <div className="flex gap-1 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-[#2F80ED] text-[#2F80ED]" />
-                  ))}
-                </div>
+                    <div key={`${testimonial.name}-${index}`} className="w-full px-3" style={{ flex: `0 0 ${100 / testimonialsPerView}%` }}>
+                      <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                        whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                        className={`group relative rounded-2xl border border-white/8 p-8 shadow-lg backdrop-blur-xl transition-all hover:shadow-[#2F80ED]/20 flex flex-col ${isExpanded ? 'min-h-[320px]' : 'h-[320px]'}`}
+                        style={{ background: 'rgba(255,255,255,0.04)' }}
+                      >
+                        <div className="flex gap-1 mb-6">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 fill-[#2F80ED] text-[#2F80ED]" />
+                          ))}
+                        </div>
 
-                <p className={`text-[#F9FAFB] text-base leading-relaxed mb-2 ${isExpanded ? '' : 'line-clamp-3'}`}>
-                  "{testimonial.text}"
-                </p>
-                {shouldShowReadMore ? (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setExpandedTestimonials((prev) => ({
-                        ...prev,
-                        [baseIndex]: !prev[baseIndex],
-                      }));
-                    }}
-                    className="mb-6 w-fit text-sm font-semibold text-[#66B7FF] hover:text-[#8FCBFF] transition-colors"
-                  >
-                    {isExpanded ? 'Read less' : 'Read more'}
-                  </button>
-                ) : (
-                  <div className="mb-6" />
-                )}
+                        <p className={`text-[#F9FAFB] text-base leading-relaxed mb-2 ${isExpanded ? '' : 'line-clamp-3'}`}>
+                          "{testimonial.text}"
+                        </p>
+                        {shouldShowReadMore ? (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setExpandedTestimonials((prev) => ({
+                                ...prev,
+                                [baseIndex]: !prev[baseIndex],
+                              }));
+                            }}
+                            className="mb-6 w-fit text-sm font-semibold text-[#66B7FF] hover:text-[#8FCBFF] transition-colors"
+                          >
+                            {isExpanded ? 'Read less' : 'Read more'}
+                          </button>
+                        ) : (
+                          <div className="mb-6" />
+                        )}
 
-                <div className="mt-auto flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] flex items-center justify-center text-white font-bold">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="text-[#F9FAFB] font-semibold text-xl">{testimonial.name}</div>
-                    {testimonial.company ? (
-                      <div className="text-[#9CA3AF] text-base">{testimonial.company}</div>
-                    ) : null}
-                  </div>
-                </div>
-              </motion.div>
-                  </div>
-                )})}
+                        <div className="mt-auto flex items-center gap-4">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] flex items-center justify-center text-white font-bold">
+                            {testimonial.name.charAt(0)}
+                          </div>
+                          <div>
+                            <div className="text-[#F9FAFB] font-semibold text-xl">{testimonial.name}</div>
+                            {testimonial.company ? (
+                              <div className="text-[#9CA3AF] text-base">{testimonial.company}</div>
+                            ) : null}
+                          </div>
+                        </div>
+                      </motion.div>
+                    </div>
+                  )
+                })}
               </motion.div>
             </div>
 
@@ -912,7 +911,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="whitelabel" className="py-24 relative bg-[#0D1730]">
+      <section id="whitelabel" className="py-20 relative bg-[#0D1730]">
         <div className="w-full max-w-[1260px] mx-auto px-4 lg:px-5 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

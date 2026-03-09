@@ -203,6 +203,9 @@ export default function OnDemandSolutions() {
           items={buildItems}
           sectionClassName="bg-[#081327] py-20"
           headingWrapClassName="mb-14 text-center"
+          headingClassName="text-[42px] font-semibold text-[#D8DEE8]"
+          titleClassName="mb-3 text-[19px] font-semibold leading-7 text-[#E5ECF8] md:text-[21px]"
+          descClassName="text-[16px] leading-8 text-[#95A4BF]"
           transitionStep={0.07}
           transitionOffsetFn={(i) => i % 3}
         />
@@ -233,7 +236,7 @@ export default function OnDemandSolutions() {
                   <h3 className="mb-2 text-lg font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {item.title}
                   </h3>
-                  <p className="text-[13px] leading-6 text-[#8A96AA]">{item.desc}</p>
+                  <p className="tf-muted-card">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -263,10 +266,10 @@ export default function OnDemandSolutions() {
                   {solutionTableRows.map((row, i) => (
                     <tr key={i} className="border-b border-[#2A3954] last:border-b-0">
                       <td className="px-6 py-5 text-lg text-[#E5ECF8]">{row.type}</td>
-                      <td className="px-6 py-5 text-center text-lg text-[#9AA7BF]">{row.time}</td>
-                      <td className="px-6 py-5 text-center text-lg text-[#9AA7BF]">{row.complexity}</td>
-                      <td className="px-6 py-5 text-center text-lg text-[#9AA7BF]">{row.features}</td>
-                      <td className="px-6 py-5 text-center text-lg text-[#9AA7BF]">{row.deploy}</td>
+                      <td className="px-6 py-5 text-center tf-muted-table">{row.time}</td>
+                      <td className="px-6 py-5 text-center tf-muted-table">{row.complexity}</td>
+                      <td className="px-6 py-5 text-center tf-muted-table">{row.features}</td>
+                      <td className="px-6 py-5 text-center tf-muted-table">{row.deploy}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -305,7 +308,7 @@ export default function OnDemandSolutions() {
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
               <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Why Businesses Choose TechFlux
+                Why Businesses Choose Techflux
               </h2>
             </motion.div>
             <div className="grid gap-6 md:grid-cols-3">
@@ -321,7 +324,7 @@ export default function OnDemandSolutions() {
                   <h3 className="mb-2 text-lg font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {item.title}
                   </h3>
-                  <p className="text-[13px] leading-6 text-[#8A96AA]">{item.desc}</p>
+                  <p className="tf-muted-card">{item.desc}</p>
                 </motion.div>
               ))}
             </div>

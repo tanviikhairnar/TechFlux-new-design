@@ -113,7 +113,7 @@ export default function DineRightCaseStudy() {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-[1260px] px-4 pb-16 lg:px-5">
+        <section className="mx-auto w-full max-w-[1260px] px-4 pb-20 lg:px-5">
           <div className="rounded-2xl border border-[#1E2E49] bg-[#111B31] p-6 md:p-7">
             <h2 className="mb-4 text-2xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
               About the Project
@@ -238,7 +238,7 @@ export default function DineRightCaseStudy() {
           </div>
         </section>
 
-        <section className="bg-[#0A152B] py-20 md:py-24">
+        <section className="bg-[#0A152B] py-20 md:py-20">
           <div className="mx-auto grid w-full max-w-[1260px] gap-6 px-4 md:grid-cols-2 lg:px-5">
             <div className="group relative overflow-hidden rounded-2xl border border-[#24406A] bg-[#101A31] shadow-[0_14px_36px_rgba(5,20,56,0.35)] transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/45 hover:shadow-[0_18px_44px_rgba(47,128,237,0.28)]">
               <img

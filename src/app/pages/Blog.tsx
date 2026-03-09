@@ -111,7 +111,7 @@ export default function Blog() {
           </div>
         </section>
 
-        <section className="pb-24">
+        <section className="pb-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -1,10 +1,7 @@
 import { motion } from 'motion/react';
 import { Calendar, CheckCircle2, Clock3, Image, Video } from 'lucide-react';
-import { FormEvent, useState } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
-import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
-import { sendStrategyCallEmails } from '../lib/leadEmailService';
 
 const coverageItems = [
   'Product feasibility and technical approach',
@@ -76,52 +73,6 @@ function TestimonialCard({ quote, name, role, delay }: TestimonialCardProps) {
 }
 
 export default function BookStrategyCall() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    company: '',
-    projectType: 'SaaS Development',
-    budget: 'Under $50K',
-    message: '',
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState('');
-  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
-  const [showSuccessOnButton, setShowSuccessOnButton] = useState(false);
-
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setSubmitError('');
-    setShowSuccessPopup(false);
-
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
-      setSubmitError('Please fill all required fields.');
-      return;
-    }
-
-    try {
-      setIsSubmitting(true);
-      await sendStrategyCallEmails(formData);
-      setShowSuccessPopup(true);
-      setShowSuccessOnButton(true);
-      window.setTimeout(() => setShowSuccessOnButton(false), 2500);
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        company: '',
-        projectType: 'SaaS Development',
-        budget: 'Under $50K',
-        message: '',
-      });
-    } catch (error) {
-      setSubmitError(error instanceof Error ? error.message : 'Failed to submit. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#020617]" style={{ fontFamily: 'Inter, sans-serif' }}>
       <Navigation />
@@ -199,85 +150,17 @@ export default function BookStrategyCall() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="rounded-2xl border border-white/5 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:p-8"
-              style={{ background: 'rgba(255,255,255,0.03)' }}
+              className="rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-[#2F80ED]/20 transition-all duration-300"
+              style={{ background: "rgba(255,255,255,0.03)" }}
             >
-              <h3 className="mb-6 text-center text-2xl font-semibold text-[#E5E7EB] md:text-4xl" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Request Strategy Call
-              </h3>
-              <form className="space-y-4" onSubmit={onSubmit}>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <input
-                    type="text"
-                    placeholder="First name *"
-                    value={formData.firstName}
-                    onChange={(event) => setFormData((prev) => ({ ...prev, firstName: event.target.value }))}
-                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Last name *"
-                    value={formData.lastName}
-                    onChange={(event) => setFormData((prev) => ({ ...prev, lastName: event.target.value }))}
-                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]"
-                  />
-                </div>
-                <input
-                  type="email"
-                  placeholder="Business email *"
-                  value={formData.email}
-                  onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
-                  className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]"
-                />
-                <input
-                  type="text"
-                  placeholder="Company"
-                  value={formData.company}
-                  onChange={(event) => setFormData((prev) => ({ ...prev, company: event.target.value }))}
-                  className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]"
-                />
-                <div className="grid gap-4 md:grid-cols-2">
-                  <select
-                    value={formData.projectType}
-                    onChange={(event) => setFormData((prev) => ({ ...prev, projectType: event.target.value }))}
-                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none focus:border-[#2F80ED]"
-                  >
-                    <option>SaaS Development</option>
-                    <option>AI Solutions</option>
-                    <option>On-Demand Applications</option>
-                    <option>White-Label Development</option>
-                    <option>E-Commerce Solutions</option>
-                  </select>
-                  <select
-                    value={formData.budget}
-                    onChange={(event) => setFormData((prev) => ({ ...prev, budget: event.target.value }))}
-                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none focus:border-[#2F80ED]"
-                  >
-                    <option>Under $50K</option>
-                    <option>$50K - $100K</option>
-                    <option>$100K - $250K</option>
-                    <option>$250K+</option>
-                    <option>Need Guidance</option>
-                  </select>
-                </div>
-                <textarea
-                  rows={5}
-                  placeholder="Tell us about your project goals *"
-                  value={formData.message}
-                  onChange={(event) => setFormData((prev) => ({ ...prev, message: event.target.value }))}
-                  className="w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 py-3 text-sm leading-relaxed text-[#E5E7EB] outline-none placeholder:text-[#64748B] focus:border-[#2F80ED]"
-                />
-
-                {submitError ? <p className="text-sm text-[#f87171]">{submitError}</p> : null}
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="inline-flex h-11 w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white transition-all duration-200 hover:brightness-110"
-                >
-                  {isSubmitting ? 'Submitting...' : showSuccessOnButton ? 'Request Sent' : 'Send Strategy Call Request'}
-                </button>
-              </form>
+              <iframe
+                title="strategy call"
+                src="https://calendly.com/soheltf/strategy-call-45min"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full border-0"
+                style={{ height: "980px" }}
+              />
             </motion.div>
           </div>
 
@@ -295,7 +178,7 @@ export default function BookStrategyCall() {
             </h2>
 
             <div className="grid items-stretch gap-5 md:grid-cols-3">
-              {testimonials.map((item, index) => (
+              {testimonials.slice(0, 3).map((item, index) => (
                 <TestimonialCard
                   key={index}
                   quote={item.quote}
@@ -311,7 +194,7 @@ export default function BookStrategyCall() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-20 rounded-3xl border border-white/5 p-10 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:p-14"
+            className="mt-20 hidden rounded-3xl border border-white/5 p-10 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:p-14"
             style={{ background: 'rgba(255,255,255,0.03)' }}
           >
             <h2 className="mb-4 text-4xl font-bold text-[#E5E7EB] md:text-5xl" style={{ fontFamily: 'Sora, sans-serif' }}>
@@ -326,13 +209,6 @@ export default function BookStrategyCall() {
           </motion.div>
         </div>
       </main>
-
-      <SubmissionSuccessPopup
-        open={showSuccessPopup}
-        onClose={() => setShowSuccessPopup(false)}
-        title="Strategy Call Request Sent"
-        message="Your request has been submitted. Our team will contact you shortly to confirm your call slot."
-      />
 
       <Footer />
     </div>

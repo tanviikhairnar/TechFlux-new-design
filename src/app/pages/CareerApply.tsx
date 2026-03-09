@@ -133,7 +133,7 @@ export default function CareerApply() {
           </div>
         </section>
 
-        <section id="apply-form" className="relative z-10 py-16 md:py-20">
+        <section id="apply-form" className="relative z-10 py-20 md:py-20">
           <div className="mx-auto w-full max-w-[760px] px-4 lg:px-5">
             <motion.form
               initial={{ opacity: 0, y: 20 }}

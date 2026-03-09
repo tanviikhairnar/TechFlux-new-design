@@ -200,7 +200,7 @@ export default function WhiteLabelPartnership() {
                 White-Label Development Partner for Agencies
               </h1>
               <p className="mt-5 max-w-[780px] text-base leading-relaxed text-[#8A96AA] md:text-lg">
-                TechFlux Solutions works behind the scenes as your trusted development partner, helping agencies deliver
+                Techflux Solutions works behind the scenes as your trusted development partner, helping agencies deliver
                 high‑quality SaaS platforms, mobile apps, and digital products without expanding their internal team.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-start">
@@ -259,10 +259,10 @@ export default function WhiteLabelPartnership() {
                   <div className="mx-auto mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]">
                     <item.icon className="h-4 w-4 text-[#2F80ED]" />
                   </div>
-                  <h3 className="mb-2 text-[15px] font-semibold leading-6 text-[#E5ECF8]">
+                  <h3 className="mb-2 tf-card-title">
                     {item.title}
                   </h3>
-                  <p className="text-[13px] leading-6 text-[#95A4BF]">{item.text}</p>
+                  <p className="tf-muted-card">{item.text}</p>
                 </motion.div>
               ))}
             </div>
@@ -292,10 +292,10 @@ export default function WhiteLabelPartnership() {
                   <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]">
                     <item.icon className="h-4 w-4 text-[#2F80ED]" />
                   </div>
-                  <h3 className="mb-2 text-[15px] font-semibold leading-6 text-[#E5ECF8]">
+                  <h3 className="mb-2 tf-card-title">
                     {item.title}
                   </h3>
-                  <p className="text-[13px] leading-6 text-[#95A4BF]">{item.text}</p>
+                  <p className="tf-muted-card">{item.text}</p>
                 </motion.div>
               ))}
             </div>
@@ -366,7 +366,7 @@ export default function WhiteLabelPartnership() {
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
               <h2 className="mb-3 text-3xl font-semibold text-[#F2F5FA] md:text-[46px]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Why Partner With TechFlux
+                Why Partner With Techflux
               </h2>
             </motion.div>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -394,7 +394,7 @@ export default function WhiteLabelPartnership() {
         </section>
 
         {/* case study */}
-        <section className="py-24 md:py-28">
+        <section className="py-20 md:py-28">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
               <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
@@ -408,7 +408,7 @@ export default function WhiteLabelPartnership() {
                   <h3 className="mb-4 text-2xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {caseStudy.title}
                   </h3>
-                  <p className="mb-6 text-[13px] leading-6 text-[#8A96AA]">{caseStudy.desc}</p>
+                  <p className="mb-6 tf-muted-card">{caseStudy.desc}</p>
                   <Link to="/case-studies/studio-new-media" className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CA1FF]">
                     View Case Study <ChevronRight className="h-4 w-4" />
                   </Link>

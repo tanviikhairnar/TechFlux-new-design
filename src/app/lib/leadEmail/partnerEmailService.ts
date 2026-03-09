@@ -34,7 +34,7 @@ Services Offered: ${lead.services}
 Message: ${lead.message}
 
 Please review and schedule a partnership discussion.
-Lead Source: TechFlux Website - Partner Form`;
+Lead Source: Techflux Website - Partner Form`;
 
   if (!canUseEmailJs()) {
     throw new Error('Direct email is not configured. Set EmailJS env keys and restart the app.');

@@ -73,7 +73,7 @@ export default function EcommerceSolutions() {
                 Modern E-Commerce Solutions
               </h2>
 
-              <p className="mb-8 text-sm leading-7 text-[#8A96AA] md:text-[15px]">
+              <p className="tf-muted-card mb-8">
                 We build custom e-commerce platforms tailored to your business needs - whether you&apos;re launching a
                 new store, migrating from an existing platform, or need advanced B2B functionality.
               </p>
@@ -125,7 +125,7 @@ export default function EcommerceSolutions() {
                   <h3 className="mb-3 text-xl font-semibold leading-tight text-[#E5ECF8]" style={{ fontFamily: "Sora, sans-serif" }}>
                     {item.title}
                   </h3>
-                  <p className="text-[14px] leading-7 text-[#8A96AA]">{item.desc}</p>
+                  <p className="tf-muted-card">{item.desc}</p>
                 </motion.div>
               ))}
             </div>

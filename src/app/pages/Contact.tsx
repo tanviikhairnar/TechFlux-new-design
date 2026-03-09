@@ -206,7 +206,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-[#E5E7EB] md:text-lg">Email</h3>
-                      <p className="text-sm text-[#94A3B8] md:text-base">sales@techflux.in</p>
+                      <p className="text-base text-[#94A3B8] md:text-[17px]">sales@techflux.in</p>
                     </div>
                   </div>
 
@@ -216,7 +216,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-[#E5E7EB] md:text-lg">Phone</h3>
-                      <p className="text-sm text-[#94A3B8] md:text-base">+91 9730960043</p>
+                      <p className="text-base text-[#94A3B8] md:text-[17px]">+91 9730960043</p>
                     </div>
                   </div>
 
@@ -226,7 +226,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-[#E5E7EB] md:text-lg">Office 1</h3>
-                      <p className="text-sm leading-relaxed text-[#94A3B8] md:text-base">
+                      <p className="text-base leading-relaxed text-[#94A3B8] md:text-[17px]">
                         Dhawan Apartment, Maneksha Nagar, Dwarka, Nashik, Maharashtra 422011
                       </p>
                     </div>
@@ -238,7 +238,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-[#E5E7EB] md:text-lg">Office 2</h3>
-                      <p className="text-sm leading-relaxed text-[#94A3B8] md:text-base">
+                      <p className="text-base leading-relaxed text-[#94A3B8] md:text-[17px]">
                         Bavdhan, Pune
                       </p>
                     </div>
@@ -272,7 +272,7 @@ export default function Contact() {
                 <h3 className="mb-3 text-xl font-bold text-[#E5E7EB] md:text-[22px]" style={{ fontFamily: 'Sora, sans-serif' }}>
                   Prefer a Direct Conversation?
                 </h3>
-                <p className="mb-6 text-sm text-[#94A3B8] md:text-[15px]">Schedule a strategy call to discuss your project in detail.</p>
+                <p className="mb-6 text-base text-[#94A3B8] md:text-[17px]">Schedule a strategy call to discuss your project in detail.</p>
                 <Link
                   to="/book-strategy-call"
                   className="inline-flex rounded-xl bg-gradient-to-r from-[#38A9FF] to-[#2B7BDF] px-8 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all hover:brightness-110 md:text-[15px]"

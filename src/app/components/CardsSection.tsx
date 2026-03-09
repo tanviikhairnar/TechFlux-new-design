@@ -39,8 +39,8 @@ export function CardsSection({
   cardClassName = 'group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]',
   iconWrapperClassName = 'mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]',
   iconClassName = 'h-4 w-4 text-[#2F80ED]',
-  titleClassName = 'mb-2 text-[15px] font-semibold leading-6 text-[#E5ECF8]',
-  descClassName = 'text-[13px] leading-6 text-[#95A4BF]',
+  titleClassName = 'mb-2 tf-card-title',
+  descClassName = 'tf-muted-card',
   transitionStep = 0.05,
   transitionOffsetFn,
 }: CardsSectionProps) {

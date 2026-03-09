@@ -142,7 +142,7 @@ export default function BecomePartner() {
               Scale Your Agency Without Hiring Developers
             </h1>
             <p className="mx-auto max-w-2xl text-base leading-relaxed text-[#93A4BE] md:text-lg">
-              Partner with TechFlux to deliver enterprise-grade development services to your clients under your brand.
+              Partner with Techflux to deliver enterprise-grade development services to your clients under your brand.
               Focus on growth while we handle the technical execution.
             </p>
           </motion.section>
@@ -296,7 +296,7 @@ export default function BecomePartner() {
                   Partner Success Story
                 </h3>
                 <p className="mb-5 text-sm leading-relaxed text-[#93A4BE]">
-                  "Working with TechFlux as our white-label partner has allowed us to scale our agency without the overhead of hiring developers. We have tripled our revenue in the past year by offering development services we couldn't provide before. Their team is professional, reliable, and consistently delivers quality work on time."
+                  "Working with Techflux as our white-label partner has allowed us to scale our agency without the overhead of hiring developers. We have tripled our revenue in the past year by offering development services we couldn't provide before. Their team is professional, reliable, and consistently delivers quality work on time."
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-xs font-semibold text-white">DM</div>
@@ -327,7 +327,7 @@ export default function BecomePartner() {
         open={showSuccessPopup}
         onClose={() => setShowSuccessPopup(false)}
         title="Partnership Request Sent"
-        message="Thanks for your interest in partnering with TechFlux. We will review your application and connect with you soon."
+        message="Thanks for your interest in partnering with Techflux. We will review your application and connect with you soon."
       />
 
       <Footer />

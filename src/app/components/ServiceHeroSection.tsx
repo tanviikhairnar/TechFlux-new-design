@@ -77,10 +77,10 @@ export function ServiceHeroSection({
   const resolvedImageContainerClassName =
     imageContainerClassName ||
     (imageVariant === 'framed'
-      ? `relative min-h-[260px] overflow-hidden rounded-[28px] border border-white/10 bg-[#0E1B34] shadow-[0_22px_56px_rgba(3,11,27,0.32)] md:min-h-[470px] ${
+      ? `relative min-h-[260px] overflow-hidden rounded-[28px] bg-[#0E1B34] shadow-[0_22px_56px_rgba(3,11,27,0.32)] md:min-h-[470px] ${
           imageFit === 'contain' ? 'flex items-center justify-center' : ''
         }`
-      : 'overflow-hidden rounded-2xl border border-white/10 bg-[#0E1B34] shadow-[0_20px_50px_rgba(2,10,28,0.35)]');
+      : 'overflow-hidden rounded-2xl bg-[#0E1B34] shadow-[0_20px_50px_rgba(2,10,28,0.35)]');
 
   const resolvedImageOverlayClassName =
     imageOverlayClassName;

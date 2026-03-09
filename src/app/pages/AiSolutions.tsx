@@ -224,7 +224,7 @@ export default function AiSolutions() {
                   <h3 className="mb-2 text-xl font-semibold leading-tight text-[#E5ECF8] md:text-2xl">
                     {item.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-[#8A96AA] md:text-base">{item.desc}</p>
+                  <p className="tf-muted-card">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -254,9 +254,9 @@ export default function AiSolutions() {
                   {tableRows.map((row, i) => (
                     <tr key={i} className="border-b border-[#2A3954] last:border-b-0">
                       <td className="px-6 py-5 text-lg text-[#E5ECF8]">{row.feature}</td>
-                      <td className="px-6 py-5 text-center text-lg text-[#9AA7BF]">{row.aiChatbot}</td>
-                      <td className="px-6 py-5 text-center text-lg text-[#9AA7BF]">{row.automation}</td>
-                      <td className="px-6 py-5 text-center text-lg text-[#9AA7BF]">{row.analytics}</td>
+                      <td className="px-6 py-5 text-center tf-muted-table">{row.aiChatbot}</td>
+                      <td className="px-6 py-5 text-center tf-muted-table">{row.automation}</td>
+                      <td className="px-6 py-5 text-center tf-muted-table">{row.analytics}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -294,7 +294,7 @@ export default function AiSolutions() {
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-14 text-center">
               <h2 className="mb-3 text-3xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Why Businesses Choose TechFlux
+                Why Businesses Choose Techflux
               </h2>
             </motion.div>
 
@@ -318,7 +318,7 @@ export default function AiSolutions() {
                   <h3 className="mb-2 text-lg font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {item.title}
                   </h3>
-                  <p className="text-[13px] leading-6 text-[#8A96AA]">{item.desc}</p>
+                  <p className="tf-muted-card">{item.desc}</p>
                 </motion.div>
               ))}
             </div>

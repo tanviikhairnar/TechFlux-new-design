@@ -29,7 +29,7 @@ Techflux Solutions
 Building Scalable SaaS, AI & On-Demand Platforms
 https://techflux.in`;
 
-  const internalSubject = 'New Strategy Call Lead - TechFlux Website';
+  const internalSubject = 'New Strategy Call Lead - Techflux Website';
   const internalMessage = `New strategy call request received from the website.
 
 Lead Details:

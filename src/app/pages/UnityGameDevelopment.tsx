@@ -228,8 +228,8 @@ export default function UnityGameDevelopment() {
           cardClassName="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
           iconWrapperClassName="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]"
           iconClassName="h-4 w-4 text-[#2F80ED]"
-          titleClassName="mb-2 text-[15px] font-semibold leading-6 text-[#E5ECF8]"
-          descClassName="text-[13px] leading-6 text-[#95A4BF]"
+          titleClassName="mb-2 tf-card-title"
+          descClassName="tf-muted-card"
           transitionStep={0.06}
         />
 
@@ -286,7 +286,7 @@ export default function UnityGameDevelopment() {
           </div>
         </section>
 
-        <section className="relative py-24 bg-[#070F1F]">
+        <section className="relative py-20 bg-[#070F1F]">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
 
             <div className="mb-14 text-center">
@@ -358,7 +358,7 @@ export default function UnityGameDevelopment() {
                   <div className="p-6">
                     <span className="rounded-full bg-[#11294F] px-2 py-1 text-xs text-[#6FB9FF]">{item.tag}</span>
                     <h3 className="mt-3 text-lg font-semibold text-[#F9FAFB]">{item.title}</h3>
-                    <p className="mt-2 text-[13px] leading-6 text-[#9CA3AF]">{item.desc}</p>
+                    <p className="mt-2 tf-muted-card">{item.desc}</p>
                     <Link to="/case-studies" className="unity-link mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#56AEFF]">
                       View Case Study
                       <ArrowRight className="h-4 w-4" />
@@ -390,7 +390,7 @@ export default function UnityGameDevelopment() {
                 >
                   <item.icon className="mb-3 h-5 w-5 text-[#2F80ED]" />
                   <h3 className="mb-2 text-lg font-semibold text-[#F9FAFB]">{item.title}</h3>
-                  <p className="text-[13px] leading-6 text-[#9CA3AF]">{item.desc}</p>
+                  <p className="tf-muted-card">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -442,7 +442,7 @@ export default function UnityGameDevelopment() {
                   className="group rounded-2xl border border-white/5 bg-[#0F172A] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <h3 className="text-base font-semibold text-[#F9FAFB]">{item.title}</h3>
-                  <p className="mt-2 text-[13px] leading-6 text-[#9CA3AF]">{item.desc}</p>
+                  <p className="mt-2 tf-muted-card">{item.desc}</p>
                   <Link to={item.to} className="unity-link mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#62B4FF]">
                     Learn More
                     <ArrowRight className="h-4 w-4" />

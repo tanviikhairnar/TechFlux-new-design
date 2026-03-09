@@ -245,8 +245,8 @@ export default function SaaSDevelopment() {
                   <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]">
                     <item.icon className="h-4 w-4 text-[#2F80ED]" />
                   </div>
-                  <h3 className="mb-2 text-[15px] font-semibold leading-6 text-[#E5ECF8]">{item.title}</h3>
-                  <p className="text-[13px] leading-6 text-[#95A4BF]">{item.desc}</p>
+                  <h3 className="mb-2 tf-card-title">{item.title}</h3>
+                  <p className="tf-muted-card">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -277,7 +277,7 @@ export default function SaaSDevelopment() {
                   ].map((row) => (
                     <tr key={row[0]} className="border-b border-[#2A3954] last:border-b-0">
                       {row.map((cell) => (
-                        <td key={cell} className="px-6 py-5 text-lg text-[#9AA7BF]">
+                        <td key={cell} className="px-6 py-5 tf-muted-table">
                           {cell}
                         </td>
                       ))}
@@ -317,7 +317,7 @@ export default function SaaSDevelopment() {
         <section className="bg-[#081327] py-20">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <h2 className="mb-9 text-center text-3xl font-semibold text-[#E5ECF8]" style={{ fontFamily: 'Sora, sans-serif' }}>
-              Why Businesses Choose TechFlux
+              Why Businesses Choose Techflux
             </h2>
             <div className="grid gap-5 md:grid-cols-3">
               {whyTechflux.map((item, i) => (
@@ -360,7 +360,7 @@ export default function SaaSDevelopment() {
           </div>
         </section>
 
-        <section className="pb-20 pt-6 md:pb-24 md:pt-8">
+        <section className="pb-20 pt-6 md:pb-20 md:pt-8">
           <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
             <div className="rounded-2xl border border-[#24406B] bg-[linear-gradient(135deg,#16345D_0%,#223C67_55%,#2A4775_100%)] px-8 py-12 text-center">
               <h2 className="text-3xl font-semibold text-white md:text-4xl" style={{ fontFamily: 'Sora, sans-serif' }}>
