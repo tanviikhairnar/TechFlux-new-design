@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import App from "./app/App.tsx";
-import "./styles/index.css";
+import "./styles/style.css";
 
 const FALLBACK_IMAGE_SRC = "/images/fallback-image.svg";
 

@@ -31,7 +31,7 @@ export function CardsSection({
   subtitle,
   items,
   sectionClassName = 'py-20',
-  containerClassName = 'mx-auto w-full max-w-[1260px] px-4 lg:px-5',
+  containerClassName = 'tf-shell',
   headingWrapClassName = 'mb-9 text-center',
   headingClassName = 'text-3xl font-semibold text-[#D8DEE8]',
   subtitleClassName = 'text-sm text-[#8A96AA] md:text-[15px]',

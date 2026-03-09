@@ -25,7 +25,7 @@ export function TechnologyStackSection({
 }: TechnologyStackSectionProps) {
   return (
     <section className={sectionClassName}>
-      <div className="mx-auto w-full max-w-[1260px] px-4 lg:px-5">
+      <div className="tf-shell">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className={headingWrapClassName}>
           <h2 className={headingClassName} style={{ fontFamily: 'Sora, sans-serif' }}>
             {title}

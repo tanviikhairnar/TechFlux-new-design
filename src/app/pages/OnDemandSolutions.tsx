@@ -278,7 +278,7 @@ export default function OnDemandSolutions() {
           </div>
         </section>
 
-        <InvestmentCardsSection title="Typical Project Investment" cards={pricingCards} />
+        <InvestmentCardsSection title="Typical Project Investment" cards={pricingCards} showEstimateButton />
 
         <IndustriesSection title="Industries Using On-Demand Apps" items={industries} />
 

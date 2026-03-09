@@ -27,6 +27,7 @@ import { InvestmentCardsSection } from "../components/InvestmentCardsSection";
 import { IndustriesSection } from "../components/IndustriesSection";
 import { CaseStudySection } from "../components/CaseStudySection";
 import { GetProjectEstimateButton } from "../components/GetProjectEstimateButton";
+import { SEOContentStructureSection } from "../components/SEOContentStructureSection";
 import ecommerceHeroImage from "../../assets/images/smiling-models-posing-clothing-shop.jpg";
 import ecommerceCaseImage from "../../assets/images/3577047_edit.webp";
 
@@ -305,6 +306,7 @@ export default function EcommerceSolutions() {
         <InvestmentCardsSection
           title="Typical Project Investment"
           cards={investmentCards}
+          showEstimateButton
           gridClassName="grid gap-4 md:grid-cols-2 lg:grid-cols-4"
           cardClassName="rounded-2xl border border-[#1D2B44] bg-[#101B33] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
           cardTitleClassName="text-[18px] font-semibold text-[#E7EDF9]"
@@ -428,6 +430,8 @@ export default function EcommerceSolutions() {
             </motion.div>
           </div>
         </section>
+
+        <SEOContentStructureSection />
       </main>
 
       <Footer />

@@ -18,9 +18,9 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <div className="tf-page">
       <RouterProvider router={router} />
       <AnimatePresence>{showLoader ? <TechfluxLoader /> : null}</AnimatePresence>
-    </>
+    </div>
   );
 }

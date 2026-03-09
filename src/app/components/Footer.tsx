@@ -24,7 +24,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-white/5 bg-[#050d1d]">
-      <div className="mx-auto max-w-[1260px] px-4 pb-10 pt-16 lg:px-5">
+      <div className="tf-shell pb-10 pt-16">
         
         {/* Top Grid */}
         <motion.div

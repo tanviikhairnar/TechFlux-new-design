@@ -20,7 +20,7 @@ export function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[#10213F] bg-[#030A1C]/95 backdrop-blur-md">
-      <div className="mx-auto max-w-[1260px] px-4 lg:px-5">
+      <div className="tf-shell">
         <div className="flex h-[84px] items-center justify-between">
           
           <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>

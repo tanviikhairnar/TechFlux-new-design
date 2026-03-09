@@ -51,7 +51,7 @@ function CtaButton({ label, to, href, className }: CtaItem) {
 }
 
 export function ServiceHeroSection({
-  sectionClassName = 'relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-24 pt-28 md:pb-32 md:pt-40 lg:px-5',
+  sectionClassName = 'relative z-10 tf-shell pb-24 pt-28 md:pb-32 md:pt-40',
   containerClassName = 'grid items-center gap-10 lg:min-h-[520px] lg:grid-cols-[1fr_1.05fr]',
   textWrapClassName = '',
   badgeText,

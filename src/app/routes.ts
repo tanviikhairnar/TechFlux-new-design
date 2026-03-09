@@ -6,7 +6,7 @@ import BecomePartner from "./pages/BecomePartner";
 import WhiteLabelPartnership from "./pages/WhiteLabelPartnership";
 import Contact from "./pages/Contact";
 import SaaSDevelopment from "./pages/SaaSDevelopment";
-import AiSolutions from "./pages/AiSolutions";
+import AISolutions from "./pages/AISolutions";
 import OnDemandSolutions from "./pages/OnDemandSolutions";
 import UnityGameDevelopment from "./pages/UnityGameDevelopment";
 import EcommerceSolutions from "./pages/EcommerceSolutions";
@@ -66,7 +66,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/ai-solutions",
-        Component: AiSolutions,
+        Component: AISolutions,
       },
       {
         path: "/on-demand-solutions",

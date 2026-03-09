@@ -289,7 +289,7 @@ export default function SaaSDevelopment() {
           </div>
         </section>
 
-        <InvestmentCardsSection title="Typical Project Investment" cards={pricingCards} />
+        <InvestmentCardsSection title="Typical Project Investment" cards={pricingCards} showEstimateButton />
 
         <IndustriesSection title="Industries Using Our SaaS Solutions" items={industries} />
 

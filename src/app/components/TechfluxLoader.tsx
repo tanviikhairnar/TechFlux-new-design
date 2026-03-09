@@ -50,14 +50,6 @@ const TechfluxLoader = () => {
             className="absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-transparent via-blue-400 to-transparent blur-[2px]"
           />
         </div>
-
-        <motion.p
-          animate={{ opacity: [0.3, 1, 0.3] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="text-xs tracking-[0.4em] text-blue-300"
-        >
-          INITIALIZING SYSTEM
-        </motion.p>
       </div>
     </div>
   );
