@@ -1,9 +1,9 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Code2, TrendingUp, Users, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-import fuztechImage from '../../assets/images/repair.jpg';
+const fuztechImage = "https://techflux.in/img/assets/images/repair.jpg";
 
 const challengeItems = [
   'Complex repair service categorization',
@@ -225,3 +225,8 @@ export default function FuzTechCaseStudy() {
     </div>
   );
 }
+
+
+
+
+

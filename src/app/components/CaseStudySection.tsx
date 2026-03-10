@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -93,3 +93,4 @@ export function CaseStudySection({
     </section>
   );
 }
+

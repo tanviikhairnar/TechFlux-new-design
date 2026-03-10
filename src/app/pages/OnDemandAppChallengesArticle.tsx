@@ -1,5 +1,5 @@
 import { ArticlePageTemplate, type ArticleSection } from '../components/ArticlePageTemplate';
-import onDemandBlogImage from '../../assets/images/On Demand.jpg';
+const onDemandBlogImage = "https://techflux.in/img/assets/images/On%20Demand.jpg";
 
 const sections: ArticleSection[] = [
   {
@@ -95,3 +95,7 @@ export default function OnDemandAppChallengesArticle() {
     />
   );
 }
+
+
+
+

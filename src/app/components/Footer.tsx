@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Github, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { BecomePartnerButton, BookStrategyCallButton } from "./GetProjectEstimateButton";
@@ -174,3 +174,4 @@ export function Footer() {
     </footer>
   );
 }
+

@@ -1,9 +1,9 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Code2, TrendingUp, Users, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-import etern8Image from '../../assets/images/AI.jpg';
+const etern8Image = "https://techflux.in/img/assets/images/AI.jpg";
 
 const challengeItems = [
   'Complex smartwatch data integration',
@@ -226,3 +226,8 @@ export default function Etern8CaseStudy() {
     </div>
   );
 }
+
+
+
+
+

@@ -1,22 +1,26 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BookStrategyCallButton } from './GetProjectEstimateButton';
-import TechfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
+const TechfluxLogo =
+  "https://techflux.in/img/assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
 
 export function Navigation() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const serviceItems = [
-    { label: "SaaS Development", href: "/saas-development#saas-development-heading", useRoute: true },
-    { label: "AI Solutions", href: "/ai-solutions#ai-solutions-heading", useRoute: true },
-    { label: "On-Demand Applications", href: "/on-demand-solutions#on-demand-applications-heading", useRoute: true },
-    { label: "White-Label Partnership", href: "/services/white-label-partnership#white-label-partnership-heading", useRoute: true },
-    { label: "Unity Game Development", href: "/unity-game-development#unity-game-development-heading", useRoute: true },
-    { label: "E-Commerce Solutions", href: "/e-commerce-solutions#ecommerce-solutions-heading", useRoute: true },
-  ] as const;
+  { label: "SaaS Development", href: "/saas-development#saas-development-heading", useRoute: true },
+  { label: "AI Solutions", href: "/ai-solutions#ai-solutions-heading", useRoute: true },
+  { label: "On-Demand Applications", href: "/on-demand-solutions#on-demand-applications-heading", useRoute: true },
+  { label: "E-Commerce Solutions", href: "/e-commerce-solutions#ecommerce-solutions-heading", useRoute: true },
+
+  // Hidden for now
+  // { label: "Unity Game Development", href: "/unity-game-development#unity-game-development-heading", useRoute: true },
+
+  { label: "White-Label Partnership", href: "/services/white-label-partnership#white-label-partnership-heading", useRoute: true },
+] as const;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[#10213F] bg-[#030A1C]/95 backdrop-blur-md">
@@ -209,3 +213,7 @@ export function Navigation() {
     </nav>
   );
 }
+
+
+
+

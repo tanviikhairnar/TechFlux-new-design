@@ -1,4 +1,4 @@
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import TechfluxLoader from "./TechfluxLoader";
 
@@ -21,3 +21,4 @@ export default function AppLoaderGate({ durationMs = 1800 }: AppLoaderGateProps)
 
   return <AnimatePresence>{showLoader ? <TechfluxLoader /> : null}</AnimatePresence>;
 }
+

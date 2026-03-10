@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import {
   ArrowUpRight,
   BarChart3,
@@ -27,9 +27,8 @@ import { InvestmentCardsSection } from "../components/InvestmentCardsSection";
 import { IndustriesSection } from "../components/IndustriesSection";
 import { CaseStudySection } from "../components/CaseStudySection";
 import { GetProjectEstimateButton } from "../components/GetProjectEstimateButton";
-import { SEOContentStructureSection } from "../components/SEOContentStructureSection";
-import ecommerceHeroImage from "../../assets/images/smiling-models-posing-clothing-shop.jpg";
-import ecommerceCaseImage from "../../assets/images/3577047_edit.webp";
+const ecommerceHeroImage = "https://techflux.in/img/assets/images/WhatsApp%20Image%202026-03-10%20at%2015.55.45.jpeg";
+const ecommerceCaseImage = "https://techflux.in/img/assets/images/3577047_edit.webp";
 
 const ecommerceSolutions = [
   {
@@ -431,10 +430,14 @@ export default function EcommerceSolutions() {
           </div>
         </section>
 
-        <SEOContentStructureSection />
       </main>
 
       <Footer />
     </div>
   );
 }
+
+
+
+
+

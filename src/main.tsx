@@ -11,6 +11,9 @@ function applyImagePerformanceDefaults(img: HTMLImageElement) {
   if (!img.decoding) {
     img.decoding = "async";
   }
+  if (!img.referrerPolicy) {
+    img.referrerPolicy = "no-referrer";
+  }
 }
 
 function enableGlobalLazyLoading() {
@@ -38,7 +41,6 @@ function enableGlobalLazyLoading() {
   });
 }
 
-// Global safety net: if any image fails to load, swap to a local fallback asset.
 document.addEventListener(
   "error",
   (event) => {

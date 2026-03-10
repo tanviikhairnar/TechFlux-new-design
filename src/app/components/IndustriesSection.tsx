@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import type { ComponentType } from 'react';
 
 type IndustryItem = {
@@ -62,3 +62,4 @@ export function IndustriesSection({
     </section>
   );
 }
+

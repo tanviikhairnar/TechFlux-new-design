@@ -1,11 +1,11 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-import dineRightImage from '../../assets/images/dineright.jpg';
-import diningPreviewOne from '../../assets/images/smiling-models-posing-clothing-shop.jpg';
-import diningPreviewTwo from '../../assets/images/hand-touching-mobile-with-applications.jpg';
+const dineRightImage = "https://techflux.in/img/assets/images/dineright.jpg";
+const diningPreviewOne = "https://techflux.in/img/assets/images/WhatsApp%20Image%202026-03-10%20at%2015.55.45.jpeg";
+const diningPreviewTwo = "https://techflux.in/img/assets/images/hand-touching-mobile-with-applications.jpg";
 
 const challengePoints = [
   'Traditional restaurant booking lacks curated experiences',
@@ -291,3 +291,8 @@ export default function DineRightCaseStudy() {
     </div>
   );
 }
+
+
+
+
+

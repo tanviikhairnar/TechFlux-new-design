@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import type { ComponentType } from 'react';
 
 type CardItem = {
@@ -76,3 +76,4 @@ export function CardsSection({
     </section>
   );
 }
+

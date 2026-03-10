@@ -1,5 +1,5 @@
 import { CheckCircle2, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 type SubmissionSuccessPopupProps = {
   open: boolean;
@@ -57,3 +57,4 @@ export function SubmissionSuccessPopup({ open, title, message, onClose }: Submis
     </AnimatePresence>
   );
 }
+

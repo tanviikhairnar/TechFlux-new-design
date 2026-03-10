@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { CheckCircle2, DollarSign, Handshake, Send, Users } from 'lucide-react';
 import { FormEvent, useState } from 'react';
 import { Footer } from '../components/Footer';
@@ -334,3 +334,4 @@ export default function BecomePartner() {
     </div>
   );
 }
+

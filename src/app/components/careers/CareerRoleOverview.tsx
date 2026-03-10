@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowLeft, BriefcaseBusiness, CheckCircle2, Clock3, MapPin, Monitor } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CareerApplyNowButton } from '../GetProjectEstimateButton';
@@ -93,3 +93,4 @@ function RoleList({ title, items }: { title: string; items: string[] }) {
     </section>
   );
 }
+

@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import {
   MessageSquare,
   Brain,
@@ -27,8 +27,9 @@ import { CardsSection } from '../components/CardsSection';
 import { InvestmentCardsSection } from '../components/InvestmentCardsSection';
 import { TechnologyStackSection } from '../components/TechnologyStackSection';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-import aiHeroImage from '../../assets/images/AI.jpg';
-import aiCaseImage from '../../assets/images/3649760.jpg';
+
+const aiHeroImage = 'https://techflux.in/img/assets/images/AI.jpg';
+const aiCaseImage = 'https://techflux.in/img/assets/images/3649760.jpg';
 
 const aiSolutions = [
   {
@@ -410,5 +411,10 @@ export default function AISolutions() {
     </div>
   );
 }
+
+
+
+
+
 
 

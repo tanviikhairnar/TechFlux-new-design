@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
   BriefcaseBusiness,
@@ -11,10 +11,10 @@ import {
   TrendingUp,
   Users,
 } from 'lucide-react';
-import teamPhoto from '../../assets/images/159a7f79-3802-497b-ae5e-ac1f83a54e60.webp';
-import culturePhoto from '../../assets/images/cloud-storage-background-business-network-design.jpg';
-import workspacePhoto from '../../assets/images/hand-touching-mobile-with-applications.jpg';
-import growthPhoto from '../../assets/images/pexels-cottonbro-5483071.jpg';
+const teamPhoto = "/img/assets/159a7f79-3802-497b-ae5e-ac1f83a54e60.webp";
+const culturePhoto = "/img/assets/cloud-storage-background-business-network-design.jpg";
+const workspacePhoto = "/img/assets/hand-touching-mobile-with-applications.jpg";
+const growthPhoto = "/img/assets/pexels-cottonbro-5483071.jpg";
 import { Footer } from '../components/Footer';
 import { CareerApplyNowButton, CareerViewDetailsButton } from '../components/GetProjectEstimateButton';
 import { Navigation } from '../components/Navigation';
@@ -353,3 +353,8 @@ export default function Careers() {
     </div>
   );
 }
+
+
+
+
+

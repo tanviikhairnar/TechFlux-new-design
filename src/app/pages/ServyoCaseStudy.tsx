@@ -1,9 +1,9 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Circle, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-import servyoImage from '../../assets/images/WhatsApp Image 2026-03-06 at 12.15.24.jpeg';
+const servyoImage = "http://techflux.in/img/assets/images/iMac%20-%20FREE%20(1).png";
 
 const challengePoints = [
   'Lack of centralized service booking system',
@@ -257,3 +257,8 @@ export default function ServyoCaseStudy() {
     </div>
   );
 }
+
+
+
+
+

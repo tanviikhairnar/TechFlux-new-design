@@ -1,10 +1,10 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, TrendingUp, Users, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
 import { Navigation } from '../components/Navigation';
-import myObscurImage from '../../assets/images/3577047_edit.webp';
+const myObscurImage = "https://techflux.in/img/assets/images/3577047_edit.webp";
 
 const challengeItems = [
   'Generic product discovery experience',
@@ -242,3 +242,8 @@ export default function MyObscurCaseStudy() {
     </div>
   );
 }
+
+
+
+
+

@@ -1,9 +1,9 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Code2, TrendingUp, Users, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-import studioImage from '../../assets/images/4824548.jpg';
+const studioImage = "https://techflux.in/img/assets/images/Macbook%20Pro%20-%20FREE%20(1).png";
 
 const challengeItems = [
   'Complex multi-tenant architecture requirements',
@@ -225,3 +225,8 @@ export default function StudioNewMediaCaseStudy() {
     </div>
   );
 }
+
+
+
+
+

@@ -1,10 +1,10 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, Circle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
 import { Navigation } from '../components/Navigation';
-import allstarImage from '../../assets/images/car.jpg';
+const allstarImage = "https://techflux.in/img/assets/images/car.jpg";
 
 const challengeItems = [
   'Inefficient manual inventory tracking system',
@@ -315,3 +315,8 @@ export default function AllstarPremierAutoCaseStudy() {
     </div>
   );
 }
+
+
+
+
+

@@ -1,12 +1,12 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowRight, Clock3 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-import saasBlogImage from '../../assets/images/saas-concept-collage.jpg';
-import aiBlogImage from '../../assets/images/AI.jpg';
-import onDemandBlogImage from '../../assets/images/On Demand.jpg';
+const saasBlogImage = "https://techflux.in/img/assets/images/saas-concept-collage.jpg";
+const aiBlogImage = "https://techflux.in/img/assets/images/AI.jpg";
+const onDemandBlogImage = "https://techflux.in/img/assets/images/On%20Demand.jpg";
 
 const posts = [
   {
@@ -144,5 +144,10 @@ export default function Blog() {
     </div>
   );
 }
+
+
+
+
+
 
 

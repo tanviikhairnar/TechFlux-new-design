@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import {
   Users,
   ArrowUpRight,
@@ -19,8 +19,8 @@ import { CardsSection } from '../components/CardsSection';
 import { InvestmentCardsSection } from '../components/InvestmentCardsSection';
 import { TechnologyStackSection } from '../components/TechnologyStackSection';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-import onDemandImage from '../../assets/images/On Demand.jpg';
-import onDemandHeroImage from '../../assets/images/hand-touching-mobile-with-applications.jpg';
+const onDemandImage = "https://techflux.in/img/assets/images/On%20Demand.jpg";
+const onDemandHeroImage = "https://techflux.in/img/assets/images/hand-touching-mobile-with-applications.jpg";
 
 const buildItems = [
   {
@@ -391,5 +391,10 @@ export default function OnDemandSolutions() {
     </div>
   );
 }
+
+
+
+
+
 
 

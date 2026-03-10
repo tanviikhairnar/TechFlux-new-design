@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import {
   Shield,
   Users,
@@ -21,7 +21,7 @@ import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
 import { ServiceHeroSection } from '../components/ServiceHeroSection';
-import whiteLabelImage from '../../assets/images/4824548.jpg';
+const whiteLabelImage = "http://techflux.in/img/assets/images/Macbook%20Pro%20-%20FREE%20(1).png";
 
 const builtFor = [
   {
@@ -527,6 +527,11 @@ export default function WhiteLabelPartnership() {
     </div>
   );
 }
+
+
+
+
+
 
 
 

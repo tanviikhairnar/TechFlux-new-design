@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from './Footer';
@@ -127,3 +127,4 @@ export function ArticlePageTemplate({
     </div>
   );
 }
+

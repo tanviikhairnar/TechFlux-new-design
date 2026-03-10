@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import {
   ArrowRight,
   Smartphone,
@@ -20,10 +20,10 @@ import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { CardsSection } from '../components/CardsSection';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-import unityHeroImage from '../../assets/images/AI (1).jpg';
-import unityCaseImageOne from '../../assets/images/On Demand.jpg';
-import unityCaseImageTwo from '../../assets/images/AI.jpg';
-import unityCaseImageThree from '../../assets/images/SaaS.jpg';
+const unityHeroImage = "https://techflux.in/img/assets/images/AI%20(1).jpg";
+const unityCaseImageOne = "https://techflux.in/img/assets/images/On%20Demand.jpg";
+const unityCaseImageTwo = "https://techflux.in/img/assets/images/AI.jpg";
+const unityCaseImageThree = "https://techflux.in/img/assets/images/SaaS.jpg";
 
 const whyChooseUnity = [
   {
@@ -461,3 +461,8 @@ export default function UnityGameDevelopment() {
     </div>
   );
 }
+
+
+
+
+

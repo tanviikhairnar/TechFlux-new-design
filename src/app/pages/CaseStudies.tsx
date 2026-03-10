@@ -1,17 +1,17 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-import servyoImage from '../../assets/images/WhatsApp Image 2026-03-06 at 12.15.24.jpeg';
-import dinerightImage from '../../assets/images/dineright.jpg';
-import allstarImage from '../../assets/images/car.jpg';
-import fashionStoreImage from '../../assets/images/smiling-models-posing-clothing-shop.jpg';
-import fuztechImage from '../../assets/images/On Demand.jpg';
-import etern8Image from '../../assets/images/AI.jpg';
-import mobileTechImage from '../../assets/images/hand-touching-mobile-with-applications.jpg';
-import leaveCertificateImage from '../../assets/images/WhatsApp Image 2026-03-06 at 12.15.24.jpeg';
+const servyoImage = "http://techflux.in/img/assets/images/Group%201000003012.png";
+const dinerightImage = "https://techflux.in/img/assets/images/dineright.jpg";
+const allstarImage = "https://techflux.in/img/assets/images/car.jpg";
+const fashionStoreImage = "https://techflux.in/img/assets/images/WhatsApp%20Image%202026-03-10%20at%2015.55.45.jpeg";
+const fuztechImage = "https://techflux.in/img/assets/images/On%20Demand.jpg";
+const etern8Image = "https://techflux.in/img/assets/images/AI.jpg";
+const mobileTechImage = "https://techflux.in/img/assets/images/hand-touching-mobile-with-applications.jpg";
+const leaveCertificateImage = "https://techflux.in/img/assets/images/WhatsApp%20Image%202026-03-06%20at%2012.15.24.jpeg";
 
 type CaseStudy = {
   name: string;
@@ -211,3 +211,8 @@ export default function CaseStudies() {
     </div>
   );
 }
+
+
+
+
+

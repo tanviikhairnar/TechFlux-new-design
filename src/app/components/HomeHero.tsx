@@ -2,7 +2,7 @@ import React from "react"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { ArrowRight } from "lucide-react"
-import homeHeroImage from "../../assets/images/AI (1).jpg"
+const homeHeroImage = "/img/assets/AI%20(1).jpg";
 
 const HomeHero = () => {
   return (
@@ -67,5 +67,9 @@ const HomeHero = () => {
 }
 
 export default HomeHero
+
+
+
+
 
 

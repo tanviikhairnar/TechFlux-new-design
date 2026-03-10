@@ -1,9 +1,9 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Code2, TrendingUp, Users, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-import leaveCertificateImage from '../../assets/images/WhatsApp Image 2026-03-06 at 12.15.24.jpeg';
+const leaveCertificateImage = "https://techflux.in/img/assets/images/Macbook%20Pro%20-%20FREE%20(1).png";
 
 const challengeItems = [
   'Manual certificate management consuming excessive administrative time',
@@ -226,3 +226,8 @@ export default function LeaveCertificateCaseStudy() {
     </div>
   );
 }
+
+
+
+
+

@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 import { GetProjectEstimateButton } from './GetProjectEstimateButton';
 
@@ -77,3 +77,4 @@ export function InvestmentCardsSection({
     </section>
   );
 }
+

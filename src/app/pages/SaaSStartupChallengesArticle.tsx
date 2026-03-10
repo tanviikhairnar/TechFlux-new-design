@@ -1,5 +1,5 @@
 import { ArticlePageTemplate, type ArticleSection } from '../components/ArticlePageTemplate';
-import aiBlogImage from '../../assets/images/AI.jpg';
+const aiBlogImage = "https://techflux.in/img/assets/images/AI.jpg";
 
 const sections: ArticleSection[] = [
   {
@@ -86,3 +86,7 @@ export default function SaaSStartupChallengesArticle() {
     />
   );
 }
+
+
+
+

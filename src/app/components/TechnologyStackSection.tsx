@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 type TechnologyStackSectionProps = {
   title: string;
@@ -43,3 +43,4 @@ export function TechnologyStackSection({
     </section>
   );
 }
+

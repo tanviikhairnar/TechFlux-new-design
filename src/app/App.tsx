@@ -1,4 +1,4 @@
-import { AnimatePresence } from 'motion/react';
+import { AnimatePresence } from 'framer-motion';
 import { RouterProvider } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { router } from './routes';
@@ -24,3 +24,4 @@ export default function App() {
     </div>
   );
 }
+

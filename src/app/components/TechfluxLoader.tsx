@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const letters = "TECHFLUX".split("");
 
@@ -56,3 +56,4 @@ const TechfluxLoader = () => {
 };
 
 export default TechfluxLoader;
+

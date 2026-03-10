@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useMotionValue, useTransform, animate } from 'motion/react';
+import { AnimatePresence, motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import {
   Users, Brain, Zap, Layers, ArrowRight, Check,
   Star, ChevronLeft, ChevronRight
@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { ClientLogosSlider } from '../components/ClientLogosSlider';
-import homeHeroAiImage from '../../assets/images/AI (1).jpg';
-import homeSaasImage from '../../assets/images/SaaS.jpg';
-import homeAiGradientImage from '../../assets/images/photo-1760629863094-5b1e8d1aae74.jpg';
-import onDemandImage from '../../assets/images/On Demand (1).jpg';
-import servyoCaseImage from '../../assets/images/159a7f79-3802-497b-ae5e-ac1f83a54e60.webp';
-import allstarCaseImage from '../../assets/images/car.jpg';
-import eternCaseImage from '../../assets/images/3649760.jpg';
+const homeHeroAiImage = "https://techflux.in/img/assets/images/AI%20(1).jpg";
+const homeSaasImage = "https://techflux.in/img/assets/images/SaaS.jpg";
+const homeAiGradientImage = "https://techflux.in/img/assets/images/photo-1760629863094-5b1e8d1aae74.jpg";
+const onDemandImage = "https://techflux.in/img/assets/images/On%20Demand%20(1).jpg";
+const servyoCaseImage = "https://techflux.in/img/assets/images/Group%201000003012.png";
+const allstarCaseImage = "https://techflux.in/img/assets/images/car.jpg";
+const eternCaseImage = "https://techflux.in/img/assets/images/3649760.jpg";
 
 function Counter({
   value,
@@ -90,6 +90,20 @@ export default function Home() {
   const [expandedTestimonials, setExpandedTestimonials] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
+    document.title = 'AI & SaaS Development Company | On-Demand Platform Solutions | Techflux Solutions';
+    let descriptionTag = document.querySelector('meta[name="description"]');
+    if (!descriptionTag) {
+      descriptionTag = document.createElement('meta');
+      descriptionTag.setAttribute('name', 'description');
+      document.head.appendChild(descriptionTag);
+    }
+    descriptionTag.setAttribute(
+      'content',
+      'TechFlux Solutions helps startups and agencies design, develop, and scale high-performance digital products.',
+    );
+  }, []);
+
+  useEffect(() => {
     const onResize = () => {
       if (window.innerWidth < 768) {
         setTestimonialsPerView(1);
@@ -159,15 +173,14 @@ export default function Home() {
             className="max-w-xl"
           >
             <h1
-              className="text-6xl md:text-7xl font-bold text-[#F9FAFB] leading-[1.1] mb-8"
+              className="text-5xl md:text-6xl font-semibold text-[#F9FAFB] leading-[1.08] mb-7"
               style={{ fontFamily: 'Sora, sans-serif' }}
             >
               Building Scalable SaaS, AI & On-Demand Platforms
             </h1>
 
             <p className="text-xl text-[#9CA3AF] leading-relaxed mb-10">
-              Techflux Solutions partners with startups and agencies to design,
-              develop, and scale high-performance digital products.
+              Techflux Solutions is an AI and SaaS development company specializing in scalable SaaS platforms, AI-powered applications, and on-demand digital solutions. We help startups and enterprises transform ideas into modern software products using cloud technologies, automation, and intelligent systems.
             </p>
 
             <div className="flex flex-wrap gap-5">
@@ -983,6 +996,13 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+
+
+
+
 
 
 

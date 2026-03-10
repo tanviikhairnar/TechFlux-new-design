@@ -1,5 +1,5 @@
 import { ArticlePageTemplate, type ArticleSection } from '../components/ArticlePageTemplate';
-import saasBlogImage from '../../assets/images/saas-concept-collage.jpg';
+const saasBlogImage = "https://techflux.in/img/assets/images/saas-concept-collage.jpg";
 
 const sections: ArticleSection[] = [
   {
@@ -99,3 +99,7 @@ export default function SaaSMVPIn60DaysArticle() {
     />
   );
 }
+
+
+
+

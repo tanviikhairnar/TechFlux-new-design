@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import {
   BarChart3,
   Building2,
@@ -30,8 +30,8 @@ import { CardsSection } from '../components/CardsSection';
 import { InvestmentCardsSection } from '../components/InvestmentCardsSection';
 import { TechnologyStackSection } from '../components/TechnologyStackSection';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-import saasHeroImage from '../../assets/images/SaaS.jpg';
-import leaveCertificateImage from '../../assets/images/WhatsApp Image 2026-03-06 at 12.15.24.jpeg';
+const saasHeroImage = "https://techflux.in/img/assets/images/SaaS.jpg";
+const leaveCertificateImage = "https://techflux.in/img/assets/images/WhatsApp%20Image%202026-03-06%20at%2012.15.24.jpeg";
 
 const saasSolutions = [
   {
@@ -387,4 +387,9 @@ export default function SaaSDevelopment() {
     </div>
   );
 }
+
+
+
+
+
 

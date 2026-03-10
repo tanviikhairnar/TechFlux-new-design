@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Calendar, CheckCircle2, ChevronLeft, ChevronRight, Clock3, Star, Video } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Navigation } from '../components/Navigation';
@@ -315,3 +315,4 @@ export default function BookStrategyCall() {
     </div>
   );
 }
+
