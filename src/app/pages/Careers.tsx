@@ -11,10 +11,10 @@ import {
   TrendingUp,
   Users,
 } from 'lucide-react';
-const teamPhoto = "/img/assets/159a7f79-3802-497b-ae5e-ac1f83a54e60.webp";
-const culturePhoto = "/img/assets/cloud-storage-background-business-network-design.jpg";
-const workspacePhoto = "/img/assets/hand-touching-mobile-with-applications.jpg";
-const growthPhoto = "/img/assets/pexels-cottonbro-5483071.jpg";
+const teamPhoto = "https://techflux.in/img/assets/images/WhatsApp%20Image%202026-03-10%20at%2015.39.11.jpeg";
+const culturePhoto = "https://techflux.in/img/assets/images/cloud-storage-background-business-network-design.jpg";
+const workspacePhoto = "https://techflux.in/img/assets/images/hand-touching-mobile-with-applications.jpg";
+const growthPhoto = "https://techflux.in/img/assets/images/pexels-cottonbro-5483071.jpg";
 import { Footer } from '../components/Footer';
 import { CareerApplyNowButton, CareerViewDetailsButton } from '../components/GetProjectEstimateButton';
 import { Navigation } from '../components/Navigation';

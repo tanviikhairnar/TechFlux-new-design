@@ -90,7 +90,7 @@ export default function Home() {
   const [expandedTestimonials, setExpandedTestimonials] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
-    document.title = 'AI & SaaS Development Company | On-Demand Platform Solutions | Techflux Solutions';
+    document.title = 'Techflux Solutions';
     let descriptionTag = document.querySelector('meta[name="description"]');
     if (!descriptionTag) {
       descriptionTag = document.createElement('meta');

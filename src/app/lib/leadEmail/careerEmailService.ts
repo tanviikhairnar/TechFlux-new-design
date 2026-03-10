@@ -4,6 +4,8 @@ import { CareerApplicationLead, LeadEmailDelivery } from './types';
 const CAREER_RECEIVER_EMAIL = import.meta.env.VITE_CAREER_RECEIVER_EMAIL || 'hr@techflux.in';
 
 export async function sendCareerApplicationEmail(lead: CareerApplicationLead): Promise<LeadEmailDelivery> {
+  const [firstName, ...lastNameParts] = lead.fullName.trim().split(/\s+/);
+  const lastName = lastNameParts.join(' ');
   const internalSubject = `New Career Application - ${lead.position}`;
   const internalMessage = `A new career application has been submitted.
 
@@ -36,6 +38,17 @@ Lead Source: Techflux Website - Career Apply Form`;
       message: internalMessage,
       replyTo: lead.email,
       params: {
+        first_name: firstName,
+        last_name: lastName,
+        full_name: lead.fullName,
+        email: lead.email,
+        phone: lead.phone,
+        location: lead.location,
+        years_of_experience: lead.yearsOfExperience,
+        position: lead.position,
+        portfolio_url: lead.portfolioUrl || 'N/A',
+        resume_file_name: lead.resumeFileName,
+        cover_letter: lead.coverLetter || 'N/A',
         FullName: lead.fullName,
         Email: lead.email,
         Phone: lead.phone,
