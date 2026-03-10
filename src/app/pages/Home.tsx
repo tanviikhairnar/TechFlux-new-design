@@ -173,14 +173,14 @@ export default function Home() {
             className="max-w-xl"
           >
             <h1
-              className="text-5xl md:text-6xl font-semibold text-[#F9FAFB] leading-[1.08] mb-7"
+              className="text-6xl md:text-6xl font-semibold text-[#F9FAFB] leading-[1.08] mb-7"
               style={{ fontFamily: 'Sora, sans-serif' }}
             >
               Building Scalable SaaS, AI & On-Demand Platforms
             </h1>
 
             <p className="text-xl text-[#9CA3AF] leading-relaxed mb-10">
-              Techflux Solutions is an AI and SaaS development company specializing in scalable SaaS platforms, AI-powered applications, and on-demand digital solutions. We help startups and enterprises transform ideas into modern software products using cloud technologies, automation, and intelligent systems.
+              Techflux Solutions helps startups and agencies design, develop, and scale high-performance digital products.
             </p>
 
             <div className="flex flex-wrap gap-5">
