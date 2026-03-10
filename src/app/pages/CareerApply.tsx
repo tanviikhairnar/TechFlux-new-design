@@ -233,13 +233,22 @@ export default function CareerApply() {
               </h2>
 
               <InputLabel label="Upload Your Resume" required />
-              <label className="mt-3 flex cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed border-[#2A3D5D] bg-[#0A1830] px-5 py-8 text-center transition-all hover:border-[#2F80ED]">
+              <label
+                htmlFor="resume-upload"
+                className="mt-3 flex cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed border-[#2A3D5D] bg-[#0A1830] px-5 py-8 text-center transition-all hover:border-[#2F80ED]"
+              >
                 <Upload className="mb-2 h-7 w-7 text-[#7AAEE8]" />
                 <span className="text-base font-semibold text-[#C9DDF8]">Click to upload resume</span>
                 <span className="mt-1 text-sm text-[#7F91AF]">PDF or DOC (Max 5MB)</span>
                 {resumeFile ? <span className="mt-2 text-sm text-[#60A5FA]">{resumeFile.name}</span> : null}
-                <input type="file" accept=".pdf,.doc,.docx" className="hidden" onChange={onResumeFileChange} />
               </label>
+              <input
+                id="resume-upload"
+                type="file"
+                accept=".pdf,.doc,.docx"
+                onChange={onResumeFileChange}
+                className="sr-only"
+              />
 
               {submitError ? <p className="mt-4 text-sm text-[#F87171]">{submitError}</p> : null}
 
