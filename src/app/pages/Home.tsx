@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
   Users, Brain, Zap, Layers, ArrowRight, Check,
   Star, ChevronLeft, ChevronRight
@@ -23,21 +23,28 @@ function Counter({
   value: number;
   decimals?: number;
 }) {
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) =>
-    Number(latest).toFixed(decimals)
-  );
+  const [display, setDisplay] = useState(() => Number(0).toFixed(decimals));
 
   useEffect(() => {
-    const controls = animate(count, value, {
-      duration: 1,
-      ease: "easeOut",
-    });
+    let rafId = 0;
+    const duration = 1000;
+    const start = performance.now();
+    const from = 0;
 
-    return controls.stop;
-  }, [value, count]);
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const current = from + (value - from) * progress;
+      setDisplay(current.toFixed(decimals));
+      if (progress < 1) {
+        rafId = window.requestAnimationFrame(tick);
+      }
+    };
 
-  return <motion.span>{rounded}</motion.span>;
+    rafId = window.requestAnimationFrame(tick);
+    return () => window.cancelAnimationFrame(rafId);
+  }, [value, decimals]);
+
+  return <span>{display}</span>;
 }
 
 const processSteps = [
