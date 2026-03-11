@@ -1,19 +1,11 @@
-import allstarLogo from "https://techflux.in/img/assets/logos/allstar_logo_i.png";
-import aqatoLogo from "https://techflux.in/img/assets/logos/aqato_logo_i.png";
-import myCarePlusLogo from "https://techflux.in/img/assets/logos/MyCarePlus_Logo.png";
-import studioNewMediaLogo from "https://techflux.in/img/assets/logos/Studio%20new%20media%20logo_black_new.png";
-import editedLogo1 from "https://techflux.in/img/assets/logos/BG.png";
-import editedLogo2 from "https://techflux.in/img/assets/logos/WhatsApp_Image_2026-03-05_at_17.04.24-removebg-preview.png";
-import editedLogo3 from "https://techflux.in/img/assets/logos/WhatsApp_Image_2026-03-05_at_17.04.59-removebg-preview.png";
-
 const clientLogos = [
-  { src: allstarLogo, alt: "Allstar" },
-  { src: aqatoLogo, alt: "Aqato" },
-  { src: myCarePlusLogo, alt: "MyCarePlus" },
-  { src: studioNewMediaLogo, alt: "Studio New Media" },
-  { src: editedLogo1, alt: "Edited Logo 1" },
-  { src: editedLogo2, alt: "Edited Logo 2" },
-  { src: editedLogo3, alt: "Edited Logo 3" }
+  { src: "https://techflux.in/img/assets/logos/allstar_logo_i.png", alt: "Allstar" },
+  { src: "https://techflux.in/img/assets/logos/aqato_logo_i.png", alt: "Aqato" },
+  { src: "https://techflux.in/img/assets/logos/MyCarePlus_Logo.png", alt: "MyCarePlus" },
+  { src: "https://techflux.in/img/assets/logos/Studio%20new%20media%20logo_black_new.png", alt: "Studio New Media" },
+  { src: "https://techflux.in/img/assets/logos/BG.png", alt: "Edited Logo 1" },
+  { src: "https://techflux.in/img/assets/logos/WhatsApp_Image_2026-03-05_at_17.04.24-removebg-preview.png", alt: "Edited Logo 2" },
+  { src: "https://techflux.in/img/assets/logos/WhatsApp_Image_2026-03-05_at_17.04.59-removebg-preview.png", alt: "Edited Logo 3" }
 ];
 
 export function ClientLogosSlider() {
