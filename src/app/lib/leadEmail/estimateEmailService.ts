@@ -1,142 +1,152 @@
-import { canUseEmailJs, getCustomerSenderEmail, getDefaultTemplateId, getInternalReceiverEmails, getPrimaryInternalEmail, isEmailJsDeliveryError, sendEmail } from './sharedEmailClient';
-import { EstimateLead, LeadEmailDelivery } from './types';
+import emailjs from '@emailjs/browser';
 
-const TEMPLATE_ESTIMATE_CUSTOMER = import.meta.env.VITE_EMAILJS_TEMPLATE_ESTIMATE_CUSTOMER || getDefaultTemplateId();
-const TEMPLATE_ESTIMATE_INTERNAL = import.meta.env.VITE_EMAILJS_TEMPLATE_ESTIMATE_INTERNAL || getDefaultTemplateId();
+type EmailPayload = {
+  toEmail: string;
+  toName: string;
+  subject: string;
+  message: string;
+  templateId?: string;
+  replyTo?: string;
+  fromEmail?: string;
+  params?: Record<string, string>;
+};
 
-export async function sendEstimateEmails(lead: EstimateLead): Promise<LeadEmailDelivery> {
-  const customerSubject = 'Your Project Estimate Request - Techflux Solutions';
-  const customerMessage = `Hi ${lead.firstName},
+const INTERNAL_RECEIVER_EMAILS_RAW =
+  import.meta.env.VITE_LEAD_RECEIVER_EMAIL || 'sohel@techflux.in,asrar@techflux.in';
+const INTERNAL_SENDER_EMAILS_RAW =
+  import.meta.env.VITE_LEAD_SENDER_EMAIL || 'sohel@techflux.in,asrar@techflux.in';
 
-Thank you for submitting your project details.
+const CUSTOMER_SENDER_EMAIL = 'sales@techflux.in';
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-Our team at Techflux Solutions is reviewing your requirements to prepare an initial estimate and development approach.
+function looksLikeEmail(value: string | undefined) {
+  return Boolean(value && isValidEmail(value));
+}
 
-Based on your submission, we will analyze:
-- Platform requirements
-- Technical architecture
-- Development timeline
-- Estimated cost range
+function parseEmails(raw: string) {
+  return raw
+    .split(',')
+    .map((email) => email.trim())
+    .filter(Boolean);
+}
 
-You can expect a response from our team within 24 hours.
+function assertEmailConfig() {
+  const receiverEmails = getInternalReceiverEmails();
+  const senderEmails = getInternalSenderEmails();
 
-If your project involves SaaS platforms, AI integrations, or on-demand applications, we may recommend a short strategy call to discuss the best approach.
-
-We appreciate the opportunity to collaborate with you.
-
-Best regards,
-Techflux Solutions
-https://techflux.in`;
-
-  const internalSubject = 'New Project Estimate Request - Techflux Website';
-  const internalMessage = `New project estimate request received.
-
-Lead Details:
-Name: ${lead.firstName} ${lead.lastName}
-Email: ${lead.email}
-Company: ${lead.company}
-Project Type: ${lead.projectType}
-Budget: ${lead.budget}
-Timeline: ${lead.timeline}
-Project Details: ${lead.message}
-
-Please review and respond within 24 hours.
-Lead Source: Techflux Website - Project Estimate Form`;
-
-  if (!canUseEmailJs()) {
-    throw new Error('Direct email is not configured. Set EmailJS env keys and restart the app.');
+  if (!receiverEmails.length || receiverEmails.some((email) => !isValidEmail(email))) {
+    throw new Error(
+      'Invalid receiver email. Use real mailbox addresses like sohel@techflux.in,asrar@techflux.in.',
+    );
   }
 
-  try {
-    await Promise.all([
-      sendEmail({
-        toEmail: lead.email,
-        toName: lead.firstName,
-        subject: customerSubject,
-        message: customerMessage,
-        templateId: TEMPLATE_ESTIMATE_CUSTOMER,
-        fromEmail: getCustomerSenderEmail(),
-        replyTo: getPrimaryInternalEmail(),
-        params: {
-          FirstName: lead.firstName,
-          LastName: lead.lastName,
-          Email: lead.email,
-          Company: lead.company,
-          ProjectType: lead.projectType,
-          Budget: lead.budget,
-          Timeline: lead.timeline,
-          Message: lead.message,
-          first_name: lead.firstName,
-          last_name: lead.lastName,
-          full_name: `${lead.firstName} ${lead.lastName}`.trim(),
-          email: lead.email,
-          company: lead.company,
-          project_type: lead.projectType,
-          budget: lead.budget,
-          timeline: lead.timeline,
-          message: lead.message,
-          firstName: lead.firstName,
-          lastName: lead.lastName,
-          fullName: `${lead.firstName} ${lead.lastName}`.trim(),
-          projectType: lead.projectType,
-          FirstName: lead.firstName,
-          LastName: lead.lastName,
-          Email: lead.email,
-          Company: lead.company,
-          ProjectType: lead.projectType,
-          Budget: lead.budget,
-          Timeline: lead.timeline,
-          Message: lead.message,
-        },
-      }),
-      Promise.all(
-        getInternalReceiverEmails().map((email) =>
-          sendEmail({
-            toEmail: email,
-            toName: 'Techflux Team',
-            subject: internalSubject,
-            message: internalMessage,
-            templateId: TEMPLATE_ESTIMATE_INTERNAL,
-            replyTo: lead.email,
-        params: {
-          FirstName: lead.firstName,
-          LastName: lead.lastName,
-          Email: lead.email,
-          Company: lead.company,
-          ProjectType: lead.projectType,
-          Budget: lead.budget,
-          Timeline: lead.timeline,
-          Message: lead.message,
-          first_name: lead.firstName,
-          last_name: lead.lastName,
-          full_name: `${lead.firstName} ${lead.lastName}`.trim(),
-          email: lead.email,
-              company: lead.company,
-              project_type: lead.projectType,
-              budget: lead.budget,
-              timeline: lead.timeline,
-              message: lead.message,
-              firstName: lead.firstName,
-              lastName: lead.lastName,
-              fullName: `${lead.firstName} ${lead.lastName}`.trim(),
-              projectType: lead.projectType,
-              FirstName: lead.firstName,
-              LastName: lead.lastName,
-              Email: lead.email,
-              Company: lead.company,
-              ProjectType: lead.projectType,
-              Budget: lead.budget,
-              Timeline: lead.timeline,
-              Message: lead.message,
-            },
-          }),
-        ),
-      ),
-    ]);
-
-    return 'emailjs';
-  } catch (error) {
-    if (!isEmailJsDeliveryError(error)) throw error;
-    throw error;
+  if (!senderEmails.length || senderEmails.some((email) => !isValidEmail(email))) {
+    throw new Error(
+      'Invalid sender email. Use real mailbox addresses like sohel@techflux.in,asrar@techflux.in.',
+    );
   }
+
+  if (!isValidEmail(CUSTOMER_SENDER_EMAIL)) {
+    throw new Error('Invalid customer sender email. Use a real mailbox address like sales@techflux.in.');
+  }
+
+  if (
+    looksLikeEmail(EMAILJS_SERVICE_ID) ||
+    looksLikeEmail(EMAILJS_TEMPLATE_ID) ||
+    looksLikeEmail(EMAILJS_PUBLIC_KEY)
+  ) {
+    throw new Error(
+      'Invalid EmailJS config: SERVICE_ID, TEMPLATE_ID, and PUBLIC_KEY must be EmailJS values (not an email address).',
+    );
+  }
+
+  if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+    throw new Error('EmailJS_NOT_CONFIGURED');
+  }
+}
+
+export function isValidEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+export function canUseEmailJs() {
+  const receiverEmails = getInternalReceiverEmails();
+  const senderEmails = getInternalSenderEmails();
+  const validReceivers = receiverEmails.length > 0 && receiverEmails.every((email) => isValidEmail(email));
+  const validSenders = senderEmails.length > 0 && senderEmails.every((email) => isValidEmail(email));
+  const invalidEmailJsValues =
+    looksLikeEmail(EMAILJS_SERVICE_ID) ||
+    looksLikeEmail(EMAILJS_TEMPLATE_ID) ||
+    looksLikeEmail(EMAILJS_PUBLIC_KEY);
+
+  return (
+    validReceivers &&
+    validSenders &&
+    !invalidEmailJsValues &&
+    Boolean(EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY)
+  );
+}
+
+export function isEmailJsDeliveryError(error: unknown) {
+  if (!(error instanceof Error)) return false;
+  return error.message.startsWith('EmailJS error') || error.message === 'EmailJS request failed.';
+}
+
+export function getPrimaryInternalEmail() {
+  return getInternalReceiverEmails()[0] || 'sohel@techflux.in';
+}
+
+export function getInternalReceiverEmails() {
+  return parseEmails(INTERNAL_RECEIVER_EMAILS_RAW);
+}
+
+export function getCustomerSenderEmail() {
+  return CUSTOMER_SENDER_EMAIL;
+}
+
+export function getDefaultTemplateId() {
+  return EMAILJS_TEMPLATE_ID;
+}
+
+export function sendEmail(payload: EmailPayload) {
+  assertEmailConfig();
+  const senderEmails = getInternalSenderEmails();
+  const primarySender = payload.fromEmail || senderEmails[0] || getPrimaryInternalEmail();
+
+  return emailjs
+    .send(
+      EMAILJS_SERVICE_ID,
+      payload.templateId || EMAILJS_TEMPLATE_ID,
+      {
+        ...(payload.params || {}),
+        to: payload.toEmail,
+        to_email: payload.toEmail,
+        to_name: payload.toName,
+        subject: payload.subject,
+        message: payload.message,
+        Message: payload.message,
+        msg: payload.message,
+        email_message: payload.message,
+        user_message: payload.message,
+        lead_details: payload.message,
+        from_email: primarySender,
+        from_name: 'Techflux Solutions',
+        sender_emails: senderEmails.join(', '),
+        reply_to: payload.replyTo || getPrimaryInternalEmail(),
+      },
+      {
+        publicKey: EMAILJS_PUBLIC_KEY,
+      },
+    )
+    .catch((error: unknown) => {
+      const status = typeof error === 'object' && error !== null ? (error as { status?: number }).status : undefined;
+      const text = typeof error === 'object' && error !== null ? (error as { text?: string }).text : undefined;
+      throw new Error(status ? `EmailJS error ${status}: ${text || 'Request failed'}` : 'EmailJS request failed.');
+    });
+}
+
+function getInternalSenderEmails() {
+  return parseEmails(INTERNAL_SENDER_EMAILS_RAW);
 }

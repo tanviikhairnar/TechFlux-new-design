@@ -135,12 +135,6 @@ export function Footer() {
                   Office 1: Dhawan Apartment, Maneksha Nagar, Dwarka, Nashik, Maharashtra 422011
                 </span>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin className={contactIconClass} />
-                <span className="leading-relaxed text-[#9CA3AF]">
-                  Office 2: Bavdhan, Pune
-                </span>
-              </li>
             </ul>
           </div>
         </motion.div>

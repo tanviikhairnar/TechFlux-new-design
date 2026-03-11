@@ -51,4 +51,5 @@ export type CareerApplicationLead = {
   portfolioUrl: string;
   coverLetter: string;
   resumeFileName: string;
+  resumeBase64?: string;
 };

@@ -231,18 +231,6 @@ export default function Contact() {
                       </p>
                     </div>
                   </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className={contactIconWrapClass}>
-                      <MapPin className={contactIconClass} />
-                    </div>
-                    <div>
-                      <h3 className="text-base font-semibold text-[#E5E7EB] md:text-lg">Office 2</h3>
-                      <p className="text-base leading-relaxed text-[#94A3B8] md:text-[17px]">
-                        Bavdhan, Pune
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
 

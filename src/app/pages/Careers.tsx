@@ -11,8 +11,7 @@ import {
   TrendingUp,
   Users,
 } from 'lucide-react';
-const teamPhoto = "https://techflux.in/img/assets/images/WhatsApp%20Image%202026-03-10%20at%2015.39.11.jpeg";
-const culturePhoto = "https://techflux.in/img/assets/images/cloud-storage-background-business-network-design.jpg";
+const teamPhoto = "https://techflux.in/img/assets/WhatsApp%20Image%202026-03-10%20at%2015.39.11.jpeg";
 const workspacePhoto = "https://techflux.in/img/assets/images/hand-touching-mobile-with-applications.jpg";
 const growthPhoto = "https://techflux.in/img/assets/images/pexels-cottonbro-5483071.jpg";
 import { Footer } from '../components/Footer';
@@ -28,11 +27,6 @@ const whyWorkItems = [
   },
   {
     icon: Globe2,
-    title: 'Flexible Work Culture',
-    text: 'Work remotely with flexible hours and maintain a healthy work-life balance.',
-  },
-  {
-    icon: Users,
     title: 'Global Projects',
     text: 'Work on diverse projects for international clients across industries.',
   },
@@ -80,11 +74,6 @@ const lifeCards = [
     text: 'Work together on challenging projects.',
   },
   {
-    image: culturePhoto,
-    title: 'Remote-First',
-    text: 'Flexible work environment',
-  },
-  {
     image: workspacePhoto,
     title: 'Innovation Culture',
     text: 'Brainstorm and create together',
@@ -118,7 +107,7 @@ export default function Careers() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.14),transparent_42%)]" />
 
         <div className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-16 pt-28 md:pb-20 md:pt-32 lg:px-5">
-          <section className="mb-20 grid min-h-[calc(100vh-150px)] gap-10 lg:grid-cols-[1fr_1.02fr] lg:items-center">
+          <section className="mb-20 grid min-h-[calc(100vh-150px)] gap-10 lg:grid-cols-[1fr_1.12fr] lg:items-center">
             <motion.div initial={{ opacity: 0, x: -26 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.65 }}>
               <h1
                 className="mb-6 max-w-[560px] text-5xl font-bold leading-[1.04] tracking-[-0.015em] text-[#E5E7EB] sm:text-6xl md:text-[72px]"
@@ -148,7 +137,7 @@ export default function Careers() {
               transition={{ duration: 0.65, delay: 0.1 }}
               className="overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
             >
-              <img src={teamPhoto} alt="Techflux team at work" className="h-[300px] w-full object-cover object-center md:h-[520px] lg:h-[620px]" />
+              <img src={teamPhoto} alt="Techflux team at work" className="h-auto w-full object-contain" />
             </motion.div>
           </section>
 
@@ -162,7 +151,7 @@ export default function Careers() {
             <h2 className="mb-12 text-center text-4xl font-bold text-[#E5E7EB] md:text-[44px]" style={{ fontFamily: 'Sora, sans-serif' }}>
               Why Work With Techflux
             </h2>
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {whyWorkItems.map((item, index) => (
                 <motion.div
                   key={item.title}
@@ -306,7 +295,7 @@ export default function Careers() {
                 Join a collaborative environment where innovation meets culture.
               </p>
 
-              <div className="mb-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              <div className="mb-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {lifeCards.map((card, index) => (
                   <motion.article
                     key={card.title}
@@ -353,8 +342,3 @@ export default function Careers() {
     </div>
   );
 }
-
-
-
-
-
