@@ -1,10 +1,10 @@
-import allstarLogo from "../../assets/logos/allstar_logo_i.png";
-import aqatoLogo from "../../assets/logos/aqato_logo_i.png";
-import myCarePlusLogo from "../../assets/logos/MyCarePlus_Logo.png";
-import studioNewMediaLogo from "../../assets/logos/Studio new media logo_black_new.png";
-import editedLogo1 from "../../assets/logos/BG.png";
-import editedLogo2 from "../../assets/logos/WhatsApp_Image_2026-03-05_at_17.04.24-removebg-preview.png";
-import editedLogo3 from "../../assets/logos/WhatsApp_Image_2026-03-05_at_17.04.59-removebg-preview.png";
+import allstarLogo from "https://techflux.in/img/assets/logos/allstar_logo_i.png";
+import aqatoLogo from "https://techflux.in/img/assets/logos/aqato_logo_i.png";
+import myCarePlusLogo from "https://techflux.in/img/assets/logos/MyCarePlus_Logo.png";
+import studioNewMediaLogo from "https://techflux.in/img/assets/logos/Studio%20new%20media%20logo_black_new.png";
+import editedLogo1 from "https://techflux.in/img/assets/logos/BG.png";
+import editedLogo2 from "https://techflux.in/img/assets/logos/WhatsApp_Image_2026-03-05_at_17.04.24-removebg-preview.png";
+import editedLogo3 from "https://techflux.in/img/assets/logos/WhatsApp_Image_2026-03-05_at_17.04.59-removebg-preview.png";
 
 const clientLogos = [
   { src: allstarLogo, alt: "Allstar" },
