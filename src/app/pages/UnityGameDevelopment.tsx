@@ -177,7 +177,7 @@ export default function UnityGameDevelopment() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-18%,rgba(47,128,237,0.24),transparent_42%)]" />
 
         <section className="relative z-10 tf-shell pb-24 pt-28 md:pb-32 md:pt-40">
-          <div className="grid items-center gap-12 lg:min-h-[520px] lg:grid-cols-[1.05fr_1fr]">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr]">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <span className="mb-6 inline-flex rounded-full border border-[#2F80ED]/35 bg-[#0A1F43] px-4 py-1 text-sm text-[#7AB9FF]">
                 Unity Game Development
@@ -209,7 +209,7 @@ export default function UnityGameDevelopment() {
               <img
                 src={unityHeroImage}
                 alt="Unity game development architecture"
-                className="h-[280px] w-full object-cover object-center md:h-[360px] lg:h-[430px]"
+                className="h-auto w-full object-contain"
               />
             </motion.div>
           </div>
@@ -461,8 +461,6 @@ export default function UnityGameDevelopment() {
     </div>
   );
 }
-
-
 
 
 

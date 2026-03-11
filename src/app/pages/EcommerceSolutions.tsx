@@ -199,7 +199,7 @@ export default function EcommerceSolutions() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-18%,rgba(47,128,237,0.24),transparent_42%)]" />
 
         <ServiceHeroSection
-          containerClassName="grid items-center gap-10 md:grid-cols-[0.95fr_1.05fr] md:gap-12 lg:min-h-[520px]"
+          containerClassName="grid items-center gap-10 md:grid-cols-[0.95fr_1.05fr] md:gap-12"
           title={
             <>
               High-Performance
@@ -330,10 +330,10 @@ export default function EcommerceSolutions() {
           headingClassName="mb-3 text-3xl font-semibold text-[#D8DEE8]"
           cardClassName="overflow-hidden rounded-2xl border border-white/5 bg-[linear-gradient(110deg,#0F1B31_0%,#101A2D_55%,#0E1728_100%)]"
           gridClassName="grid items-stretch md:grid-cols-[1.05fr_1fr]"
-          imageWrapClassName="h-[280px] md:h-[440px]"
+          imageWrapClassName="h-[280px] overflow-hidden md:h-[440px]"
           imageSrc={ecommerceCaseImage}
           imageAlt="Fashion e-commerce platform case study"
-          imageClassName="h-full w-full object-cover"
+          imageClassName="h-full w-full object-cover object-center"
           contentClassName="flex flex-col justify-center p-7 md:p-12"
           badgeText="Fashion E-commerce"
           badgeClassName="mb-6 inline-flex w-fit rounded-full border border-[#2F80ED]/30 bg-[#0F2A5F] px-5 py-2 text-sm font-medium text-[#56A9F5]"

@@ -77,7 +77,7 @@ export function ServiceHeroSection({
   const resolvedImageContainerClassName =
     imageContainerClassName ||
     (imageVariant === 'framed'
-      ? `relative min-h-[260px] overflow-hidden rounded-[28px] bg-[#0E1B34] shadow-[0_22px_56px_rgba(3,11,27,0.32)] md:min-h-[470px] ${
+      ? `relative overflow-hidden rounded-[28px] bg-[#0E1B34] p-4 shadow-[0_22px_56px_rgba(3,11,27,0.32)] md:p-6 ${
           imageFit === 'contain' ? 'flex items-center justify-center' : ''
         }`
       : 'overflow-hidden rounded-2xl bg-[#0E1B34] shadow-[0_20px_50px_rgba(2,10,28,0.35)]');
@@ -89,11 +89,11 @@ export function ServiceHeroSection({
     imageClassName ||
     (imageVariant === 'framed'
       ? imageFit === 'contain'
-        ? 'relative z-10 h-[82%] w-[95%] rounded-r-[18px] rounded-tl-[18px] object-contain'
-        : 'absolute inset-0 h-full w-full object-cover'
+        ? 'relative z-10 h-auto w-full rounded-r-[18px] rounded-tl-[18px] object-contain'
+        : 'relative z-10 h-auto w-full rounded-r-[18px] rounded-tl-[18px] object-cover'
       : imageFit === 'contain'
-        ? 'h-[300px] w-full object-contain md:h-[380px] lg:h-[460px]'
-        : 'h-[300px] w-full object-cover md:h-[380px] lg:h-[460px]');
+        ? 'h-auto w-full object-contain'
+        : 'h-auto w-full object-cover');
 
   return (
     <section className={sectionClassName}>

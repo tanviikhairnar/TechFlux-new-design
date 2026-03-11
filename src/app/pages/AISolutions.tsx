@@ -161,7 +161,7 @@ export default function AISolutions() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-18%,rgba(47,128,237,0.24),transparent_42%)]" />
 
         <ServiceHeroSection
-          containerClassName="grid items-center gap-10 md:grid-cols-[0.95fr_1.05fr] md:gap-12 lg:min-h-[520px]"
+          containerClassName="grid items-center gap-10 md:grid-cols-[0.95fr_1.05fr] md:gap-12"
           textWrapClassName="text-center lg:text-left"
           badgeText="AI Solutions"
           title="AI-Powered Digital Products"

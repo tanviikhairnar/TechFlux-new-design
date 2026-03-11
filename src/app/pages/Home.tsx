@@ -353,7 +353,7 @@ export default function Home() {
                 <img
                   src={homeSaasImage}
                   alt="SaaS Dashboard"
-                  className="w-full h-[420px] object-cover rounded-2xl"
+                  className="w-full h-auto object-contain rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
               </div>
@@ -476,7 +476,7 @@ export default function Home() {
                 <img
                   src={homeAiGradientImage}
                   alt="AI Gradient"
-                  className="w-full h-[420px] object-cover rounded-2xl"
+                  className="w-full h-auto object-contain rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
               </div>
@@ -500,7 +500,7 @@ export default function Home() {
                 <img
                   src={onDemandImage}
                   alt="On-Demand App"
-                  className="w-full h-[420px] object-cover rounded-2xl"
+                  className="w-full h-auto object-contain rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
               </div>

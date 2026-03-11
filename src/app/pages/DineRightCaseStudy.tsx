@@ -59,7 +59,7 @@ export default function DineRightCaseStudy() {
       <main className="relative">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(37,99,235,0.12),transparent_42%)]" />
 
-        <section className="relative z-10 mx-auto flex w-full max-w-[1260px] min-h-[680px] items-center px-4 pb-24 pt-[7.5rem] md:min-h-[760px] md:pb-28 md:pt-[8.5rem] lg:px-5">
+        <section className="relative z-10 mx-auto flex w-full max-w-[1260px] items-center px-4 pb-24 pt-[7.5rem] md:pb-28 md:pt-[8.5rem] lg:px-5">
           <div className="grid w-full items-center gap-10 lg:grid-cols-[1fr_1.06fr]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -107,7 +107,7 @@ export default function DineRightCaseStudy() {
               <img
                 src={dineRightImage}
                 alt="Dine Right platform"
-                className="h-[260px] w-full object-cover object-center md:h-[340px]"
+                className="h-auto w-full object-contain"
               />
             </motion.div>
           </div>

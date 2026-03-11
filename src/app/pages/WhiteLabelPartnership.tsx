@@ -186,7 +186,7 @@ export default function WhiteLabelPartnership() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mx-auto flex min-h-[420px] w-full flex-col justify-center lg:min-h-[520px] lg:flex-row lg:items-center lg:justify-between"
+            className="mx-auto flex w-full flex-col justify-center lg:flex-row lg:items-center lg:justify-between"
           >
             <div className="w-full lg:w-1/2 text-center lg:text-left">
               <div className="inline-flex mb-6 rounded-full border border-[#2F80ED]/35 bg-[#0A1F43] px-4 py-1 text-sm text-[#7AB9FF]">
@@ -228,7 +228,7 @@ export default function WhiteLabelPartnership() {
                 <img
                   src={whiteLabelImage}
                   alt="Handshake on laptop screen"
-                  className="h-[320px] w-full rounded-xl object-cover object-center lg:h-[350px]"
+                  className="h-auto w-full rounded-xl object-contain"
                 />
               </div>
             </motion.div>

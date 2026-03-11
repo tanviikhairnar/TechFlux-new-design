@@ -309,10 +309,6 @@ function getInternalSenderEmails() {
   return parseEmails(INTERNAL_SENDER_EMAILS_RAW);
 }
 
-/* -------------------------------------------------------------------------- */
-/* NEW FUNCTION ADDED (FOR ESTIMATE EMAILS)                                   */
-/* -------------------------------------------------------------------------- */
-
 type EstimateEmailPayload = {
   name: string;
   email: string;
