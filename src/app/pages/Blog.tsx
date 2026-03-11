@@ -4,9 +4,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-const saasBlogImage = "https://techflux.in/img/assets/images/saas-concept-collage.jpg";
-const aiBlogImage = "https://techflux.in/img/assets/images/AI.jpg";
-const onDemandBlogImage = "https://techflux.in/img/assets/images/On%20Demand.jpg";
+const saasBlogImage = new URL("../../assets/webp/saas-concept-collage.webp", import.meta.url).href;
+const aiBlogImage = new URL("../../assets/webp/AI.webp", import.meta.url).href;
+const onDemandBlogImage = new URL("../../assets/webp/On Demand.webp", import.meta.url).href;
 
 const posts = [
   {

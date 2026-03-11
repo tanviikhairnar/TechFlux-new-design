@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Code2, TrendingUp, Users, 
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-const studioImage = "https://techflux.in/img/assets/images/Macbook%20Pro%20-%20FREE%20(1).png";
+const studioImage = new URL("../../assets/webp/Macbook Pro - FREE (1).webp", import.meta.url).href;
 
 const challengeItems = [
   'Complex multi-tenant architecture requirements',

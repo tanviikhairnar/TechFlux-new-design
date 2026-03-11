@@ -28,8 +28,8 @@ import { InvestmentCardsSection } from '../components/InvestmentCardsSection';
 import { TechnologyStackSection } from '../components/TechnologyStackSection';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
 
-const aiHeroImage = 'https://techflux.in/img/assets/images/AI.jpg';
-const aiCaseImage = 'https://techflux.in/img/assets/images/3649760.jpg';
+const aiHeroImage = new URL("../../assets/webp/AI.webp", import.meta.url).href;
+const aiCaseImage = new URL("../../assets/webp/3649760.webp", import.meta.url).href;
 
 const aiSolutions = [
   {

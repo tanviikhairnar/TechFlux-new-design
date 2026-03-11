@@ -1,5 +1,5 @@
 import { ArticlePageTemplate, type ArticleSection } from '../components/ArticlePageTemplate';
-const aiBlogImage = "https://techflux.in/img/assets/images/AI.jpg";
+const aiBlogImage = new URL("../../assets/webp/AI.webp", import.meta.url).href;
 
 const sections: ArticleSection[] = [
   {

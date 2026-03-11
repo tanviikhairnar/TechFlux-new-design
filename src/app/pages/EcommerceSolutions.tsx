@@ -27,8 +27,8 @@ import { InvestmentCardsSection } from "../components/InvestmentCardsSection";
 import { IndustriesSection } from "../components/IndustriesSection";
 import { CaseStudySection } from "../components/CaseStudySection";
 import { GetProjectEstimateButton } from "../components/GetProjectEstimateButton";
-const ecommerceHeroImage = "https://techflux.in/img/assets/images/WhatsApp%20Image%202026-03-10%20at%2015.55.45.jpeg";
-const ecommerceCaseImage = "https://techflux.in/img/assets/images/3577047_edit.webp";
+const ecommerceHeroImage = new URL("../../assets/webp/WhatsApp Image 2026-03-10 at 15.55.45.webp", import.meta.url).href;
+const ecommerceCaseImage = new URL("../../assets/webp/3577047_edit.webp", import.meta.url).href;
 
 const ecommerceSolutions = [
   {

@@ -21,7 +21,7 @@ import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
 import { ServiceHeroSection } from '../components/ServiceHeroSection';
-const whiteLabelImage = "http://techflux.in/img/assets/images/Macbook%20Pro%20-%20FREE%20(1).png";
+const whiteLabelImage = new URL("../../assets/webp/Macbook Pro - FREE (1).webp", import.meta.url).href;
 
 const builtFor = [
   {

@@ -20,10 +20,10 @@ import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { CardsSection } from '../components/CardsSection';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-const unityHeroImage = "https://techflux.in/img/assets/images/AI%20(1).jpg";
-const unityCaseImageOne = "https://techflux.in/img/assets/images/On%20Demand.jpg";
-const unityCaseImageTwo = "https://techflux.in/img/assets/images/AI.jpg";
-const unityCaseImageThree = "https://techflux.in/img/assets/images/SaaS.jpg";
+const unityHeroImage = new URL("../../assets/webp/AI (1).webp", import.meta.url).href;
+const unityCaseImageOne = new URL("../../assets/webp/On Demand.webp", import.meta.url).href;
+const unityCaseImageTwo = new URL("../../assets/webp/AI.webp", import.meta.url).href;
+const unityCaseImageThree = new URL("../../assets/webp/SaaS.webp", import.meta.url).href;
 
 const whyChooseUnity = [
   {

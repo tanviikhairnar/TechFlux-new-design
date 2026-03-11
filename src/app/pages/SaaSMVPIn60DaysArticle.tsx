@@ -1,5 +1,5 @@
 import { ArticlePageTemplate, type ArticleSection } from '../components/ArticlePageTemplate';
-const saasBlogImage = "https://techflux.in/img/assets/images/saas-concept-collage.jpg";
+const saasBlogImage = new URL("../../assets/webp/saas-concept-collage.webp", import.meta.url).href;
 
 const sections: ArticleSection[] = [
   {

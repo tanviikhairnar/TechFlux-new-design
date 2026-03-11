@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { ClientLogosSlider } from '../components/ClientLogosSlider';
-const homeHeroAiImage = "https://techflux.in/img/assets/images/AI%20(1).jpg";
-const homeSaasImage = "https://techflux.in/img/assets/images/SaaS.jpg";
-const homeAiGradientImage = "https://techflux.in/img/assets/images/photo-1760629863094-5b1e8d1aae74.jpg";
-const onDemandImage = "https://techflux.in/img/assets/images/On%20Demand%20(1).jpg";
-const servyoCaseImage = "https://techflux.in/img/assets/images/Group%201000003012.png";
-const allstarCaseImage = "https://techflux.in/img/assets/images/car.jpg";
-const eternCaseImage = "https://techflux.in/img/assets/images/3649760.jpg";
+const homeHeroAiImage = new URL("../../assets/webp/AI (1).webp", import.meta.url).href;
+const homeSaasImage = new URL("../../assets/webp/SaaS.webp", import.meta.url).href;
+const homeAiGradientImage = new URL("../../assets/webp/photo-1760629863094-5b1e8d1aae74.webp", import.meta.url).href;
+const onDemandImage = new URL("../../assets/webp/On Demand (1).webp", import.meta.url).href;
+const servyoCaseImage = new URL("../../assets/webp/Group 1000003012.webp", import.meta.url).href;
+const allstarCaseImage = new URL("../../assets/webp/car.webp", import.meta.url).href;
+const eternCaseImage = new URL("../../assets/webp/3649760.webp", import.meta.url).href;
 
 function Counter({
   value,

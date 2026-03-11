@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "convert": "tsx scripts/convert-images.ts",
+    "webp:convert": "node scripts/convert-to-webp.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -75,7 +77,9 @@
   "devDependencies": {
     "@tailwindcss/vite": "4.1.12",
     "@vitejs/plugin-react": "4.7.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.12",
+    "tsx": "^4.21.0",
     "vite": "6.3.5"
   },
   "peerDependencies": {

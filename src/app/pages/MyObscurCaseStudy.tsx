@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
 import { Navigation } from '../components/Navigation';
-const myObscurImage = "https://techflux.in/img/assets/images/3577047_edit.webp";
+const myObscurImage = new URL("../../assets/webp/3577047_edit.webp", import.meta.url).href;
 
 const challengeItems = [
   'Generic product discovery experience',
