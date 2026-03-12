@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-const servyoImage = "https://techflux.in/public/assets/images/Group%201000003012.webp"
+const servyoImage = "https://techflux.in/public/assets/images/WhatsApp%20Image%202026-03-06%20at%2012.15.24.webp"
 const dinerightImage = "https://techflux.in/public/assets/images/dineright.webp"
 const allstarImage = "https://techflux.in/public/assets/images/car.webp"
 const fashionStoreImage = "https://techflux.in/public/assets/images/WhatsApp%20Image%202026-03-10%20at%2015.55.45.webp"
