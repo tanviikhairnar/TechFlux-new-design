@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Code2, TrendingUp, Users, 
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-const etern8Image = new URL("../../assets/webp/AI.webp", import.meta.url).href;
+const etern8Image = "https://techflux.in/public/assets/images/AI.webp"
 
 const challengeItems = [
   'Complex smartwatch data integration',

@@ -1,11 +1,10 @@
 const clientLogos = [
-  { src: "https://techflux.in/img/assets/logos/allstar_logo_i.png", alt: "Allstar" },
-  { src: "https://techflux.in/img/assets/logos/aqato_logo_i.png", alt: "Aqato" },
-  { src: "https://techflux.in/img/assets/logos/MyCarePlus_Logo.png", alt: "MyCarePlus" },
-  { src: "https://techflux.in/img/assets/logos/Studio%20new%20media%20logo_black_new.png", alt: "Studio New Media" },
-  { src: "https://techflux.in/img/assets/logos/BG.png", alt: "Edited Logo 1" },
-  { src: "https://techflux.in/img/assets/logos/WhatsApp_Image_2026-03-05_at_17.04.24-removebg-preview.png", alt: "Edited Logo 2" },
-  { src: "https://techflux.in/img/assets/logos/WhatsApp_Image_2026-03-05_at_17.04.59-removebg-preview.png", alt: "Edited Logo 3" }
+  { src: "https://techflux.in/public/assets/images/allstar_logo_i.webp", alt: "Allstar" },
+  { src: "https://techflux.in/public/assets/images/aqato_logo_i.webp", alt: "Aqato" },
+  { src: "https://techflux.in/public/assets/images/Studio%20new%20media%20logo_black_new.webp", alt: "Studio New Media" },
+  { src: "https://techflux.in/public/assets/images/BG.webp", alt: "Edited Logo 1" },
+  { src: "https://techflux.in/public/assets/images/WhatsApp_Image_2026-03-05_at_17.04.59-removebg-preview.webp", alt: "Edited Logo 2" },
+  { src: "https://techflux.in/public/assets/images/WhatsApp_Image_2026-03-05_at_17.04.24-removebg-preview.webp", alt: "Edited Logo 3" }
 ];
 
 export function ClientLogosSlider() {

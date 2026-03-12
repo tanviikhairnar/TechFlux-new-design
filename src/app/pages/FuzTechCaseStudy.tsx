@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Code2, TrendingUp, Users, 
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-const fuztechImage = new URL("../../assets/webp/repair.webp", import.meta.url).href;
+const fuztechImage = "https://techflux.in/public/assets/images/repair.webp"
 
 const challengeItems = [
   'Complex repair service categorization',

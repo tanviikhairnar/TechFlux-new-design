@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { ClientLogosSlider } from '../components/ClientLogosSlider';
-const homeHeroAiImage = new URL("../../assets/webp/AI (1).webp", import.meta.url).href;
-const homeSaasImage = new URL("../../assets/webp/SaaS.webp", import.meta.url).href;
-const homeAiGradientImage = new URL("../../assets/webp/photo-1760629863094-5b1e8d1aae74.webp", import.meta.url).href;
-const onDemandImage = new URL("../../assets/webp/On Demand (1).webp", import.meta.url).href;
-const servyoCaseImage = new URL("../../assets/webp/Group 1000003012.webp", import.meta.url).href;
-const allstarCaseImage = new URL("../../assets/webp/car.webp", import.meta.url).href;
-const eternCaseImage = new URL("../../assets/webp/3649760.webp", import.meta.url).href;
+const homeHeroAiImage = "https://techflux.in/public/assets/images/AI%20(1).webp"
+const homeSaasImage = "https://techflux.in/public/assets/images/SaaS.webp"
+const homeAiGradientImage = "https://techflux.in/public/assets/images/photo-1760629863094-5b1e8d1aae74.webp"
+const onDemandImage = "https://techflux.in/public/assets/images/On%20Demand%20(1).webp"
+const servyoCaseImage = "https://techflux.in/public/assets/images/Group%201000003012.webp"
+const allstarCaseImage = "https://techflux.in/public/assets/images/car.webp"
+const eternCaseImage = "https://techflux.in/public/assets/images/3649760.webp"
 
 function Counter({
   value,

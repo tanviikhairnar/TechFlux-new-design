@@ -2,7 +2,7 @@ import React from "react"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { ArrowRight } from "lucide-react"
-const homeHeroImage = "/img/assets/AI%20(1).jpg";
+const homeHeroImage = "https://techflux.in/public/assets/images/AI%20(1).webp";
 
 const HomeHero = () => {
   return (

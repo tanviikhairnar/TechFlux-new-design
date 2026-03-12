@@ -28,8 +28,8 @@ import { InvestmentCardsSection } from '../components/InvestmentCardsSection';
 import { TechnologyStackSection } from '../components/TechnologyStackSection';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
 
-const aiHeroImage = new URL("../../assets/webp/AI.webp", import.meta.url).href;
-const aiCaseImage = new URL("../../assets/webp/3649760.webp", import.meta.url).href;
+const aiHeroImage = "https://techflux.in/public/assets/images/AI.webp"
+const aiCaseImage = "https://techflux.in/public/assets/images/3649760.webp"
 
 const aiSolutions = [
   {

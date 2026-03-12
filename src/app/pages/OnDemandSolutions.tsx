@@ -19,8 +19,8 @@ import { CardsSection } from '../components/CardsSection';
 import { InvestmentCardsSection } from '../components/InvestmentCardsSection';
 import { TechnologyStackSection } from '../components/TechnologyStackSection';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-const onDemandImage = new URL("../../assets/webp/On Demand.webp", import.meta.url).href;
-const onDemandHeroImage = new URL("../../assets/webp/hand-touching-mobile-with-applications.webp", import.meta.url).href;
+const onDemandImage = "https://techflux.in/public/assets/images/On%20Demand.webp"
+const onDemandHeroImage = "https://techflux.in/public/assets/images/hand-touching-mobile-with-applications.webp"
 
 const buildItems = [
   {

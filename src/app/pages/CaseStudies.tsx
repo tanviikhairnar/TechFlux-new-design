@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-const servyoImage = new URL("../../assets/webp/Group 1000003012.webp", import.meta.url).href;
-const dinerightImage = new URL("../../assets/webp/dineright.webp", import.meta.url).href;
-const allstarImage = new URL("../../assets/webp/car.webp", import.meta.url).href;
-const fashionStoreImage = new URL("../../assets/webp/WhatsApp Image 2026-03-10 at 15.55.45.webp", import.meta.url).href;
-const fuztechImage = new URL("../../assets/webp/On Demand.webp", import.meta.url).href;
-const etern8Image = new URL("../../assets/webp/AI.webp", import.meta.url).href;
-const mobileTechImage = new URL("../../assets/webp/hand-touching-mobile-with-applications.webp", import.meta.url).href;
-const leaveCertificateImage = new URL("../../assets/webp/WhatsApp Image 2026-03-06 at 12.15.24.webp", import.meta.url).href;
+const servyoImage = "https://techflux.in/public/assets/images/Group%201000003012.webp"
+const dinerightImage = "https://techflux.in/public/assets/images/dineright.webp"
+const allstarImage = "https://techflux.in/public/assets/images/car.webp"
+const fashionStoreImage = "https://techflux.in/public/assets/images/WhatsApp%20Image%202026-03-10%20at%2015.55.45.webp"
+const fuztechImage = "https://techflux.in/public/assets/images/On%20Demand.webp"
+const etern8Image = "https://techflux.in/public/assets/images/AI.webp"
+const mobileTechImage = "https://techflux.in/public/assets/images/hand-touching-mobile-with-applications.webp"
+const leaveCertificateImage = "https://techflux.in/public/assets/images/"
 
 type CaseStudy = {
   name: string;

@@ -11,9 +11,9 @@ import {
   TrendingUp,
   Users,
 } from 'lucide-react';
-const teamPhoto = "https://techflux.in/img/assets/WhatsApp%20Image%202026-03-10%20at%2015.39.11.jpeg";
-const workspacePhoto = new URL("../../assets/webp/hand-touching-mobile-with-applications.webp", import.meta.url).href;
-const growthPhoto = new URL("../../assets/webp/pexels-cottonbro-5483071.webp", import.meta.url).href;
+const teamPhoto = "https://techflux.in/public/assets/images/WhatsApp%20Image%202026-03-10%20at%2015.39.11.webp";
+const workspacePhoto = "https://techflux.in/public/assets/images/hand-touching-mobile-with-applications.webp"
+const growthPhoto = "https://techflux.in/public/assets/images/pexels-cottonbro-5483071.webp"
 import { Footer } from '../components/Footer';
 import { CareerApplyNowButton, CareerViewDetailsButton } from '../components/GetProjectEstimateButton';
 import { Navigation } from '../components/Navigation';

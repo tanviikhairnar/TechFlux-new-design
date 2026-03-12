@@ -2,10 +2,13 @@ import { motion } from "framer-motion";
 import { Github, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { BecomePartnerButton, BookStrategyCallButton } from "./GetProjectEstimateButton";
-import TechfluxLogo from "../../assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
+
+const imageSources = {
+  techfluxLogo: "https://techflux.in/img/assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png",
+};
 
 const socialLinks = [
-  { icon: Linkedin, href: "https://www.linkedin.com/company/techfluxsolution/", label: "LinkedIn" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/techfluxsolutions1/", label: "LinkedIn" },
   { icon: Instagram, href: "https://www.instagram.com/techflux_solutions?igsh=MW0zdHl4bnhkajYxYQ==", label: "Instagram" },
   { icon: Github, href: "https://github.com/techfluxsolutions", label: "GitHub" },
 ];
@@ -37,7 +40,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-6 flex items-center gap-3">
-              <img src={TechfluxLogo} alt="Techflux Logo" className="h-9 w-9" />
+              <img src={imageSources.techfluxLogo} alt="Techflux Logo" className="h-9 w-9" />
               <span className="font-sora text-xl font-semibold text-white">
                 Techflux Solutions
               </span>
@@ -168,4 +171,3 @@ export function Footer() {
     </footer>
   );
 }
-

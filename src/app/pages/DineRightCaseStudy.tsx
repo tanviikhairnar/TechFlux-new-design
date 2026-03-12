@@ -3,9 +3,9 @@ import { ArrowRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-const dineRightImage = new URL("../../assets/webp/dineright.webp", import.meta.url).href;
-const diningPreviewOne = new URL("../../assets/webp/WhatsApp Image 2026-03-10 at 15.55.45.webp", import.meta.url).href;
-const diningPreviewTwo = new URL("../../assets/webp/hand-touching-mobile-with-applications.webp", import.meta.url).href;
+const dineRightImage = "https://techflux.in/public/assets/images/dineright.webp"
+const diningPreviewOne = "https://techflux.in/public/assets/images/WhatsApp%20Image%202026-03-10%20at%2015.55.45.webp"
+const diningPreviewTwo = "https://techflux.in/public/assets/images/hand-touching-mobile-with-applications.webp"
 
 const challengePoints = [
   'Traditional restaurant booking lacks curated experiences',

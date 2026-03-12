@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
 import { Navigation } from '../components/Navigation';
-const allstarImage = new URL("../../assets/webp/car.webp", import.meta.url).href;
+const allstarImage = "https://techflux.in/public/assets/images/car.webp"
 
 const challengeItems = [
   'Inefficient manual inventory tracking system',
