@@ -215,7 +215,7 @@ export default function AllstarPremierAutoCaseStudy() {
               {featureItems.map((item) => (
                 <div
                   key={item}
-                  className="rounded-xl border border-white/6 bg-[#111D33] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+                  className="rounded-2xl border border-white/6 bg-[#111D33] px-5 py-4 shadow-[0_10px_24px_rgba(2,10,28,0.24)] transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:rounded-xl md:p-5 md:shadow-none"
                 >
                   <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[#26497A] bg-[#122C4D]">
                     <CheckCircle2 className="h-5 w-5 text-[#3B82F6]" />

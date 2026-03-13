@@ -184,11 +184,11 @@ export default function DineRightCaseStudy() {
               Delivering a premium dining booking experience
             </p>
 
-            <div className="mx-auto grid max-w-[980px] gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto grid max-w-[980px] gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {keyFeatures.map((feature) => (
                 <div
                   key={feature}
-                  className="flex min-h-[98px] flex-col justify-center rounded-xl border border-[#1E2E49] bg-[#111B31] px-4 py-3.5"
+                  className="flex min-h-[110px] flex-col justify-center rounded-2xl border border-[#1E2E49] bg-[#111B31] px-5 py-4 shadow-[0_10px_24px_rgba(2,10,28,0.24)] md:min-h-[98px] md:rounded-xl md:px-4 md:py-3.5 md:shadow-none"
                 >
                   <Check className="mb-3 h-4 w-4 text-[#57B0FF]" />
                   <p className="text-[15px] font-semibold text-[#E5E7EB]">{feature}</p>

@@ -174,7 +174,7 @@ export default function Etern8CaseStudy() {
             </h2>
             <div className="grid gap-4 md:grid-cols-2">
               {featureItems.map((item) => (
-                <div key={item.title} className="rounded-xl border border-white/6 bg-[#111D33] p-5">
+                <div className="rounded-2xl border border-white/6 bg-[#111D33] px-5 py-4 shadow-[0_10px_24px_rgba(2,10,28,0.24)] md:rounded-xl md:p-5 md:shadow-none" key={item.title}>
                   <p className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#2F80ED]" />
                     <span>

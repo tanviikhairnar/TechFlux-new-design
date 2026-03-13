@@ -10,7 +10,7 @@ const imageSources = {
 const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/company/techfluxsolutions1/", label: "LinkedIn" },
   { icon: Instagram, href: "https://www.instagram.com/techflux_solutions?igsh=MW0zdHl4bnhkajYxYQ==", label: "Instagram" },
-  { icon: Github, href: "https://www.linkedin.com/company/techfluxsolutions1/", label: "GitHub" },
+  { icon: Github, href: "https://github.com/techfluxsolutions", label: "GitHub" },
 ];
 
 const quickLinks = [
