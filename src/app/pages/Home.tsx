@@ -377,7 +377,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative order-2 md:order-1"
             >
               <div className="relative overflow-hidden rounded-3xl">
                 <img
@@ -396,6 +396,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="order-1 md:order-2"
             >
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#F9FAFB] mb-6"
@@ -530,7 +531,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative order-2 md:order-1"
             >
               <div className="relative overflow-hidden rounded-3xl">
                 <img
@@ -549,6 +550,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="order-1 md:order-2"
             >
               <h2
                 className="text-4xl md:text-5xl font-bold text-[#F9FAFB] mb-6"
