@@ -11,7 +11,7 @@ const fashionStoreImage = "https://techflux.in/public/assets/images/WhatsApp%20I
 const fuztechImage = "https://techflux.in/public/assets/images/On%20Demand.webp"
 const etern8Image = "https://techflux.in/public/assets/images/AI.webp"
 const mobileTechImage = "https://techflux.in/public/assets/images/hand-touching-mobile-with-applications.webp"
-const leaveCertificateImage = "https://techflux.in/public/assets/images/pexels-pavel-danilyuk-8112119.jpg"
+const leaveCertificateImage = "https://techflux.in/public/assets/images/pexels-pavel-danilyuk-8112119.webp"
 
 type CaseStudy = {
   name: string;
