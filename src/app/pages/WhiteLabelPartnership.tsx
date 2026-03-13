@@ -228,6 +228,9 @@ export default function WhiteLabelPartnership() {
                 <img
                   src={whiteLabelImage}
                   alt="Handshake on laptop screen"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                   className="h-auto w-full rounded-xl object-contain"
                 />
               </div>
@@ -403,7 +406,14 @@ export default function WhiteLabelPartnership() {
             </motion.div>
             <div className="overflow-hidden rounded-2xl border border-white/5 bg-[#0F1B31]">
               <div className="grid md:grid-cols-2">
-                <img src={caseStudy.img} alt={caseStudy.title} className="h-[320px] w-full object-cover object-center md:h-full md:min-h-[460px]" />
+                <img
+                  src={caseStudy.img}
+                  alt={caseStudy.title}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
+                  className="h-[320px] w-full object-cover object-center md:h-full md:min-h-[460px]"
+                />
                 <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12">
                   <h3 className="mb-4 text-2xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {caseStudy.title}

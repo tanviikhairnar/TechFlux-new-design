@@ -136,7 +136,14 @@ export default function CaseStudies() {
                 className="group overflow-hidden rounded-2xl border border-white/6 bg-[#101A31] transition-all hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden">
-                  <img src={item.image} alt={item.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                   {item.inProgress && (
                     <span className="absolute right-3 top-3 rounded-full bg-[#2F80ED] px-2.5 py-1 text-xs font-medium text-white">
                       Work In Progress
@@ -211,7 +218,6 @@ export default function CaseStudies() {
     </div>
   );
 }
-
 
 
 

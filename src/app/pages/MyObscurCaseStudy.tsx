@@ -110,6 +110,9 @@ export default function MyObscurCaseStudy() {
               <img
                 src={myObscurImage}
                 alt="MyObscur ecommerce interface"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="h-auto w-full object-contain"
               />
             </motion.div>

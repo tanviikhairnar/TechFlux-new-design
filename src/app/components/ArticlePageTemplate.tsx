@@ -87,7 +87,15 @@ export function ArticlePageTemplate({
             className="relative mb-12 overflow-hidden rounded-3xl border border-[#274468]/70 bg-[#0B1426] px-5 py-8 md:px-8 md:py-10"
           >
             {headingBackgroundImage ? (
-              <img src={headingBackgroundImage} alt="" aria-hidden="true" className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center" />
+              <img
+                src={headingBackgroundImage}
+                alt=""
+                aria-hidden="true"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+              />
             ) : null}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/92 via-black/82 to-black/72" />
             <div className="relative z-10">

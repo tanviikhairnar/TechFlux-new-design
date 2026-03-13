@@ -128,6 +128,9 @@ export default function AllstarPremierAutoCaseStudy() {
               <img
                 src={allstarImage}
                 alt="Allstar Premier Auto inventory"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="h-auto w-full object-contain"
               />
             </motion.div>

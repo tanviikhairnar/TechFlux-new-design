@@ -74,7 +74,14 @@ export function CaseStudySection({
         <div className={cardClassName}>
           <div className={gridClassName}>
             <div className={resolvedImageWrapClassName}>
-              <img src={imageSrc} alt={imageAlt} className={resolvedImageClassName} />
+              <img
+                src={imageSrc}
+                alt={imageAlt}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                className={resolvedImageClassName}
+              />
             </div>
             <div className={contentClassName}>
               {badgeText ? <span className={badgeClassName}>{badgeText}</span> : null}

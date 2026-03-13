@@ -107,6 +107,9 @@ export default function DineRightCaseStudy() {
               <img
                 src={dineRightImage}
                 alt="Dine Right platform"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="h-auto w-full object-contain"
               />
             </motion.div>
@@ -244,6 +247,9 @@ export default function DineRightCaseStudy() {
               <img
                 src={diningPreviewOne}
                 alt="Dine Right experience preview 1"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
                 className="h-[280px] w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-[360px]"
               />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#071227]/85 to-transparent" />
@@ -252,6 +258,9 @@ export default function DineRightCaseStudy() {
               <img
                 src={diningPreviewTwo}
                 alt="Dine Right experience preview 2"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
                 className="h-[280px] w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-[360px]"
               />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#071227]/85 to-transparent" />

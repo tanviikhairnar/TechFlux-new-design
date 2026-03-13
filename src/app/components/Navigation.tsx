@@ -32,6 +32,8 @@ export function Navigation() {
               <img
                 src={TechfluxLogo}
                 alt="Techflux Logo"
+                loading="eager"
+                decoding="async"
                 className="h-9 w-9 object-contain"
               />
               <span
@@ -213,7 +215,6 @@ export function Navigation() {
     </nav>
   );
 }
-
 
 
 

@@ -117,7 +117,14 @@ export function ServiceHeroSection({
           className={resolvedImageContainerClassName}
         >
           {resolvedImageOverlayClassName ? <div className={resolvedImageOverlayClassName} /> : null}
-          <img src={imageSrc} alt={imageAlt} className={resolvedImageClassName} />
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+            className={resolvedImageClassName}
+          />
         </motion.div>
       </div>
     </section>

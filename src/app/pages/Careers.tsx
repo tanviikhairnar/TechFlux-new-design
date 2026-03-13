@@ -137,7 +137,14 @@ export default function Careers() {
               transition={{ duration: 0.65, delay: 0.1 }}
               className="overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
             >
-              <img src={teamPhoto} alt="Techflux team at work" className="h-auto w-full object-contain" />
+              <img
+                src={teamPhoto}
+                alt="Techflux team at work"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                className="h-auto w-full object-contain"
+              />
             </motion.div>
           </section>
 
@@ -307,7 +314,14 @@ export default function Careers() {
                     style={{ background: 'rgba(255,255,255,0.03)' }}
                   >
                     <div className="relative aspect-[16/10] w-full overflow-hidden">
-                      <img src={card.image} alt={card.title} className="h-full w-full object-cover object-center" />
+                      <img
+                        src={card.image}
+                        alt={card.title}
+                        loading="lazy"
+                        decoding="async"
+                        fetchPriority="low"
+                        className="h-full w-full object-cover object-center"
+                      />
                       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0E1B34] to-transparent" />
                     </div>
                     <div className="p-5">

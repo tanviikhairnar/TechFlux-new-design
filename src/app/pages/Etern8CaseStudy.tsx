@@ -116,6 +116,9 @@ export default function Etern8CaseStudy() {
               <img
                 src={etern8Image}
                 alt="Etern 8 wellness platform"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="h-auto w-full object-contain"
               />
             </motion.div>

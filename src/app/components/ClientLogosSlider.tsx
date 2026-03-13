@@ -47,6 +47,11 @@ export function ClientLogosSlider() {
                   <img
                     src={logo.src}
                     alt={logo.alt}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                    width={180}
+                    height={56}
                     className="max-h-14 w-auto object-contain brightness-0 invert opacity-60 transition-all duration-500 ease-out transform-gpu group-hover:scale-105 group-hover:opacity-80"
                   />
                 </div>

@@ -209,6 +209,9 @@ export default function UnityGameDevelopment() {
               <img
                 src={unityHeroImage}
                 alt="Unity game development architecture"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="h-auto w-full object-contain"
               />
             </motion.div>
@@ -353,7 +356,14 @@ export default function UnityGameDevelopment() {
                   className="group overflow-hidden rounded-2xl border border-white/5 bg-[#0F172A] transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <div className="relative aspect-[16/10] w-full overflow-hidden">
-                    <img src={item.image} alt={item.title} className="h-full w-full object-cover object-center" />
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      decoding="async"
+                      fetchPriority="low"
+                      className="h-full w-full object-cover object-center"
+                    />
                   </div>
                   <div className="p-6">
                     <span className="rounded-full bg-[#11294F] px-2 py-1 text-xs text-[#6FB9FF]">{item.tag}</span>
@@ -461,6 +471,5 @@ export default function UnityGameDevelopment() {
     </div>
   );
 }
-
 
 

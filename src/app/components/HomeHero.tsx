@@ -55,6 +55,9 @@ const HomeHero = () => {
             <img
               src={homeHeroImage}
               alt="AI Technology"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
               className="h-full w-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F1A] via-transparent to-transparent" />

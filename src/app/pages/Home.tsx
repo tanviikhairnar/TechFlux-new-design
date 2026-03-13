@@ -245,6 +245,9 @@ export default function Home() {
               <img
                 src={homeHeroAiImage}
                 alt="AI Technology"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="w-full max-w-[640px] h-auto rounded-2xl ml-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F1A] via-transparent to-transparent" />
@@ -380,6 +383,9 @@ export default function Home() {
                 <img
                   src={homeSaasImage}
                   alt="SaaS Dashboard"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                   className="w-full h-auto object-contain rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
@@ -503,6 +509,9 @@ export default function Home() {
                 <img
                   src={homeAiGradientImage}
                   alt="AI Gradient"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                   className="w-full h-auto object-contain rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
@@ -527,6 +536,9 @@ export default function Home() {
                 <img
                   src={onDemandImage}
                   alt="On-Demand App"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                   className="w-full h-auto object-contain rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
@@ -777,7 +789,14 @@ export default function Home() {
                 className="group overflow-hidden rounded-2xl border border-white/6 bg-[#101A31] transition-all hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden">
-                  <img src={item.image} alt={item.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                 </div>
 
                 <div className="p-5">

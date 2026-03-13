@@ -115,6 +115,9 @@ export default function FuzTechCaseStudy() {
               <img
                 src={fuztechImage}
                 alt="FuzTech repair booking platform"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="h-auto w-full object-contain"
               />
             </motion.div>

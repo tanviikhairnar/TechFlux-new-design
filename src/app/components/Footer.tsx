@@ -40,7 +40,14 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-6 flex items-center gap-3">
-              <img src={imageSources.techfluxLogo} alt="Techflux Logo" className="h-9 w-9" />
+              <img
+                src={imageSources.techfluxLogo}
+                alt="Techflux Logo"
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                className="h-9 w-9"
+              />
               <span className="font-sora text-xl font-semibold text-white">
                 Techflux Solutions
               </span>

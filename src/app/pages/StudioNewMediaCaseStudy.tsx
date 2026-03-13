@@ -115,6 +115,9 @@ export default function StudioNewMediaCaseStudy() {
               <img
                 src={studioImage}
                 alt="Studio New Media CMS platform"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="h-auto w-full object-contain"
               />
             </motion.div>

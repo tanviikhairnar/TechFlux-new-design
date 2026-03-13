@@ -111,6 +111,9 @@ export default function ServyoCaseStudy() {
               <img
                 src={servyoImage}
                 alt="Servyo app showcase"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="h-auto w-full object-contain"
               />
             </motion.div>

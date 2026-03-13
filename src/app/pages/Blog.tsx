@@ -78,7 +78,14 @@ export default function Blog() {
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#24314a] bg-[#101A31] shadow-[0_20px_35px_rgba(2,8,23,0.28)] transition-all hover:border-[#32598b]"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden">
-                  <img src={post.image} alt={post.title} className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                    className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <div className="mb-3 flex items-center gap-2.5 text-xs">
@@ -144,7 +151,6 @@ export default function Blog() {
     </div>
   );
 }
-
 
 
 

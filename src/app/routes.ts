@@ -1,32 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "./pages/Home";
-import BookStrategyCall from "./pages/BookStrategyCall";
-import GetEstimate from "./pages/GetEstimate";
-import BecomePartner from "./pages/BecomePartner";
-import WhiteLabelPartnership from "./pages/WhiteLabelPartnership";
-import Contact from "./pages/Contact";
-import SaaSDevelopment from "./pages/SaaSDevelopment";
-import AISolutions from "./pages/AISolutions";
-import OnDemandSolutions from "./pages/OnDemandSolutions";
-import UnityGameDevelopment from "./pages/UnityGameDevelopment";
-import EcommerceSolutions from "./pages/EcommerceSolutions";
-import CaseStudies from "./pages/CaseStudies";
-import Blog from "./pages/Blog";
-import Careers from "./pages/Careers";
-import CareerDetails from "./pages/CareerDetails";
-import CareerApply from "./pages/CareerApply";
-import SaaSStartupChallengesArticle from "./pages/SaaSStartupChallengesArticle";
-import SaaSMVPIn60DaysArticle from "./pages/SaaSMVPIn60DaysArticle";
-import OnDemandAppChallengesArticle from "./pages/OnDemandAppChallengesArticle";
-import ServyoCaseStudy from "./pages/ServyoCaseStudy";
-import DineRightCaseStudy from "./pages/DineRightCaseStudy";
-import AllstarPremierAutoCaseStudy from "./pages/AllstarPremierAutoCaseStudy";
-import MyObscurCaseStudy from "./pages/MyObscurCaseStudy";
-import LeaveCertificateCaseStudy from "./pages/LeaveCertificateCaseStudy";
-import FuzTechCaseStudy from "./pages/FuzTechCaseStudy";
-import Etern8CaseStudy from "./pages/Etern8CaseStudy";
-import StudioNewMediaCaseStudy from "./pages/StudioNewMediaCaseStudy";
+import type { ComponentType } from "react";
 import ScrollToTop from "./components/ScrollToTop";
+
+type LazyImport = () => Promise<{ default: ComponentType }>;
+
+const lazyPage = (importer: LazyImport) => async () => {
+  const mod = await importer();
+  return { Component: mod.default };
+};
 
 export const router = createBrowserRouter([
   {
@@ -34,115 +15,115 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        Component: Home,
+        lazy: lazyPage(() => import("./pages/Home")),
       },
       {
         path: "/book-strategy-call",
-        Component: BookStrategyCall,
+        lazy: lazyPage(() => import("./pages/BookStrategyCall")),
       },
       {
         path: "/get-estimate",
-        Component: GetEstimate,
+        lazy: lazyPage(() => import("./pages/GetEstimate")),
       },
       {
         path: "/become-partner",
-        Component: BecomePartner,
+        lazy: lazyPage(() => import("./pages/BecomePartner")),
       },
       {
         path: "/services/white-label-partnership",
-        Component: WhiteLabelPartnership,
+        lazy: lazyPage(() => import("./pages/WhiteLabelPartnership")),
       },
       {
         path: "/services/white-lable-partnership",
-        Component: WhiteLabelPartnership,
+        lazy: lazyPage(() => import("./pages/WhiteLabelPartnership")),
       },
       {
         path: "/contact",
-        Component: Contact,
+        lazy: lazyPage(() => import("./pages/Contact")),
       },
       {
         path: "/saas-development",
-        Component: SaaSDevelopment,
+        lazy: lazyPage(() => import("./pages/SaaSDevelopment")),
       },
       {
         path: "/ai-solutions",
-        Component: AISolutions,
+        lazy: lazyPage(() => import("./pages/AISolutions")),
       },
       {
         path: "/on-demand-solutions",
-        Component: OnDemandSolutions,
+        lazy: lazyPage(() => import("./pages/OnDemandSolutions")),
       },
       {
         path: "/unity-game-development",
-        Component: UnityGameDevelopment,
+        lazy: lazyPage(() => import("./pages/UnityGameDevelopment")),
       },
       {
         path: "/e-commerce-solutions",
-        Component: EcommerceSolutions,
+        lazy: lazyPage(() => import("./pages/EcommerceSolutions")),
       },
       {
         path: "/case-studies",
-        Component: CaseStudies,
+        lazy: lazyPage(() => import("./pages/CaseStudies")),
       },
       {
         path: "/case-studies/servyo",
-        Component: ServyoCaseStudy,
+        lazy: lazyPage(() => import("./pages/ServyoCaseStudy")),
       },
       {
         path: "/case-studies/dine-right",
-        Component: DineRightCaseStudy,
+        lazy: lazyPage(() => import("./pages/DineRightCaseStudy")),
       },
       {
         path: "/case-studies/allstar-premier-auto",
-        Component: AllstarPremierAutoCaseStudy,
+        lazy: lazyPage(() => import("./pages/AllstarPremierAutoCaseStudy")),
       },
       {
         path: "/case-studies/myobscur",
-        Component: MyObscurCaseStudy,
+        lazy: lazyPage(() => import("./pages/MyObscurCaseStudy")),
       },
       {
         path: "/case-studies/leave-certificate",
-        Component: LeaveCertificateCaseStudy,
+        lazy: lazyPage(() => import("./pages/LeaveCertificateCaseStudy")),
       },
       {
         path: "/case-studies/fuztech",
-        Component: FuzTechCaseStudy,
+        lazy: lazyPage(() => import("./pages/FuzTechCaseStudy")),
       },
       {
         path: "/case-studies/etern8",
-        Component: Etern8CaseStudy,
+        lazy: lazyPage(() => import("./pages/Etern8CaseStudy")),
       },
       {
         path: "/case-studies/studio-new-media",
-        Component: StudioNewMediaCaseStudy,
+        lazy: lazyPage(() => import("./pages/StudioNewMediaCaseStudy")),
       },
       {
         path: "/blog",
-        Component: Blog,
+        lazy: lazyPage(() => import("./pages/Blog")),
       },
       {
         path: "/careers",
-        Component: Careers,
+        lazy: lazyPage(() => import("./pages/Careers")),
       },
       {
         path: "/careers/:slug",
-        Component: CareerDetails,
+        lazy: lazyPage(() => import("./pages/CareerDetails")),
       },
       {
         path: "/careers/apply",
-        Component: CareerApply,
+        lazy: lazyPage(() => import("./pages/CareerApply")),
       },
       {
         path: "/blog/ai-integration-services-structured-approach",
-        Component: SaaSStartupChallengesArticle,
+        lazy: lazyPage(() => import("./pages/SaaSStartupChallengesArticle")),
       },
       {
         path: "/blog/saas-mvp-development-2026",
-        Component: SaaSMVPIn60DaysArticle,
+        lazy: lazyPage(() => import("./pages/SaaSMVPIn60DaysArticle")),
       },
       {
         path: "/blog/white-label-saas-development-strategic-infrastructure",
-        Component: OnDemandAppChallengesArticle,
+        lazy: lazyPage(() => import("./pages/OnDemandAppChallengesArticle")),
       },
     ],
   },
