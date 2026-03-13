@@ -28,7 +28,7 @@ import { InvestmentCardsSection } from '../components/InvestmentCardsSection';
 import { TechnologyStackSection } from '../components/TechnologyStackSection';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
 
-const aiHeroImage = "https://techflux.in/public/assets/images/AI.webp"
+const aiHeroImage = "https://techflux.in/public/assets/images/return8.webp"
 const aiCaseImage = "https://techflux.in/public/assets/images/3649760.webp"
 
 const aiSolutions = [

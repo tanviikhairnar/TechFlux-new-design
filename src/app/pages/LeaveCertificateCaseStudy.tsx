@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Code2, TrendingUp, Users, 
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-const leaveCertificateImage = "https://techflux.in/public/assets/images/Macbook%20Pro%20-%20FREE%20(1).webp"
+const leaveCertificateImage = "https://techflux.in/public/assets/images/leave-serificate.webp"
 
 const challengeItems = [
   'Manual certificate management consuming excessive administrative time',

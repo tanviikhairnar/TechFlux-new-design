@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { BecomePartnerButton, BookStrategyCallButton } from "./GetProjectEstimateButton";
 
 const imageSources = {
-  techfluxLogo: "https://techflux.in/img/assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png",
+  techfluxLogo: "https://techflux.in/public/assets/images/TFlogo.png",
 };
 
 const socialLinks = [

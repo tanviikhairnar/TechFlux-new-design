@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-const servyoImage = "https://techflux.in/public/assets/images/WhatsApp%20Image%202026-03-06%20at%2012.15.24.webp"
+const servyoImage = "https://techflux.in/public/assets/images/servyoCollage.webp"
 const dinerightImage = "https://techflux.in/public/assets/images/dineright.webp"
 const allstarImage = "https://techflux.in/public/assets/images/car.webp"
-const fashionStoreImage = "https://techflux.in/public/assets/images/WhatsApp%20Image%202026-03-10%20at%2015.55.45.webp"
-const fuztechImage = "https://techflux.in/public/assets/images/On%20Demand.webp"
-const etern8Image = "https://techflux.in/public/assets/images/AI.webp"
-const mobileTechImage = "https://techflux.in/public/assets/images/hand-touching-mobile-with-applications.webp"
-const leaveCertificateImage = "https://techflux.in/public/assets/images/8112119_list_card.webp"
+const fashionStoreImage = "https://techflux.in/public/assets/images/MyObscur.webp"
+const fuztechImage = "https://techflux.in/public/assets/images/fuztech.webp"
+const etern8Image = "https://techflux.in/public/assets/images/return8.webp"
+const mobileTechImage = "https://techflux.in/public/assets/images/studionewmedia.webp"
+const leaveCertificateImage = "https://techflux.in/public/assets/images/leave-serificate.webp"
 
 type CaseStudy = {
   name: string;

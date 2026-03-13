@@ -1,5 +1,5 @@
 import { ArticlePageTemplate, type ArticleSection } from '../components/ArticlePageTemplate';
-const onDemandBlogImage = new URL("../../assets/webp/On Demand.webp", import.meta.url).href;
+const onDemandBlogImage = "https://techflux.in/public/assets/images/On%20Demand%20platforms.webp"
 
 const sections: ArticleSection[] = [
   {

@@ -4,7 +4,7 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BookStrategyCallButton } from './GetProjectEstimateButton';
 const TechfluxLogo =
-  "https://techflux.in/img/assets/97803067c0aec46e43b07e2df6709083ebfe41e9.png";
+  "https://techflux.in/public/assets/images/TFlogo.png";
 
 export function Navigation() {
   const [servicesOpen, setServicesOpen] = useState(false);

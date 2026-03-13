@@ -9,10 +9,10 @@ import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { ClientLogosSlider } from '../components/ClientLogosSlider';
 const homeHeroAiImage = "https://techflux.in/public/assets/images/AI%20(1).webp"
-const homeSaasImage = "https://techflux.in/public/assets/images/SaaS.webp"
-const homeAiGradientImage = "https://techflux.in/public/assets/images/photo-1760629863094-5b1e8d1aae74.webp"
-const onDemandImage = "https://techflux.in/public/assets/images/On%20Demand%20(1).webp"
-const servyoCaseImage = "https://techflux.in/public/assets/images/Group%201000003012.webp"
+const homeSaasImage = "https://techflux.in/public/assets/images/senterpriseSaaS%20development.webp"
+const homeAiGradientImage = "https://techflux.in/public/assets/images/return8.webp"
+const onDemandImage = "https://techflux.in/public/assets/images/On%20Demand%20platforms.webp"
+const servyoCaseImage = "https://techflux.in/public/assets/images/servyoCollage.webp"
 const allstarCaseImage = "https://techflux.in/public/assets/images/car.webp"
 const eternCaseImage = "https://techflux.in/public/assets/images/3649760.webp"
 
@@ -86,6 +86,33 @@ const testimonialsData = [
     text: 'I had a fantastic experience working with Techflux and his team. They demonstrated creativity, met deadlines consistently, delivered high-quality output, and provided clean documentation and smooth handoff. Great execution across website development and tooling.',
     name: 'Parth',
     company: 'Dine Right',
+  },
+];
+
+const successStories = [
+  {
+    name: 'Servyo',
+    description: 'Multi-role platform with real-time booking & subscriptions',
+    image: servyoCaseImage,
+    tags: ['Flutter', 'Web App', 'Payment Gateway'],
+    categoryLabel: 'Service Marketplace',
+    caseStudyUrl: '/case-studies/servyo',
+  },
+  {
+    name: 'Allstar Premier Auto',
+    description: 'Streamlined inventory management & enhanced lead conversion',
+    image: allstarCaseImage,
+    tags: ['Custom Inventory', 'Analytics', 'Lead Generation'],
+    categoryLabel: 'Automotive',
+    caseStudyUrl: '/case-studies/allstar-premier-auto',
+  },
+  {
+    name: 'Etern 8',
+    description: 'AI-powered personalized health insights from wearable data',
+    image: eternCaseImage,
+    tags: ['AI Engine', 'Smartwatch Integration', 'Health Analytics'],
+    categoryLabel: 'AI Wellness',
+    caseStudyUrl: '/case-studies/etern8',
   },
 ];
 
@@ -733,75 +760,50 @@ export default function Home() {
               to="/case-studies"
               className="text-[#2F80ED] font-semibold flex items-center gap-2 hover:text-[#66B7FF] transition-colors"
             >
-              View All Case Studies →
+              View All Case Studies
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                image: servyoCaseImage,
-                category: "Service Marketplace",
-                title: "Servyo",
-                description:
-                  "Multi-role platform with real-time booking and subscriptions.",
-                metric: "Booking + subscriptions",
-              },
-              {
-                image: allstarCaseImage,
-                category: "Automotive",
-                title: "Allstar Premier Auto",
-                description:
-                  "Streamlined inventory management with improved lead conversion.",
-                metric: "Inventory + lead funnel",
-              },
-              {
-                image: eternCaseImage,
-                category: "AI Wellness",
-                title: "Etern 8",
-                description:
-                  "AI-powered personalized health insights generated from wearable data.",
-                metric: "Wearable AI insights",
-              },
-            ].map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
+            {successStories.map((item, index) => (
+              <motion.article
+                key={item.name}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group rounded-2xl overflow-hidden border border-white/5 bg-[#111827] hover:border-[#2F80ED]/30 transition-all shadow-lg"
+                className="group overflow-hidden rounded-2xl border border-white/6 bg-[#101A31] transition-all hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
               >
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                  <img src={item.image} alt={item.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
 
-                <div className="p-6">
-                  <span className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full bg-[#1E293B] text-[#2F80ED]">
-                    {project.category}
+                <div className="p-5">
+                  <span className="mb-3 inline-flex rounded-full bg-[#10284D] px-3 py-1 text-xs text-[#6DB6FF]">
+                    {item.categoryLabel}
                   </span>
 
-                  <h3
-                    className="text-xl font-bold text-[#F9FAFB] mb-3"
-                    style={{ fontFamily: "Sora, sans-serif" }}
-                  >
-                    {project.title}
+                  <h3 className="mb-2 text-2xl font-semibold text-[#E5E7EB] md:text-3xl" style={{ fontFamily: 'Sora, sans-serif' }}>
+                    {item.name}
                   </h3>
 
-                  <p className="text-[#9CA3AF] mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  <div className="text-[#2F80ED] font-semibold flex items-center gap-2">
-                    ↗ {project.metric}
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span key={tag} className="rounded-md bg-[#1B2942] px-2.5 py-1 text-xs text-[#9FB2CD]">
+                        {tag}
+                      </span>
+                    ))}
                   </div>
+
+                  <p className="mb-4 text-sm leading-relaxed text-[#94A3B8]">{item.description}</p>
+                  <Link to={item.caseStudyUrl} className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F80ED] transition-colors hover:text-[#6DB6FF]">
+                    View Case Study
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </div>
@@ -1003,6 +1005,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 
 

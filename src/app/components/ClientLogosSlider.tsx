@@ -1,10 +1,11 @@
 const clientLogos = [
-  { src: "https://techflux.in/public/assets/images/allstar_logo_i.webp", alt: "Allstar" },
-  { src: "https://techflux.in/public/assets/images/aqato_logo_i.webp", alt: "Aqato" },
-  { src: "https://techflux.in/public/assets/images/Studio%20new%20media%20logo_black_new.webp", alt: "Studio New Media" },
-  { src: "https://techflux.in/public/assets/images/BG.webp", alt: "Edited Logo 1" },
-  { src: "https://techflux.in/public/assets/images/WhatsApp_Image_2026-03-05_at_17.04.59-removebg-preview.webp", alt: "Edited Logo 2" },
-  { src: "https://techflux.in/public/assets/images/WhatsApp_Image_2026-03-05_at_17.04.24-removebg-preview.webp", alt: "Edited Logo 3" }
+  { src: "https://techflux.in/public/assets/images/logo/logo1.webp", alt: "Aqato" },
+  { src: "https://techflux.in/public/assets/images/logo/logo2.webp", alt: "Studio New Media" },
+  { src: "https://techflux.in/public/assets/images/logo/logo3.webp", alt: "Edited Logo 1" },
+  { src: "https://techflux.in/public/assets/images/logo/logo4.webp", alt: "Edited Logo 2" },
+  { src: "https://techflux.in/public/assets/images/logo/logo5.webp", alt: "Edited Logo 3" },
+  { src: "https://techflux.in/public/assets/images/logo/logo6.png", alt: "Edited Logo 5" },
+  { src: "https://techflux.in/public/assets/images/logo/logo7.webp", alt: "Edited Logo 4" },
 ];
 
 export function ClientLogosSlider() {

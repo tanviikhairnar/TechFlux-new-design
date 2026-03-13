@@ -11,8 +11,8 @@ import {
   TrendingUp,
   Users,
 } from 'lucide-react';
-const teamPhoto = "https://techflux.in/public/assets/images/WhatsApp%20Image%202026-03-10%20at%2015.39.11.webp";
-const workspacePhoto = "https://techflux.in/public/assets/images/hand-touching-mobile-with-applications.webp"
+const teamPhoto = "https://techflux.in/public/assets/images/team-photo.webp";
+const workspacePhoto = "https://techflux.in/public/assets/images/studionewmedia.webp"
 const growthPhoto = "https://techflux.in/public/assets/images/pexels-cottonbro-5483071.webp"
 import { Footer } from '../components/Footer';
 import { CareerApplyNowButton, CareerViewDetailsButton } from '../components/GetProjectEstimateButton';

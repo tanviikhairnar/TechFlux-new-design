@@ -4,9 +4,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-const saasBlogImage = "https://techflux.in/public/assets/images/iMac%20-%20FREE%20(1).webp"
-const aiBlogImage = "https://techflux.in/public/assets/images/AI.webp"
-const onDemandBlogImage = "https://techflux.in/public/assets/images/On%20Demand.webp"
+const saasBlogImage = "https://techflux.in/public/assets/images/senterpriseSaaS%20development.webp"
+const aiBlogImage = "https://techflux.in/public/assets/images/return8.webp"
+const onDemandBlogImage = "https://techflux.in/public/assets/images/On%20Demand%20platforms.webp"
 
 const posts = [
   {

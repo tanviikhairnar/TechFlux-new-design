@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
 const dineRightImage = "https://techflux.in/public/assets/images/dineright.webp"
-const diningPreviewOne = "https://techflux.in/public/assets/images/WhatsApp%20Image%202026-03-10%20at%2015.55.45.webp"
-const diningPreviewTwo = "https://techflux.in/public/assets/images/hand-touching-mobile-with-applications.webp"
+const diningPreviewOne = "https://techflux.in/public/assets/images/MyObscur.webp"
+const diningPreviewTwo = "https://techflux.in/public/assets/images/studionewmedia.webp"
 
 const challengePoints = [
   'Traditional restaurant booking lacks curated experiences',

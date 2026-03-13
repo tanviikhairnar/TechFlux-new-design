@@ -30,8 +30,8 @@ import { CardsSection } from '../components/CardsSection';
 import { InvestmentCardsSection } from '../components/InvestmentCardsSection';
 import { TechnologyStackSection } from '../components/TechnologyStackSection';
 import { GetProjectEstimateButton } from '../components/GetProjectEstimateButton';
-const saasHeroImage = "https://techflux.in/public/assets/images/SaaS.webp"
-const leaveCertificateImage = "https://techflux.in/public/assets/images/WhatsApp%20Image%202026-03-06%20at%2012.15.24.webp"
+const saasHeroImage = "https://techflux.in/public/assets/images/senterpriseSaaS%20development.webp"
+const leaveCertificateImage = "https://techflux.in/public/assets/images/servyoCollage.webp"
 
 const saasSolutions = [
   {

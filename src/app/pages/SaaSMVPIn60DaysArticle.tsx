@@ -1,5 +1,5 @@
 import { ArticlePageTemplate, type ArticleSection } from '../components/ArticlePageTemplate';
-const saasBlogImage = "https://techflux.in/public/assets/images/iMac%20-%20FREE%20(1).webp"
+const saasBlogImage = "https://techflux.in/public/assets/images/fuztech.webp"
 
 const sections: ArticleSection[] = [
   {

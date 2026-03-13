@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle2, Circle, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
-const servyoImage = "https://techflux.in/public/assets/images/iMac%20-%20FREE%20(1).webp"
+const servyoImage = "https://techflux.in/public/assets/images/servyoCollage.webp"
 
 const challengePoints = [
   'Lack of centralized service booking system',
