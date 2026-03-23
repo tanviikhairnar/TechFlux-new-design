@@ -109,6 +109,7 @@ export const careerRoles: CareerRole[] = [
     requiredSkills: ['SEO fundamentals', 'Social media campaign handling', 'Google Ads basics'],
     niceToHave: ['Content marketing', 'Analytics tools knowledge', 'A/B testing mindset'],
     localPreference: 'Local candidates preferred',
+    eligibilityTag: 'Female',
   },
   {
     slug: 'game-developer',
