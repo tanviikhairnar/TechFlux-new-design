@@ -88,6 +88,7 @@ const lifeCards = [
 function tagIcon(label: string) {
   if (label.includes('Work From Office') || label.includes('Remote')) return Monitor;
   if (label.includes('Year') || label.includes('Month') || label.includes('Fresher')) return CalendarClock;
+  if (label.includes('Female')) return Users;
   return BriefcaseBusiness;
 }
 
@@ -212,7 +213,9 @@ export default function Careers() {
                         {position.title}
                       </h3>
                       <div className="mb-5 flex flex-wrap gap-x-6 gap-y-2 text-base text-[#90A8CB] md:text-lg">
-                        {[position.mode, position.experience, position.department].map((tag) => {
+                        {[position.mode, position.experience, position.department, position.eligibilityTag]
+                          .flatMap((tag) => (tag ? [tag] : []))
+                          .map((tag) => {
                           const Icon = tagIcon(tag);
                           return (
                             <span key={tag} className="inline-flex items-center gap-1.5">

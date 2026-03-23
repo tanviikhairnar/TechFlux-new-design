@@ -22,6 +22,15 @@ const quickLinks = [
   { label: "Contact", to: "/contact" },
 ];
 
+const serviceLinks = [
+  { label: "SaaS Development", to: "/saas-development" },
+  { label: "AI Solutions", to: "/ai-solutions" },
+  { label: "On-Demand Applications", to: "/on-demand-solutions" },
+  { label: "White-Label Partnership", to: "/services/white-label-partnership" },
+  { label: "Unity Game Development", to: "/unity-game-development" },
+  { label: "E-Commerce Solutions", to: "/e-commerce-solutions" },
+];
+
 export function Footer() {
   const contactIconClass = "mt-1 h-4 w-4 shrink-0 text-[#2F80ED]";
 
@@ -101,21 +110,14 @@ export function Footer() {
               Services
             </h3>
             <ul className="space-y-3 text-base">
-              {[
-                "SaaS Development",
-                "AI Solutions",
-                "On-Demand Applications",
-                "White-Label Partnership",
-                "Unity Game Development",
-                "E-Commerce Solutions",
-              ].map((item, i) => (
-                <li key={i}>
-                  <a
-                    href="#"
+              {serviceLinks.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    to={item.to}
                     className="text-[#9CA3AF] transition-colors hover:text-[#2F80ED]"
                   >
-                    {item}
-                  </a>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -11,6 +11,7 @@ export type CareerRole = {
   requiredSkills: string[];
   niceToHave: string[];
   localPreference?: string;
+  eligibilityTag?: string;
 };
 
 export const careerRoles: CareerRole[] = [
@@ -145,6 +146,7 @@ export const careerRoles: CareerRole[] = [
     ],
     requiredSkills: ['Figma or Adobe XD', 'Wireframing', 'Prototyping', 'Design thinking'],
     niceToHave: ['User research basics', 'Usability testing', 'Design system experience'],
+    eligibilityTag: 'Female',
   },
   {
     slug: 'software-tester-trainee',
@@ -164,6 +166,7 @@ export const careerRoles: CareerRole[] = [
     requiredSkills: ['Testing course or internship exposure', 'Test case understanding', 'Basic QA process awareness'],
     niceToHave: ['Automation tool basics', 'API testing basics', 'Strong attention to detail'],
     localPreference: 'Work From Office - Nashik only',
+    eligibilityTag: 'Female',
   },
   {
     slug: 'business-development-executive-it-sales',

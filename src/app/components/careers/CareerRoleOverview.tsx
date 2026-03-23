@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowLeft, BriefcaseBusiness, CheckCircle2, Clock3, MapPin, Monitor } from 'lucide-react';
+import { ArrowLeft, BriefcaseBusiness, CheckCircle2, Clock3, MapPin, Monitor, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CareerApplyNowButton } from '../GetProjectEstimateButton';
 import type { CareerRole } from '../../data/careers';
@@ -38,6 +38,12 @@ export function CareerRoleOverview({ role, showBackLink = false }: { role: Caree
               <BriefcaseBusiness className="h-4 w-4 text-[#2F80ED]" />
               {role.department}
             </span>
+            {role.eligibilityTag ? (
+              <span className="inline-flex items-center gap-2">
+                <Users className="h-4 w-4 text-[#2F80ED]" />
+                {role.eligibilityTag}
+              </span>
+            ) : null}
           </div>
         </div>
       </section>
