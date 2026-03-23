@@ -130,7 +130,7 @@ export const careerRoles: CareerRole[] = [
     localPreference: 'Local candidates preferred',
   },
   {
-    slug: 'ui-ux-designer',
+    slug: 'ui-ux-designer',   
     title: 'UI/UX Designer',
     experience: '6 Months - 1 Year',
     location: 'Nashik',
