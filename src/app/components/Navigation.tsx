@@ -23,7 +23,7 @@ export function Navigation() {
 ] as const;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[#10213F] bg-[#030A1C]/95 backdrop-blur-md">
+    <nav className="tf-glass-panel fixed top-0 left-0 right-0 z-50 border-b border-[#10213F] bg-[#030A1C]/88">
       <div className="tf-shell">
         <div className="flex h-[84px] items-center justify-between">
           
@@ -49,7 +49,7 @@ export function Navigation() {
 
             <Link
               to="/"
-              className="text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
+              className="tf-nav-link text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
             >
               Home
             </Link>
@@ -59,7 +59,7 @@ export function Navigation() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="flex items-center gap-1 text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white">
+              <button className="tf-nav-link flex items-center gap-1 text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white">
                 Services
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
@@ -75,14 +75,14 @@ export function Navigation() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 5 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute left-1/2 top-full mt-4 w-72 -translate-x-1/2 overflow-hidden rounded-xl border border-white/10 bg-[#111827]/95 shadow-2xl backdrop-blur-xl"
+                    className="tf-glass-panel absolute left-1/2 top-full mt-4 w-72 -translate-x-1/2 overflow-hidden rounded-xl border border-white/10 bg-[#111827]/88 shadow-2xl"
                   >
                     {serviceItems.map((item, i) =>
                       item.useRoute ? (
                         <Link
                           key={i}
                           to={item.href}
-                          className="block px-5 py-3 text-sm text-gray-300 transition-all hover:bg-[#2F80ED]/10 hover:text-white"
+                          className="block px-5 py-3 text-sm text-gray-300 transition-all hover:bg-[#2F80ED]/10 hover:pl-6 hover:text-white"
                         >
                           {item.label}
                         </Link>
@@ -90,7 +90,7 @@ export function Navigation() {
                         <a
                           key={i}
                           href={item.href}
-                          className="block px-5 py-3 text-sm text-gray-300 transition-all hover:bg-[#2F80ED]/10 hover:text-white"
+                          className="block px-5 py-3 text-sm text-gray-300 transition-all hover:bg-[#2F80ED]/10 hover:pl-6 hover:text-white"
                         >
                           {item.label}
                         </a>
@@ -103,27 +103,27 @@ export function Navigation() {
 
             <Link
               to="/case-studies"
-              className="text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
+              className="tf-nav-link text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
             >
               Case Studies
             </Link>
 
             <Link
               to="/blog"
-              className="text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
+              className="tf-nav-link text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
             >
               Blog
             </Link>
 
             <Link
               to="/contact"
-              className="text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
+              className="tf-nav-link text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
             >
               Contact
             </Link>
 
             <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-              <BookStrategyCallButton className="inline-flex h-[48px] items-center rounded-xl bg-gradient-to-r from-[#3AAEFE] to-[#2F80ED] px-6 text-[15px] font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30" />
+              <BookStrategyCallButton className="tf-button-primary inline-flex h-[48px] items-center rounded-xl bg-gradient-to-r from-[#3AAEFE] to-[#2F80ED] px-6 text-[15px] font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30" />
             </motion.div>
           </div>
 
@@ -146,10 +146,10 @@ export function Navigation() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden border-t border-white/5 py-4 bg-[#030A1C]/95 backdrop-blur-md"
+              className="tf-glass-panel lg:hidden border-t border-white/5 bg-[#030A1C]/88 py-4"
             >
               <div className="flex flex-col gap-3">
-                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-[17px] text-gray-400 hover:text-white py-2">
+                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="tf-lift-soft py-2 text-[17px] text-gray-400 hover:text-white">
                   Home
                 </Link>
 
@@ -157,7 +157,7 @@ export function Navigation() {
                   <button
                     type="button"
                     onClick={() => setMobileServicesOpen((prev) => !prev)}
-                    className="flex w-full items-center justify-between py-2 text-[17px] text-gray-400 transition-colors hover:text-white"
+                    className="tf-lift-soft flex w-full items-center justify-between py-2 text-[17px] text-gray-400 transition-colors hover:text-white"
                   >
                     <span>Services</span>
                     <ChevronDown
@@ -183,7 +183,7 @@ export function Navigation() {
                               setMobileMenuOpen(false);
                               setMobileServicesOpen(false);
                             }}
-                            className="block py-2 text-[16px] text-gray-400 transition-colors hover:text-white"
+                            className="tf-lift-soft block py-2 text-[16px] text-gray-400 transition-colors hover:text-white"
                           >
                             {item.label}
                           </Link>
@@ -193,18 +193,18 @@ export function Navigation() {
                   </AnimatePresence>
                 </div>
 
-                <Link to="/case-studies" onClick={() => setMobileMenuOpen(false)} className="text-[17px] text-gray-400 hover:text-white py-2">
+                <Link to="/case-studies" onClick={() => setMobileMenuOpen(false)} className="tf-lift-soft py-2 text-[17px] text-gray-400 hover:text-white">
                   Case Studies
                 </Link>
-                <Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="text-[17px] text-gray-400 hover:text-white py-2">
+                <Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="tf-lift-soft py-2 text-[17px] text-gray-400 hover:text-white">
                   Blog
                 </Link>
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="text-[17px] text-gray-400 hover:text-white py-2">
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="tf-lift-soft py-2 text-[17px] text-gray-400 hover:text-white">
                   Contact
                 </Link>
                 <BookStrategyCallButton
                   onClick={() => setMobileMenuOpen(false)}
-                  className="mt-2 rounded-lg bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] px-5 py-3 text-center text-[15px] font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30"
+                  className="tf-button-primary mt-2 rounded-lg bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] px-5 py-3 text-center text-[15px] font-semibold text-white transition-all duration-300 hover:brightness-110 hover:shadow-lg hover:shadow-[#2F80ED]/30"
                 />
               </div>
             </motion.div>
@@ -215,6 +215,5 @@ export function Navigation() {
     </nav>
   );
 }
-
 
 

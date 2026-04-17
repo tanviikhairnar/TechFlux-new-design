@@ -17,13 +17,44 @@ export function ClientLogosSlider() {
           to { transform: translateX(-50%); }
         }
 
+        @keyframes client-logo-float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-5px); }
+        }
+
         .client-logo-marquee-track {
           animation: client-logo-marquee 28s linear infinite;
+        }
+
+        .client-logo-item {
+          animation: client-logo-float 4.2s ease-in-out infinite;
+        }
+
+        .client-logo-mark {
+          transition:
+            opacity 280ms ease,
+            transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+            filter 320ms ease;
+        }
+
+        .client-logo-item:hover .client-logo-mark,
+        .client-logo-item:focus-within .client-logo-mark {
+          transform: scale(1.04);
+          opacity: 0.92;
+          filter: brightness(1.08);
         }
 
         @media (prefers-reduced-motion: reduce) {
           .client-logo-marquee-track {
             animation: none;
+          }
+
+          .client-logo-item {
+            animation: none;
+          }
+
+          .client-logo-mark {
+            transition: none;
           }
         }
       `}</style>
@@ -42,7 +73,8 @@ export function ClientLogosSlider() {
               {clientLogos.map((logo) => (
                 <div
                   key={`${groupIndex}-${logo.alt}`}
-                  className="group flex h-24 w-[180px] shrink-0 items-center justify-center"
+                  className="client-logo-item flex h-24 w-[180px] shrink-0 items-center justify-center"
+                  style={{ animationDelay: `${groupIndex * 0.5}s` }}
                 >
                   <img
                     src={logo.src}
@@ -52,7 +84,7 @@ export function ClientLogosSlider() {
                     fetchPriority="low"
                     width={180}
                     height={56}
-                    className="max-h-14 w-auto object-contain brightness-0 invert opacity-60 transition-all duration-500 ease-out transform-gpu group-hover:scale-105 group-hover:opacity-80"
+                    className="client-logo-mark max-h-14 w-auto object-contain brightness-0 invert opacity-65"
                   />
                 </div>
               ))}

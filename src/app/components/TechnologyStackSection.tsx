@@ -21,7 +21,7 @@ export function TechnologyStackSection({
   headingClassName = 'mb-3 text-[42px] font-semibold text-[#D8DEE8]',
   descriptionClassName = 'text-sm text-[#8A96AA] md:text-[15px]',
   tagsWrapClassName = 'mx-auto flex max-w-[1400px] flex-wrap justify-center gap-4',
-  tagClassName = 'inline-flex min-h-[72px] min-w-[120px] items-center justify-center rounded-2xl border border-[#1E2D46] bg-[#121F39] px-8 py-4 text-[16px] font-semibold tracking-wide text-[#D8DEE8] transition-all hover:border-[#2F80ED]/45 hover:bg-[#152645]',
+  tagClassName = 'tf-hover-card inline-flex min-h-[72px] min-w-[120px] items-center justify-center rounded-2xl border border-[#1E2D46] bg-[#121F39] px-8 py-4 text-[16px] font-semibold tracking-wide text-[#D8DEE8] transition-all hover:border-[#2F80ED]/45 hover:bg-[#152645]',
 }: TechnologyStackSectionProps) {
   return (
     <section className={sectionClassName}>

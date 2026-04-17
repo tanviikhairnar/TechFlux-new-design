@@ -327,20 +327,15 @@ export default function EcommerceSolutions() {
         <CaseStudySection
           title="E-commerce Platform We've Built"
           headingWrapClassName="mb-14 text-center"
-          headingClassName="mb-3 text-3xl font-semibold text-[#D8DEE8]"
-          cardClassName="overflow-hidden rounded-2xl border border-white/5 bg-[linear-gradient(110deg,#0F1B31_0%,#101A2D_55%,#0E1728_100%)]"
-          gridClassName="grid items-stretch md:grid-cols-[1.05fr_1fr]"
+          headingClassName="mb-4 text-4xl font-semibold text-[#D8DEE8] md:text-[52px]"
           imageWrapClassName="h-[280px] overflow-hidden md:h-[440px]"
           imageSrc={ecommerceCaseImage}
           imageAlt="Fashion e-commerce platform case study"
           imageClassName="h-full w-full object-cover object-center"
-          contentClassName="flex flex-col justify-center p-7 md:p-12"
           badgeText="Fashion E-commerce"
           badgeClassName="mb-6 inline-flex w-fit rounded-full border border-[#2F80ED]/30 bg-[#0F2A5F] px-5 py-2 text-sm font-medium text-[#56A9F5]"
           cardTitle="MyObscur - Fashion E-commerce Platform"
-          cardTitleClassName="mb-4 text-2xl font-semibold leading-tight text-[#D8DEE8] md:text-[40px]"
           description="A modern fashion commerce platform built with personalized journeys, secure checkout, and performance-focused storefront architecture."
-          descriptionClassName="mb-8 max-w-[620px] tf-muted-card"
           linkTo="/case-studies/myobscur"
           linkClassName="inline-flex items-center gap-2 text-xl font-semibold text-[#2F80ED] transition-colors hover:text-[#66B7FF]"
           linkSuffix={<ArrowUpRight className="h-5 w-5" />}

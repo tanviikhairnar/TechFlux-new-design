@@ -2,6 +2,10 @@
 
 :root {
   color-scheme: dark;
+  --tf-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --tf-ease-snappy: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --tf-shadow-soft: 0 18px 42px rgba(3, 11, 27, 0.3);
+  --tf-shadow-glow: 0 18px 48px rgba(47, 128, 237, 0.2);
 }
 
 body {
@@ -9,6 +13,7 @@ body {
   background: #020617;
   color: #e2e8f0;
   font-family: Inter, sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 #root {
@@ -16,6 +21,7 @@ body {
 }
 
 .tf-page {
+  position: relative;
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
@@ -25,7 +31,36 @@ body {
     linear-gradient(180deg, #020617 0%, #061228 48%, #020617 100%);
 }
 
+.tf-page::before,
+.tf-page::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 9999px;
+  filter: blur(110px);
+  opacity: 0.34;
+}
+
+.tf-page::before {
+  top: 8rem;
+  left: -8rem;
+  background: radial-gradient(circle, rgba(45, 156, 219, 0.3), transparent 68%);
+  animation: tfFloatOne 16s ease-in-out infinite;
+}
+
+.tf-page::after {
+  right: -10rem;
+  bottom: 5rem;
+  background: radial-gradient(circle, rgba(47, 128, 237, 0.24), transparent 70%);
+  animation: tfFloatTwo 18s ease-in-out infinite;
+}
+
 .tf-shell {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 1260px;
   margin: 0 auto;
@@ -112,4 +147,183 @@ body {
   font-size: 17px;
   line-height: 1.6;
   color: #9aa7bf;
+}
+
+.tf-hover-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform 320ms var(--tf-ease-standard),
+    border-color 320ms var(--tf-ease-standard),
+    box-shadow 320ms var(--tf-ease-standard),
+    background-color 320ms var(--tf-ease-standard);
+}
+
+.tf-hover-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(79, 177, 255, 0.16), transparent 38%);
+  opacity: 0;
+  transition: opacity 320ms var(--tf-ease-standard);
+}
+
+.tf-hover-card:hover,
+.tf-hover-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--tf-shadow-soft), var(--tf-shadow-glow);
+}
+
+.tf-hover-card:hover::before,
+.tf-hover-card:focus-within::before {
+  opacity: 1;
+}
+
+.tf-lift-soft {
+  transition:
+    transform 260ms var(--tf-ease-standard),
+    box-shadow 260ms var(--tf-ease-standard),
+    border-color 260ms var(--tf-ease-standard),
+    color 220ms ease;
+}
+
+.tf-lift-soft:hover,
+.tf-lift-soft:focus-visible {
+  transform: translateY(-3px);
+}
+
+.tf-nav-link {
+  position: relative;
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+.tf-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.45rem;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0.45);
+  transform-origin: center;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(58, 174, 254, 0), rgba(58, 174, 254, 0.95), rgba(47, 128, 237, 0));
+  opacity: 0;
+  transition: opacity 240ms ease, transform 240ms var(--tf-ease-standard);
+}
+
+.tf-nav-link:hover,
+.tf-nav-link:focus-visible {
+  transform: translateY(-1px);
+}
+
+.tf-nav-link:hover::after,
+.tf-nav-link:focus-visible::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.tf-button-primary,
+.tf-button-secondary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.tf-button-primary::before,
+.tf-button-secondary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 18%, rgba(255, 255, 255, 0.22) 50%, transparent 82%);
+  transform: translateX(-125%);
+  transition: transform 650ms var(--tf-ease-standard);
+}
+
+.tf-button-primary:hover::before,
+.tf-button-primary:focus-visible::before,
+.tf-button-secondary:hover::before,
+.tf-button-secondary:focus-visible::before {
+  transform: translateX(125%);
+}
+
+.tf-text-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 180ms ease, gap 220ms var(--tf-ease-standard);
+}
+
+.tf-text-link:hover,
+.tf-text-link:focus-visible {
+  gap: 0.75rem;
+}
+
+.tf-image-zoom {
+  will-change: transform, filter;
+  transition: transform 700ms var(--tf-ease-standard), filter 450ms ease;
+  transform-origin: center;
+}
+
+.group:hover .tf-image-zoom,
+.group:focus-within .tf-image-zoom {
+  transform: scale(1.1) translate3d(0, -4px, 0);
+  filter: saturate(1.1) brightness(1.03);
+}
+
+.tf-section-visual {
+  will-change: transform, filter;
+  transition: transform 820ms var(--tf-ease-standard), filter 480ms ease;
+  transform-origin: center;
+}
+
+.group:hover .tf-section-visual,
+.group:focus-within .tf-section-visual {
+  transform: scale(1.12) translate3d(0, -8px, 0);
+  filter: saturate(1.12) brightness(1.04);
+}
+
+.tf-glass-panel {
+  backdrop-filter: blur(18px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+@keyframes tfFloatOne {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(3rem, 2rem, 0);
+  }
+}
+
+@keyframes tfFloatTwo {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-2.5rem, -1.5rem, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

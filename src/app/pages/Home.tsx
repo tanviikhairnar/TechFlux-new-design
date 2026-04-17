@@ -8,13 +8,15 @@ import { Link } from 'react-router-dom';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { ClientLogosSlider } from '../components/ClientLogosSlider';
-const homeHeroAiImage = "https://techflux.in/public/assets/images/AI%20(1).webp"
+import { ai1, car, image3649760, onDemand } from '../../Techflux_assets';
+
+const homeHeroAiImage = ai1
 const homeSaasImage = "https://techflux.in/public/assets/images/senterpriseSaaS%20development.webp"
 const homeAiGradientImage = "https://techflux.in/public/assets/images/return8.webp"
-const onDemandImage = "https://techflux.in/public/assets/images/On%20Demand%20platforms.webp"
+const onDemandImage = onDemand
 const servyoCaseImage = "https://techflux.in/public/assets/images/servyoCollage.webp"
-const allstarCaseImage = "https://techflux.in/public/assets/images/car.webp"
-const eternCaseImage = "https://techflux.in/public/assets/images/3649760.webp"
+const allstarCaseImage = car
+const eternCaseImage = image3649760
 
 function Counter({
   value,
@@ -138,6 +140,22 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const preloadSources = [homeHeroAiImage, homeSaasImage, homeAiGradientImage, onDemandImage];
+    const preloadedImages = preloadSources.map((src) => {
+      const image = new Image();
+      image.decoding = 'async';
+      image.src = src;
+      return image;
+    });
+
+    return () => {
+      preloadedImages.forEach((image) => {
+        image.src = '';
+      });
+    };
+  }, []);
+
+  useEffect(() => {
     const onResize = () => {
       if (window.innerWidth < 768) {
         setTestimonialsPerView(1);
@@ -220,7 +238,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-5">
               <Link
                 to="/book-strategy-call"
-                className="px-9 py-4 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all flex items-center gap-2"
+                className="tf-button-primary px-9 py-4 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all flex items-center gap-2"
               >
                 Book Strategy Call
                 <ArrowRight className="w-5 h-5" />
@@ -228,7 +246,7 @@ export default function Home() {
 
               <Link
                 to="/case-studies"
-                className="px-9 py-4 rounded-xl border border-[#2F80ED] text-[#2F80ED] font-semibold hover:bg-[#2F80ED]/10 transition-all"
+                className="tf-button-secondary px-9 py-4 rounded-xl border border-[#2F80ED] text-[#2F80ED] font-semibold hover:bg-[#2F80ED]/10 transition-all"
               >
                 View Case Studies
               </Link>
@@ -241,14 +259,14 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden">
+            <div className="group relative overflow-hidden rounded-2xl">
               <img
                 src={homeHeroAiImage}
                 alt="AI Technology"
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
-                className="w-full max-w-[640px] h-auto rounded-2xl ml-auto"
+                className="tf-section-visual ml-auto h-auto w-full max-w-[640px] rounded-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F1A] via-transparent to-transparent" />
             </div>
@@ -338,7 +356,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group relative p-8 rounded-2xl border border-[#1B263B] hover:border-[#2F80ED]/60 transition-all"
+                className="tf-hover-card group relative rounded-2xl border border-[#1B263B] p-8 transition-all hover:border-[#2F80ED]/60"
                 style={{ background: '#0F172A' }}
               >
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] flex items-center justify-center mb-6 shadow-lg shadow-[#2F80ED]/25 transition-all">
@@ -358,7 +376,7 @@ export default function Home() {
 
                 <a
                   href={service.link}
-                  className="text-[#2F80ED] font-semibold flex items-center gap-2 group-hover:gap-3 transition-all"
+                  className="tf-text-link text-[#2F80ED] font-semibold"
                 >
                   Learn More
                   <ArrowRight className="w-4 h-4" />
@@ -379,14 +397,14 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative order-2 md:order-1"
             >
-              <div className="relative overflow-hidden rounded-3xl">
+              <div className="group relative overflow-hidden rounded-3xl">
                 <img
                   src={homeSaasImage}
                   alt="SaaS Dashboard"
                   loading="lazy"
                   decoding="async"
                   fetchPriority="low"
-                  className="w-full h-auto object-contain rounded-2xl"
+                className="tf-section-visual w-full h-auto object-contain rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
               </div>
@@ -435,7 +453,7 @@ export default function Home() {
 
               <Link
                 to="/saas-development"
-                className="inline-flex h-[58px] px-9 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-[18px] font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all items-center"
+                className="tf-button-primary inline-flex h-[58px] px-9 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-[18px] font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all items-center"
               >
                 Explore SaaS Development
               </Link>
@@ -506,14 +524,14 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="relative overflow-hidden rounded-3xl">
+              <div className="group relative overflow-hidden rounded-3xl">
                 <img
                   src={homeAiGradientImage}
                   alt="AI Gradient"
                   loading="lazy"
                   decoding="async"
                   fetchPriority="low"
-                  className="w-full h-auto object-contain rounded-2xl"
+                  className="tf-section-visual w-full h-auto object-contain rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
               </div>
@@ -533,14 +551,14 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative order-2 md:order-1"
             >
-              <div className="relative overflow-hidden rounded-3xl">
+              <div className="group relative overflow-hidden rounded-3xl">
                 <img
                   src={onDemandImage}
                   alt="On-Demand App"
                   loading="lazy"
                   decoding="async"
                   fetchPriority="low"
-                  className="w-full h-auto object-contain rounded-2xl"
+                  className="tf-section-visual w-full h-auto object-contain rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2F80ED]/20 to-transparent" />
               </div>
@@ -788,7 +806,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group overflow-hidden rounded-2xl border border-white/6 bg-[#101A31] transition-all hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+                className="tf-hover-card group overflow-hidden rounded-2xl border border-white/6 bg-[#101A31] transition-all hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden">
                   <img
@@ -797,7 +815,7 @@ export default function Home() {
                     loading="lazy"
                     decoding="async"
                     fetchPriority="low"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="tf-image-zoom h-full w-full object-cover"
                   />
                 </div>
 
@@ -819,7 +837,7 @@ export default function Home() {
                   </div>
 
                   <p className="mb-4 text-sm leading-relaxed text-[#94A3B8]">{item.description}</p>
-                  <Link to={item.caseStudyUrl} className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F80ED] transition-colors hover:text-[#6DB6FF]">
+                  <Link to={item.caseStudyUrl} className="tf-text-link text-sm font-semibold text-[#2F80ED] transition-colors hover:text-[#6DB6FF]">
                     View Case Study
                     <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -852,7 +870,7 @@ export default function Home() {
           </motion.div>
 
           <div className="relative group">
-            <div className="overflow-hidden">
+            <div className="-mb-6 -mt-6 overflow-hidden py-6">
               <motion.div
                 className="-mx-3 flex"
                 animate={{ x: `-${(testimonialIndex * 100) / testimonialsPerView}%` }}
@@ -870,8 +888,7 @@ export default function Home() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                        className={`group relative rounded-2xl border border-white/8 p-8 shadow-lg backdrop-blur-xl transition-all hover:shadow-[#2F80ED]/20 flex flex-col ${isExpanded ? 'min-h-[320px]' : 'h-[320px]'}`}
+                        className={`tf-hover-card tf-glass-panel group relative flex flex-col rounded-2xl border border-white/8 p-8 shadow-[0_10px_20px_rgba(3,10,24,0.1)] transition-all hover:border-white/10 hover:shadow-[0_14px_28px_rgba(3,10,24,0.18)] ${isExpanded ? 'min-h-[320px]' : 'h-[320px]'}`}
                         style={{ background: 'rgba(255,255,255,0.04)' }}
                       >
                         <div className="flex gap-1 mb-6">
@@ -960,7 +977,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center max-w-[1120px] mx-auto rounded-[28px] border border-[#20355A] bg-[#16233D] px-8 py-10 md:px-12 md:py-12"
+            className="tf-hover-card tf-glass-panel mx-auto max-w-[1120px] rounded-[28px] border border-[#20355A] bg-[#16233D]/92 px-8 py-10 text-center md:px-12 md:py-12"
           >
             <div className="mb-6 flex justify-center text-[#2F80ED]">
               <Users className="h-9 w-9" />
@@ -977,13 +994,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 to="/become-partner"
-                className="inline-flex h-[52px] px-8 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-base font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all items-center justify-center gap-2"
+                className="tf-button-primary inline-flex h-[52px] px-8 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-base font-semibold hover:shadow-xl hover:shadow-[#2F80ED]/40 transition-all items-center justify-center gap-2"
               >
                 Become a Partner
               </Link>
               <Link
                 to="/learn-more"
-                className="inline-flex h-[52px] px-8 rounded-xl border border-[#2F80ED] text-[#2F80ED] text-base font-semibold hover:bg-[#2F80ED]/10 transition-all items-center justify-center gap-2"
+                className="tf-button-secondary inline-flex h-[52px] px-8 rounded-xl border border-[#2F80ED] text-[#2F80ED] text-base font-semibold hover:bg-[#2F80ED]/10 transition-all items-center justify-center gap-2"
               >
                 Learn More
               </Link>
@@ -1012,7 +1029,7 @@ export default function Home() {
               </p>
               <Link
                 to="/book-strategy-call"
-                className="inline-flex px-8 py-4 rounded-xl bg-[#2F80ED] text-white font-bold hover:brightness-110 transition-all shadow-xl items-center gap-2"
+                className="tf-button-primary inline-flex px-8 py-4 rounded-xl bg-[#2F80ED] text-white font-bold hover:brightness-110 transition-all shadow-xl items-center gap-2"
               >
                 Book Strategy Call
                 <ArrowRight className="w-5 h-5" />
