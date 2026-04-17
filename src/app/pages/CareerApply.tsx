@@ -13,6 +13,7 @@ import {
 import { ChangeEvent, ComponentType, FormEvent, useEffect, useMemo, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { Footer } from '../components/Footer';
+import { FormSelect } from '../components/FormSelect';
 import { Navigation } from '../components/Navigation';
 import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
 import { careerRoles, getCareerRoleByTitle, roleOptions } from '../data/careers';
@@ -41,6 +42,7 @@ const defaultFormState: ApplyFormState = {
 };
 
 export default function CareerApply() {
+  const selectClassName = 'h-12';
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const roleFromState = (location.state as { roleTitle?: string; role?: { title: string } } | null);
@@ -195,17 +197,12 @@ export default function CareerApply() {
 
               <div className="space-y-5">
                 <InputLabel label="Position Applying For" required />
-                <select
+                <FormSelect
                   value={form.position}
-                  onChange={(event) => updateField('position', event.target.value)}
-                  className="h-12 w-full rounded-xl border border-[#233755] bg-[#0A1830] px-4 text-sm text-[#E5E7EB] outline-none transition-all focus:border-[#2F80ED]"
-                >
-                  {roleOptions.map((role) => (
-                    <option key={role} value={role}>
-                      {role}
-                    </option>
-                  ))}
-                </select>
+                  onValueChange={(value) => updateField('position', value)}
+                  options={roleOptions}
+                  triggerClassName={selectClassName}
+                />
 
                 <InputLabel label="Portfolio / GitHub Link" optional />
                 <InputWithIcon

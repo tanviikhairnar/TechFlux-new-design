@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle2, Mail, Phone, MapPin, Send } from 'lucide-react';
 import { FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FormSelect } from '../components/FormSelect';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
@@ -10,6 +11,7 @@ import { sendContactEmails } from '../lib/leadEmailService';
 export default function Contact() {
   const contactIconWrapClass = 'mt-0.5 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#13376A]';
   const contactIconClass = 'h-5 w-5 text-[#2F80ED] stroke-[2.1]';
+  const selectClassName = 'h-[56px]';
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -138,30 +140,22 @@ export default function Contact() {
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB] md:text-[15px]">Project Type</label>
-                  <select
+                  <FormSelect
                     value={formData.projectType}
-                    onChange={(event) => setFormData((prev) => ({ ...prev, projectType: event.target.value }))}
-                    className="w-full rounded-xl border border-[#203A64] bg-[#0E1A31] px-4 py-[11px] text-sm text-[#E5E7EB] focus:border-[#2F80ED] focus:outline-none md:text-[15px]"
-                  >
-                    <option>SaaS Development</option>
-                    <option>AI Solutions</option>
-                    <option>On-Demand Applications</option>
-                    <option>White-Label Partnership</option>
-                  </select>
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, projectType: value }))}
+                    options={['SaaS Development', 'AI Solutions', 'On-Demand Applications', 'White-Label Partnership']}
+                    triggerClassName={selectClassName}
+                  />
                 </div>
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB] md:text-[15px]">Budget</label>
-                  <select
+                  <FormSelect
                     value={formData.budget}
-                    onChange={(event) => setFormData((prev) => ({ ...prev, budget: event.target.value }))}
-                    className="w-full rounded-xl border border-[#203A64] bg-[#0E1A31] px-4 py-[11px] text-sm text-[#E5E7EB] focus:border-[#2F80ED] focus:outline-none md:text-[15px]"
-                  >
-                    <option>Under $50K</option>
-                    <option>$50K - $100K</option>
-                    <option>$100K - $250K</option>
-                    <option>$250K+</option>
-                  </select>
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, budget: value }))}
+                    options={['Under $50K', '$50K - $100K', '$100K - $250K', '$250K+']}
+                    triggerClassName={selectClassName}
+                  />
                 </div>
 
                 <div>

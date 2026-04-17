@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle2, Send } from 'lucide-react';
 import { FormEvent, useState } from 'react';
 import { Footer } from '../components/Footer';
+import { FormSelect } from '../components/FormSelect';
 import { Navigation } from '../components/Navigation';
 import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
 import { sendEstimateEmails } from '../lib/leadEmailService';
@@ -21,6 +22,7 @@ const whyItems = [
 ];
 
 export default function GetEstimate() {
+  const selectClassName = 'h-11';
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -151,47 +153,38 @@ export default function GetEstimate() {
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Project Type *</label>
-                  <select
+                  <FormSelect
                     value={formData.projectType}
-                    onChange={(event) => setFormData((prev) => ({ ...prev, projectType: event.target.value }))}
-                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 ease-out hover:border-[#2A4B7E] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
-                  >
-                    <option>SaaS Development</option>
-                    <option>AI Solutions</option>
-                    <option>On-Demand Applications</option>
-                    <option>White-Label Development</option>
-                    <option>E-Commerce Solutions</option>
-                  </select>
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, projectType: value }))}
+                    options={[
+                      'SaaS Development',
+                      'AI Solutions',
+                      'On-Demand Applications',
+                      'White-Label Development',
+                      'E-Commerce Solutions',
+                    ]}
+                    triggerClassName={selectClassName}
+                  />
                 </div>
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Budget Range *</label>
-                  <select
+                  <FormSelect
                     value={formData.budget}
-                    onChange={(event) => setFormData((prev) => ({ ...prev, budget: event.target.value }))}
-                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 ease-out hover:border-[#2A4B7E] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
-                  >
-                    <option>Under $50K</option>
-                    <option>$50K - $100K</option>
-                    <option>$100K - $250K</option>
-                    <option>$250K+</option>
-                    <option>Need Guidance</option>
-                  </select>
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, budget: value }))}
+                    options={['Under $50K', '$50K - $100K', '$100K - $250K', '$250K+', 'Need Guidance']}
+                    triggerClassName={selectClassName}
+                  />
                 </div>
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#E5E7EB]">Desired Timeline *</label>
-                  <select
+                  <FormSelect
                     value={formData.timeline}
-                    onChange={(event) => setFormData((prev) => ({ ...prev, timeline: event.target.value }))}
-                    className="h-11 w-full rounded-xl border border-[#22345A] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 ease-out hover:border-[#2A4B7E] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
-                  >
-                    <option>ASAP (within 3 months)</option>
-                    <option>3-6 months</option>
-                    <option>6-12 months</option>
-                    <option>12+ months</option>
-                    <option>Flexible</option>
-                  </select>
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, timeline: value }))}
+                    options={['ASAP (within 3 months)', '3-6 months', '6-12 months', '12+ months', 'Flexible']}
+                    triggerClassName={selectClassName}
+                  />
                 </div>
 
                 <div>
