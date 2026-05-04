@@ -33,10 +33,18 @@ export function TechnologyStackSection({
           <p className={descriptionClassName}>{description}</p>
         </motion.div>
         <div className={tagsWrapClassName}>
-          {items.map((item) => (
-            <span key={item} className={tagClassName}>
+          {items.map((item, i) => (
+            <motion.span
+              key={item}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -3 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.03, duration: 0.24 }}
+              className={tagClassName}
+            >
               {item}
-            </span>
+            </motion.span>
           ))}
         </div>
       </div>

@@ -126,20 +126,6 @@ export default function Home() {
   const [expandedTestimonials, setExpandedTestimonials] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
-    document.title = 'Techflux Solutions';
-    let descriptionTag = document.querySelector('meta[name="description"]');
-    if (!descriptionTag) {
-      descriptionTag = document.createElement('meta');
-      descriptionTag.setAttribute('name', 'description');
-      document.head.appendChild(descriptionTag);
-    }
-    descriptionTag.setAttribute(
-      'content',
-      'TechFlux Solutions helps startups and agencies design, develop, and scale high-performance digital products.',
-    );
-  }, []);
-
-  useEffect(() => {
     const preloadSources = [homeHeroAiImage, homeSaasImage, homeAiGradientImage, onDemandImage];
     const preloadedImages = preloadSources.map((src) => {
       const image = new Image();

@@ -27,7 +27,7 @@ const builtFor = [
   {
     icon: Globe,
     title: 'Digital Marketing Agencies',
-    text: 'Expand your service offerings with full‑stack products delivered under your brand.',
+    text: 'Expand your service offerings with full-stack products delivered under your brand.',
   },
   {
     icon: Layers,
@@ -37,7 +37,7 @@ const builtFor = [
   {
     icon: Code,
     title: 'Startup Consultants',
-    text: 'Offer end-to-end technical solutions to early‑stage clients.',
+    text: 'Offer end-to-end technical solutions to early-stage clients.',
   },
   {
     icon: Box,
@@ -47,14 +47,14 @@ const builtFor = [
   {
     icon: Server,
     title: 'Software Companies',
-    text: 'Augment engineering teams with on‑demand expertise.',
+    text: 'Augment engineering teams with on-demand expertise.',
   },
 ];
 
 const services = [
   { icon: Server, title: 'SaaS Platform Development', text: 'Build tailored SaaS platforms with subscription billing and admin features.' },
   { icon: Code, title: 'AI Solutions', text: 'AI chatbots, automation systems, and intelligent analytics.' },
-  { icon: Layers, title: 'On-Demand Applications', text: 'Booking platforms, marketplaces, and real‑time apps.' },
+  { icon: Layers, title: 'On-Demand Applications', text: 'Booking platforms, marketplaces, and real-time apps.' },
   { icon: Smartphone, title: 'Mobile App Development', text: 'Cross-platform mobile apps using Flutter and React Native.' },
   { icon: ShoppingCart, title: 'E-commerce Platforms', text: 'Custom e-commerce solutions with Shopify, WooCommerce, or headless stacks.' },
   { icon: Cloud, title: 'Custom Web Applications', text: 'Scalable web apps built with modern frameworks and cloud infrastructure.' },
@@ -138,7 +138,7 @@ const whyItems = [
 ];
 
 const caseStudy = {
-  title: 'Studio New Media – SaaS CMS Platform',
+  title: 'Studio New Media - SaaS CMS Platform',
   desc: 'Custom SaaS CMS platform built for a European digital agency to manage multiple client websites, including multi-tenant architecture, role-based access, and automated billing.',
   img: whiteLabelImage,
 };
@@ -201,7 +201,7 @@ export default function WhiteLabelPartnership() {
               </h1>
               <p className="mt-5 max-w-[780px] text-base leading-relaxed text-[#8A96AA] md:text-lg">
                 Techflux Solutions works behind the scenes as your trusted development partner, helping agencies deliver
-                high‑quality SaaS platforms, mobile apps, and digital products without expanding their internal team.
+                high-quality SaaS platforms, mobile apps, and digital products without expanding their internal team.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-start">
                 <Link
@@ -511,7 +511,7 @@ export default function WhiteLabelPartnership() {
                 Looking for a Reliable Development Partner?
               </h2>
               <p className="mx-auto mb-8 max-w-[760px] text-sm text-[#8A96AA] md:text-[15px]">
-                Let’s discuss how we can help you deliver exceptional technical solutions to your clients under your brand.
+                LetÃ¢â‚¬â„¢s discuss how we can help you deliver exceptional technical solutions to your clients under your brand.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Link

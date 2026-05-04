@@ -200,6 +200,7 @@ export default function EcommerceSolutions() {
 
         <ServiceHeroSection
           containerClassName="grid items-center gap-10 md:grid-cols-[0.95fr_1.05fr] md:gap-12"
+          titleId="ecommerce-solutions-heading"
           title={
             <>
               High-Performance

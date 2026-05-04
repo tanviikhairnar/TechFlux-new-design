@@ -17,7 +17,7 @@ import { FormSelect } from '../components/FormSelect';
 import { Navigation } from '../components/Navigation';
 import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
 import { careerRoles, getCareerRoleByTitle, roleOptions } from '../data/careers';
-import { sendCareerApplicationEmail } from '../lib/leadEmailService';
+import { submitCareerForm } from '../lib/api/forms';
 
 type ApplyFormState = {
   fullName: string;
@@ -83,16 +83,9 @@ export default function CareerApply() {
 
     try {
       setIsSubmitting(true);
-      await sendCareerApplicationEmail({
-        fullName: form.fullName,
-        email: form.email,
-        phone: form.phone,
-        location: form.location,
-        yearsOfExperience: form.yearsOfExperience,
-        position: form.position,
-        portfolioUrl: form.portfolioUrl,
-        coverLetter: form.coverLetter,
-        resumeFileName: resumeFile.name,
+      await submitCareerForm({
+        ...form,
+        resumeFile,
       });
 
       setShowSuccessPopup(true);

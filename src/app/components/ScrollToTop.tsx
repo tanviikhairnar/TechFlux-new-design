@@ -1,12 +1,34 @@
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import RouteSeo from "./RouteSeo";
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      const elementId = decodeURIComponent(hash.slice(1));
 
-  return <Outlet />;
+      window.requestAnimationFrame(() => {
+        const target = document.getElementById(elementId);
+
+        if (target) {
+          target.scrollIntoView({ block: "start" });
+        } else {
+          window.scrollTo(0, 0);
+        }
+      });
+
+      return;
+    }
+
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+
+  return (
+    <>
+      <RouteSeo />
+      <Outlet />
+    </>
+  );
 }

@@ -157,6 +157,7 @@
 
 
 import emailjs from '@emailjs/browser';
+import type { EstimateLead } from './types';
 
 type EmailPayload = {
   toEmail: string;
@@ -309,20 +310,20 @@ function getInternalSenderEmails() {
   return parseEmails(INTERNAL_SENDER_EMAILS_RAW);
 }
 
-type EstimateEmailPayload = {
-  name: string;
-  email: string;
-  message: string;
-};
+export async function sendEstimateEmails(data: EstimateLead) {
+  const fullName = `${data.firstName} ${data.lastName}`.trim();
 
-export async function sendEstimateEmails(data: EstimateEmailPayload) {
   const adminEmail = sendEmail({
     toEmail: getPrimaryInternalEmail(),
     toName: 'Techflux Team',
-    subject: `New Estimate Request from ${data.name}`,
+    subject: `New Estimate Request from ${fullName}`,
     message: `
-Name: ${data.name}
+Name: ${fullName}
 Email: ${data.email}
+Company: ${data.company || 'N/A'}
+Project Type: ${data.projectType}
+Budget: ${data.budget}
+Timeline: ${data.timeline}
 
 Message:
 ${data.message}
@@ -332,9 +333,9 @@ ${data.message}
 
   const customerEmail = sendEmail({
     toEmail: data.email,
-    toName: data.name,
+    toName: fullName,
     subject: 'Your estimate request has been received',
-    message: `Hi ${data.name},
+    message: `Hi ${data.firstName},
 
 Thank you for contacting Techflux Solutions. Our team has received your estimate request and will respond shortly.
 

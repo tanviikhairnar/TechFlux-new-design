@@ -71,7 +71,7 @@ const techTags = [
 const coreFeatures = [
   { title: 'Real-Time Tracking', desc: 'Live GPS tracking and status updates.' },
   { title: 'Smart Booking System', desc: 'Automated scheduling and availability management.' },
-  { title: 'Multi-User Roles', desc: 'Customers, providers, and admins with tailor‑made dashboards.' },
+  { title: 'Multi-User Roles', desc: 'Customers, providers, and admins with tailor-made dashboards.' },
   { title: 'Secure Payments', desc: 'Encrypted transactions with multiple gateway support.' },
   { title: 'Analytics Dashboard', desc: 'Operational insights and business reporting.' },
   { title: 'Vendor Management', desc: 'Control over providers, commissions, and ratings.' },
@@ -141,7 +141,7 @@ const industries = [
 ];
 
 const caseStudy = {
-  title: 'Servyo – Service Marketplace',
+  title: 'Servyo - Service Marketplace',
   desc: 'Multi-service booking platform connecting clients, cleaners, and technicians with features like live booking, subscriptions, and payment gateway integration.',
   img: onDemandImage,
 };

@@ -83,7 +83,7 @@ const successStories = [
   {
     resultIcon: TrendingUp,
     img: aiCaseImage,
-    title: 'Etern 8 – AI Wellness Platform',
+    title: 'Etern 8 - AI Wellness Platform',
     desc: 'AI-powered wellness platform analyzing smartwatch data to deliver personalized health recommendations using machine learning algorithms.',
     result: '100K+ users, 85% engagement',
   },

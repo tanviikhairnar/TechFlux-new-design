@@ -4,7 +4,7 @@ import { FormEvent, useState } from 'react';
 import { Footer } from '../components/Footer';
 import { Navigation } from '../components/Navigation';
 import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
-import { sendPartnerEmails } from '../lib/leadEmailService';
+import { submitPartnerForm } from '../lib/api/forms';
 
 const perfectFor = [
   {
@@ -102,14 +102,15 @@ export default function BecomePartner() {
     setSubmitError('');
     setShowSuccessPopup(false);
 
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.company || !formData.message) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.company || !formData.services || !formData.message) {
       setSubmitError('Please fill all required fields.');
       return;
     }
 
     try {
       setIsSubmitting(true);
-      await sendPartnerEmails(formData);
+      await submitPartnerForm(formData);
+
       setShowSuccessPopup(true);
       setShowSuccessOnButton(true);
       window.setTimeout(() => setShowSuccessOnButton(false), 2500);

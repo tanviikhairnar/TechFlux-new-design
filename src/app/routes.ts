@@ -50,7 +50,15 @@ export const router = createBrowserRouter([
         lazy: lazyPage(() => import("./pages/AISolutions")),
       },
       {
+        path: "/ai-development",
+        lazy: lazyPage(() => import("./pages/AISolutions")),
+      },
+      {
         path: "/on-demand-solutions",
+        lazy: lazyPage(() => import("./pages/OnDemandSolutions")),
+      },
+      {
+        path: "/on-demand-development",
         lazy: lazyPage(() => import("./pages/OnDemandSolutions")),
       },
       {
@@ -63,6 +71,10 @@ export const router = createBrowserRouter([
       },
       {
         path: "/case-studies",
+        lazy: lazyPage(() => import("./pages/CaseStudies")),
+      },
+      {
+        path: "/portfolio",
         lazy: lazyPage(() => import("./pages/CaseStudies")),
       },
       {

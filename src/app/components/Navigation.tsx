@@ -49,7 +49,7 @@ export function Navigation() {
 
             <Link
               to="/"
-              className="tf-nav-link text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
+              className="tf-nav-link rounded-md text-[17px] font-medium text-[#94A3B8] transition-[color,opacity] duration-200 hover:text-[#F8FAFC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F80ED]/35"
             >
               Home
             </Link>
@@ -59,7 +59,7 @@ export function Navigation() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="tf-nav-link flex items-center gap-1 text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white">
+              <button className="tf-nav-link flex items-center gap-1 rounded-md text-[17px] font-medium text-[#94A3B8] transition-[color,opacity] duration-200 hover:text-[#F8FAFC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F80ED]/35">
                 Services
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
@@ -71,18 +71,18 @@ export function Navigation() {
               <AnimatePresence>
                 {servicesOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 5 }}
-                    transition={{ duration: 0.15 }}
-                    className="tf-glass-panel absolute left-1/2 top-full mt-4 w-72 -translate-x-1/2 overflow-hidden rounded-xl border border-white/10 bg-[#111827]/88 shadow-2xl"
+                    initial={{ opacity: 0, y: 12, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 6, scale: 0.98 }}
+                    transition={{ duration: 0.18, ease: 'easeOut' }}
+                    className="tf-glass-panel absolute left-1/2 top-full mt-4 w-72 -translate-x-1/2 overflow-hidden rounded-xl border border-[#1F365A] bg-[#0B162A]/92 shadow-[0_24px_48px_rgba(2,8,23,0.46)] backdrop-blur-xl"
                   >
                     {serviceItems.map((item, i) =>
                       item.useRoute ? (
                         <Link
                           key={i}
                           to={item.href}
-                          className="block px-5 py-3 text-sm text-gray-300 transition-all hover:bg-[#2F80ED]/10 hover:pl-6 hover:text-white"
+                          className="block px-5 py-3 text-sm text-[#C7D2E0] transition-[padding,color,background-color] duration-200 hover:bg-[#2F80ED]/10 hover:pl-6 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#2F80ED]/35"
                         >
                           {item.label}
                         </Link>
@@ -90,7 +90,7 @@ export function Navigation() {
                         <a
                           key={i}
                           href={item.href}
-                          className="block px-5 py-3 text-sm text-gray-300 transition-all hover:bg-[#2F80ED]/10 hover:pl-6 hover:text-white"
+                          className="block px-5 py-3 text-sm text-[#C7D2E0] transition-[padding,color,background-color] duration-200 hover:bg-[#2F80ED]/10 hover:pl-6 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#2F80ED]/35"
                         >
                           {item.label}
                         </a>
@@ -103,21 +103,21 @@ export function Navigation() {
 
             <Link
               to="/case-studies"
-              className="tf-nav-link text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
+              className="tf-nav-link rounded-md text-[17px] font-medium text-[#94A3B8] transition-[color,opacity] duration-200 hover:text-[#F8FAFC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F80ED]/35"
             >
               Case Studies
             </Link>
 
             <Link
               to="/blog"
-              className="tf-nav-link text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
+              className="tf-nav-link rounded-md text-[17px] font-medium text-[#94A3B8] transition-[color,opacity] duration-200 hover:text-[#F8FAFC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F80ED]/35"
             >
               Blog
             </Link>
 
             <Link
               to="/contact"
-              className="tf-nav-link text-[17px] font-medium text-gray-400 transition-colors duration-200 hover:text-white"
+              className="tf-nav-link rounded-md text-[17px] font-medium text-[#94A3B8] transition-[color,opacity] duration-200 hover:text-[#F8FAFC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F80ED]/35"
             >
               Contact
             </Link>
@@ -134,7 +134,7 @@ export function Navigation() {
                 setMobileServicesOpen(false);
               }
             }}
-            className="lg:hidden text-[#F9FAFB] p-2"
+            className="rounded-lg p-2 text-[#F9FAFB] transition-colors duration-200 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F80ED]/35 lg:hidden"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -146,10 +146,11 @@ export function Navigation() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="tf-glass-panel lg:hidden border-t border-white/5 bg-[#030A1C]/88 py-4"
+              transition={{ duration: 0.22, ease: 'easeOut' }}
+              className="tf-glass-panel border-t border-white/5 bg-[#030A1C]/88 py-4 lg:hidden"
             >
               <div className="flex flex-col gap-3">
-                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="tf-lift-soft py-2 text-[17px] text-gray-400 hover:text-white">
+                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="tf-lift-soft rounded-md py-2 text-[17px] text-[#94A3B8] transition-colors duration-200 hover:text-white">
                   Home
                 </Link>
 
@@ -157,7 +158,7 @@ export function Navigation() {
                   <button
                     type="button"
                     onClick={() => setMobileServicesOpen((prev) => !prev)}
-                    className="tf-lift-soft flex w-full items-center justify-between py-2 text-[17px] text-gray-400 transition-colors hover:text-white"
+                    className="tf-lift-soft flex w-full items-center justify-between rounded-md py-2 text-[17px] text-[#94A3B8] transition-colors duration-200 hover:text-white"
                   >
                     <span>Services</span>
                     <ChevronDown
@@ -183,7 +184,7 @@ export function Navigation() {
                               setMobileMenuOpen(false);
                               setMobileServicesOpen(false);
                             }}
-                            className="tf-lift-soft block py-2 text-[16px] text-gray-400 transition-colors hover:text-white"
+                            className="tf-lift-soft block rounded-md py-2 text-[16px] text-[#A6B3C4] transition-colors duration-200 hover:text-white"
                           >
                             {item.label}
                           </Link>
@@ -193,13 +194,13 @@ export function Navigation() {
                   </AnimatePresence>
                 </div>
 
-                <Link to="/case-studies" onClick={() => setMobileMenuOpen(false)} className="tf-lift-soft py-2 text-[17px] text-gray-400 hover:text-white">
+                <Link to="/case-studies" onClick={() => setMobileMenuOpen(false)} className="tf-lift-soft rounded-md py-2 text-[17px] text-[#94A3B8] transition-colors duration-200 hover:text-white">
                   Case Studies
                 </Link>
-                <Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="tf-lift-soft py-2 text-[17px] text-gray-400 hover:text-white">
+                <Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="tf-lift-soft rounded-md py-2 text-[17px] text-[#94A3B8] transition-colors duration-200 hover:text-white">
                   Blog
                 </Link>
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="tf-lift-soft py-2 text-[17px] text-gray-400 hover:text-white">
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="tf-lift-soft rounded-md py-2 text-[17px] text-[#94A3B8] transition-colors duration-200 hover:text-white">
                   Contact
                 </Link>
                 <BookStrategyCallButton

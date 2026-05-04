@@ -5,7 +5,7 @@ import { Footer } from '../components/Footer';
 import { FormSelect } from '../components/FormSelect';
 import { Navigation } from '../components/Navigation';
 import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
-import { sendEstimateEmails } from '../lib/leadEmailService';
+import { submitProjectForm } from '../lib/api/forms';
 
 const nextSteps = [
   { title: 'We Review', text: 'Our team analyzes your project requirements' },
@@ -50,7 +50,7 @@ export default function GetEstimate() {
 
     try {
       setIsSubmitting(true);
-      await sendEstimateEmails(formData);
+      await submitProjectForm(formData);
       setShowSuccessPopup(true);
       setShowSuccessOnButton(true);
       window.setTimeout(() => setShowSuccessOnButton(false), 2500);

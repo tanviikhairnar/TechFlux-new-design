@@ -6,7 +6,7 @@ import { FormSelect } from '../components/FormSelect';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { SubmissionSuccessPopup } from '../components/SubmissionSuccessPopup';
-import { sendContactEmails } from '../lib/leadEmailService';
+import { submitContactForm } from '../lib/api/forms';
 
 export default function Contact() {
   const contactIconWrapClass = 'mt-0.5 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#13376A]';
@@ -38,7 +38,8 @@ export default function Contact() {
 
     try {
       setIsSubmitting(true);
-      await sendContactEmails(formData);
+      await submitContactForm(formData);
+
       setShowSuccessPopup(true);
       setShowSuccessOnButton(true);
       window.setTimeout(() => setShowSuccessOnButton(false), 2500);
