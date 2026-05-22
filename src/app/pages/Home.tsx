@@ -224,7 +224,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-5">
               <Link
                 to="/book-strategy-call"
-                className="tf-button-primary px-9 py-4 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold active:shadow-xl active:shadow-[#2F80ED]/40 transition-all flex items-center gap-2"
+                className="tf-button-primary px-9 py-4 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold hover:shadow-xl active:shadow-xl hover:shadow-[#2F80ED]/40 active:shadow-[#2F80ED]/40 transition-all flex items-center gap-2"
               >
                 Book Strategy Call
                 <ArrowRight className="w-5 h-5" />
@@ -232,7 +232,7 @@ export default function Home() {
 
               <Link
                 to="/case-studies"
-                className="tf-button-secondary px-9 py-4 rounded-xl border border-[#2F80ED] text-[#2F80ED] font-semibold active:bg-[#2F80ED]/10 transition-all"
+                className="tf-button-secondary px-9 py-4 rounded-xl border border-[#2F80ED] text-[#2F80ED] font-semibold hover:bg-[#2F80ED]/10 active:bg-[#2F80ED]/10 transition-all"
               >
                 View Case Studies
               </Link>
@@ -341,8 +341,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileTap={{ y: -8, transition: { duration: 0.3 } }}
-                className="tf-hover-card group relative rounded-2xl border border-[#1B263B] p-8 transition-all active:border-[#2F80ED]/60"
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="tf-hover-card group relative rounded-2xl border border-[#1B263B] p-8 transition-all hover:border-[#2F80ED]/60 active:border-[#2F80ED]/60"
                 style={{ background: '#0F172A' }}
               >
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] flex items-center justify-center mb-6 shadow-lg shadow-[#2F80ED]/25 transition-all">
@@ -439,7 +439,7 @@ export default function Home() {
 
               <Link
                 to="/saas-development"
-                className="tf-button-primary inline-flex h-[58px] px-9 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-[18px] font-semibold active:shadow-xl active:shadow-[#2F80ED]/40 transition-all items-center"
+                className="tf-button-primary inline-flex h-[58px] px-9 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-[18px] font-semibold hover:shadow-xl active:shadow-xl hover:shadow-[#2F80ED]/40 active:shadow-[#2F80ED]/40 transition-all items-center"
               >
                 Explore SaaS Development
               </Link>
@@ -497,7 +497,7 @@ export default function Home() {
 
               <Link
                 to="/ai-solutions"
-                className="inline-flex px-8 py-4 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold active:shadow-xl active:shadow-[#2F80ED]/40 transition-all items-center gap-2"
+                className="inline-flex px-8 py-4 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold hover:shadow-xl active:shadow-xl hover:shadow-[#2F80ED]/40 active:shadow-[#2F80ED]/40 transition-all items-center gap-2"
               >
                 Explore AI Solutions
                 <ArrowRight className="w-5 h-5" />
@@ -593,7 +593,7 @@ export default function Home() {
 
               <Link
                 to="/on-demand-solutions"
-                className="inline-flex h-[58px] px-9 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-[18px] font-semibold active:shadow-xl active:shadow-[#2F80ED]/40 transition-all items-center"
+                className="inline-flex h-[58px] px-9 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-[18px] font-semibold hover:shadow-xl active:shadow-xl hover:shadow-[#2F80ED]/40 active:shadow-[#2F80ED]/40 transition-all items-center"
               >
                 View On-Demand Solutions
               </Link>
@@ -621,7 +621,10 @@ export default function Home() {
           </motion.div>
 
           <div className="mb-12">
-            <div className="hidden lg:grid lg:grid-cols-6 gap-6 pb-10 pt-16 xl:gap-8">
+            <div
+              className="hidden lg:grid lg:grid-cols-6 gap-6 pb-10 pt-16 xl:gap-8"
+              onMouseLeave={() => setActiveProcessStep(null)}
+            >
               {processSteps.map((step, index) => (
                 <motion.div
                   key={step.icon}
@@ -632,17 +635,14 @@ export default function Home() {
                     duration: 0.6,
                     delay: index * 0.2,
                   }}
+                  onMouseEnter={() => setActiveProcessStep(index)}
                   className="relative flex min-h-[138px] flex-col items-center text-center"
                 >
                   <div className="relative mb-5 flex w-full items-center justify-center">
                     <button
                       type="button"
-                      onClick={() =>
-                        setActiveProcessStep((prev) => (prev === index ? null : index))
-                      }
                       onFocus={() => setActiveProcessStep(index)}
                       onBlur={() => setActiveProcessStep(null)}
-                      aria-pressed={activeProcessStep === index}
                       className="h-16 w-16 rounded-full bg-gradient-to-br from-[#2D9CDB] to-[#2F80ED] text-3xl font-bold text-white shadow-lg shadow-[#2F80ED]/30 outline-none"
                       style={{ fontFamily: "Sora, sans-serif" }}
                     >
@@ -781,7 +781,7 @@ export default function Home() {
 
             <Link
               to="/case-studies"
-              className="text-[#2F80ED] font-semibold flex items-center gap-2 active:text-[#66B7FF] transition-colors"
+              className="text-[#2F80ED] font-semibold flex items-center gap-2 hover:text-[#66B7FF] active:text-[#66B7FF] transition-colors"
             >
               View All Case Studies
               <ArrowRight className="h-4 w-4" />
@@ -796,8 +796,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                whileTap={{ y: -8, transition: { duration: 0.3 } }}
-                className="tf-hover-card group overflow-hidden rounded-2xl border border-white/6 bg-[#101A31] transition-all active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="tf-hover-card group overflow-hidden rounded-2xl border border-white/6 bg-[#101A31] transition-all hover:border-[#2F80ED]/30 active:border-[#2F80ED]/30 hover:shadow-lg active:shadow-lg hover:shadow-[#2F80ED]/20 active:shadow-[#2F80ED]/20"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden">
                   <img
@@ -828,7 +828,7 @@ export default function Home() {
                   </div>
 
                   <p className="mb-4 text-sm leading-relaxed text-[#94A3B8]">{item.description}</p>
-                  <Link to={item.caseStudyUrl} className="tf-text-link text-sm font-semibold text-[#2F80ED] transition-colors active:text-[#6DB6FF]">
+                  <Link to={item.caseStudyUrl} className="tf-text-link text-sm font-semibold text-[#2F80ED] transition-colors hover:text-[#6DB6FF] active:text-[#6DB6FF]">
                     View Case Study
                     <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -879,7 +879,7 @@ export default function Home() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className={`tf-hover-card tf-glass-panel group relative flex flex-col rounded-2xl border border-white/8 p-8 shadow-[0_10px_20px_rgba(3,10,24,0.1)] transition-all active:border-white/10 active:shadow-[0_14px_28px_rgba(3,10,24,0.18)] ${isExpanded ? 'min-h-[320px]' : 'h-[320px]'}`}
+                        className={`tf-hover-card tf-glass-panel group relative flex flex-col rounded-2xl border border-white/8 p-8 shadow-[0_10px_20px_rgba(3,10,24,0.1)] transition-all hover:border-white/10 active:border-white/10 hover:shadow-[0_14px_28px_rgba(3,10,24,0.18)] active:shadow-[0_14px_28px_rgba(3,10,24,0.18)] ${isExpanded ? 'min-h-[320px]' : 'h-[320px]'}`}
                         style={{ background: 'rgba(255,255,255,0.04)' }}
                       >
                         <div className="flex gap-1 mb-6">
@@ -900,7 +900,7 @@ export default function Home() {
                                 [baseIndex]: !prev[baseIndex],
                               }));
                             }}
-                            className="mb-6 w-fit text-sm font-semibold text-[#66B7FF] active:text-[#8FCBFF] transition-colors"
+                            className="mb-6 w-fit text-sm font-semibold text-[#66B7FF] hover:text-[#8FCBFF] active:text-[#8FCBFF] transition-colors"
                           >
                             {isExpanded ? 'Read less' : 'Read more'}
                           </button>
@@ -927,7 +927,7 @@ export default function Home() {
             </div>
 
             {canSlide && (
-              <div className="absolute left-1/2 top-1/2 z-20 w-screen -translate-x-1/2 -translate-y-1/2 px-0 opacity-100 transition-opacity duration-300">
+              <div className="pointer-events-none absolute left-1/2 top-1/2 z-20 w-screen -translate-x-1/2 -translate-y-1/2 px-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
                 <button
                   type="button"
                   onClick={() => {
@@ -944,7 +944,7 @@ export default function Home() {
                       setTestimonialIndex((prev) => prev - 1);
                     }
                   }}
-                  className="absolute left-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#111827]/95 text-[#E5E7EB] transition-all active:border-[#2F80ED]/60 active:text-[#2F80ED]"
+                  className="pointer-events-auto absolute left-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#111827]/95 text-[#E5E7EB] transition-all hover:border-[#2F80ED]/60 active:border-[#2F80ED]/60 hover:text-[#2F80ED] active:text-[#2F80ED]"
                 >
                   <ChevronLeft className="h-5 w-5" />
                 </button>
@@ -952,7 +952,7 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => setTestimonialIndex((prev) => prev + 1)}
-                  className="absolute right-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#111827]/95 text-[#E5E7EB] transition-all active:border-[#2F80ED]/60 active:text-[#2F80ED]"
+                  className="pointer-events-auto absolute right-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#111827]/95 text-[#E5E7EB] transition-all hover:border-[#2F80ED]/60 active:border-[#2F80ED]/60 hover:text-[#2F80ED] active:text-[#2F80ED]"
                 >
                   <ChevronRight className="h-5 w-5" />
                 </button>
@@ -985,13 +985,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 to="/become-partner"
-                className="tf-button-primary inline-flex h-[52px] px-8 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-base font-semibold active:shadow-xl active:shadow-[#2F80ED]/40 transition-all items-center justify-center gap-2"
+                className="tf-button-primary inline-flex h-[52px] px-8 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white text-base font-semibold hover:shadow-xl active:shadow-xl hover:shadow-[#2F80ED]/40 active:shadow-[#2F80ED]/40 transition-all items-center justify-center gap-2"
               >
                 Become a Partner
               </Link>
               <Link
                 to="/learn-more"
-                className="tf-button-secondary inline-flex h-[52px] px-8 rounded-xl border border-[#2F80ED] text-[#2F80ED] text-base font-semibold active:bg-[#2F80ED]/10 transition-all items-center justify-center gap-2"
+                className="tf-button-secondary inline-flex h-[52px] px-8 rounded-xl border border-[#2F80ED] text-[#2F80ED] text-base font-semibold hover:bg-[#2F80ED]/10 active:bg-[#2F80ED]/10 transition-all items-center justify-center gap-2"
               >
                 Learn More
               </Link>
@@ -1020,7 +1020,7 @@ export default function Home() {
               </p>
               <Link
                 to="/book-strategy-call"
-                className="tf-button-primary inline-flex px-8 py-4 rounded-xl bg-[#2F80ED] text-white font-bold active:brightness-110 transition-all shadow-xl items-center gap-2"
+                className="tf-button-primary inline-flex px-8 py-4 rounded-xl bg-[#2F80ED] text-white font-bold hover:brightness-110 active:brightness-110 transition-all shadow-xl items-center gap-2"
               >
                 Book Strategy Call
                 <ArrowRight className="w-5 h-5" />
@@ -1034,8 +1034,6 @@ export default function Home() {
     </div>
   );
 }
-
-
 
 
 

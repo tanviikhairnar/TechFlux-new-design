@@ -132,8 +132,8 @@ export default function CaseStudies() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                whileTap={{ y: -8, transition: { duration: 0.3 } }}
-                className="group overflow-hidden rounded-2xl border border-white/6 bg-[#101A31] transition-all active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="group overflow-hidden rounded-2xl border border-white/6 bg-[#101A31] transition-all hover:border-[#2F80ED]/30 active:border-[#2F80ED]/30 hover:shadow-lg active:shadow-lg hover:shadow-[#2F80ED]/20 active:shadow-[#2F80ED]/20"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden">
                   <img
@@ -142,7 +142,7 @@ export default function CaseStudies() {
                     loading="lazy"
                     decoding="async"
                     fetchPriority="low"
-                    className="h-full w-full object-cover transition-transform duration-500 group-active:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   {item.inProgress && (
                     <span className="absolute right-3 top-3 rounded-full bg-[#2F80ED] px-2.5 py-1 text-xs font-medium text-white">
@@ -170,7 +170,7 @@ export default function CaseStudies() {
 
                   <p className="mb-4 text-sm leading-relaxed text-[#94A3B8]">{item.description}</p>
                   {item.caseStudyUrl ? (
-                    <Link to={item.caseStudyUrl} className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F80ED] transition-colors active:text-[#6DB6FF]">
+                    <Link to={item.caseStudyUrl} className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F80ED] transition-colors hover:text-[#6DB6FF] active:text-[#6DB6FF]">
                       View Case Study
                       <ArrowRight className="h-4 w-4" />
                     </Link>
@@ -207,7 +207,7 @@ export default function CaseStudies() {
                 >
                   Book Strategy Call
                 </Link>
-                <GetProjectEstimateButton className="rounded-xl border border-[#2F80ED] bg-[#2A3E5D] px-8 py-3 text-sm font-semibold text-[#E5E7EB] active:bg-[#334b70]" />
+                <GetProjectEstimateButton className="rounded-xl border border-[#2F80ED] bg-[#2A3E5D] px-8 py-3 text-sm font-semibold text-[#E5E7EB] hover:bg-[#334b70] active:bg-[#334b70]" />
               </div>
             </motion.div>
           </div>
@@ -218,8 +218,6 @@ export default function CaseStudies() {
     </div>
   );
 }
-
-
 
 
 

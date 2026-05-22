@@ -36,7 +36,7 @@ export function InvestmentCardsSection({
   bulletItemClassName = 'flex items-center gap-3 text-[16px] text-[#9EABC2]',
   showEstimateButton = false,
   estimateButtonWrapClassName = 'mt-10 flex justify-center',
-  estimateButtonClassName = 'tf-button-primary inline-flex h-[50px] items-center justify-center rounded-xl bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-sm font-semibold text-white shadow-[0_0_16px_rgba(56,169,255,0.3)] transition-all active:-translate-y-0.5 active:brightness-110',
+  estimateButtonClassName = 'tf-button-primary inline-flex h-[50px] items-center justify-center rounded-xl bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-sm font-semibold text-white shadow-[0_0_16px_rgba(56,169,255,0.3)] transition-all hover:-translate-y-0.5 active:-translate-y-0.5 hover:brightness-110 active:brightness-110',
   estimateButtonTo = '/get-estimate',
   estimateButtonLabel = 'Get Project Estimate',
 }: InvestmentCardsSectionProps) {
@@ -77,5 +77,4 @@ export function InvestmentCardsSection({
     </section>
   );
 }
-
 

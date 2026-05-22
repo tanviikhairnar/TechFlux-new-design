@@ -43,7 +43,7 @@ function BreadcrumbLink({
   return (
     <Comp
       data-slot="breadcrumb-link"
-      className={cn("active:text-foreground transition-colors", className)}
+      className={cn("hover:text-foreground active:text-foreground transition-colors", className)}
       {...props}
     />
   );
@@ -107,4 +107,3 @@ export {
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
 };
-

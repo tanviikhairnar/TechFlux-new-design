@@ -91,7 +91,7 @@ export default function DineRightCaseStudy() {
 
               <Link
                 to="/get-estimate"
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-7 py-3 text-sm font-semibold text-white shadow-[0_0_20px_rgba(47,128,237,0.28)] transition-all duration-200 active:-translate-y-0.5 active:brightness-110 active:shadow-[0_10px_28px_rgba(47,128,237,0.42)]"
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-7 py-3 text-sm font-semibold text-white shadow-[0_0_20px_rgba(47,128,237,0.28)] transition-all duration-200 hover:-translate-y-0.5 active:-translate-y-0.5 hover:brightness-110 active:brightness-110 hover:shadow-[0_10px_28px_rgba(47,128,237,0.42)] active:shadow-[0_10px_28px_rgba(47,128,237,0.42)]"
               >
                 Start a Similar Platform
                 <ArrowRight className="h-4 w-4" />
@@ -243,25 +243,25 @@ export default function DineRightCaseStudy() {
 
         <section className="bg-[#0A152B] py-20 md:py-20">
           <div className="mx-auto grid w-full max-w-[1260px] gap-6 px-4 md:grid-cols-2 lg:px-5">
-            <div className="group relative overflow-hidden rounded-2xl border border-[#24406A] bg-[#101A31] shadow-[0_14px_36px_rgba(5,20,56,0.35)] transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/45 active:shadow-[0_18px_44px_rgba(47,128,237,0.28)]">
+            <div className="group relative overflow-hidden rounded-2xl border border-[#24406A] bg-[#101A31] shadow-[0_14px_36px_rgba(5,20,56,0.35)] transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 hover:border-[#2F80ED]/45 active:border-[#2F80ED]/45 hover:shadow-[0_18px_44px_rgba(47,128,237,0.28)] active:shadow-[0_18px_44px_rgba(47,128,237,0.28)]">
               <img
                 src={diningPreviewOne}
                 alt="Dine Right experience preview 1"
                 loading="lazy"
                 decoding="async"
                 fetchPriority="low"
-                className="h-[280px] w-full object-cover transition-transform duration-500 group-active:scale-105 md:h-[360px]"
+                className="h-[280px] w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-[360px]"
               />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#071227]/85 to-transparent" />
             </div>
-            <div className="group relative overflow-hidden rounded-2xl border border-[#24406A] bg-[#101A31] shadow-[0_14px_36px_rgba(5,20,56,0.35)] transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/45 active:shadow-[0_18px_44px_rgba(47,128,237,0.28)]">
+            <div className="group relative overflow-hidden rounded-2xl border border-[#24406A] bg-[#101A31] shadow-[0_14px_36px_rgba(5,20,56,0.35)] transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 hover:border-[#2F80ED]/45 active:border-[#2F80ED]/45 hover:shadow-[0_18px_44px_rgba(47,128,237,0.28)] active:shadow-[0_18px_44px_rgba(47,128,237,0.28)]">
               <img
                 src={diningPreviewTwo}
                 alt="Dine Right experience preview 2"
                 loading="lazy"
                 decoding="async"
                 fetchPriority="low"
-                className="h-[280px] w-full object-cover transition-transform duration-500 group-active:scale-105 md:h-[360px]"
+                className="h-[280px] w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-[360px]"
               />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#071227]/85 to-transparent" />
             </div>
@@ -280,13 +280,13 @@ export default function DineRightCaseStudy() {
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link
                   to="/book-strategy-call"
-                  className="rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-8 py-3 text-sm font-semibold text-white transition-all duration-200 active:-translate-y-0.5 active:brightness-110 active:shadow-[0_10px_30px_rgba(47,128,237,0.45)]"
+                  className="rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-8 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 active:-translate-y-0.5 hover:brightness-110 active:brightness-110 hover:shadow-[0_10px_30px_rgba(47,128,237,0.45)] active:shadow-[0_10px_30px_rgba(47,128,237,0.45)]"
                 >
                   Book Strategy Call
                 </Link>
                 <Link
                   to="/case-studies"
-                  className="rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-8 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 active:-translate-y-0.5 active:bg-[#23406B]"
+                  className="rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-8 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 hover:-translate-y-0.5 active:-translate-y-0.5 hover:bg-[#23406B] active:bg-[#23406B]"
                 >
                   View More Case Studies
                 </Link>
@@ -300,8 +300,6 @@ export default function DineRightCaseStudy() {
     </div>
   );
 }
-
-
 
 
 

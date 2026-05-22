@@ -218,13 +218,13 @@ export default function EcommerceSolutions() {
             label: "Get Project Estimate",
             to: "/get-estimate",
             className:
-              "inline-flex h-[56px] items-center justify-center rounded-[16px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-[18px] font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.34)] transition-all active:brightness-110",
+              "inline-flex h-[56px] items-center justify-center rounded-[16px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-[18px] font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.34)] transition-all hover:brightness-110 active:brightness-110",
           }}
           secondaryCta={{
             label: "Book Strategy Call",
             to: "/book-strategy-call",
             className:
-              "inline-flex h-[56px] items-center justify-center rounded-[16px] border border-white/10 bg-[#111A2D] px-8 text-[18px] font-semibold text-[#E0E7F5] transition-all active:border-[#2F80ED]/45 active:bg-[#15233E]",
+              "inline-flex h-[56px] items-center justify-center rounded-[16px] border border-white/10 bg-[#111A2D] px-8 text-[18px] font-semibold text-[#E0E7F5] transition-all hover:border-[#2F80ED]/45 active:border-[#2F80ED]/45 hover:bg-[#15233E] active:bg-[#15233E]",
           }}
           imageSrc={ecommerceHeroImage}
           imageAlt="E-commerce development dashboard"
@@ -240,7 +240,7 @@ export default function EcommerceSolutions() {
           headingWrapClassName="mb-14 text-center"
           headingClassName="mb-3 text-3xl font-semibold text-[#D8DEE8]"
           gridClassName="grid gap-4 md:grid-cols-2 lg:grid-cols-4"
-          cardClassName="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/35 active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+          cardClassName="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 hover:border-[#2F80ED]/35 active:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)] active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
           iconWrapperClassName="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#102548]"
           iconClassName="h-5 w-5 text-[#2F80ED]"
           titleClassName="mb-2 text-[18px] font-semibold leading-7 text-[#E5ECF8]"
@@ -260,7 +260,7 @@ export default function EcommerceSolutions() {
           headingWrapClassName="mb-14 text-center"
           headingClassName="mb-3 text-3xl font-semibold text-[#D8DEE8]"
           gridClassName="grid gap-4 md:grid-cols-2 lg:grid-cols-4"
-          cardClassName="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/35 active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+          cardClassName="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 hover:border-[#2F80ED]/35 active:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)] active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
           iconWrapperClassName="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#102548]"
           iconClassName="h-5 w-5 text-[#2F80ED]"
           titleClassName="mb-2 text-[17px] font-semibold leading-6 text-[#E5ECF8]"
@@ -308,7 +308,7 @@ export default function EcommerceSolutions() {
           cards={investmentCards}
           showEstimateButton
           gridClassName="grid gap-4 md:grid-cols-2 lg:grid-cols-4"
-          cardClassName="rounded-2xl border border-[#1D2B44] bg-[#101B33] p-7 transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/35 active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+          cardClassName="rounded-2xl border border-[#1D2B44] bg-[#101B33] p-7 transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 hover:border-[#2F80ED]/35 active:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)] active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
           cardTitleClassName="text-[18px] font-semibold text-[#E7EDF9]"
           bulletItemClassName="flex items-center gap-3 text-[14px] text-[#9EABC2]"
         />
@@ -319,8 +319,8 @@ export default function EcommerceSolutions() {
           headingWrapClassName="mb-10 text-center"
           headingClassName="text-3xl font-semibold text-[#E5ECF8]"
           gridClassName="grid gap-4 sm:grid-cols-2 md:grid-cols-4"
-          cardClassName="group flex min-h-[130px] flex-col items-center justify-center rounded-2xl border border-[#1E2D45] bg-[#111D36] p-5 text-center transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30"
-          iconWrapperClassName="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 group-active:scale-105"
+          cardClassName="group flex min-h-[130px] flex-col items-center justify-center rounded-2xl border border-[#1E2D45] bg-[#111D36] p-5 text-center transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 hover:border-[#2F80ED]/30 active:border-[#2F80ED]/30"
+          iconWrapperClassName="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-105"
           iconClassName="h-5 w-5"
           labelClassName="max-w-[140px] text-[15px] font-semibold leading-snug text-[#E3EAF8]"
         />
@@ -338,7 +338,7 @@ export default function EcommerceSolutions() {
           cardTitle="MyObscur - Fashion E-commerce Platform"
           description="A modern fashion commerce platform built with personalized journeys, secure checkout, and performance-focused storefront architecture."
           linkTo="/case-studies/myobscur"
-          linkClassName="inline-flex items-center gap-2 text-xl font-semibold text-[#2F80ED] transition-colors active:text-[#66B7FF]"
+          linkClassName="inline-flex items-center gap-2 text-xl font-semibold text-[#2F80ED] transition-colors hover:text-[#66B7FF] active:text-[#66B7FF]"
           linkSuffix={<ArrowUpRight className="h-5 w-5" />}
         />
 
@@ -358,7 +358,7 @@ export default function EcommerceSolutions() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="group rounded-2xl border border-white/5 bg-[#0C1527] p-6 transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/35 active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                  className="group rounded-2xl border border-white/5 bg-[#0C1527] p-6 transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 hover:border-[#2F80ED]/35 active:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)] active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]">
                     <item.icon className="h-4 w-4 text-[#2F80ED]" />
@@ -389,7 +389,7 @@ export default function EcommerceSolutions() {
                 >
                   <Link
                     to={item.link}
-                    className="block rounded-2xl border border-white/5 bg-[#0C1830] p-6 text-center transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/35 active:bg-[#112241] active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                    className="block rounded-2xl border border-white/5 bg-[#0C1830] p-6 text-center transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 hover:border-[#2F80ED]/35 active:border-[#2F80ED]/35 hover:bg-[#112241] active:bg-[#112241] hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)] active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                   >
                     <p className="font-semibold text-[#D8DEE8]">{item.title}</p>
                   </Link>
@@ -432,8 +432,6 @@ export default function EcommerceSolutions() {
     </div>
   );
 }
-
-
 
 
 

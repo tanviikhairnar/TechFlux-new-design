@@ -160,7 +160,7 @@ export default function BookStrategyCall() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: 0.1 }}
-                className="rounded-2xl border border-white/5 p-6 transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20 md:p-7"
+                className="rounded-2xl border border-white/5 p-6 transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 hover:border-[#2F80ED]/30 active:border-[#2F80ED]/30 hover:shadow-lg active:shadow-lg hover:shadow-[#2F80ED]/20 active:shadow-[#2F80ED]/20 md:p-7"
                 style={{ background: 'rgba(255,255,255,0.03)' }}
               >
                 <h3 className="mb-4 text-2xl font-semibold text-[#E5E7EB] md:text-3xl" style={{ fontFamily: 'Sora, sans-serif' }}>
@@ -189,7 +189,7 @@ export default function BookStrategyCall() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="rounded-2xl overflow-hidden active:shadow-lg active:shadow-[#2F80ED]/20 transition-all duration-300"
+              className="rounded-2xl overflow-hidden hover:shadow-lg active:shadow-lg hover:shadow-[#2F80ED]/20 active:shadow-[#2F80ED]/20 transition-all duration-300"
               style={{ background: "rgba(255,255,255,0.03)" }}
             >
               <iframe
@@ -230,8 +230,8 @@ export default function BookStrategyCall() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.08 }}
-                        whileTap={{ y: -6, transition: { duration: 0.3 } }}
-                        className="flex h-[320px] flex-col rounded-2xl border border-white/8 p-8 shadow-lg backdrop-blur-xl transition-all active:shadow-[#2F80ED]/20"
+                        whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                        className="flex h-[320px] flex-col rounded-2xl border border-white/8 p-8 shadow-lg backdrop-blur-xl transition-all hover:shadow-[#2F80ED]/20 active:shadow-[#2F80ED]/20"
                         style={{ background: 'rgba(255,255,255,0.04)' }}
                       >
                         <div className="mb-6 flex gap-1">
@@ -257,7 +257,7 @@ export default function BookStrategyCall() {
               </div>
 
               {canSlide ? (
-                <div className="absolute left-1/2 top-1/2 z-20 w-screen -translate-x-1/2 -translate-y-1/2 px-0 opacity-100 transition-opacity duration-300">
+                <div className="pointer-events-none absolute left-1/2 top-1/2 z-20 w-screen -translate-x-1/2 -translate-y-1/2 px-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
                   <button
                     type="button"
                     onClick={() => {
@@ -274,7 +274,7 @@ export default function BookStrategyCall() {
                         setTestimonialIndex((prev) => prev - 1);
                       }
                     }}
-                    className="absolute left-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#111827]/95 text-[#E5E7EB] transition-all active:border-[#2F80ED]/60 active:text-[#2F80ED]"
+                    className="pointer-events-auto absolute left-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#111827]/95 text-[#E5E7EB] transition-all hover:border-[#2F80ED]/60 active:border-[#2F80ED]/60 hover:text-[#2F80ED] active:text-[#2F80ED]"
                   >
                     <ChevronLeft className="h-5 w-5" />
                   </button>
@@ -282,7 +282,7 @@ export default function BookStrategyCall() {
                   <button
                     type="button"
                     onClick={() => setTestimonialIndex((prev) => prev + 1)}
-                    className="absolute right-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#111827]/95 text-[#E5E7EB] transition-all active:border-[#2F80ED]/60 active:text-[#2F80ED]"
+                    className="pointer-events-auto absolute right-0 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#111827]/95 text-[#E5E7EB] transition-all hover:border-[#2F80ED]/60 active:border-[#2F80ED]/60 hover:text-[#2F80ED] active:text-[#2F80ED]"
                   >
                     <ChevronRight className="h-5 w-5" />
                   </button>
@@ -295,7 +295,7 @@ export default function BookStrategyCall() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-20 hidden rounded-3xl border border-white/5 p-10 text-center transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20 md:p-14"
+            className="mt-20 hidden rounded-3xl border border-white/5 p-10 text-center transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 hover:border-[#2F80ED]/30 active:border-[#2F80ED]/30 hover:shadow-lg active:shadow-lg hover:shadow-[#2F80ED]/20 active:shadow-[#2F80ED]/20 md:p-14"
             style={{ background: 'rgba(255,255,255,0.03)' }}
           >
             <h2 className="mb-4 text-4xl font-bold text-[#E5E7EB] md:text-5xl" style={{ fontFamily: 'Sora, sans-serif' }}>
@@ -304,7 +304,7 @@ export default function BookStrategyCall() {
             <p className="mx-auto mb-8 max-w-3xl text-base text-[#64748B] md:text-lg">
               No sales pitch, just honest technical advice and recommendations.
             </p>
-            <button className="rounded-xl bg-gradient-to-r from-[#38A9FF] to-[#2B7BDF] px-8 py-4 text-base font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all active:brightness-110">
+            <button className="rounded-xl bg-gradient-to-r from-[#38A9FF] to-[#2B7BDF] px-8 py-4 text-base font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all hover:brightness-110 active:brightness-110">
               Confirm Your Strategy Call
             </button>
           </motion.div>
@@ -315,5 +315,3 @@ export default function BookStrategyCall() {
     </div>
   );
 }
-
-

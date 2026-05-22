@@ -77,10 +77,10 @@ export function ServiceHeroSection({
   const resolvedImageContainerClassName =
     imageContainerClassName ||
     (imageVariant === 'framed'
-      ? `tf-hover-card group relative overflow-hidden rounded-[28px] border border-white/5 bg-[#0E1B34] p-4 shadow-[0_22px_56px_rgba(3,11,27,0.32)] transition-[transform,border-color,box-shadow] duration-500 active:-translate-y-1 active:border-[#2F80ED]/25 active:shadow-[0_26px_64px_rgba(9,25,61,0.42)] md:p-6 ${
+      ? `tf-hover-card group relative overflow-hidden rounded-[28px] border border-white/5 bg-[#0E1B34] p-4 shadow-[0_22px_56px_rgba(3,11,27,0.32)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 active:-translate-y-1 hover:border-[#2F80ED]/25 active:border-[#2F80ED]/25 hover:shadow-[0_26px_64px_rgba(9,25,61,0.42)] active:shadow-[0_26px_64px_rgba(9,25,61,0.42)] md:p-6 ${
           imageFit === 'contain' ? 'flex items-center justify-center' : ''
         }`
-      : 'tf-hover-card group overflow-hidden rounded-2xl border border-white/5 bg-[#0E1B34] shadow-[0_20px_50px_rgba(2,10,28,0.35)] transition-[transform,border-color,box-shadow] duration-500 active:-translate-y-1 active:border-[#2F80ED]/25 active:shadow-[0_24px_58px_rgba(9,25,61,0.42)]');
+      : 'tf-hover-card group overflow-hidden rounded-2xl border border-white/5 bg-[#0E1B34] shadow-[0_20px_50px_rgba(2,10,28,0.35)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 active:-translate-y-1 hover:border-[#2F80ED]/25 active:border-[#2F80ED]/25 hover:shadow-[0_24px_58px_rgba(9,25,61,0.42)] active:shadow-[0_24px_58px_rgba(9,25,61,0.42)]');
 
   const resolvedImageOverlayClassName =
     imageOverlayClassName;
@@ -123,12 +123,10 @@ export function ServiceHeroSection({
             loading="eager"
             decoding="async"
             fetchPriority="high"
-            className={`${resolvedImageClassName} transition-transform duration-700 ease-out group-active:scale-[1.025]`}
+            className={`${resolvedImageClassName} transition-transform duration-700 ease-out group-hover:scale-[1.025]`}
           />
         </motion.div>
       </div>
     </section>
   );
 }
-
-

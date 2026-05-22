@@ -206,13 +206,13 @@ export default function WhiteLabelPartnership() {
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-start">
                 <Link
                   to="/become-partner"
-                  className="inline-flex h-[52px] items-center justify-center rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-sm font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.28)] transition-all active:brightness-110"
+                  className="inline-flex h-[52px] items-center justify-center rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-sm font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.28)] transition-all hover:brightness-110 active:brightness-110"
                 >
                   Become a Partner
                 </Link>
                 <Link
                   to="/book-strategy-call"
-                  className="inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#2F80ED] px-8 text-sm font-semibold text-[#4CA1FF] active:bg-[#2F80ED]/10 transition-all"
+                  className="inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#2F80ED] px-8 text-sm font-semibold text-[#4CA1FF] hover:bg-[#2F80ED]/10 active:bg-[#2F80ED]/10 transition-all"
                 >
                   Book Partnership Call
                 </Link>
@@ -257,7 +257,7 @@ export default function WhiteLabelPartnership() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="group rounded-2xl border border-white/5 bg-[#0C1830] px-8 py-8 text-center transition-all duration-300 active:border-[#2F80ED]/35 active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                  className="group rounded-2xl border border-white/5 bg-[#0C1830] px-8 py-8 text-center transition-all duration-300 hover:border-[#2F80ED]/35 active:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)] active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <div className="mx-auto mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]">
                     <item.icon className="h-4 w-4 text-[#2F80ED]" />
@@ -290,7 +290,7 @@ export default function WhiteLabelPartnership() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: (i % 3) * 0.06 }}
-                  className="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 active:border-[#2F80ED]/35 active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                  className="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 active:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)] active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]">
                     <item.icon className="h-4 w-4 text-[#2F80ED]" />
@@ -317,7 +317,7 @@ export default function WhiteLabelPartnership() {
               {techTags.map((tag, i) => (
                 <span
                   key={i}
-                  className="inline-flex min-h-[72px] min-w-[120px] items-center justify-center rounded-2xl border border-[#1E2D46] bg-[#121F39] px-8 py-4 text-[16px] font-semibold tracking-wide text-[#D8DEE8] transition-all active:border-[#2F80ED]/45 active:bg-[#152645]"
+                  className="inline-flex min-h-[72px] min-w-[120px] items-center justify-center rounded-2xl border border-[#1E2D46] bg-[#121F39] px-8 py-4 text-[16px] font-semibold tracking-wide text-[#D8DEE8] transition-all hover:border-[#2F80ED]/45 active:border-[#2F80ED]/45 hover:bg-[#152645] active:bg-[#152645]"
                 >
                   {tag}
                 </span>
@@ -487,7 +487,7 @@ export default function WhiteLabelPartnership() {
                 >
                   <Link
                     to={item.to}
-                    className="block rounded-2xl border border-white/5 bg-[#0C1830] p-6 text-center transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/35 active:bg-[#112241] active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                    className="block rounded-2xl border border-white/5 bg-[#0C1830] p-6 text-center transition-all duration-300 hover:-translate-y-1 active:-translate-y-1 hover:border-[#2F80ED]/35 active:border-[#2F80ED]/35 hover:bg-[#112241] active:bg-[#112241] hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)] active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                   >
                     <p className="font-semibold text-[#D8DEE8]">{item.title}</p>
                   </Link>
@@ -511,7 +511,7 @@ export default function WhiteLabelPartnership() {
                 Looking for a Reliable Development Partner?
               </h2>
               <p className="mx-auto mb-8 max-w-[760px] text-sm text-[#8A96AA] md:text-[15px]">
-                LetÃ¢â‚¬â„¢s discuss how we can help you deliver exceptional technical solutions to your clients under your brand.
+                Letâ€™s discuss how we can help you deliver exceptional technical solutions to your clients under your brand.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <Link
@@ -522,7 +522,7 @@ export default function WhiteLabelPartnership() {
                 </Link>
                 <Link
                   to="/book-strategy-call"
-                  className="inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#2F80ED] px-8 text-sm font-semibold text-[#4CA1FF] active:bg-[#2F80ED]/10"
+                  className="inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#2F80ED] px-8 text-sm font-semibold text-[#4CA1FF] hover:bg-[#2F80ED]/10 active:bg-[#2F80ED]/10"
                 >
                   Book Strategy Call
                 </Link>
@@ -537,7 +537,6 @@ export default function WhiteLabelPartnership() {
     </div>
   );
 }
-
 
 
 

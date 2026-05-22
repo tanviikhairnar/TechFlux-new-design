@@ -67,7 +67,7 @@ export default function CareerDetails() {
               positionTitle={role.title}
               role={role}
               label="Apply for This Position"
-              className="inline-flex h-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-9 text-base font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 active:brightness-110"
+              className="inline-flex h-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-9 text-base font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:brightness-110 active:brightness-110"
             />
           </div>
         </section>
@@ -77,4 +77,3 @@ export default function CareerDetails() {
     </div>
   );
 }
-

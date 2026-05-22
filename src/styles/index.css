@@ -99,6 +99,7 @@ body {
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
 }
 
+.unity-card:hover,
 .unity-card:active,
 .unity-card:focus-within {
   transform: translateY(-3px);
@@ -113,6 +114,7 @@ body {
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
+.unity-chip:hover,
 .unity-chip:active,
 .unity-chip:focus-within {
   transform: translateY(-2px);
@@ -124,6 +126,7 @@ body {
   transition: color 180ms ease, gap 180ms ease;
 }
 
+.unity-link:hover,
 .unity-link:active,
 .unity-link:focus-visible {
   color: #94ccff;
@@ -180,12 +183,14 @@ body {
   transition: opacity 320ms var(--tf-ease-standard);
 }
 
+.tf-hover-card:hover,
 .tf-hover-card:active,
 .tf-hover-card:focus-within {
   transform: translateY(-6px);
   box-shadow: var(--tf-shadow-soft), var(--tf-shadow-glow);
 }
 
+.tf-hover-card:hover::before,
 .tf-hover-card:active::before,
 .tf-hover-card:focus-within::before {
   opacity: 1;
@@ -199,6 +204,7 @@ body {
     color 220ms ease;
 }
 
+.tf-lift-soft:hover,
 .tf-lift-soft:active,
 .tf-lift-soft:focus-visible {
   transform: translateY(-3px);
@@ -224,22 +230,83 @@ body {
   transition: opacity 240ms ease, transform 240ms var(--tf-ease-standard);
 }
 
+.tf-nav-link:hover,
 .tf-nav-link:active,
 .tf-nav-link:focus-visible {
   transform: translateY(-1px);
 }
 
+.tf-nav-link:hover::after,
 .tf-nav-link:active::after,
 .tf-nav-link:focus-visible::after {
   opacity: 1;
   transform: scaleX(1);
 }
 
+.tf-cta-feedback,
 .tf-button-primary,
 .tf-button-secondary {
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform, box-shadow, filter;
+  transition:
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    opacity 220ms ease;
+}
+
+.tf-cta-feedback::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(8, 20, 44, 0.12)),
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.06), transparent 68%);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.tf-cta-feedback:hover,
+.tf-button-primary:hover,
+.tf-button-secondary:hover {
+  transform: translate3d(0, -1px, 0);
+  filter: brightness(1.015);
+}
+
+.tf-cta-feedback:hover::after {
+  opacity: 0.42;
+}
+
+.tf-cta-feedback:active,
+.tf-button-primary:active,
+.tf-button-secondary:active {
+  transform: translate3d(0, 0.5px, 0);
+  filter: brightness(0.985) saturate(1.03);
+  box-shadow:
+    inset 0 1px 8px rgba(3, 11, 27, 0.24),
+    0 0 0 2px rgba(47, 128, 237, 0.12);
+}
+
+.tf-cta-feedback:active::after {
+  opacity: 1;
+}
+
+.tf-cta-feedback:focus-visible,
+.tf-button-primary:focus-visible,
+.tf-button-secondary:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(47, 128, 237, 0.16),
+    0 10px 30px rgba(10, 43, 95, 0.16);
 }
 
 .tf-button-primary::before,
@@ -252,11 +319,31 @@ body {
   transition: transform 650ms var(--tf-ease-standard);
 }
 
+.tf-button-primary:hover::before,
 .tf-button-primary:active::before,
 .tf-button-primary:focus-visible::before,
+.tf-button-secondary:hover::before,
 .tf-button-secondary:active::before,
 .tf-button-secondary:focus-visible::before {
   transform: translateX(125%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tf-cta-feedback:active,
+  .tf-button-primary:active,
+  .tf-button-secondary:active {
+    transform: none;
+  }
+
+  .tf-cta-feedback:hover,
+  .tf-button-primary:hover,
+  .tf-button-secondary:hover {
+    transform: none;
+  }
+
+  .tf-cta-feedback::after {
+    transition: none;
+  }
 }
 
 .tf-text-link {
@@ -267,6 +354,7 @@ body {
   transition: color 180ms ease, gap 220ms var(--tf-ease-standard);
 }
 
+.tf-text-link:hover,
 .tf-text-link:active,
 .tf-text-link:focus-visible {
   gap: 0.75rem;
@@ -278,6 +366,7 @@ body {
   transform-origin: center;
 }
 
+.group:hover .tf-image-zoom,
 .group:active .tf-image-zoom,
 .group:focus-within .tf-image-zoom {
   transform: scale(1.1) translate3d(0, -4px, 0);
@@ -290,6 +379,7 @@ body {
   transform-origin: center;
 }
 
+.group:hover .tf-section-visual,
 .group:active .tf-section-visual,
 .group:focus-within .tf-section-visual {
   transform: scale(1.12) translate3d(0, -8px, 0);
@@ -322,6 +412,7 @@ body {
     transform 220ms ease;
 }
 
+.tf-select:hover,
 .tf-select:active,
 .tf-select:focus {
   border-color: #3564a7;

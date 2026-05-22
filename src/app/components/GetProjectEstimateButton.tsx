@@ -15,7 +15,7 @@ export function GetProjectEstimateButton({
   after,
 }: GetProjectEstimateButtonProps) {
   return (
-    <Link to={to} className={className}>
+    <Link to={to} className={`tf-cta-feedback ${className}`}>
       {label}
       {after}
     </Link>
@@ -36,7 +36,7 @@ export function BookStrategyCallButton({
   onClick,
 }: RouteButtonProps) {
   return (
-    <Link to="/book-strategy-call" onClick={onClick} className={className}>
+    <Link to="/book-strategy-call" onClick={onClick} className={`tf-cta-feedback ${className}`}>
       {label}
       {after}
     </Link>
@@ -50,7 +50,7 @@ export function BecomePartnerButton({
   onClick,
 }: RouteButtonProps) {
   return (
-    <Link to="/become-partner" onClick={onClick} className={className}>
+    <Link to="/become-partner" onClick={onClick} className={`tf-cta-feedback ${className}`}>
       {label}
       {after}
     </Link>
@@ -76,7 +76,7 @@ export function CareerApplyNowButton({
     <Link
       to={`/careers/apply?position=${encodeURIComponent(positionTitle)}`}
       state={{ roleTitle: positionTitle, role }}
-      className={className}
+      className={`tf-cta-feedback ${className}`}
     >
       {label}
       {after}
@@ -100,7 +100,7 @@ export function CareerViewDetailsButton({
   after,
 }: CareerViewDetailsButtonProps) {
   return (
-    <Link to={`/careers/${slug}`} state={{ role }} className={className}>
+    <Link to={`/careers/${slug}`} state={{ role }} className={`tf-cta-feedback ${className}`}>
       {label}
       {after}
     </Link>

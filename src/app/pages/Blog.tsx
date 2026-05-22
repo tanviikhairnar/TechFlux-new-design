@@ -74,8 +74,8 @@ export default function Blog() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                whileTap={{ y: -6, transition: { duration: 0.25 } }}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#24314a] bg-[#101A31] shadow-[0_20px_35px_rgba(2,8,23,0.28)] transition-all active:border-[#32598b]"
+                whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#24314a] bg-[#101A31] shadow-[0_20px_35px_rgba(2,8,23,0.28)] transition-all hover:border-[#32598b] active:border-[#32598b]"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden">
                   <img
@@ -84,7 +84,7 @@ export default function Blog() {
                     loading="lazy"
                     decoding="async"
                     fetchPriority="low"
-                    className="h-full w-full object-cover object-center transition-transform duration-500 group-active:scale-105"
+                    className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
@@ -106,10 +106,10 @@ export default function Blog() {
                     <button
                       type="button"
                       onClick={() => navigate(post.link)}
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F80ED] transition-all duration-300 active:text-[#61B8FF] active:[text-shadow:0_0_14px_rgba(47,128,237,0.75)] group-active:[text-shadow:0_0_10px_rgba(47,128,237,0.55)]"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F80ED] transition-all duration-300 hover:text-[#61B8FF] active:text-[#61B8FF] hover:[text-shadow:0_0_14px_rgba(47,128,237,0.75)] active:[text-shadow:0_0_14px_rgba(47,128,237,0.75)] group-hover:[text-shadow:0_0_10px_rgba(47,128,237,0.55)]"
                     >
                       Read More
-                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-active:translate-x-1" />
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </button>
                   </div>
                 </div>
@@ -140,7 +140,7 @@ export default function Blog() {
                 >
                   Book Strategy Call
                 </Link>
-                <GetProjectEstimateButton className="rounded-xl bg-[#364B69] px-8 py-3 text-sm font-semibold text-[#E5E7EB] active:bg-[#466087]" />
+                <GetProjectEstimateButton className="rounded-xl bg-[#364B69] px-8 py-3 text-sm font-semibold text-[#E5E7EB] hover:bg-[#466087] active:bg-[#466087]" />
               </div>
             </motion.div>
           </div>
@@ -151,8 +151,6 @@ export default function Blog() {
     </div>
   );
 }
-
-
 
 
 

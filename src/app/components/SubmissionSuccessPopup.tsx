@@ -31,7 +31,7 @@ export function SubmissionSuccessPopup({ open, title, message, onClose }: Submis
               type="button"
               aria-label="Close success popup"
               onClick={onClose}
-              className="absolute right-3 top-3 rounded-lg p-1.5 text-[#94A3B8] transition-colors active:bg-[#13233F] active:text-[#E5E7EB]"
+              className="absolute right-3 top-3 rounded-lg p-1.5 text-[#94A3B8] transition-colors hover:bg-[#13233F] active:bg-[#13233F] hover:text-[#E5E7EB] active:text-[#E5E7EB]"
             >
               <X className="h-4 w-4" />
             </button>
@@ -47,7 +47,7 @@ export function SubmissionSuccessPopup({ open, title, message, onClose }: Submis
             <button
               type="button"
               onClick={onClose}
-              className="mt-6 inline-flex h-11 w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white transition-all duration-200 active:brightness-110"
+              className="mt-6 inline-flex h-11 w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white transition-all duration-200 hover:brightness-110 active:brightness-110"
             >
               Continue
             </button>
@@ -57,5 +57,4 @@ export function SubmissionSuccessPopup({ open, title, message, onClose }: Submis
     </AnimatePresence>
   );
 }
-
 

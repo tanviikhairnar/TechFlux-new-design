@@ -99,7 +99,7 @@ export default function GetEstimate() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20 md:p-7"
+              className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 hover:border-[#2F80ED]/30 active:border-[#2F80ED]/30 hover:shadow-lg active:shadow-lg hover:shadow-[#2F80ED]/20 active:shadow-[#2F80ED]/20 md:p-7"
             >
               <h2 className="mb-5 text-3xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Project Details
@@ -203,7 +203,7 @@ export default function GetEstimate() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white transition-all duration-200 active:-translate-y-0.5 active:brightness-110 active:shadow-[0_10px_28px_rgba(47,128,237,0.45)]"
+                  className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 active:-translate-y-0.5 hover:brightness-110 active:brightness-110 hover:shadow-[0_10px_28px_rgba(47,128,237,0.45)] active:shadow-[0_10px_28px_rgba(47,128,237,0.45)]"
                 >
                   {showSuccessOnButton && !isSubmitting ? <CheckCircle2 className="h-4 w-4" /> : <Send className="h-4 w-4" />}
                   {isSubmitting ? 'Submitting...' : showSuccessOnButton ? 'Request Sent' : 'Submit Project Details'}
@@ -216,7 +216,7 @@ export default function GetEstimate() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
+                className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 hover:border-[#2F80ED]/30 active:border-[#2F80ED]/30 hover:shadow-lg active:shadow-lg hover:shadow-[#2F80ED]/20 active:shadow-[#2F80ED]/20"
               >
                 <h3 className="mb-4 text-3xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                   What Happens Next
@@ -240,7 +240,7 @@ export default function GetEstimate() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
+                className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 hover:border-[#2F80ED]/30 active:border-[#2F80ED]/30 hover:shadow-lg active:shadow-lg hover:shadow-[#2F80ED]/20 active:shadow-[#2F80ED]/20"
               >
                 <h3 className="mb-4 text-3xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                   Why Techflux?
@@ -259,7 +259,7 @@ export default function GetEstimate() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.25 }}
-                className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
+                className="rounded-2xl border border-white/5 bg-[#101A31]/95 p-5 transition-all duration-300 hover:border-[#2F80ED]/30 active:border-[#2F80ED]/30 hover:shadow-lg active:shadow-lg hover:shadow-[#2F80ED]/20 active:shadow-[#2F80ED]/20"
               >
                 <div className="text-center">
                   <p className="text-4xl font-bold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
@@ -288,5 +288,4 @@ export default function GetEstimate() {
     </div>
   );
 }
-
 

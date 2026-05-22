@@ -41,7 +41,7 @@ function SelectTrigger({
       data-slot="select-trigger"
       data-size={size}
       className={cn(
-        "flex w-full items-center justify-between gap-2 whitespace-nowrap rounded-xl border border-[#24416f] bg-[#0f1b33] bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0))] px-4 text-[15px] text-[#e5e7eb] shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] outline-none transition-[border-color,box-shadow,background-color,transform] data-[placeholder]:text-[#7b8da8] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-11 data-[size=sm]:h-10 focus-visible:border-[#2f80ed] focus-visible:ring-[4px] focus-visible:ring-[#2f80ed]/15 active:border-[#3564a7] active:bg-[#11203b] *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "flex w-full items-center justify-between gap-2 whitespace-nowrap rounded-xl border border-[#24416f] bg-[#0f1b33] bg-[linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0))] px-4 text-[15px] text-[#e5e7eb] shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] outline-none transition-[border-color,box-shadow,background-color,transform] data-[placeholder]:text-[#7b8da8] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-11 data-[size=sm]:h-10 focus-visible:border-[#2f80ed] focus-visible:ring-[4px] focus-visible:ring-[#2f80ed]/15 hover:border-[#3564a7] active:border-[#3564a7] hover:bg-[#11203b] active:bg-[#11203b] *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className,
       )}
       {...props}
@@ -187,4 +187,3 @@ export {
   SelectTrigger,
   SelectValue,
 };
-
