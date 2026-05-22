@@ -87,14 +87,14 @@ export default function MyObscurCaseStudy() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   to="/get-estimate"
-                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-7 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(47,128,237,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_10px_30px_rgba(47,128,237,0.45)]"
+                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-7 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(47,128,237,0.35)] transition-all duration-200 active:-translate-y-0.5 active:brightness-110 active:shadow-[0_10px_30px_rgba(47,128,237,0.45)]"
                 >
                   Start a Similar Project
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   to="/book-strategy-call"
-                  className="inline-flex items-center rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-7 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#23406B]"
+                  className="inline-flex items-center rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-7 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 active:-translate-y-0.5 active:bg-[#23406B]"
                 >
                   Book Strategy Call
                 </Link>
@@ -120,7 +120,7 @@ export default function MyObscurCaseStudy() {
         </section>
 
         <section className="mx-auto w-full max-w-[1260px] px-4 pb-14 lg:px-5">
-          <div className="rounded-2xl border border-white/6 bg-[#101A31] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:p-7">
+          <div className="rounded-2xl border border-white/6 bg-[#101A31] p-6 transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20 md:p-7">
             <h2 className="mb-4 text-2xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
               About the Client
             </h2>
@@ -142,7 +142,7 @@ export default function MyObscurCaseStudy() {
               {challengeItems.map((item) => (
                 <div
                   key={item}
-                  className="rounded-xl border border-white/6 bg-[#111D33] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+                  className="rounded-xl border border-white/6 bg-[#111D33] p-5 transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
                 >
                   <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[#26497A] bg-[#122C4D]">
                     <CheckCircle2 className="h-5 w-5 text-[#3B82F6]" />
@@ -163,7 +163,7 @@ export default function MyObscurCaseStudy() {
               {featureItems.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-white/6 bg-[#111D33] px-5 py-4 shadow-[0_10px_24px_rgba(2,10,28,0.24)] transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:rounded-xl md:p-5 md:shadow-none"
+                  className="rounded-2xl border border-white/6 bg-[#111D33] px-5 py-4 shadow-[0_10px_24px_rgba(2,10,28,0.24)] transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20 md:rounded-xl md:p-5 md:shadow-none"
                 >
                   <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[#26497A] bg-[#122C4D]">
                     <CheckCircle2 className="h-5 w-5 text-[#3B82F6]" />
@@ -185,7 +185,7 @@ export default function MyObscurCaseStudy() {
               {techItems.map((item) => (
                 <span
                   key={item}
-                  className="rounded-lg border border-white/8 bg-[#111D33] px-4 py-2 text-sm text-[#C4D4EA] transition-all duration-300 hover:border-[#2F80ED]/40"
+                  className="rounded-lg border border-white/8 bg-[#111D33] px-4 py-2 text-sm text-[#C4D4EA] transition-all duration-300 active:border-[#2F80ED]/40"
                 >
                   {item}
                 </span>
@@ -203,7 +203,7 @@ export default function MyObscurCaseStudy() {
               {impactItems.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-xl border border-white/6 bg-[#111D33] px-5 py-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+                  className="rounded-xl border border-white/6 bg-[#111D33] px-5 py-4 transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
                 >
                   <p className="flex items-start gap-3">
                     <item.icon className="mt-0.5 h-4 w-4 shrink-0 text-[#2F80ED]" />
@@ -230,11 +230,11 @@ export default function MyObscurCaseStudy() {
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link
                   to="/book-strategy-call"
-                  className="rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-8 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_10px_30px_rgba(47,128,237,0.45)]"
+                  className="rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-8 py-3 text-sm font-semibold text-white transition-all duration-200 active:-translate-y-0.5 active:brightness-110 active:shadow-[0_10px_30px_rgba(47,128,237,0.45)]"
                 >
                   Book Strategy Call
                 </Link>
-                <GetProjectEstimateButton className="rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-8 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#23406B]" />
+                <GetProjectEstimateButton className="rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-8 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 active:-translate-y-0.5 active:bg-[#23406B]" />
               </div>
             </div>
           </div>
@@ -245,6 +245,7 @@ export default function MyObscurCaseStudy() {
     </div>
   );
 }
+
 
 
 

@@ -184,13 +184,13 @@ export default function OnDemandSolutions() {
             label: 'Get Project Estimate',
             to: '/get-estimate',
             className:
-              'inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#2F80ED] px-8 text-sm font-semibold text-[#4CA1FF] transition-all hover:bg-[#2F80ED]/10',
+              'inline-flex h-[52px] items-center justify-center rounded-[10px] border border-[#2F80ED] px-8 text-sm font-semibold text-[#4CA1FF] transition-all active:bg-[#2F80ED]/10',
           }}
           secondaryCta={{
             label: 'Book Strategy Call',
             to: '/book-strategy-call',
             className:
-              'inline-flex h-[52px] items-center justify-center rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-sm font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.28)] transition-all hover:brightness-110',
+              'inline-flex h-[52px] items-center justify-center rounded-[10px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-sm font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.28)] transition-all active:brightness-110',
           }}
           imageSrc={onDemandHeroImage}
           imageAlt="On-demand app screen"
@@ -295,7 +295,7 @@ export default function OnDemandSolutions() {
           cardTitle={caseStudy.title}
           description={caseStudy.desc}
           linkTo="/case-studies/servyo"
-          linkClassName="inline-flex items-center gap-2 text-xl font-semibold text-[#2F80ED] transition-colors hover:text-[#66B7FF]"
+          linkClassName="inline-flex items-center gap-2 text-xl font-semibold text-[#2F80ED] transition-colors active:text-[#66B7FF]"
           linkSuffix={<ArrowUpRight className="h-5 w-5" />}
         />
 
@@ -344,7 +344,7 @@ export default function OnDemandSolutions() {
                 >
                   <Link
                     to={item.link}
-                    className="block rounded-2xl border border-white/5 bg-[#0C1830] p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/35 hover:bg-[#112241] hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                    className="block rounded-2xl border border-white/5 bg-[#0C1830] p-6 text-center transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/35 active:bg-[#112241] active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                   >
                     <p className="font-semibold text-[#D8DEE8]">{item.title}</p>
                   </Link>
@@ -376,7 +376,7 @@ export default function OnDemandSolutions() {
                 >
                   Book Strategy Call
                 </Link>
-                <GetProjectEstimateButton className="rounded-[10px] border border-[#2F80ED] px-8 py-3 text-sm font-medium text-[#4CA1FF] hover:bg-[#2F80ED]/10" />
+                <GetProjectEstimateButton className="rounded-[10px] border border-[#2F80ED] px-8 py-3 text-sm font-medium text-[#4CA1FF] active:bg-[#2F80ED]/10" />
               </div>
             </motion.div>
           </div>
@@ -386,6 +386,7 @@ export default function OnDemandSolutions() {
     </div>
   );
 }
+
 
 
 

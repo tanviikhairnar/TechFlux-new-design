@@ -1,0 +1,45 @@
+<IfModule mod_headers.c>
+  RequestHeader set X-Prerender-Token "1XF90ayrd5R5rbdG7d4O"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{QUERY_STRING} _escaped_fragment_ [OR]
+  RewriteCond %{HTTP_USER_AGENT} baiduspider [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} twitterbot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} facebookexternalhit [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} rogerbot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} linkedinbot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} embedly [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} quora\ link\ preview [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} showyoubot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} outbrain [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} pinterest [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} slackbot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} vkShare [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} W3C_Validator [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} redditbot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} applebot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} whatsapp [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} flipboard [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} tumblrbot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} bitlybot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} skypeuripreview [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} nuzzel [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} discordbot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} googlebot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} bingbot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} yandex [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} chatgpt-user [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} GPTBot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} ClaudeBot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} PerplexityBot [NC,OR]
+  RewriteCond %{HTTP_USER_AGENT} Google-Extended [NC]
+  RewriteCond %{REQUEST_URI} !\.(js|css|xml|less|png|jpg|jpeg|gif|pdf|doc|txt|ico|rss|zip|mp3|rar|exe|wmv|avi|ppt|mpg|mpeg|tif|wav|mov|psd|ai|xls|mp4|m4a|swf|dat|dmg|iso|flv|m4v|torrent|ttf|woff|woff2|svg|webp|avif)$ [NC]
+  RewriteRule ^(index\.html|index\.php)?(.*)$ https://service.prerender.io/%{REQUEST_SCHEME}://%{HTTP_HOST}/$2 [P,END]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+</IfModule>

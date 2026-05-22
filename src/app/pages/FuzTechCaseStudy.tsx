@@ -57,7 +57,7 @@ export default function FuzTechCaseStudy() {
 
         <section className="relative z-10 mx-auto flex w-full max-w-[1260px] items-center px-4 pb-24 pt-[7.5rem] md:pb-28 md:pt-[8.5rem] lg:px-5">
           <div className="w-full">
-          <Link to="/case-studies" className="mb-6 inline-flex items-center gap-2 text-sm text-[#6DB6FF] hover:text-white">
+          <Link to="/case-studies" className="mb-6 inline-flex items-center gap-2 text-sm text-[#6DB6FF] active:text-white">
             <ArrowLeft className="h-4 w-4" />
             Back to Case Studies
           </Link>
@@ -92,14 +92,14 @@ export default function FuzTechCaseStudy() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   to="/get-estimate"
-                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-7 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(47,128,237,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110"
+                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-7 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(47,128,237,0.35)] transition-all duration-200 active:-translate-y-0.5 active:brightness-110"
                 >
                   Start a Similar Project
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   to="/book-strategy-call"
-                  className="inline-flex items-center rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-7 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#23406B]"
+                  className="inline-flex items-center rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-7 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 active:-translate-y-0.5 active:bg-[#23406B]"
                 >
                   Book Strategy Call
                 </Link>
@@ -228,6 +228,7 @@ export default function FuzTechCaseStudy() {
     </div>
   );
 }
+
 
 
 

@@ -31,6 +31,11 @@ body {
     linear-gradient(180deg, #020617 0%, #061228 48%, #020617 100%);
 }
 
+.tf-deferred-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 960px;
+}
+
 .tf-page::before,
 .tf-page::after {
   content: "";
@@ -94,7 +99,8 @@ body {
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
 }
 
-.unity-card:hover {
+.unity-card:active,
+.unity-card:focus-within {
   transform: translateY(-3px);
   border-color: rgba(47, 128, 237, 0.52);
   background: linear-gradient(180deg, rgba(18, 35, 63, 0.98), rgba(15, 29, 55, 0.98));
@@ -107,7 +113,8 @@ body {
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
-.unity-chip:hover {
+.unity-chip:active,
+.unity-chip:focus-within {
   transform: translateY(-2px);
   border-color: rgba(47, 128, 237, 0.45);
   box-shadow: 0 8px 20px rgba(12, 40, 88, 0.28);
@@ -117,7 +124,8 @@ body {
   transition: color 180ms ease, gap 180ms ease;
 }
 
-.unity-link:hover {
+.unity-link:active,
+.unity-link:focus-visible {
   color: #94ccff;
   gap: 0.65rem;
 }
@@ -172,13 +180,13 @@ body {
   transition: opacity 320ms var(--tf-ease-standard);
 }
 
-.tf-hover-card:hover,
+.tf-hover-card:active,
 .tf-hover-card:focus-within {
   transform: translateY(-6px);
   box-shadow: var(--tf-shadow-soft), var(--tf-shadow-glow);
 }
 
-.tf-hover-card:hover::before,
+.tf-hover-card:active::before,
 .tf-hover-card:focus-within::before {
   opacity: 1;
 }
@@ -191,7 +199,7 @@ body {
     color 220ms ease;
 }
 
-.tf-lift-soft:hover,
+.tf-lift-soft:active,
 .tf-lift-soft:focus-visible {
   transform: translateY(-3px);
 }
@@ -216,12 +224,12 @@ body {
   transition: opacity 240ms ease, transform 240ms var(--tf-ease-standard);
 }
 
-.tf-nav-link:hover,
+.tf-nav-link:active,
 .tf-nav-link:focus-visible {
   transform: translateY(-1px);
 }
 
-.tf-nav-link:hover::after,
+.tf-nav-link:active::after,
 .tf-nav-link:focus-visible::after {
   opacity: 1;
   transform: scaleX(1);
@@ -244,9 +252,9 @@ body {
   transition: transform 650ms var(--tf-ease-standard);
 }
 
-.tf-button-primary:hover::before,
+.tf-button-primary:active::before,
 .tf-button-primary:focus-visible::before,
-.tf-button-secondary:hover::before,
+.tf-button-secondary:active::before,
 .tf-button-secondary:focus-visible::before {
   transform: translateX(125%);
 }
@@ -259,7 +267,7 @@ body {
   transition: color 180ms ease, gap 220ms var(--tf-ease-standard);
 }
 
-.tf-text-link:hover,
+.tf-text-link:active,
 .tf-text-link:focus-visible {
   gap: 0.75rem;
 }
@@ -270,7 +278,7 @@ body {
   transform-origin: center;
 }
 
-.group:hover .tf-image-zoom,
+.group:active .tf-image-zoom,
 .group:focus-within .tf-image-zoom {
   transform: scale(1.1) translate3d(0, -4px, 0);
   filter: saturate(1.1) brightness(1.03);
@@ -282,7 +290,7 @@ body {
   transform-origin: center;
 }
 
-.group:hover .tf-section-visual,
+.group:active .tf-section-visual,
 .group:focus-within .tf-section-visual {
   transform: scale(1.12) translate3d(0, -8px, 0);
   filter: saturate(1.12) brightness(1.04);
@@ -314,7 +322,8 @@ body {
     transform 220ms ease;
 }
 
-.tf-select:hover {
+.tf-select:active,
+.tf-select:focus {
   border-color: #3564a7;
   background-color: #11203b;
 }

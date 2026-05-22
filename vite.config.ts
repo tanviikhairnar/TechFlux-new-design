@@ -16,6 +16,39 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes('node_modules')) {
+            return;
+          }
+
+          if (
+            id.includes('react-router') ||
+            id.includes('react-dom') ||
+            id.includes('\\react\\') ||
+            id.includes('/react/')
+          ) {
+            return 'react-vendor';
+          }
+
+          if (id.includes('framer-motion')) {
+            return 'motion-vendor';
+          }
+
+          if (
+            id.includes('@radix-ui') ||
+            id.includes('react-hook-form') ||
+            id.includes('sonner') ||
+            id.includes('cmdk')
+          ) {
+            return 'ui-vendor';
+          }
+        },
+      },
+    },
+  },
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],

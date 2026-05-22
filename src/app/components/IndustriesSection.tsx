@@ -27,9 +27,9 @@ export function IndustriesSection({
   headingWrapClassName = 'mb-9 text-center',
   headingClassName = 'text-3xl font-semibold text-[#E5ECF8]',
   gridClassName = 'grid gap-6 sm:grid-cols-3 md:grid-cols-6',
-  cardClassName = 'tf-hover-card group flex min-h-[200px] flex-col items-center justify-center rounded-2xl border border-[#1E2D45] bg-[#111D36] p-7 text-center transition-[transform,border-color,background-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:bg-[#13213D] hover:shadow-[0_16px_38px_rgba(9,25,61,0.28)]',
-  iconWrapperClassName = 'mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-2xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_22px_rgba(122,185,255,0.35)]',
-  iconClassName = 'h-8 w-8 transition-all duration-300 group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.35)]',
+  cardClassName = 'tf-hover-card group flex min-h-[200px] flex-col items-center justify-center rounded-2xl border border-[#1E2D45] bg-[#111D36] p-7 text-center transition-[transform,border-color,background-color,box-shadow] duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:bg-[#13213D] active:shadow-[0_16px_38px_rgba(9,25,61,0.28)]',
+  iconWrapperClassName = 'mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-2xl transition-all duration-300 group-active:scale-105 group-active:shadow-[0_0_22px_rgba(122,185,255,0.35)]',
+  iconClassName = 'h-8 w-8 transition-all duration-300 group-active:drop-shadow-[0_0_10px_rgba(255,255,255,0.35)]',
   labelClassName = 'max-w-[150px] text-[18px] font-semibold leading-snug text-[#E3EAF8]',
 }: IndustriesSectionProps) {
   return (
@@ -47,7 +47,7 @@ export function IndustriesSection({
               key={item.label}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -4 }}
+              whileTap={{ y: -4 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, duration: 0.24 }}
               className={cardClassName}
@@ -63,4 +63,5 @@ export function IndustriesSection({
     </section>
   );
 }
+
 

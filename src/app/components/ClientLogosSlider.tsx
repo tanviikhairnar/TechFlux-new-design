@@ -37,7 +37,7 @@ export function ClientLogosSlider() {
             filter 320ms ease;
         }
 
-        .client-logo-item:hover .client-logo-mark,
+        .client-logo-item:active .client-logo-mark,
         .client-logo-item:focus-within .client-logo-mark {
           transform: scale(1.04);
           opacity: 0.92;

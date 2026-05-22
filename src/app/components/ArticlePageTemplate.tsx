@@ -74,7 +74,7 @@ export function ArticlePageTemplate({
 
         <article className="relative z-10 mx-auto w-full max-w-[1260px] px-4 pb-20 pt-28 md:px-6 md:pt-32 lg:px-5">
           <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="mb-7">
-            <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-[#56A9F5] transition-colors hover:text-[#87CBFF]">
+            <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-[#56A9F5] transition-colors active:text-[#87CBFF]">
               <ArrowLeft className="h-4 w-4" />
               Back to Blog
             </Link>
@@ -122,7 +122,7 @@ export function ArticlePageTemplate({
                   Book Strategy Call
                 </Link>
                 <GetProjectEstimateButton
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#364B69] px-8 py-3 text-sm font-semibold text-[#E5E7EB] hover:bg-[#466087]"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#364B69] px-8 py-3 text-sm font-semibold text-[#E5E7EB] active:bg-[#466087]"
                   after={<ArrowRight className="h-4 w-4" />}
                 />
               </div>
@@ -135,4 +135,5 @@ export function ArticlePageTemplate({
     </div>
   );
 }
+
 

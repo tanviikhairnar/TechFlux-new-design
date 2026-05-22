@@ -200,13 +200,13 @@ export default function SaaSDevelopment() {
             label: 'Get Project Estimate',
             to: '/get-estimate',
             className:
-              'inline-flex h-[56px] items-center justify-center rounded-[16px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-[18px] font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.34)] transition-all hover:brightness-110',
+              'inline-flex h-[56px] items-center justify-center rounded-[16px] bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-[18px] font-semibold text-white shadow-[0_0_22px_rgba(56,169,255,0.34)] transition-all active:brightness-110',
           }}
           secondaryCta={{
             label: 'Book Strategy Call',
             to: '/book-strategy-call',
             className:
-              'inline-flex h-[56px] items-center justify-center rounded-[16px] border border-white/10 bg-[#111A2D] px-8 text-[18px] font-semibold text-[#E0E7F5] transition-all hover:border-[#2F80ED]/45 hover:bg-[#15233E]',
+              'inline-flex h-[56px] items-center justify-center rounded-[16px] border border-white/10 bg-[#111A2D] px-8 text-[18px] font-semibold text-[#E0E7F5] transition-all active:border-[#2F80ED]/45 active:bg-[#15233E]',
           }}
           imageSrc={saasHeroImage}
           imageAlt="SaaS analytics dashboard"
@@ -238,10 +238,10 @@ export default function SaaSDevelopment() {
                   key={item.title}
                   initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ y: -5 }}
+                  whileTap={{ y: -5 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                  className="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 active:border-[#2F80ED]/35 active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]">
                     <item.icon className="h-4 w-4 text-[#2F80ED]" />
@@ -307,7 +307,7 @@ export default function SaaSDevelopment() {
           cardTitle="servyo - SaaS Platform"
           description="Digital document management platform for educational institutions with secure records, multi-user workflows, and automated certificate generation."
           linkTo="/leave-certificate-case-study"
-          linkClassName="inline-flex items-center gap-2 text-xl font-semibold text-[#2F80ED] transition-colors hover:text-[#66B7FF]"
+          linkClassName="inline-flex items-center gap-2 text-xl font-semibold text-[#2F80ED] transition-colors active:text-[#66B7FF]"
         />
 
         <section className="bg-[#081327] py-20">
@@ -323,7 +323,7 @@ export default function SaaSDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="rounded-2xl border border-[#1E2D45] bg-[#111D36] p-8 transition-all duration-300 hover:border-[#2F80ED]/35"
+                  className="rounded-2xl border border-[#1E2D45] bg-[#111D36] p-8 transition-all duration-300 active:border-[#2F80ED]/35"
                 >
                   <div className="mb-5 flex h-12 w-12 items-center justify-center">
                     <item.icon className="h-10 w-10 text-[#2F80ED]" />
@@ -343,10 +343,10 @@ export default function SaaSDevelopment() {
             </h2>
             <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-5">
               {relatedServices.map((service) => (
-                <motion.div key={service.title} whileHover={{ y: -3 }} transition={{ duration: 0.2 }}>
+                <motion.div key={service.title} whileTap={{ y: -3 }} transition={{ duration: 0.2 }}>
                   <Link
                     to={service.to}
-                    className="flex min-h-[58px] items-center justify-center rounded-lg border border-white/5 bg-[#0C1830] px-4 py-3 text-center text-sm font-medium text-[#D7E2F6] transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/35 hover:bg-[#112241] hover:text-white"
+                    className="flex min-h-[58px] items-center justify-center rounded-lg border border-white/5 bg-[#0C1830] px-4 py-3 text-center text-sm font-medium text-[#D7E2F6] transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/35 active:bg-[#112241] active:text-white"
                   >
                     {service.title}
                   </Link>
@@ -383,6 +383,7 @@ export default function SaaSDevelopment() {
     </div>
   );
 }
+
 
 
 

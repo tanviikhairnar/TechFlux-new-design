@@ -192,11 +192,11 @@ export default function UnityGameDevelopment() {
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
                   to="/book-strategy-call"
-                  className="inline-flex h-[52px] items-center rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-7 text-sm font-semibold text-white shadow-[0_0_24px_rgba(47,128,237,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_10px_30px_rgba(47,128,237,0.45)]"
+                  className="inline-flex h-[52px] items-center rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-7 text-sm font-semibold text-white shadow-[0_0_24px_rgba(47,128,237,0.35)] transition-all duration-200 active:-translate-y-0.5 active:brightness-110 active:shadow-[0_10px_30px_rgba(47,128,237,0.45)]"
                 >
                   Book Strategy Call
                 </Link>
-                <GetProjectEstimateButton className="inline-flex h-[52px] items-center rounded-xl border border-[#2F80ED] px-7 text-sm font-semibold text-[#6EB8FF] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2F80ED]/10 hover:shadow-[0_8px_24px_rgba(19,77,151,0.3)]" />
+                <GetProjectEstimateButton className="inline-flex h-[52px] items-center rounded-xl border border-[#2F80ED] px-7 text-sm font-semibold text-[#6EB8FF] transition-all duration-200 active:-translate-y-0.5 active:bg-[#2F80ED]/10 active:shadow-[0_8px_24px_rgba(19,77,151,0.3)]" />
               </div>
             </motion.div>
 
@@ -228,7 +228,7 @@ export default function UnityGameDevelopment() {
           headingClassName="text-3xl font-semibold text-[#F9FAFB]"
           subtitleClassName="mx-auto mt-3 max-w-3xl text-sm text-[#9CA3AF] md:text-[15px]"
           gridClassName="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-          cardClassName="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+          cardClassName="group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-all duration-300 active:border-[#2F80ED]/35 active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
           iconWrapperClassName="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548]"
           iconClassName="h-4 w-4 text-[#2F80ED]"
           titleClassName="mb-2 tf-card-title"
@@ -252,7 +252,7 @@ export default function UnityGameDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="group rounded-2xl border border-white/5 bg-[#0F172A] p-10 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                  className="group rounded-2xl border border-white/5 bg-[#0F172A] p-10 transition-all duration-300 active:border-[#2F80ED]/35 active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <item.icon className="mb-6 h-8 w-8 text-[#2F80ED]" />
                   <h3 className="mb-3 text-[18px] font-semibold leading-tight text-[#F9FAFB]">{item.title}</h3>
@@ -279,7 +279,7 @@ export default function UnityGameDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.03 }}
-                  className="unity-chip flex h-[118px] flex-col items-center justify-center rounded-[20px] border border-[#24324C]/70 bg-[#111A2D] px-4 py-4 text-center transition-all hover:border-[#2F80ED]/35"
+                  className="unity-chip flex h-[118px] flex-col items-center justify-center rounded-[20px] border border-[#24324C]/70 bg-[#111A2D] px-4 py-4 text-center transition-all active:border-[#2F80ED]/35"
                 >
                   <Code2 className="mx-auto mb-2.5 h-7 w-7 text-[#2F80ED]" />
                   <span className="text-[15px] font-semibold leading-tight text-[#E2E8F0]">{item}</span>
@@ -313,7 +313,7 @@ export default function UnityGameDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#0E1628] p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/25 hover:shadow-[0_20px_50px_rgba(0,0,0,0.45)]"
+                  className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#0E1628] p-6 md:p-7 transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/25 active:shadow-[0_20px_50px_rgba(0,0,0,0.45)]"
                 >
                   <span className="inline-flex rounded-full bg-[#132B52] px-4 py-1 text-[12px] font-semibold tracking-wide text-[#4DA3FF]">
                     STEP {item.step.toString().padStart(2, "0")}
@@ -353,7 +353,7 @@ export default function UnityGameDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="group overflow-hidden rounded-2xl border border-white/5 bg-[#0F172A] transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                  className="group overflow-hidden rounded-2xl border border-white/5 bg-[#0F172A] transition-all duration-300 active:border-[#2F80ED]/35 active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <div className="relative aspect-[16/10] w-full overflow-hidden">
                     <img
@@ -396,7 +396,7 @@ export default function UnityGameDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="group rounded-2xl border border-white/5 bg-[#0F172A] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                  className="group rounded-2xl border border-white/5 bg-[#0F172A] p-6 transition-all duration-300 active:border-[#2F80ED]/35 active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <item.icon className="mb-3 h-5 w-5 text-[#2F80ED]" />
                   <h3 className="mb-2 text-lg font-semibold text-[#F9FAFB]">{item.title}</h3>
@@ -405,7 +405,7 @@ export default function UnityGameDevelopment() {
               ))}
             </div>
             <div className="mt-10 flex justify-center">
-              <GetProjectEstimateButton className="inline-flex h-[50px] items-center justify-center rounded-xl bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-sm font-semibold text-white shadow-[0_0_16px_rgba(56,169,255,0.3)] transition-all hover:-translate-y-0.5 hover:brightness-110" />
+              <GetProjectEstimateButton className="inline-flex h-[50px] items-center justify-center rounded-xl bg-gradient-to-r from-[#39AAFF] to-[#2A79D9] px-8 text-sm font-semibold text-white shadow-[0_0_16px_rgba(56,169,255,0.3)] transition-all active:-translate-y-0.5 active:brightness-110" />
             </div>
           </div>
         </section>
@@ -427,11 +427,11 @@ export default function UnityGameDevelopment() {
               <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
                 <Link
                   to="/book-strategy-call"
-                  className="inline-flex h-[50px] items-center justify-center rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-8 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_10px_28px_rgba(47,128,237,0.45)]"
+                  className="inline-flex h-[50px] items-center justify-center rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-8 text-sm font-semibold text-white transition-all duration-200 active:-translate-y-0.5 active:brightness-110 active:shadow-[0_10px_28px_rgba(47,128,237,0.45)]"
                 >
                   Book Strategy Call
                 </Link>
-                <GetProjectEstimateButton className="inline-flex h-[50px] items-center justify-center rounded-xl border border-[#2F80ED] px-8 text-sm font-semibold text-[#69B7FF] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#2F80ED]/10 hover:shadow-[0_8px_24px_rgba(19,77,151,0.3)]" />
+                <GetProjectEstimateButton className="inline-flex h-[50px] items-center justify-center rounded-xl border border-[#2F80ED] px-8 text-sm font-semibold text-[#69B7FF] transition-all duration-200 active:-translate-y-0.5 active:bg-[#2F80ED]/10 active:shadow-[0_8px_24px_rgba(19,77,151,0.3)]" />
               </div>
             </motion.div>
           </div>
@@ -452,7 +452,7 @@ export default function UnityGameDevelopment() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="group rounded-2xl border border-white/5 bg-[#0F172A] p-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
+                  className="group rounded-2xl border border-white/5 bg-[#0F172A] p-6 transition-all duration-300 active:border-[#2F80ED]/35 active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]"
                 >
                   <h3 className="text-base font-semibold text-[#F9FAFB]">{item.title}</h3>
                   <p className="mt-2 tf-muted-card">{item.desc}</p>
@@ -471,5 +471,6 @@ export default function UnityGameDevelopment() {
     </div>
   );
 }
+
 
 

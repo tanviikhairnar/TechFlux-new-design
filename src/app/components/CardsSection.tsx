@@ -36,9 +36,9 @@ export function CardsSection({
   headingClassName = 'text-3xl font-semibold text-[#D8DEE8]',
   subtitleClassName = 'text-sm text-[#8A96AA] md:text-[15px]',
   gridClassName = 'grid gap-4 md:grid-cols-2 lg:grid-cols-3',
-  cardClassName = 'tf-hover-card group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-[transform,border-color,background-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/35 hover:bg-[#10203C] hover:shadow-[0_14px_36px_rgba(16,53,110,0.32)]',
-  iconWrapperClassName = 'mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#15315a] group-hover:shadow-[0_0_24px_rgba(47,128,237,0.24)]',
-  iconClassName = 'h-4 w-4 text-[#2F80ED] transition-transform duration-300 group-hover:scale-110',
+  cardClassName = 'tf-hover-card group rounded-2xl border border-white/5 bg-[#0C1830] p-6 transition-[transform,border-color,background-color,box-shadow] duration-300 active:-translate-y-1 active:border-[#2F80ED]/35 active:bg-[#10203C] active:shadow-[0_14px_36px_rgba(16,53,110,0.32)]',
+  iconWrapperClassName = 'mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#102548] transition-all duration-300 group-active:scale-110 group-active:bg-[#15315a] group-active:shadow-[0_0_24px_rgba(47,128,237,0.24)]',
+  iconClassName = 'h-4 w-4 text-[#2F80ED] transition-transform duration-300 group-active:scale-110',
   titleClassName = 'mb-2 tf-card-title',
   descClassName = 'tf-muted-card',
   transitionStep = 0.05,
@@ -60,7 +60,7 @@ export function CardsSection({
               key={item.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -4 }}
+              whileTap={{ y: -4 }}
               viewport={{ once: true }}
               transition={{ delay: (transitionOffsetFn ? transitionOffsetFn(i) : i) * transitionStep, duration: 0.28 }}
               className={cardClassName}
@@ -77,4 +77,5 @@ export function CardsSection({
     </section>
   );
 }
+
 

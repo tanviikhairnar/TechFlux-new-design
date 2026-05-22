@@ -30,15 +30,15 @@ const HomeHero = () => {
           <div className="flex flex-wrap gap-4">
             <Link
               to="/book-strategy-call"
-              className="group px-8 py-4 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold flex items-center gap-2 transition-all duration-300 hover:shadow-2xl hover:shadow-[#2F80ED]/40"
+              className="group px-8 py-4 rounded-xl bg-gradient-to-r from-[#2D9CDB] to-[#2F80ED] text-white font-semibold flex items-center gap-2 transition-all duration-300 active:shadow-2xl active:shadow-[#2F80ED]/40"
             >
               Book Strategy Call
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="w-5 h-5 transition-transform group-active:translate-x-1" />
             </Link>
 
             <a
               href="#portfolio"
-              className="px-8 py-4 rounded-xl border border-[#2F80ED] text-[#2F80ED] font-semibold transition-all duration-300 hover:bg-[#2F80ED]/10"
+              className="px-8 py-4 rounded-xl border border-[#2F80ED] text-[#2F80ED] font-semibold transition-all duration-300 active:bg-[#2F80ED]/10"
             >
               View Case Studies
             </a>
@@ -70,6 +70,7 @@ const HomeHero = () => {
 }
 
 export default HomeHero
+
 
 
 

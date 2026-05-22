@@ -154,7 +154,7 @@ export default function BecomePartner() {
             </h2>
             <div className="grid gap-5 md:grid-cols-3">
               {perfectFor.map((item) => (
-                <div key={item.title} className="rounded-2xl border border-[#1F2D46] bg-[#111B31] p-7 text-center transition-all duration-300 hover:border-[#2C4B78] hover:bg-[#132039]">
+                <div key={item.title} className="rounded-2xl border border-[#1F2D46] bg-[#111B31] p-7 text-center transition-all duration-300 active:border-[#2C4B78] active:bg-[#132039]">
                   <item.icon className="mx-auto mb-5 h-8 w-8 text-[#2F80ED]" />
                   <h3 className="mb-2.5 text-lg font-semibold text-[#E5E7EB]">{item.title}</h3>
                   <p className="text-sm leading-relaxed text-[#93A4BE]">{item.text}</p>
@@ -169,7 +169,7 @@ export default function BecomePartner() {
             </h2>
             <div className="grid gap-5 md:grid-cols-4">
               {steps.map((item) => (
-                <div key={item.number} className="rounded-2xl border border-[#1F2D46] bg-[#111B31] p-6 transition-all duration-300 hover:border-[#2C4B78] hover:bg-[#132039]">
+                <div key={item.number} className="rounded-2xl border border-[#1F2D46] bg-[#111B31] p-6 transition-all duration-300 active:border-[#2C4B78] active:bg-[#132039]">
                   <p className="mb-3 text-4xl font-bold text-[#2F80ED]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {item.number}
                   </p>
@@ -186,7 +186,7 @@ export default function BecomePartner() {
             </h2>
             <div className="grid gap-5 md:grid-cols-2">
               {benefits.map((item) => (
-                <div key={item.title} className="rounded-2xl border border-[#1F2D46] bg-[#111B31] p-6 transition-all duration-300 hover:border-[#2C4B78] hover:bg-[#132039]">
+                <div key={item.title} className="rounded-2xl border border-[#1F2D46] bg-[#111B31] p-6 transition-all duration-300 active:border-[#2C4B78] active:bg-[#132039]">
                   <p className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#2F80ED]" />
                     <span>
@@ -213,7 +213,7 @@ export default function BecomePartner() {
                       placeholder="First name"
                       value={formData.firstName}
                       onChange={(event) => setFormData((prev) => ({ ...prev, firstName: event.target.value }))}
-                      className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                      className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] active:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
                     />
                   </div>
                   <div>
@@ -223,7 +223,7 @@ export default function BecomePartner() {
                       placeholder="Last name"
                       value={formData.lastName}
                       onChange={(event) => setFormData((prev) => ({ ...prev, lastName: event.target.value }))}
-                      className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                      className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] active:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
                     />
                   </div>
                 </div>
@@ -234,7 +234,7 @@ export default function BecomePartner() {
                     placeholder="your.email@agency.com"
                     value={formData.email}
                     onChange={(event) => setFormData((prev) => ({ ...prev, email: event.target.value }))}
-                    className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                    className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] active:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
                   />
                 </div>
                 <div>
@@ -244,7 +244,7 @@ export default function BecomePartner() {
                     placeholder="Your company name"
                     value={formData.company}
                     onChange={(event) => setFormData((prev) => ({ ...prev, company: event.target.value }))}
-                    className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                    className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] active:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
                   />
                 </div>
                 <div>
@@ -254,7 +254,7 @@ export default function BecomePartner() {
                     placeholder="Agency, Consultant, Reseller..."
                     value={formData.agencyType}
                     onChange={(event) => setFormData((prev) => ({ ...prev, agencyType: event.target.value }))}
-                    className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                    className="h-11 w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] active:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
                   />
                 </div>
                 <div>
@@ -264,7 +264,7 @@ export default function BecomePartner() {
                     placeholder="What services do you currently offer?"
                     value={formData.services}
                     onChange={(event) => setFormData((prev) => ({ ...prev, services: event.target.value }))}
-                    className="w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                    className="w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] active:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
                   />
                 </div>
                 <div>
@@ -274,7 +274,7 @@ export default function BecomePartner() {
                     placeholder="Tell us about your goals and what you're looking for in a development partner..."
                     value={formData.message}
                     onChange={(event) => setFormData((prev) => ({ ...prev, message: event.target.value }))}
-                    className="w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] hover:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
+                    className="w-full rounded-xl border border-[#243A62] bg-[#0D1930] px-4 py-3 text-sm text-[#E5E7EB] outline-none transition-all duration-300 placeholder:text-[#6F83A2] active:border-[#2B4D7F] focus:border-[#2F80ED] focus:shadow-[0_0_0_4px_rgba(47,128,237,0.14)]"
                   />
                 </div>
 
@@ -283,7 +283,7 @@ export default function BecomePartner() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
+                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-sm font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 active:-translate-y-0.5 active:brightness-110"
                 >
                   {showSuccessOnButton && !isSubmitting ? <CheckCircle2 className="h-4 w-4" /> : <Send className="h-4 w-4" />}
                   {isSubmitting ? 'Submitting...' : showSuccessOnButton ? 'Application Sent' : 'Submit Partnership Application'}
@@ -335,4 +335,5 @@ export default function BecomePartner() {
     </div>
   );
 }
+
 

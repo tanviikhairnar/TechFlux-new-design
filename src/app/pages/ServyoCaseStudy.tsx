@@ -95,7 +95,7 @@ export default function ServyoCaseStudy() {
 
               <Link
                 to="/get-estimate"
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-8 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(47,128,237,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_10px_30px_rgba(47,128,237,0.45)]"
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-8 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(47,128,237,0.35)] transition-all duration-200 active:-translate-y-0.5 active:brightness-110 active:shadow-[0_10px_30px_rgba(47,128,237,0.45)]"
               >
                 Start a Similar Project
                 <ArrowRight className="h-4 w-4" />
@@ -126,7 +126,7 @@ export default function ServyoCaseStudy() {
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-white/6 bg-[#101A31] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+              className="rounded-2xl border border-white/6 bg-[#101A31] p-6 transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
             >
               <h2 className="mb-4 text-2xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 The Challenge
@@ -146,7 +146,7 @@ export default function ServyoCaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.08 }}
-              className="rounded-2xl border border-white/6 bg-[#101A31] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+              className="rounded-2xl border border-white/6 bg-[#101A31] p-6 transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
             >
               <h2 className="mb-4 text-2xl font-semibold text-[#E5E7EB]" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Our Solution
@@ -176,7 +176,7 @@ export default function ServyoCaseStudy() {
               {keyFeatures.map((feature) => (
                 <div
                   key={feature}
-                  className="rounded-2xl border border-white/6 bg-[#111D33] px-5 py-4 shadow-[0_10px_24px_rgba(2,10,28,0.24)] transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:rounded-xl md:p-5 md:shadow-none"
+                  className="rounded-2xl border border-white/6 bg-[#111D33] px-5 py-4 shadow-[0_10px_24px_rgba(2,10,28,0.24)] transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20 md:rounded-xl md:p-5 md:shadow-none"
                 >
                   <div className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[#26497A] bg-[#122C4D]">
                     <CheckCircle2 className="h-5 w-5 text-[#3B82F6]" />
@@ -197,7 +197,7 @@ export default function ServyoCaseStudy() {
               {techStack.map((item) => (
                 <div
                   key={item.label}
-                  className="rounded-xl border border-white/6 bg-[#111D33] px-5 py-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+                  className="rounded-xl border border-white/6 bg-[#111D33] px-5 py-6 text-center transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
                 >
                   <p className="mb-2 text-xs uppercase tracking-wide text-[#58A8FF]">{item.label}</p>
                   <p className="text-lg font-semibold text-[#E5E7EB]">{item.value}</p>
@@ -216,7 +216,7 @@ export default function ServyoCaseStudy() {
               {resultItems.map((item) => (
                 <div
                   key={item}
-                  className="rounded-xl border border-white/6 bg-[#111D33] px-5 py-4 text-[#C4D4EA] transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+                  className="rounded-xl border border-white/6 bg-[#111D33] px-5 py-4 text-[#C4D4EA] transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
                 >
                   <p className="flex items-center gap-3 text-sm md:text-base">
                     <CheckCircle2 className="h-4 w-4 text-[#2F80ED]" />
@@ -240,13 +240,13 @@ export default function ServyoCaseStudy() {
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link
                   to="/book-strategy-call"
-                  className="rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-8 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_10px_30px_rgba(47,128,237,0.45)]"
+                  className="rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-8 py-3 text-sm font-semibold text-white transition-all duration-200 active:-translate-y-0.5 active:brightness-110 active:shadow-[0_10px_30px_rgba(47,128,237,0.45)]"
                 >
                   Book Strategy Call
                 </Link>
                 <Link
                   to="/case-studies"
-                  className="rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-8 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#23406B]"
+                  className="rounded-xl border border-[#2F80ED]/50 bg-[#193258] px-8 py-3 text-sm font-semibold text-[#E5E7EB] transition-all duration-200 active:-translate-y-0.5 active:bg-[#23406B]"
                 >
                   View More Case Studies
                 </Link>
@@ -260,6 +260,7 @@ export default function ServyoCaseStudy() {
     </div>
   );
 }
+
 
 
 

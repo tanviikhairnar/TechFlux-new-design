@@ -33,7 +33,7 @@ export function CaseStudySection({
   headingWrapClassName = 'mb-8 text-center',
   headingClassName = 'text-4xl font-semibold text-[#E5ECF8] md:text-[52px]',
   title,
-  cardClassName = 'tf-hover-card group overflow-hidden rounded-2xl border border-white/5 bg-[linear-gradient(110deg,#0F1B31_0%,#101A2D_55%,#0E1728_100%)] transition-[transform,border-color,box-shadow] duration-500 hover:-translate-y-1 hover:border-[#2F80ED]/25 hover:shadow-[0_24px_56px_rgba(7,20,48,0.42)]',
+  cardClassName = 'tf-hover-card group overflow-hidden rounded-2xl border border-white/5 bg-[linear-gradient(110deg,#0F1B31_0%,#101A2D_55%,#0E1728_100%)] transition-[transform,border-color,box-shadow] duration-500 active:-translate-y-1 active:border-[#2F80ED]/25 active:shadow-[0_24px_56px_rgba(7,20,48,0.42)]',
   gridClassName,
   equalSplit = true,
   imageWrapClassName,
@@ -49,7 +49,7 @@ export function CaseStudySection({
   description,
   descriptionClassName = 'mt-6 text-sm leading-8 text-[#8A96AA] md:text-[17px]',
   linkTo,
-  linkClassName = 'inline-flex items-center gap-2 text-xl font-semibold text-[#2F80ED] transition-[color,transform] duration-300 hover:translate-x-1 hover:text-[#66B7FF]',
+  linkClassName = 'inline-flex items-center gap-2 text-xl font-semibold text-[#2F80ED] transition-[color,transform] duration-300 active:translate-x-1 active:text-[#66B7FF]',
   linkLabel = 'View Case Study',
   linkSuffix,
 }: CaseStudySectionProps) {
@@ -86,7 +86,7 @@ export function CaseStudySection({
                   loading="lazy"
                   decoding="async"
                   fetchPriority="low"
-                  className={`${resolvedImageClassName} transition-transform duration-700 ease-out group-hover:scale-[1.03]`}
+                  className={`${resolvedImageClassName} transition-transform duration-700 ease-out group-active:scale-[1.03]`}
                 />
               </div>
               <div className={contentClassName}>
@@ -109,4 +109,5 @@ export function CaseStudySection({
     </section>
   );
 }
+
 

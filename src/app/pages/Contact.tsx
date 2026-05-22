@@ -175,7 +175,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#38A9FF] to-[#2B7BDF] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all hover:brightness-110 md:text-[15px]"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#38A9FF] to-[#2B7BDF] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all active:brightness-110 md:text-[15px]"
                 >
                   {showSuccessOnButton && !isSubmitting ? <CheckCircle2 className="h-5 w-5" /> : <Send className="h-5 w-5" />}
                   {isSubmitting ? 'Sending...' : showSuccessOnButton ? 'Message Sent' : 'Send Message'}
@@ -245,7 +245,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Open map in Google Maps"
-                  className="absolute bottom-3 right-3 rounded-lg bg-[#0b1f3f]/90 px-3 py-1.5 text-xs font-medium text-[#E5E7EB] backdrop-blur transition-colors hover:bg-[#12315f]"
+                  className="absolute bottom-3 right-3 rounded-lg bg-[#0b1f3f]/90 px-3 py-1.5 text-xs font-medium text-[#E5E7EB] backdrop-blur transition-colors active:bg-[#12315f]"
                 >
                   Open in Google Maps
                 </a>
@@ -258,7 +258,7 @@ export default function Contact() {
                 <p className="mb-6 text-base text-[#94A3B8] md:text-[17px]">Schedule a strategy call to discuss your project in detail.</p>
                 <Link
                   to="/book-strategy-call"
-                  className="inline-flex rounded-xl bg-gradient-to-r from-[#38A9FF] to-[#2B7BDF] px-8 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all hover:brightness-110 md:text-[15px]"
+                  className="inline-flex rounded-xl bg-gradient-to-r from-[#38A9FF] to-[#2B7BDF] px-8 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all active:brightness-110 md:text-[15px]"
                 >
                   Book Strategy Call
                 </Link>
@@ -279,3 +279,4 @@ export default function Contact() {
     </div>
   );
 }
+

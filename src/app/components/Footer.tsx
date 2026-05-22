@@ -72,9 +72,9 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.label}
-                  whileHover={{ y: -3, scale: 1.05 }}
+                  whileTap={{ y: -3, scale: 1.05 }}
                   transition={{ duration: 0.2 }}
-                  className="tf-hover-card flex h-9 w-9 items-center justify-center rounded-lg border border-white/6 bg-white/5 text-[#9CA3AF] transition-all duration-300 hover:border-[#2F80ED]/25 hover:bg-[#2F80ED]/20 hover:text-[#2F80ED]"
+                  className="tf-hover-card flex h-9 w-9 items-center justify-center rounded-lg border border-white/6 bg-white/5 text-[#9CA3AF] transition-all duration-300 active:border-[#2F80ED]/25 active:bg-[#2F80ED]/20 active:text-[#2F80ED]"
                 >
                   <item.icon className="h-4 w-4" />
                 </motion.a>
@@ -89,7 +89,7 @@ export function Footer() {
             <ul className="space-y-3 text-base">
               {quickLinks.map((item) => (
                 <li key={item.label}>
-                  <Link to={item.to} className="tf-text-link text-[#9CA3AF] transition-colors hover:text-[#2F80ED]">
+                  <Link to={item.to} className="tf-text-link text-[#9CA3AF] transition-colors active:text-[#2F80ED]">
                     {item.label}
                   </Link>
                 </li>
@@ -104,7 +104,7 @@ export function Footer() {
             <ul className="space-y-3 text-base">
               {serviceLinks.map((item) => (
                 <li key={item.label}>
-                  <Link to={item.to} className="tf-text-link text-[#9CA3AF] transition-colors hover:text-[#2F80ED]">
+                  <Link to={item.to} className="tf-text-link text-[#9CA3AF] transition-colors active:text-[#2F80ED]">
                     {item.label}
                   </Link>
                 </li>
@@ -155,8 +155,8 @@ export function Footer() {
           </p>
 
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <BookStrategyCallButton className="tf-button-primary rounded-xl bg-[#2F80ED] px-7 py-3 text-base font-medium text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#1C6DD0] hover:shadow-lg hover:shadow-[#2F80ED]/30" />
-            <BecomePartnerButton className="tf-button-secondary rounded-xl border border-[#2F80ED] px-7 py-3 text-base font-medium text-[#2F80ED] transition-all duration-300 hover:-translate-y-1 hover:bg-[#2F80ED]/10" />
+            <BookStrategyCallButton className="tf-button-primary rounded-xl bg-[#2F80ED] px-7 py-3 text-base font-medium text-white transition-all duration-300 active:-translate-y-1 active:bg-[#1C6DD0] active:shadow-lg active:shadow-[#2F80ED]/30" />
+            <BecomePartnerButton className="tf-button-secondary rounded-xl border border-[#2F80ED] px-7 py-3 text-base font-medium text-[#2F80ED] transition-all duration-300 active:-translate-y-1 active:bg-[#2F80ED]/10" />
           </div>
         </motion.div>
 
@@ -167,3 +167,4 @@ export function Footer() {
     </footer>
   );
 }
+

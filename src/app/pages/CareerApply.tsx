@@ -114,7 +114,7 @@ export default function CareerApply() {
           <div className="mx-auto w-full max-w-[1260px] px-4 pb-14 pt-28 md:pt-32 lg:px-5">
             <Link
               to="/careers"
-              className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-[#60A5FA] transition-colors hover:text-[#93C5FD]"
+              className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-[#60A5FA] transition-colors active:text-[#93C5FD]"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Careers
@@ -225,7 +225,7 @@ export default function CareerApply() {
               <InputLabel label="Upload Your Resume" required />
               <label
                 htmlFor="resume-upload"
-                className="mt-3 flex cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed border-[#2A3D5D] bg-[#0A1830] px-5 py-8 text-center transition-all hover:border-[#2F80ED]"
+                className="mt-3 flex cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed border-[#2A3D5D] bg-[#0A1830] px-5 py-8 text-center transition-all active:border-[#2F80ED]"
               >
                 <Upload className="mb-2 h-7 w-7 text-[#7AAEE8]" />
                 <span className="text-base font-semibold text-[#C9DDF8]">Click to upload resume</span>
@@ -246,13 +246,13 @@ export default function CareerApply() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="h-12 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-base font-semibold text-white transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
+                  className="h-12 rounded-xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] text-base font-semibold text-white transition-all active:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   {isSubmitting ? 'Submitting...' : showSuccessOnButton ? 'Application Submitted' : 'Submit Application'}
                 </button>
                 <Link
                   to="/careers"
-                  className="inline-flex h-12 items-center justify-center rounded-xl border border-[#2C3C56] bg-[#1B2434] text-base font-medium text-[#E5E7EB] transition-all hover:bg-[#25334B]"
+                  className="inline-flex h-12 items-center justify-center rounded-xl border border-[#2C3C56] bg-[#1B2434] text-base font-medium text-[#E5E7EB] transition-all active:bg-[#25334B]"
                 >
                   Cancel
                 </Link>
@@ -314,4 +314,5 @@ function InputWithIcon({
     </div>
   );
 }
+
 

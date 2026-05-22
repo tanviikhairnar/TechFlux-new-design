@@ -126,7 +126,7 @@ export default function Careers() {
               </p>
               <button
                 onClick={scrollToOpenPositions}
-                className="inline-flex rounded-2xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-10 py-4 text-base font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
+                className="inline-flex rounded-2xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-10 py-4 text-base font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all duration-300 active:-translate-y-0.5 active:brightness-110"
               >
                 View Open Positions
               </button>
@@ -136,7 +136,7 @@ export default function Careers() {
               initial={{ opacity: 0, x: 26 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.65, delay: 0.1 }}
-              className="overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+              className="overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
             >
               <img
                 src={teamPhoto}
@@ -167,7 +167,7 @@ export default function Careers() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.05 + index * 0.07 }}
-                  className="flex min-h-[320px] flex-col items-center rounded-3xl border border-white/5 p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+                  className="flex min-h-[320px] flex-col items-center rounded-3xl border border-white/5 p-8 text-center transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
                   style={{ background: 'rgba(255,255,255,0.03)' }}
                 >
                   <div className="mb-7 inline-flex h-[72px] w-[72px] items-center justify-center rounded-3xl bg-[#143764]">
@@ -205,7 +205,7 @@ export default function Careers() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.06 }}
-                  className="rounded-3xl border border-[#233554] bg-[#121f38] px-7 py-6 transition-all duration-300 hover:border-[#2F80ED]/35 hover:shadow-lg hover:shadow-[#2F80ED]/20 md:px-8 md:py-7"
+                  className="rounded-3xl border border-[#233554] bg-[#121f38] px-7 py-6 transition-all duration-300 active:border-[#2F80ED]/35 active:shadow-lg active:shadow-[#2F80ED]/20 md:px-8 md:py-7"
                 >
                   <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                     <div>
@@ -232,12 +232,12 @@ export default function Careers() {
                       <CareerViewDetailsButton
                         slug={position.slug}
                         role={position}
-                        className="w-full rounded-2xl border border-[#35507C] bg-[#25334B] px-6 py-3 text-center text-base font-medium text-[#D5E6FF] transition-all duration-300 hover:bg-[#2A3D5D] sm:flex-1 md:min-w-[220px] md:flex-none"
+                        className="w-full rounded-2xl border border-[#35507C] bg-[#25334B] px-6 py-3 text-center text-base font-medium text-[#D5E6FF] transition-all duration-300 active:bg-[#2A3D5D] sm:flex-1 md:min-w-[220px] md:flex-none"
                       />
                       <CareerApplyNowButton
                         positionTitle={position.title}
                         role={position}
-                        className="w-full rounded-2xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-6 py-3 text-center text-base font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 hover:brightness-110 sm:flex-1 md:min-w-[220px] md:flex-none"
+                        className="w-full rounded-2xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-6 py-3 text-center text-base font-semibold text-white shadow-[0_10px_28px_rgba(47,128,237,0.35)] transition-all duration-300 active:brightness-110 sm:flex-1 md:min-w-[220px] md:flex-none"
                       />
                     </div>
                   </div>
@@ -270,7 +270,7 @@ export default function Careers() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.07 }}
-                  className="relative rounded-3xl border border-white/5 p-7 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+                  className="relative rounded-3xl border border-white/5 p-7 text-center transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
                   style={{ background: 'rgba(255,255,255,0.03)' }}
                 >
                   {index < hiringProcess.length - 1 ? (
@@ -313,7 +313,7 @@ export default function Careers() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.07 }}
-                    className="overflow-hidden rounded-3xl border border-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-[#2F80ED]/30 hover:shadow-lg hover:shadow-[#2F80ED]/20"
+                    className="overflow-hidden rounded-3xl border border-white/5 transition-all duration-300 active:-translate-y-1 active:border-[#2F80ED]/30 active:shadow-lg active:shadow-[#2F80ED]/20"
                     style={{ background: 'rgba(255,255,255,0.03)' }}
                   >
                     <div className="relative aspect-[16/10] w-full overflow-hidden">
@@ -345,7 +345,7 @@ export default function Careers() {
                 </p>
                 <button
                   onClick={scrollToOpenPositions}
-                  className="inline-flex rounded-2xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-12 py-4 text-base font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110"
+                  className="inline-flex rounded-2xl bg-gradient-to-r from-[#39AEFE] to-[#2F80ED] px-12 py-4 text-base font-semibold text-white shadow-[0_0_24px_rgba(56,169,255,0.35)] transition-all duration-300 active:-translate-y-0.5 active:brightness-110"
                 >
                   Explore Open Positions
                 </button>
@@ -359,3 +359,4 @@ export default function Careers() {
     </div>
   );
 }
+
