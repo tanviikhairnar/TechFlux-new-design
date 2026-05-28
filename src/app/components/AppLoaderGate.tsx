@@ -6,7 +6,7 @@ type AppLoaderGateProps = {
   durationMs?: number;
 };
 
-export default function AppLoaderGate({ durationMs = 1800 }: AppLoaderGateProps) {
+export default function AppLoaderGate({ durationMs = 1600 }: AppLoaderGateProps) {
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {

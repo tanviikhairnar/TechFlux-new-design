@@ -286,7 +286,7 @@ export default function OnDemandSolutions() {
           title="On-Demand Platform We've Built"
           headingWrapClassName="mb-14 text-center"
           headingClassName="mb-4 text-4xl font-semibold text-[#D8DEE8] md:text-[52px]"
-          imageWrapClassName="h-[280px] overflow-hidden md:h-[440px]"
+          imageWrapClassName="h-[250px] overflow-hidden md:h-[380px]"
           imageSrc={caseStudy.img}
           imageAlt={caseStudy.title}
           imageClassName="h-full w-full object-cover object-center"
@@ -386,7 +386,6 @@ export default function OnDemandSolutions() {
     </div>
   );
 }
-
 
 
 

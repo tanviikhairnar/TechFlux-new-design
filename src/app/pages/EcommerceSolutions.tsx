@@ -230,6 +230,7 @@ export default function EcommerceSolutions() {
           imageAlt="E-commerce development dashboard"
           imageVariant="framed"
           imageFit="cover"
+          imageClassName="relative z-10 h-[340px] w-full rounded-2xl object-cover object-top md:h-[480px]"
           textMotionInitial={{ opacity: 0, y: 22 }}
           imageMotionInitial={{ opacity: 0, y: 22 }}
         />
@@ -329,7 +330,7 @@ export default function EcommerceSolutions() {
           title="E-commerce Platform We've Built"
           headingWrapClassName="mb-14 text-center"
           headingClassName="mb-4 text-4xl font-semibold text-[#D8DEE8] md:text-[52px]"
-          imageWrapClassName="h-[280px] overflow-hidden md:h-[440px]"
+          imageWrapClassName="h-[250px] overflow-hidden md:h-[380px]"
           imageSrc={ecommerceCaseImage}
           imageAlt="Fashion e-commerce platform case study"
           imageClassName="h-full w-full object-cover object-center"
@@ -432,7 +433,4 @@ export default function EcommerceSolutions() {
     </div>
   );
 }
-
-
-
 

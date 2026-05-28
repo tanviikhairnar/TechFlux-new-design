@@ -412,9 +412,9 @@ export default function WhiteLabelPartnership() {
                   loading="lazy"
                   decoding="async"
                   fetchPriority="low"
-                  className="h-[320px] w-full object-cover object-center md:h-full md:min-h-[460px]"
+                  className="h-[280px] w-full object-cover object-center md:h-full md:min-h-[380px]"
                 />
-                <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12">
+                <div className="flex flex-col justify-center p-8 md:p-9 lg:p-10">
                   <h3 className="mb-4 text-2xl font-semibold text-[#D8DEE8]" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {caseStudy.title}
                   </h3>
@@ -537,7 +537,6 @@ export default function WhiteLabelPartnership() {
     </div>
   );
 }
-
 
 
 
